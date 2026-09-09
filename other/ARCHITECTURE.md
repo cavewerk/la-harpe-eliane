@@ -105,6 +105,14 @@ Left in place rather than removed, since they could be repurposed for
 something else on the Push; worth deciding what (if anything) to do with
 them as a follow-up.
 
+A second leftover surfaced later, inside `MCLyra.maxpat` itself: a
+"Grid Input" bpatcher inlet feeding an `unpack i i i i i i i i` into the
+same per-channel messages the sustain gate uses — the other end of
+`gridmodule`'s per-step triggering, never wired to anything once
+`gridmodule` was torn out (confirmed zero inputs on all four voices'
+`MCLyra` bpatcher instances at the top level). Removed for the same
+reason.
+
 ## Sustain pedal
 
 A global sustain pedal, added on top of the existing keys-mode trigger
