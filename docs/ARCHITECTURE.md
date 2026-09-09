@@ -41,12 +41,20 @@ MCHelper   -- mixdown, splits to:
   (attack/decay/sustain/release, defaults 600ms/100ms/1.0/1000ms) across the
   8 inner voices. In **drone mode**, a sustained "on" is sent straight to
   this ADSR (typically from the external MIDI fader controller). In **keys
-  mode**, Ableton Push key presses trigger/retrigger it instead. Both modes
-  drive the same electromagnet — there's no mode lockout in the patch, they
-  just correspond to which physical controller is being touched. Also
-  contains a `jsui` referencing `code/helpargs.js`, a stock Max background
-  helper that prints the object's arguments in the patcher — an editor aid,
-  not functional DSP.
+  mode**, each inner voice has its own `live.button` (MIDI-mapped in
+  Ableton to a Push pad) → `toggle` → `setvalue <channel> <0/1>` →
+  `mc.live.adsr~`. A `live.button` bangs on *both* the press and the
+  release transition, and the `toggle` turns that pair of bangs into a
+  held 0/1 state — so despite looking like a click-to-latch chain, this is
+  already correct press-to-sound/release-to-stop behavior, not "press
+  again to turn off." As of the sustain-pedal addition below, that
+  `toggle` output no longer goes straight to `setvalue` — it's gated
+  through a small `js` object first. Both drone and keys mode drive the
+  same electromagnet — there's no mode lockout in the patch, they just
+  correspond to which physical controller is being touched. Also contains
+  a `jsui` referencing `code/helpargs.js`, a stock Max background helper
+  that prints the object's arguments in the patcher — an editor aid, not
+  functional DSP.
 - **`MCHelper.maxpat`** — mixes the voice down and routes it to a `dac~ 4`
   whose target channel is set live via a `live.menu` dropdown (sending a
   `set $1` message) — this is the actual electromagnet output. Current
@@ -97,6 +105,36 @@ Left in place rather than removed, since they could be repurposed for
 something else on the Push; worth deciding what (if anything) to do with
 them as a follow-up.
 
+## Sustain pedal
+
+A global sustain pedal, added on top of the existing keys-mode trigger
+chain, without changing how notes normally start/stop.
+
+- **Top level** (`LivingStringProject.maxpat`): `ctlin 64` reads a standard
+  MIDI sustain footswitch (CC 64). `> 63` turns the raw 0–127 into a clean
+  0/1 "pedal physically down" reading. A manual toggle ("Invert sustain
+  polarity") handles pedals wired the other way round (127 at rest, 0 when
+  pressed) — `!= 0` XORs the raw reading against it, and the result
+  broadcasts once via `s sustain_pedal`, reaching every voice at once
+  (that's what makes this global rather than per-voice).
+- **`MCLyra.maxpat`** (edited once — since all four voices load this same
+  file, the change applies to all 32 inner voices automatically): each
+  inner voice's `toggle` output now feeds a shared `js sustain.js` object
+  (see [code/sustain.js](../code/sustain.js)) instead of going straight to
+  `setvalue`. That object receives `r sustain_pedal` on its second inlet
+  and holds one pending-release flag per channel: a key-down always fires
+  `setvalue <channel> 1` immediately and clears any pending flag for that
+  channel (so re-pressing a sustained note still works normally); a
+  key-up either fires `setvalue <channel> 0` immediately (pedal up) or
+  just marks that channel pending (pedal down); when the pedal itself
+  goes from down to up, every still-pending channel gets its deferred
+  `setvalue <channel> 0` flushed at once.
+
+Not verified against real hardware — this environment can't run Max. Open
+it, test against the actual pedal, and in particular confirm the assumed
+polarity (127 = pressed, 0 = at rest) is either right or gets corrected by
+the invert toggle.
+
 ## What's original vs. vendored
 
 See the [README](../README.md#third-party--vendored-code) — the short
@@ -107,9 +145,10 @@ code, included so the patch is self-contained.
 
 ## Open items
 
-1. **Lightshow's source** — not identified, not investigated further (see
-   above).
-2. **Alto/soprano drone-mode fader chain** — assumed to mirror tenor/bass's
+1. **Alto/soprano drone-mode fader chain** — assumed to mirror tenor/bass's
    `ctlin`-based chain but not individually traced.
-3. **The now-inert `track1below`–`track4below` Push buttons** — repurpose or
+2. **The now-inert `track1below`–`track4below` Push buttons** — repurpose or
    remove; not decided yet.
+
+Lightshow (previously listed here) has been scrapped as a feature entirely
+— not being pursued or investigated further.

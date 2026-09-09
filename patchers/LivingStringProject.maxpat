@@ -10474,6 +10474,123 @@
      ],
      "proportion": 0.5
     }
+   },
+   {
+    "box": {
+     "maxclass": "comment",
+     "id": "obj-300",
+     "text": "Sustain Pedal (CC 64) -> global sustain_pedal send, read by every voice's MCLyra",
+     "numinlets": 1,
+     "numoutlets": 0,
+     "patching_rect": [
+      2600.0,
+      20.0,
+      300.0,
+      20.0
+     ]
+    }
+   },
+   {
+    "box": {
+     "maxclass": "newobj",
+     "id": "obj-301",
+     "text": "ctlin 64",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2600.0,
+      50.0,
+      60.0,
+      22.0
+     ]
+    }
+   },
+   {
+    "box": {
+     "maxclass": "newobj",
+     "id": "obj-302",
+     "text": "> 63",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2600.0,
+      90.0,
+      45.0,
+      22.0
+     ]
+    }
+   },
+   {
+    "box": {
+     "maxclass": "newobj",
+     "id": "obj-303",
+     "text": "!= 0",
+     "numinlets": 2,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "patching_rect": [
+      2600.0,
+      130.0,
+      45.0,
+      22.0
+     ]
+    }
+   },
+   {
+    "box": {
+     "maxclass": "newobj",
+     "id": "obj-304",
+     "text": "s sustain_pedal",
+     "numinlets": 1,
+     "numoutlets": 0,
+     "patching_rect": [
+      2600.0,
+      170.0,
+      110.0,
+      22.0
+     ]
+    }
+   },
+   {
+    "box": {
+     "maxclass": "toggle",
+     "id": "obj-305",
+     "numinlets": 1,
+     "numoutlets": 1,
+     "outlettype": [
+      ""
+     ],
+     "parameter_enable": 0,
+     "patching_rect": [
+      2680.0,
+      130.0,
+      24.0,
+      24.0
+     ]
+    }
+   },
+   {
+    "box": {
+     "maxclass": "comment",
+     "id": "obj-306",
+     "text": "Invert polarity (if pedal sends 127 at rest / 0 pressed)",
+     "numinlets": 1,
+     "numoutlets": 0,
+     "patching_rect": [
+      2715.0,
+      130.0,
+      210.0,
+      33.0
+     ]
+    }
    }
   ],
   "lines": [
@@ -14187,6 +14304,54 @@
      "order": 0,
      "source": [
       "obj-99",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "obj-301",
+      0
+     ],
+     "destination": [
+      "obj-302",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "obj-302",
+      0
+     ],
+     "destination": [
+      "obj-303",
+      0
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "obj-305",
+      0
+     ],
+     "destination": [
+      "obj-303",
+      1
+     ]
+    }
+   },
+   {
+    "patchline": {
+     "source": [
+      "obj-303",
+      0
+     ],
+     "destination": [
+      "obj-304",
       0
      ]
     }

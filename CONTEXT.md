@@ -23,12 +23,20 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
 - **Drone mode** — a performance mode: a sustained "on" is sent directly to
   an inner voice's ADSR, typically driven by the external MIDI fader
   controller. Continuous excitation of the string.
-- **Keys mode** — a performance mode: Ableton Push key presses
-  trigger/retrigger an inner voice's ADSR; Push's rotary knobs do
-  microtuning. Discrete, retriggerable excitation.
-  Drone mode and keys mode drive the *same* electromagnet for a voice and
-  aren't mutually exclusive in code — "mode" just means which controller
-  the performer is currently touching. There's no mode lockout.
+- **Keys mode** — a performance mode: each inner voice's Push pad (a
+  MIDI-mapped `live.button`) bangs on both press and release, which a
+  `toggle` turns into a proper held 0/1 state driving that inner voice's
+  ADSR — sounds while held, stops on release, same as a normal key. Push's
+  rotary knobs do microtuning. Drone mode and keys mode drive the *same*
+  electromagnet for a voice and aren't mutually exclusive in code — "mode"
+  just means which controller the performer is currently touching. There's
+  no mode lockout.
+- **Sustain pedal** — a global MIDI footswitch (CC 64) that, while held,
+  defers every inner voice's key-release across all four voices at once
+  (implemented in `code/sustain.js`, gating `MCLyra`'s existing
+  toggle→ADSR chain). Has a manual polarity-invert switch for pedals wired
+  with reversed up/down values. See
+  [docs/ARCHITECTURE.md#sustain-pedal](docs/ARCHITECTURE.md#sustain-pedal).
 - **Electromagnet channel** — the real output of a voice: a unipolar (0–1,
   never negative — electromagnets pull one direction only) signal sent to
   a discrete physical output channel, picked live via the `live.menu`

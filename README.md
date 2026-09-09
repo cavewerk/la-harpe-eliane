@@ -63,6 +63,7 @@ patchers/
   live*info.maxpat                Vendored Push color/style helpers (third-party)
 code/
   helpargs.js                     Vendored Max stock jsui helper (third-party)
+  sustain.js                      Sustain-pedal gate for MCLyra's 8 ADSRs (own work)
 ```
 
 ## Third-party / vendored code
@@ -80,13 +81,15 @@ self-contained and doesn't require installing a separate Max package:
 - `code/helpargs.js` — a stock Max utility script (ships with Max itself,
   used to render an object's "Arguments" list inside a patcher background).
 
-Only `LivingStringProject.maxpat`, `MCModule.maxpat`, `MCLyra.maxpat`, and
-`MCHelper.maxpat` are original to this project.
+Only `LivingStringProject.maxpat`, `MCModule.maxpat`, `MCLyra.maxpat`,
+`MCHelper.maxpat`, and `code/sustain.js` are original to this project.
 
 ## Status
 
-Documented, and tidied of one dead control path (`gridmodule.maxpat`, a
-16-step sequencer that turned out not to be part of how the instrument is
-actually played — removed). No other functional changes have been made.
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for open questions and
-possible improvements.
+Documented, tidied of one dead control path (`gridmodule.maxpat`, a
+16-step sequencer that wasn't part of how the instrument is actually
+played — removed), and extended with a global sustain pedal for keys mode
+(CC 64, with a polarity-invert switch — see
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md#sustain-pedal)). The sustain
+pedal hasn't been tested against real hardware yet — this environment
+can't run Max.
