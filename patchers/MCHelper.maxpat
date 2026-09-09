@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 387.0, 120.0, 507.0, 659.0 ],
+		"rect" : [ 383.0, 116.0, 507.0, 659.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"assistshowspatchername" : 1,
