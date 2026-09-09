@@ -1,19 +1,27 @@
 # Living String Project
 
-A Max/MSP + Max for Live patch for an Ableton Push-controlled, four-voice
-multichannel drone/string instrument. Each voice ("string") is a bank of 8
-detunable sine oscillators with independent ADSR envelopes and a 16-step
-on/off sequencer, mixed down and played through both a stereo main output
-and a quad "drone" output. The whole instrument is played from an Ableton
-Push controller via a custom hardware-mapping abstraction library.
+A Max/MSP + Max for Live patch that plays four physical, electromagnetically
+actuated strings — **bass, tenor, alto, soprano** — as a kinetic sound
+sculpture. Each string is driven by an additive-synthesis engine (8 harmonic
+partials, or "inner voices," per string) and physically excited through a
+dedicated electromagnet, not a speaker. It's played two ways: **drone mode**
+(external MIDI faders hold a sustained note per inner voice) and **keys
+mode** (an Ableton Push triggers/retriggers inner voices, with knobs for
+microtuning) — see [CONTEXT.md](CONTEXT.md) for the full glossary.
 
 ## Requirements
 
 - **Max 9** (built with 9.0.7; uses `mc.*` multichannel objects, so Max 8+
   is required at minimum).
-- An **Ableton Push** controller (the patch is built entirely around
-  `jk.push*` Push abstractions — see [Third-party code](#third-party-vendored-code)).
-- No external packages need to be installed — every dependency is
+- An **Ableton Push** controller for keys mode (the patch is built around
+  `jk.push*` Push abstractions — see [Third-party code](#third-party--vendored-code)).
+- An external MIDI fader controller for drone mode (read via raw `ctlin`,
+  not part of the vendored Push library).
+- The physical rig: four electromagnets, one per string, wired to four
+  discrete audio interface output channels (**never** to speakers — the
+  signal driving them is intentionally unipolar and would be inaudible/
+  harmful there).
+- No external Max packages need to be installed — every dependency is
   vendored inside `patchers/`.
 
 ## Opening it
@@ -21,33 +29,36 @@ Push controller via a custom hardware-mapping abstraction library.
 Open [`LivingStringProject.maxproj`](LivingStringProject.maxproj) in Max, then
 open `patchers/LivingStringProject.maxpat` from the project window. See
 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how the patch is wired
-internally.
+internally, and [CONTEXT.md](CONTEXT.md) for what the terms below mean.
 
 ## Voices
 
-There are four identical voice modules, named after choir registers:
+There are four identical voice modules, named after choir registers. Each
+one's electromagnet output channel is set live via a dropdown in its
+`MCHelper` instance — this is the current convention, not a hardcoded
+constant:
 
-| Voice     | Amp send      | Sequencer-gate send | Microtuning send |
-|-----------|---------------|----------------------|-------------------|
-| Soprano   | `soprano_amp` | `soprano_seqOn`      | `soprano_micro`   |
-| Alto      | `alto_amp`    | `alto_seqOn`         | `alto_micro`      |
-| Tenor     | `tenor_amp`   | `tenor_seqOn`        | `tenor_micro`     |
-| Bass      | `bass_amp`    | `bass_seqOn`         | `bass_micro`      |
+| Voice     | Amp send      | Microtuning send  | Electromagnet channel (current) |
+|-----------|---------------|--------------------|----------------------------------|
+| Bass      | `bass_amp`    | `bass_micro`       | 3                                |
+| Tenor     | `tenor_amp`   | `tenor_micro`      | 4                                |
+| Alto      | `alto_amp`    | `alto_micro`       | 5                                |
+| Soprano   | `soprano_amp` | `soprano_micro`    | 6                                |
 
-Each voice is one instance of the four bpatchers described in
-[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): `gridmodule` (sequencer),
-`MCLyra` (envelope), `MCHelper` (drone output), `MCModule` (oscillator bank).
+Each voice is one instance of three bpatchers, chained together — see
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the signal path:
+`MCModule` (8-harmonic additive engine), `MCLyra` (8-channel ADSR envelope),
+`MCHelper` (mixdown + electromagnet output + rarely-used monitor tap).
 
 ## Repository layout
 
 ```
 LivingStringProject.maxproj      Max project file (entry point)
 patchers/
-  LivingStringProject.maxpat     Top-level patch: Push UI, MIDI mapping, 4 voices
-  MCModule.maxpat                Per-voice synth engine (own work)
-  MCLyra.maxpat                  Per-voice envelope stage (own work)
-  MCHelper.maxpat                Per-voice drone output stage (own work)
-  gridmodule.maxpat               Per-voice 16-step sequencer (own work)
+  LivingStringProject.maxpat     Top-level patch: Push/fader UI, MIDI mapping, 4 voices
+  MCModule.maxpat                Per-voice additive engine (own work)
+  MCLyra.maxpat                  Per-voice ADSR envelope (own work)
+  MCHelper.maxpat                Per-voice electromagnet output stage (own work)
   jk.push*.maxpat                 Vendored Push UI abstraction library (third-party)
   live*info.maxpat                Vendored Push color/style helpers (third-party)
 code/
@@ -69,11 +80,13 @@ self-contained and doesn't require installing a separate Max package:
 - `code/helpargs.js` — a stock Max utility script (ships with Max itself,
   used to render an object's "Arguments" list inside a patcher background).
 
-Only `LivingStringProject.maxpat`, `MCModule.maxpat`, `MCLyra.maxpat`,
-`MCHelper.maxpat`, and `gridmodule.maxpat` are original to this project.
+Only `LivingStringProject.maxpat`, `MCModule.maxpat`, `MCLyra.maxpat`, and
+`MCHelper.maxpat` are original to this project.
 
 ## Status
 
-Documented and tidied for further work; no functional changes have been made
-yet. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for a list of open
-questions and possible improvements.
+Documented, and tidied of one dead control path (`gridmodule.maxpat`, a
+16-step sequencer that turned out not to be part of how the instrument is
+actually played — removed). No other functional changes have been made.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for open questions and
+possible improvements.

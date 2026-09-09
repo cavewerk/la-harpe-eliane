@@ -5,30 +5,54 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
 
 ## Terms
 
-- **Voice** — one of the four instrument parts: **soprano**, **alto**,
-  **tenor**, **bass**. Each voice is a complete, identical signal chain
-  (see `docs/ARCHITECTURE.md`), just addressed by different send/receive
-  names (e.g. `soprano_amp` vs `bass_amp`).
-- **String** — one of the 8 multichannel (`mc.*`) channels inside a voice's
-  oscillator bank (`MCModule`). Not a physical-modeling string — it's a
-  sine oscillator with its own microtuning offset. "8 strings per voice."
-- **Microtuning (`#1_micro`)** — a per-string fine-tuning offset, ramped
-  with `line~`, layered on top of the voice's main frequency.
-- **Drone** — the always-mixed-down, 4-channel output of a voice
-  (`MCHelper`'s `dac~ 4`), distinct from the top-level stereo main mix
-  (`dac~ 1 2`).
-- **Lightshow** — the Push pad/LED animation driven by (unconfirmed, see
-  `docs/ARCHITECTURE.md` open questions) `MCModule`'s extra amplitude
-  outlets. Must be switched off for the blackout button to work — this is
-  stated directly as a comment in the top-level patch.
-- **seqOn** — the per-voice gate signal from `gridmodule`'s 16-step
-  sequencer that turns a voice's sound on/off per step.
+- **Voice** — one of the four physical instrument parts: **soprano**,
+  **alto**, **tenor**, **bass**. Each voice is exactly **one physical
+  string and one electromagnet**, driven out one discrete physical output
+  channel (currently 3/4/5/6 — see **Electromagnet channel** below). There
+  are only four strings total, not eight and not thirty-two.
+- **Global tuning** — a voice's fundamental / open-string frequency.
+- **Inner voice** (aka **harmonic**) — one of the 8 additive-synthesis
+  partials inside a voice's oscillator bank (`MCModule`'s 8 `mc.*`
+  channels). Each inner voice is a harmonic multiple of its voice's global
+  tuning, with its own fader-controlled amplitude and microtuning offset.
+  *Not* a separate string — all 8 sum together to drive the one
+  electromagnet for that voice. (Corrects last session's CONTEXT.md, which
+  wrongly called these "8 strings per voice.")
+- **Microtuning (`#1_micro`)** — a small per-inner-voice fine-tuning offset
+  layered on top of a harmonic's frequency.
+- **Drone mode** — a performance mode: a sustained "on" is sent directly to
+  an inner voice's ADSR, typically driven by the external MIDI fader
+  controller. Continuous excitation of the string.
+- **Keys mode** — a performance mode: Ableton Push key presses
+  trigger/retrigger an inner voice's ADSR; Push's rotary knobs do
+  microtuning. Discrete, retriggerable excitation.
+  Drone mode and keys mode drive the *same* electromagnet for a voice and
+  aren't mutually exclusive in code — "mode" just means which controller
+  the performer is currently touching. There's no mode lockout.
+- **Electromagnet channel** — the real output of a voice: a unipolar (0–1,
+  never negative — electromagnets pull one direction only) signal sent to
+  a discrete physical output channel, picked live via the `live.menu`
+  dropdown in that voice's `MCHelper` instance (current convention:
+  bass→3, tenor→4, alto→5, soprano→6 — reconfigurable per setup, not
+  hardcoded). This is what physically drives the string. Never routed to
+  a speaker — it would damage one.
+- **Monitor mix** — the bipolar (-1 to 1) stereo path (→ shared
+  `live.gain~` → main `dac~ 1 2`). An occasional-use audible check of what
+  the electromagnets are being sent; not a primary output. The scene
+  volume buttons (0dB/-6dB/-12dB/-18dB) only affect this monitor mix, not
+  the electromagnet channels.
+- **Presentation title** — `MCModule`'s third outlet re-emits the voice's
+  own name (e.g. `"soprano"`) into a message box that serves as an on-
+  screen label when the patch is in Presentation mode. (Corrects last
+  session's read of this as dead/vestigial wiring — it's a UI label, kept
+  intentionally.)
 - **jk.push family** — the vendored third-party Ableton Push abstraction
   library (by Jeff Kaiser, CC BY-NC-SA 4.0) this patch's entire hardware UI
   is built from. Treat as a dependency, not project code — see README.
 
 ## Decisions
 
-None recorded yet. Add an ADR under `docs/adr/` the first time a
-hard-to-reverse decision gets made (e.g. changing the sequencer's clock
-source, or replacing the vendored Push library).
+- **`gridmodule` (16-step sequencer) is being removed.** It was an earlier
+  control idea that isn't part of how the instrument is actually played —
+  drone mode (faders) and keys mode (Push) are the two real controllers.
+  Not an ADR (not a hard trade-off, just removing something unused).
