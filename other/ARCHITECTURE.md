@@ -72,10 +72,12 @@ MCHelper   -- mixdown, splits to:
   (the 8 endless rotary encoders, `jk.pushrotaryAlt 3`–`10`, used for
   microtuning).
 - **Drone mode control surface**: raw MIDI CC input via `ctlin`, separate
-  hardware from the Push (an external fader bank). Confirmed wired for at
-  least tenor and bass (`ctlin` → offset (`- 39` / `- 31`) → pack → `s
-  tenor_amp` / `s bass_amp`); alto/soprano's equivalent chain wasn't traced
-  in detail but is assumed structurally identical.
+  hardware from the Push (an external fader bank). Only bass and tenor are
+  wired so far — alto/soprano have no fader chain yet (see
+  [Open items](#open-items)). Each wired voice is `ctlin` → one
+  [`code/faderamp.js`](../code/faderamp.js) instance → `s bass_amp` / `s
+  tenor_amp`. See [Fader-to-amplitude mapping](#fader-to-amplitude-mapping)
+  below.
 - **Scene volume buttons**: a `jk.push`-driven radio group (`0dB` / `-6dB` /
   `-12dB` / `-18dB`) tied to the shared `live.gain~` — affects only the
   monitor mix, not the electromagnet outputs.
@@ -143,6 +145,35 @@ it, test against the actual pedal, and in particular confirm the assumed
 polarity (127 = pressed, 0 = at rest) is either right or gets corrected by
 the invert toggle.
 
+## Fader-to-amplitude mapping
+
+Each wired voice's 8 harmonic-amplitude faders live on one bank of 8
+consecutive MIDI CCs from an external controller (bass: CC 32–39, tenor: CC
+40–47 — alto/soprano aren't wired yet, see [Open items](#open-items)).
+
+- **Top level** (`LivingStringProject.maxpat`): `ctlin` reads the whole CC
+  range at once, outputting `[value 0-127, controller#, channel]`. Its value
+  and controller# outlets feed one [`code/faderamp.js`](../code/faderamp.js)
+  instance per voice — `js faderamp.js 31` for bass, `js faderamp.js 39` for
+  tenor — whose single argument is that voice's CC-to-slider-index offset
+  (its lowest fader's CC number, minus 1). The object turns a fader move
+  into a `"select <1-8> <0.-1.>"` message and sends it on `s bass_amp` / `s
+  tenor_amp`. This replaced an equivalent five-object chain per voice (a
+  subtract, a `scale`, a `pack`, a `zl.rot`, and a `select $1 $2` message
+  box) with one parameterized object, making it straightforward to wire up
+  alto/soprano later (just a `ctlin` and a `faderamp.js` with the right
+  offset).
+- **`MCModule.maxpat`**: `r #1_amp` receives that message directly into a
+  `multislider` (the on-screen per-harmonic amplitude display), whose
+  further `iter`/`counter`/`pack`/`zl.rot` chain feeds each harmonic's
+  `mainAmp`. This receiving side was left untouched — only the sending
+  (fader-reading) side was cleaned up.
+- The value is scaled by 125, not 127 (`value / 125` in `faderamp.js`,
+  carried over unchanged from the original `scale 0. 125. 0. 1.` object) —
+  preserved as-is rather than silently corrected to the full 0–127 MIDI
+  range, in case it was deliberate calibration for this hardware. Worth
+  confirming against the real faders.
+
 ## What's original vs. vendored
 
 See the [README](../README.md#third-party--vendored-code) — the short
@@ -153,8 +184,10 @@ code, included so the patch is self-contained.
 
 ## Open items
 
-1. **Alto/soprano drone-mode fader chain** — assumed to mirror tenor/bass's
-   `ctlin`-based chain but not individually traced.
+1. **Alto/soprano have no drone-mode fader chain** — confirmed absent (only
+   two `ctlin` objects exist in the whole patch, both for bass/tenor).
+   Adding them is now just a `ctlin` plus a `js faderamp.js <offset>` per
+   voice — see [Fader-to-amplitude mapping](#fader-to-amplitude-mapping).
 2. **The now-inert `track1below`–`track4below` Push buttons** — repurpose or
    remove; not decided yet.
 

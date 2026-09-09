@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 475.0, 106.0, 328.0, 622.0 ],
+		"rect" : [ 473.0, 102.0, 473.0, 622.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -75,58 +75,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-141",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 2089.999800682067871, 597.857127904891968, 45.0, 22.0 ],
-					"text" : "zl.rot 1",
-					"varname" : "obj-131"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-142",
-					"maxclass" : "newobj",
-					"numinlets" : 6,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 2089.999800682067871, 515.357135772705078, 103.0, 22.0 ],
-					"text" : "scale 0. 125. 0. 1.",
-					"varname" : "obj-130"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-143",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 2089.999800682067871, 570.357130527496338, 47.0, 22.0 ],
-					"text" : "pack f i",
-					"varname" : "obj-129"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-144",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 2089.999800682067871, 542.857133150100708, 29.5, 22.0 ],
-					"text" : "- 39",
-					"varname" : "obj-128"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-145",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -140,14 +88,19 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-146",
-					"maxclass" : "message",
-					"numinlets" : 2,
+					"id" : "obj-9002",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2089.999800682067871, 622.857125520706177, 73.0, 22.0 ],
-					"text" : "select $1 $2",
-					"varname" : "obj-126"
+					"patching_rect" : [ 2089.999800682067871, 542.857133150100708, 130.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"filename" : "faderamp.js",
+						"parameter_enable" : 0
+					}
+,
+					"text" : "js faderamp.js 39",
+					"varname" : "faderamp_tenor"
 				}
 
 			}
@@ -160,58 +113,6 @@
 					"patching_rect" : [ 2089.999800682067871, 650.357122898101807, 75.0, 22.0 ],
 					"text" : "s tenor_amp",
 					"varname" : "obj-125"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-75",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1944.999814510345459, 595.357128143310547, 45.0, 22.0 ],
-					"text" : "zl.rot 1",
-					"varname" : "obj-124"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-73",
-					"maxclass" : "newobj",
-					"numinlets" : 6,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1944.999814510345459, 515.357135772705078, 103.0, 22.0 ],
-					"text" : "scale 0. 125. 0. 1.",
-					"varname" : "obj-123"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-62",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1944.999814510345459, 567.857130765914917, 47.0, 22.0 ],
-					"text" : "pack f i",
-					"varname" : "obj-122"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-61",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 1944.999814510345459, 542.857133150100708, 29.5, 22.0 ],
-					"text" : "- 31",
-					"varname" : "obj-121"
 				}
 
 			}
@@ -230,14 +131,19 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-27",
-					"maxclass" : "message",
-					"numinlets" : 2,
+					"id" : "obj-9001",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1944.999814510345459, 622.857125520706177, 73.0, 22.0 ],
-					"text" : "select $1 $2",
-					"varname" : "obj-119"
+					"patching_rect" : [ 1944.999814510345459, 542.857133150100708, 130.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"filename" : "faderamp.js",
+						"parameter_enable" : 0
+					}
+,
+					"text" : "js faderamp.js 31",
+					"varname" : "faderamp_bass"
 				}
 
 			}
@@ -929,7 +835,7 @@
 
 					}
 ,
-					"varname" : "live.dial[12]"
+					"varname" : "live.dial[13]"
 				}
 
 			}
@@ -985,7 +891,7 @@
 
 					}
 ,
-					"varname" : "live.dial[13]"
+					"varname" : "live.dial[14]"
 				}
 
 			}
@@ -1111,7 +1017,7 @@
 
 					}
 ,
-					"varname" : "live.dial[14]"
+					"varname" : "live.dial[16]"
 				}
 
 			}
@@ -1167,7 +1073,7 @@
 
 					}
 ,
-					"varname" : "live.dial[15]"
+					"varname" : "live.dial[18]"
 				}
 
 			}
@@ -1223,7 +1129,7 @@
 
 					}
 ,
-					"varname" : "live.dial[16]"
+					"varname" : "live.dial[19]"
 				}
 
 			}
@@ -1349,7 +1255,7 @@
 
 					}
 ,
-					"varname" : "live.dial[18]"
+					"varname" : "live.dial[23]"
 				}
 
 			}
@@ -1405,7 +1311,7 @@
 
 					}
 ,
-					"varname" : "live.dial[19]"
+					"varname" : "live.dial[24]"
 				}
 
 			}
@@ -1461,7 +1367,7 @@
 
 					}
 ,
-					"varname" : "live.dial[20]"
+					"varname" : "live.dial[26]"
 				}
 
 			}
@@ -1587,7 +1493,7 @@
 
 					}
 ,
-					"varname" : "live.dial[22]"
+					"varname" : "live.dial[29]"
 				}
 
 			}
@@ -1643,7 +1549,7 @@
 
 					}
 ,
-					"varname" : "live.dial[23]"
+					"varname" : "live.dial[32]"
 				}
 
 			}
@@ -1699,7 +1605,7 @@
 
 					}
 ,
-					"varname" : "live.dial[24]"
+					"varname" : "live.dial[34]"
 				}
 
 			}
@@ -1783,7 +1689,7 @@
 
 					}
 ,
-					"varname" : "live.dial[4]"
+					"varname" : "live.dial[36]"
 				}
 
 			}
@@ -1839,7 +1745,7 @@
 
 					}
 ,
-					"varname" : "live.dial[5]"
+					"varname" : "live.dial[37]"
 				}
 
 			}
@@ -1895,7 +1801,7 @@
 
 					}
 ,
-					"varname" : "live.dial[8]"
+					"varname" : "live.dial[40]"
 				}
 
 			}
@@ -2047,7 +1953,7 @@
 
 					}
 ,
-					"varname" : "live.dial[9]"
+					"varname" : "live.dial[42]"
 				}
 
 			}
@@ -2103,7 +2009,7 @@
 
 					}
 ,
-					"varname" : "live.dial[10]"
+					"varname" : "live.dial[44]"
 				}
 
 			}
@@ -2159,7 +2065,7 @@
 
 					}
 ,
-					"varname" : "live.dial[11]"
+					"varname" : "live.dial[45]"
 				}
 
 			}
@@ -2298,7 +2204,7 @@
 
 					}
 ,
-					"varname" : "live.dial[17]"
+					"varname" : "live.dial[48]"
 				}
 
 			}
@@ -2354,7 +2260,7 @@
 
 					}
 ,
-					"varname" : "live.dial[21]"
+					"varname" : "live.dial[49]"
 				}
 
 			}
@@ -2410,7 +2316,7 @@
 
 					}
 ,
-					"varname" : "live.dial[26]"
+					"varname" : "live.dial[50]"
 				}
 
 			}
@@ -2536,7 +2442,7 @@
 
 					}
 ,
-					"varname" : "live.dial[28]"
+					"varname" : "live.dial[52]"
 				}
 
 			}
@@ -2733,6 +2639,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 1.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -2805,6 +2712,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 1.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -2876,6 +2784,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 1.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -2947,6 +2856,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 1.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -3018,6 +2928,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 1.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -3090,6 +3001,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 1.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -3161,6 +3073,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 1.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -3232,6 +3145,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 1.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -3888,6 +3802,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -3960,6 +3875,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4032,6 +3948,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4104,6 +4021,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4176,6 +4094,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4248,6 +4167,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4320,6 +4240,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4392,6 +4313,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 0.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4464,6 +4386,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4536,6 +4459,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4607,6 +4531,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4679,6 +4604,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4751,6 +4677,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4823,6 +4750,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4895,6 +4823,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -4967,6 +4896,7 @@
 								"box" : 								{
 									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
 									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
 									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 									"fontname" : "Arial",
@@ -7299,7 +7229,7 @@
 
 					}
 ,
-					"varname" : "live.dial[29]"
+					"varname" : "live.dial[53]"
 				}
 
 			}
@@ -7355,7 +7285,7 @@
 
 					}
 ,
-					"varname" : "live.dial[30]"
+					"varname" : "live.dial[54]"
 				}
 
 			}
@@ -7433,7 +7363,7 @@
 				"box" : 				{
 					"fontsize" : 10.0,
 					"id" : "obj-120",
-					"items" : [ "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "Ableton Push 2 Live Port", ",", "Ableton Push 2 User Port", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -7538,7 +7468,7 @@
 				"box" : 				{
 					"fontsize" : 10.0,
 					"id" : "obj-127",
-					"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "Ableton Push 2 Live Port", ",", "Ableton Push 2 User Port", ",", "from Max 1", ",", "from Max 2" ],
+					"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "from Max 1", ",", "from Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -8428,50 +8358,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-146", 0 ],
-					"source" : [ "obj-141", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-143", 0 ],
-					"source" : [ "obj-142", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-141", 0 ],
-					"source" : [ "obj-143", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-143", 1 ],
-					"source" : [ "obj-144", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-142", 0 ],
+					"destination" : [ "obj-9002", 0 ],
 					"source" : [ "obj-145", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-144", 0 ],
-					"source" : [ "obj-145", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-147", 0 ],
-					"source" : [ "obj-146", 0 ]
 				}
 
 			}
@@ -8693,13 +8581,6 @@
 					"destination" : [ "obj-20", 0 ],
 					"midpoints" : [ 1244.499882221221924, 511.079827189445496, 1220.630098938941956, 511.079827189445496, 1220.630098938941956, 484.079827189445496, 1172.630098938941956, 484.079827189445496, 1172.630098938941956, 427.079827189445496, 1199.499886512756348, 427.079827189445496 ],
 					"source" : [ "obj-264", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
-					"source" : [ "obj-27", 0 ]
 				}
 
 			}
@@ -9044,29 +8925,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-61", 0 ],
-					"source" : [ "obj-60", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-73", 0 ],
+					"destination" : [ "obj-9001", 0 ],
 					"source" : [ "obj-60", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-62", 1 ],
-					"source" : [ "obj-61", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-75", 0 ],
-					"source" : [ "obj-62", 0 ]
 				}
 
 			}
@@ -9200,20 +9060,6 @@
 					"destination" : [ "obj-83", 0 ],
 					"midpoints" : [ 1154.499890804290771, 1195.415940761566162, 1154.499890804290771, 1195.415940761566162 ],
 					"source" : [ "obj-72", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-62", 0 ],
-					"source" : [ "obj-73", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-27", 0 ],
-					"source" : [ "obj-75", 0 ]
 				}
 
 			}
@@ -9552,6 +9398,20 @@
 					"midpoints" : [ 1741.999834775924683, 1102.415940761566162, 1657.529236555099487, 1102.415940761566162, 1657.529236555099487, 961.415940761566162, 1720.699841928482101, 961.415940761566162 ],
 					"order" : 0,
 					"source" : [ "obj-90", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-24", 0 ],
+					"source" : [ "obj-9001", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-147", 0 ],
+					"source" : [ "obj-9002", 0 ]
 				}
 
 			}
@@ -10320,322 +10180,7 @@
 		}
 ,
 		"parameter_map" : 		{
-			"key" : 			{
-				"live.button[28]" : 				{
-					"srcname" : "0.modifiers.18.code.key",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 1
-				}
-,
-				"live.button[22]" : 				{
-					"srcname" : "0.modifiers.19.code.key",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 1
-				}
-,
-				"live.button[24]" : 				{
-					"srcname" : "0.modifiers.20.code.key",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 1
-				}
-,
-				"live.button[27]" : 				{
-					"srcname" : "0.modifiers.21.code.key",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 1
-				}
-,
-				"live.button[25]" : 				{
-					"srcname" : "0.modifiers.23.code.key",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 1
-				}
-,
-				"live.button[26]" : 				{
-					"srcname" : "0.modifiers.22.code.key",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 1
-				}
-,
-				"live.button[23]" : 				{
-					"srcname" : "0.modifiers.26.code.key",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 1
-				}
-,
-				"live.button[29]" : 				{
-					"srcname" : "0.modifiers.28.code.key",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 1
-				}
-
-			}
-,
 			"midi" : 			{
-				"live.button[28]" : 				{
-					"srcname" : "92.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[22]" : 				{
-					"srcname" : "93.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[24]" : 				{
-					"srcname" : "94.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[27]" : 				{
-					"srcname" : "95.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[25]" : 				{
-					"srcname" : "96.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[26]" : 				{
-					"srcname" : "97.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[23]" : 				{
-					"srcname" : "98.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[29]" : 				{
-					"srcname" : "99.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[65]" : 				{
-					"srcname" : "76.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[64]" : 				{
-					"srcname" : "77.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[62]" : 				{
-					"srcname" : "78.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[68]" : 				{
-					"srcname" : "79.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[63]" : 				{
-					"srcname" : "80.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[69]" : 				{
-					"srcname" : "81.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[67]" : 				{
-					"srcname" : "82.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[66]" : 				{
-					"srcname" : "83.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[48]" : 				{
-					"srcname" : "60.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[53]" : 				{
-					"srcname" : "61.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[49]" : 				{
-					"srcname" : "62.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[46]" : 				{
-					"srcname" : "63.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[52]" : 				{
-					"srcname" : "64.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[47]" : 				{
-					"srcname" : "65.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[51]" : 				{
-					"srcname" : "66.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[50]" : 				{
-					"srcname" : "67.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[37]" : 				{
-					"srcname" : "44.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[35]" : 				{
-					"srcname" : "45.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[31]" : 				{
-					"srcname" : "46.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[34]" : 				{
-					"srcname" : "47.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[30]" : 				{
-					"srcname" : "48.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[33]" : 				{
-					"srcname" : "49.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[36]" : 				{
-					"srcname" : "50.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
-				"live.button[32]" : 				{
-					"srcname" : "51.note.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 3,
-					"trigger" : 1
-				}
-,
 				"button[9]" : 				{
 					"srcname" : "20.ctrl.0.chan.midi",
 					"min" : 0.0,
