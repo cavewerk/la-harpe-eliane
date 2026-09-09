@@ -817,8 +817,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-92"
+
 				}
 
 			}
@@ -1041,8 +1040,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-88"
+
 				}
 
 			}
@@ -1280,8 +1278,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-83"
+
 				}
 
 			}
@@ -1519,8 +1516,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-78"
+
 				}
 
 			}
@@ -1954,8 +1950,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-68"
+
 				}
 
 			}
@@ -2219,8 +2214,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-61"
+
 				}
 
 			}
@@ -2471,8 +2465,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-55"
+
 				}
 
 			}
@@ -5062,7 +5055,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 1000.0, 506.0, 0.0 ],
+									"patching_rect" : [ 50.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5080,7 +5073,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 200.0, 1000.0, 506.0, 0.0 ],
+									"patching_rect" : [ 200.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5098,7 +5091,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 350.0, 1000.0, 506.0, 0.0 ],
+									"patching_rect" : [ 350.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5116,7 +5109,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 500.0, 1000.0, 506.0, 0.0 ],
+									"patching_rect" : [ 500.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5134,7 +5127,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 650.0, 1000.0, 506.0, 0.0 ],
+									"patching_rect" : [ 650.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5152,7 +5145,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 800.0, 1000.0, 506.0, 0.0 ],
+									"patching_rect" : [ 800.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5170,7 +5163,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 950.0, 1000.0, 506.0, 0.0 ],
+									"patching_rect" : [ 950.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5188,7 +5181,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1100.0, 1000.0, 506.0, 0.0 ],
+									"patching_rect" : [ 1100.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5206,7 +5199,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 1250.0, 506.0, 0.0 ],
+									"patching_rect" : [ 40.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5224,7 +5217,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 200.0, 1250.0, 506.0, 0.0 ],
+									"patching_rect" : [ 200.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5242,7 +5235,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 350.0, 1250.0, 506.0, 0.0 ],
+									"patching_rect" : [ 350.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5260,7 +5253,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 500.0, 1250.0, 506.0, 0.0 ],
+									"patching_rect" : [ 500.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5278,7 +5271,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 650.0, 1250.0, 506.0, 0.0 ],
+									"patching_rect" : [ 650.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5296,7 +5289,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 800.0, 1250.0, 506.0, 0.0 ],
+									"patching_rect" : [ 800.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5314,7 +5307,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 950.0, 1250.0, 506.0, 0.0 ],
+									"patching_rect" : [ 950.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5332,7 +5325,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1100.0, 1250.0, 506.0, 0.0 ],
+									"patching_rect" : [ 1100.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5350,7 +5343,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 1500.0, 506.0, 0.0 ],
+									"patching_rect" : [ 50.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5368,7 +5361,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 200.0, 1500.0, 506.0, 0.0 ],
+									"patching_rect" : [ 200.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5386,7 +5379,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 350.0, 1500.0, 506.0, 0.0 ],
+									"patching_rect" : [ 350.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5404,7 +5397,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 500.0, 1500.0, 506.0, 0.0 ],
+									"patching_rect" : [ 500.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5422,7 +5415,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 650.0, 1500.0, 506.0, 0.0 ],
+									"patching_rect" : [ 650.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5440,7 +5433,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 800.0, 1500.0, 506.0, 0.0 ],
+									"patching_rect" : [ 800.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5458,7 +5451,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 950.0, 1500.0, 506.0, 0.0 ],
+									"patching_rect" : [ 950.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5476,7 +5469,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1100.0, 1500.0, 506.0, 0.0 ],
+									"patching_rect" : [ 1100.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5494,7 +5487,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 1750.0, 506.0, 0.0 ],
+									"patching_rect" : [ 50.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5512,7 +5505,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 200.0, 1750.0, 506.0, 0.0 ],
+									"patching_rect" : [ 200.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5530,7 +5523,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 350.0, 1750.0, 506.0, 0.0 ],
+									"patching_rect" : [ 350.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5548,7 +5541,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 500.0, 1750.0, 506.0, 0.0 ],
+									"patching_rect" : [ 500.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5566,7 +5559,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 650.0, 1750.0, 506.0, 0.0 ],
+									"patching_rect" : [ 650.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5584,7 +5577,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 800.0, 1750.0, 506.0, 0.0 ],
+									"patching_rect" : [ 800.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5602,7 +5595,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 950.0, 1750.0, 506.0, 0.0 ],
+									"patching_rect" : [ 950.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -5620,7 +5613,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1100.0, 1750.0, 506.0, 0.0 ],
+									"patching_rect" : [ 1100.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
 										"parameter_enable" : 0
@@ -6405,7 +6398,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 1 ],
-									"order" : 31,
+									"order" : 30,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6469,7 +6462,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-26", 1 ],
-									"order" : 30,
+									"order" : 31,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -7417,8 +7410,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-37"
+
 				}
 
 			}
@@ -10838,13 +10830,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ledsustain.js",
-				"bootpath" : "~/Claude Drive/MaxMsp/LivingStringProject/code",
-				"patcherrelativepath" : "../code",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "livebuttoninfo.maxpat",
 				"bootpath" : "~/Claude Drive/MaxMsp/LivingStringProject/patchers",
 				"patcherrelativepath" : ".",
@@ -10884,6 +10869,13 @@
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
 				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "padhold.js",
+				"bootpath" : "~/Claude Drive/MaxMsp/LivingStringProject/code",
+				"patcherrelativepath" : "../code",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
