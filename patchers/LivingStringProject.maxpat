@@ -2171,7 +2171,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 33.0, 57.0, 1210.0, 739.0 ],
+						"rect" : [ 33.0, 86.0, 1210.0, 710.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -4655,7 +4655,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4673,7 +4673,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 200.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4691,7 +4691,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 350.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4709,7 +4709,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 500.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4727,7 +4727,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 650.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4745,7 +4745,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 800.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4763,7 +4763,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 950.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4781,7 +4781,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1100.0, 1000.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4799,7 +4799,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 40.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4817,7 +4817,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 200.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4835,7 +4835,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 350.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4853,7 +4853,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 500.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4871,7 +4871,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 650.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4889,7 +4889,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 800.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4907,7 +4907,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 950.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4925,7 +4925,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1100.0, 1250.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4943,7 +4943,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4961,7 +4961,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 200.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4979,7 +4979,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 350.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -4997,7 +4997,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 500.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -5015,7 +5015,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 650.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -5033,7 +5033,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 800.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -5051,7 +5051,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 950.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -5069,7 +5069,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1100.0, 1500.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -5087,7 +5087,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -5105,7 +5105,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 200.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -5123,7 +5123,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 350.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -5141,7 +5141,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 500.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -5159,7 +5159,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 650.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -5177,7 +5177,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 800.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -5195,7 +5195,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 950.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -5213,7 +5213,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1100.0, 1750.0, 506.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js",
+										"filename" : "padhold.js",
 										"parameter_enable" : 0
 									}
 ,
@@ -7031,7 +7031,7 @@
 				"box" : 				{
 					"fontsize" : 10.0,
 					"id" : "obj-120",
-					"items" : [ "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "to Max 1", ",", "to Max 2", ",", "Ableton Push 2 Live Port", ",", "Ableton Push 2 User Port" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -7136,7 +7136,7 @@
 				"box" : 				{
 					"fontsize" : 10.0,
 					"id" : "obj-127",
-					"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "from Max 1", ",", "from Max 2" ],
+					"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "from Max 1", ",", "from Max 2", ",", "Ableton Push 2 Live Port", ",", "Ableton Push 2 User Port" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -7964,13 +7964,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9002", 0 ],
-					"source" : [ "obj-145", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-7", 2 ],
 					"source" : [ "obj-15", 0 ]
 				}
@@ -8496,13 +8489,6 @@
 					"midpoints" : [ 1171.999889135360718, 739.415940761566162, 1645.529236555099487, 739.415940761566162, 1645.529236555099487, 961.415940761566162, 1579.299870777130081, 961.415940761566162 ],
 					"order" : 5,
 					"source" : [ "obj-58", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-9001", 0 ],
-					"source" : [ "obj-60", 0 ]
 				}
 
 			}
@@ -9779,6 +9765,262 @@
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 2
+				}
+,
+				"live.button[28]" : 				{
+					"srcname" : "92.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[22]" : 				{
+					"srcname" : "93.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[24]" : 				{
+					"srcname" : "94.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[27]" : 				{
+					"srcname" : "95.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[25]" : 				{
+					"srcname" : "96.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[26]" : 				{
+					"srcname" : "97.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[23]" : 				{
+					"srcname" : "98.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[29]" : 				{
+					"srcname" : "99.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[65]" : 				{
+					"srcname" : "76.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[64]" : 				{
+					"srcname" : "77.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[62]" : 				{
+					"srcname" : "78.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[68]" : 				{
+					"srcname" : "79.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[63]" : 				{
+					"srcname" : "80.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[69]" : 				{
+					"srcname" : "81.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[67]" : 				{
+					"srcname" : "82.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[66]" : 				{
+					"srcname" : "83.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[48]" : 				{
+					"srcname" : "60.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[53]" : 				{
+					"srcname" : "61.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[49]" : 				{
+					"srcname" : "62.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[46]" : 				{
+					"srcname" : "63.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[52]" : 				{
+					"srcname" : "64.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[47]" : 				{
+					"srcname" : "65.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[51]" : 				{
+					"srcname" : "66.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[50]" : 				{
+					"srcname" : "67.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[37]" : 				{
+					"srcname" : "44.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[35]" : 				{
+					"srcname" : "45.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[31]" : 				{
+					"srcname" : "46.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[34]" : 				{
+					"srcname" : "47.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[30]" : 				{
+					"srcname" : "48.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[33]" : 				{
+					"srcname" : "49.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[36]" : 				{
+					"srcname" : "50.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[32]" : 				{
+					"srcname" : "51.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
 				}
 
 			}
