@@ -78,9 +78,26 @@ MCHelper   -- mixdown, splits to:
   [`code/faderamp.js`](../code/faderamp.js) instance → `s bass_amp` / `s
   tenor_amp`. See [Fader-to-amplitude mapping](#fader-to-amplitude-mapping)
   below.
-- **Scene volume buttons**: a `jk.push`-driven radio group (`0dB` / `-6dB` /
-  `-12dB` / `-18dB`) tied to the shared `live.gain~` — affects only the
-  monitor mix, not the electromagnet outputs.
+- **Voice-select buttons** (formerly documented as plain "scene volume
+  buttons"): a `jk.push`-driven radio group, one button per voice
+  (labels being renamed from `0dB`/`-6dB`/`-12dB`/`-18dB` to
+  `bass`/`tenor`/`alto`/`soprano` to match). Dual-purpose:
+  1. Tied to the shared `live.gain~` — sets monitor-mix volume
+     (0dB/-6dB/-12dB/-18dB respectively), same as before. Does not touch
+     the electromagnet outputs.
+  2. Selecting a button also sends an int 1–4 into the `jk.pushrotaryAlt`
+     encoder objects (the 8 physical Push rotary encoders used for
+     microtuning — see [Fader-to-amplitude
+     mapping](#fader-to-amplitude-mapping) sibling section below for the
+     analogous fader wiring), acting as a selector for which voice's
+     inner-voice microtuning those encoders currently drive. This is how
+     one physical bank of 8 rotaries serves all four voices' 8 inner
+     voices each.
+
+  These two jobs are unrelated — one control is standing in for two
+  separate concerns (monitor volume, and microtuning-encoder targeting).
+  The project's author has flagged this as "super convoluted." No change
+  has been made to decouple it; see [Open items](#open-items).
 - **Lightshow blackout**: one button blacks out the Push's pads/LEDs; per
   the patch's own comment, a "Lightshow" feature must be off for this to
   work. Where Lightshow itself comes from wasn't identified (possibly a
@@ -99,13 +116,16 @@ the instrument is actually played — drone mode (faders) and keys mode
 (Push) are the two real controllers — so it's been removed (bpatcher
 instances, their patch cords, and the file itself).
 
-One side effect: the top-level Push buttons `track1below`–`track4below`
-(feeding `sel 0 1 2 3` → `s <voice>_seqOn`) had no other consumer besides
-`gridmodule`, so those sends are now orphaned — harmless (a send with no
-receiver just does nothing), but the buttons themselves are now inert.
-Left in place rather than removed, since they could be repurposed for
-something else on the Push; worth deciding what (if anything) to do with
-them as a follow-up.
+One side effect, since corrected: the top-level Push buttons
+`track1below`–`track4below` were themselves unrelated to `gridmodule` and
+to voice-select (see [Voice-select buttons](#voice-select-buttons)
+below) — they were never wired to anything meaningful, and one
+(`track4below`) carried a stray leftover wire into `s soprano_seqOn` via
+a relay object, missed by the original `gridmodule` cleanup pass. All
+four `trackNbelow` buttons and all four `<voice>_seqOn` sends have since
+been removed outright (confirmed vestigial by the project's author, with
+no repurposing planned — voice-select stays on the
+[voice-select buttons](#voice-select-buttons)).
 
 A second leftover surfaced later, inside `MCLyra.maxpat` itself: a
 "Grid Input" bpatcher inlet feeding an `unpack i i i i i i i i` into the
@@ -188,8 +208,6 @@ code, included so the patch is self-contained.
    two `ctlin` objects exist in the whole patch, both for bass/tenor).
    Adding them is now just a `ctlin` plus a `js faderamp.js <offset>` per
    voice — see [Fader-to-amplitude mapping](#fader-to-amplitude-mapping).
-2. **The now-inert `track1below`–`track4below` Push buttons** — repurpose or
-   remove; not decided yet.
 
 Lightshow (previously listed here) has been scrapped as a feature entirely
 — not being pursued or investigated further.

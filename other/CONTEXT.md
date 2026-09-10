@@ -46,9 +46,22 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   a speaker — it would damage one.
 - **Monitor mix** — the bipolar (-1 to 1) stereo path (→ shared
   `live.gain~` → main `dac~ 1 2`). An occasional-use audible check of what
-  the electromagnets are being sent; not a primary output. The scene
-  volume buttons (0dB/-6dB/-12dB/-18dB) only affect this monitor mix, not
-  the electromagnet channels.
+  the electromagnets are being sent; not a primary output. (Corrects last
+  session's CONTEXT.md, which described the scene/voice-select buttons
+  below as affecting only this path — they also drive microtuning-voice
+  selection, a separate and unrelated effect.)
+- **Voice-select buttons** — the four `jk.push` radio buttons formerly
+  labeled by dB value (0dB/-6dB/-12dB/-18dB), relabeled bass/tenor/alto/
+  soprano to match (a display-only change; the underlying wiring is
+  unchanged). Deliberately **dual-purpose**: they still set the monitor
+  mix's volume (0dB/-6dB/-12dB/-18dB respectively), *and* selecting one
+  sends an int 1–4 into the `jk.pushrotaryAlt` encoder objects, choosing
+  which voice's inner-voice microtuning the 8 physical Push rotary
+  encoders currently adjust. This is intentional, not a wart to be
+  untangled — voice-select stays on these buttons. (The unrelated,
+  inert `track1below`–`track4below` Push buttons and their `_seqOn`
+  leftovers, once considered for repurposing, have since been removed
+  outright.)
 - **Presentation title** — `MCModule`'s third outlet re-emits the voice's
   own name (e.g. `"soprano"`) into a message box that serves as an on-
   screen label when the patch is in Presentation mode. (Corrects last
