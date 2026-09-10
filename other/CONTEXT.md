@@ -46,22 +46,27 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   a speaker — it would damage one.
 - **Monitor mix** — the bipolar (-1 to 1) stereo path (→ shared
   `live.gain~` → main `dac~ 1 2`). An occasional-use audible check of what
-  the electromagnets are being sent; not a primary output. (Corrects last
-  session's CONTEXT.md, which described the scene/voice-select buttons
-  below as affecting only this path — they also drive microtuning-voice
-  selection, a separate and unrelated effect.)
+  the electromagnets are being sent; not a primary output. Its level is
+  set directly on the `live.gain~` object itself. (Two sessions ago,
+  CONTEXT.md wrongly said the voice-select buttons below affect this
+  path — confirmed false by the project's author: they were never wired
+  to it at all.)
 - **Voice-select buttons** — the four `jk.push` radio buttons formerly
   labeled by dB value (0dB/-6dB/-12dB/-18dB), relabeled bass/tenor/alto/
   soprano to match (a display-only change; the underlying wiring is
-  unchanged). Deliberately **dual-purpose**: they still set the monitor
-  mix's volume (0dB/-6dB/-12dB/-18dB respectively), *and* selecting one
-  sends an int 1–4 into the `jk.pushrotaryAlt` encoder objects, choosing
-  which voice's inner-voice microtuning the 8 physical Push rotary
-  encoders currently adjust. This is intentional, not a wart to be
-  untangled — voice-select stays on these buttons. (The unrelated,
-  inert `track1below`–`track4below` Push buttons and their `_seqOn`
-  leftovers, once considered for repurposing, have since been removed
-  outright.)
+  unchanged). Their one real job: selecting one sends an int 1–4 into
+  the `jk.pushrotaryAlt` encoder objects, choosing which voice's
+  inner-voice microtuning the 8 physical Push rotary encoders currently
+  target. (Corrects last session's CONTEXT.md, which described these
+  buttons as also setting monitor-mix volume — per the project's author,
+  they never actually were; the dB labels were just the default,
+  never-rewired state of the underlying `jk.push` text boxes, not real
+  functionality.) The same target is also set by **last pad pressed**
+  — confirmed by the author to never drift out of sync with the
+  buttons — so the buttons just let you set the target without needing
+  to hit a pad first. (The unrelated, inert `track1below`–`track4below`
+  Push buttons and their `_seqOn` leftovers, once considered for
+  repurposing, have since been removed outright.)
 - **Presentation title** — `MCModule`'s third outlet re-emits the voice's
   own name (e.g. `"soprano"`) into a message box that serves as an on-
   screen label when the patch is in Presentation mode. (Corrects last

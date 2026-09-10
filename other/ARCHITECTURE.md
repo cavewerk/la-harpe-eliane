@@ -28,8 +28,9 @@ MCHelper   -- mixdown, splits to:
   - **Outlet 1** — `clip~ -1. 1.` (properly bipolar) → feeds the shared
     top-level `live.gain~` → main stereo `dac~ 1 2`. This is the monitor
     mix: an occasional audible check of what's being sent to the magnets,
-    not a primary output. The top-level scene volume buttons (0dB / -6dB /
-    -12dB / -18dB) only affect this path.
+    not a primary output. Its level is set directly on `live.gain~` —
+    the top-level voice-select buttons (see below) are not wired to it,
+    despite this doc previously saying otherwise.
   - **Outlet 2** — the voice's own name (e.g. `"soprano"`) as a message →
     feeds a message box that acts as an on-screen label in Presentation
     mode. Cosmetic, not signal.
@@ -80,24 +81,27 @@ MCHelper   -- mixdown, splits to:
   below.
 - **Voice-select buttons** (formerly documented as plain "scene volume
   buttons"): a `jk.push`-driven radio group, one button per voice
-  (labels being renamed from `0dB`/`-6dB`/`-12dB`/`-18dB` to
-  `bass`/`tenor`/`alto`/`soprano` to match). Dual-purpose:
-  1. Tied to the shared `live.gain~` — sets monitor-mix volume
-     (0dB/-6dB/-12dB/-18dB respectively), same as before. Does not touch
-     the electromagnet outputs.
-  2. Selecting a button also sends an int 1–4 into the `jk.pushrotaryAlt`
-     encoder objects (the 8 physical Push rotary encoders used for
-     microtuning — see [Fader-to-amplitude
-     mapping](#fader-to-amplitude-mapping) sibling section below for the
-     analogous fader wiring), acting as a selector for which voice's
-     inner-voice microtuning those encoders currently drive. This is how
-     one physical bank of 8 rotaries serves all four voices' 8 inner
-     voices each.
+  (labels renamed from `0dB`/`-6dB`/`-12dB`/`-18dB` to
+  `bass`/`tenor`/`alto`/`soprano` to match). Confirmed by the project's
+  author: these were **never** wired to monitor-mix volume — the dB
+  labels were just the leftover default state of unwired `jk.push` text
+  boxes, not real functionality. This doc previously said otherwise;
+  that was wrong.
 
-  These two jobs are unrelated — one control is standing in for two
-  separate concerns (monitor volume, and microtuning-encoder targeting).
-  The project's author has flagged this as "super convoluted." No change
-  has been made to decouple it; see [Open items](#open-items).
+  Their one real job: selecting a button sends an int 1–4 into the
+  `jk.pushrotaryAlt` encoder objects (the 8 physical Push rotary
+  encoders used for microtuning — see [Fader-to-amplitude
+  mapping](#fader-to-amplitude-mapping) for the analogous fader wiring),
+  choosing which voice's inner-voice microtuning those encoders
+  currently target. This is how one physical bank of 8 rotaries serves
+  all four voices' 8 inner voices each. The same target is also set by
+  **last pad pressed** on the Push — confirmed never to drift out of
+  sync with the buttons — so the buttons just let you set the target
+  without needing to hit a pad first.
+
+  See [ROADMAP.md](ROADMAP.md) for how this target-selection mechanism
+  is planned to extend to dynamic fader assignment and encoder
+  mode-switching.
 - **Lightshow blackout**: one button blacks out the Push's pads/LEDs; per
   the patch's own comment, a "Lightshow" feature must be off for this to
   work. Where Lightshow itself comes from wasn't identified (possibly a
@@ -189,10 +193,9 @@ consecutive MIDI CCs from an external controller (bass: CC 32–39, tenor: CC
   `mainAmp`. This receiving side was left untouched — only the sending
   (fader-reading) side was cleaned up.
 - The value is scaled by 125, not 127 (`value / 125` in `faderamp.js`,
-  carried over unchanged from the original `scale 0. 125. 0. 1.` object) —
-  preserved as-is rather than silently corrected to the full 0–127 MIDI
-  range, in case it was deliberate calibration for this hardware. Worth
-  confirming against the real faders.
+  carried over unchanged from the original `scale 0. 125. 0. 1.` object).
+  Confirmed intentional by the project's author: their physical faders
+  top out at 125, not the full 0–127 MIDI range.
 
 ## What's original vs. vendored
 
@@ -206,8 +209,13 @@ code, included so the patch is self-contained.
 
 1. **Alto/soprano have no drone-mode fader chain** — confirmed absent (only
    two `ctlin` objects exist in the whole patch, both for bass/tenor).
-   Adding them is now just a `ctlin` plus a `js faderamp.js <offset>` per
-   voice — see [Fader-to-amplitude mapping](#fader-to-amplitude-mapping).
+   No longer planned as a standalone hardcoded-CC extension; see
+   [ROADMAP.md](ROADMAP.md) — this is now expected to resolve as a side
+   effect of the dynamic fader-to-voice assignment feature.
 
 Lightshow (previously listed here) has been scrapped as a feature entirely
 — not being pursued or investigated further.
+
+Forward-looking plans (new features, hardware-mapping ambitions, code
+cleanup) live in [ROADMAP.md](ROADMAP.md), not here — this file documents
+current-state architecture only.
