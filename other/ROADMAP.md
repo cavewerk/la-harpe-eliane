@@ -36,11 +36,14 @@ fader → voice assignment** below.
 
 Reordered 2026-09-10 per the project's author.
 
-1. `[ ]` **Sustain pedal repress-to-release** — while the pedal is held,
+1. `[x]` **Sustain pedal repress-to-release** — while the pedal is held,
    re-pressing an already-sustained pad releases it immediately instead
    of restarting the note. Normal (no-pedal) press/release behavior is
-   unchanged. Contained change, mostly in `code/sustain.js`. No new
-   button or mode needed.
+   unchanged. Landed in both `code/sustain.js` (audio gate) and
+   `code/padhold.js` (per-pad LED hold, which independently tracked the
+   same old press/defer/flush behavior and needed the same fix so the
+   LED matches the sound). Hardware-tested and confirmed 2026-09-10 —
+   see [ADR 0001](../docs/adr/0001-sustain-repress-to-release.md).
 2. `[ ]` **Encoder mode-switch, phase 1** — one Push button cycles the 8
    macro encoders (3–10) between **microtuning** (existing) and
    **partial amplitude**. Encoders 1 & 2 become permanently dedicated to
