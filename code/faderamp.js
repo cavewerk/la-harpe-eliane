@@ -45,7 +45,9 @@ function handle(value) {
 		post("faderamp.js (offset " + offset + "): dropping bad message - index=" + index + " value=" + value + "\n");
 		return;
 	}
-	outlet(0, "select", index, value / 125);
+	if (index >= 1 && index <= 8) {
+		outlet(0, "select", index, value / 125);
+	}
 }
 
 function msg_int(value) { handle(value); }
