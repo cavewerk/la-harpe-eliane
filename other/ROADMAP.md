@@ -53,13 +53,23 @@ Reordered 2026-09-10 per the project's author.
    target is a stretch item if time allows.
 3. `[ ]` **Start the ADR habit** — see [docs/adr/](../docs/adr/README.md).
    First real candidates: items 1 and 2 above.
-4. `[ ]` **Dynamic fader → voice assignment (minimum viable)** — a
+4. `[x]` **Dynamic fader → voice assignment (minimum viable)** — a
    selector (dropdown/`umenu` is enough for v1) per existing 8-CC fader
    block (the bass/tenor hardware already wired) choosing which voice it
    drives. Independent from encoder voice-targeting — separate
    mechanism, not unified with it. Also resolves alto/soprano drone-mode
    parity without needing a second fader bank. Buildable now on current
    hardware.
+   Landed 2026-09-11, hardware-tested and confirmed working — see
+   [ADR 0002](../docs/adr/0002-dynamic-fader-voice-assignment.md). One
+   `umenu` per fader bank (`fadertarget_bass_menu` /
+   `fadertarget_tenor_menu`, items bass/tenor/alto/soprano) → `+ 1` →
+   a `gate 4` inserted between each bank's `js faderamp.js` and its
+   sends, routing to `s bass_amp` / `s tenor_amp` (reused) or the two
+   new `s alto_amp` / `s soprano_amp` (added — these didn't exist
+   before). Each umenu defaults on load to its bank's original target
+   (bass bank → bass, tenor bank → tenor) via `loadbang`, so behavior
+   is unchanged until someone touches the dropdown.
 5. `[ ]` **Interleaved cleanup** — as the items above touch the
    fader-chain code, `sustain.js`, and the encoder wiring, comment those
    sections and adopt `patcherargs` there if it helps. Not a separate

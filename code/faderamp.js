@@ -17,18 +17,38 @@
 
 	Scales by 125, not 127, matching the original chain's "scale 0.
 	125. 0. 1." - carried over as-is rather than silently changed.
+
+	Accepts both int and float messages on either inlet (ctlin's
+	value/CC# outlets are documented as plain numbers, but this
+	guards against either being coerced to float somewhere upstream).
+	A bad/non-numeric index or value is dropped and logged rather than
+	sent on as a garbage "select" message.
 */
 
 inlets = 2;
 outlets = 1;
 
-var offset = (jsarguments.length > 0) ? jsarguments[0] : 0;
+// Read the *last* jsarguments entry, not [0]: if this object is ever
+// recreated with the script path passed as its own leading argument
+// (as opposed to typed as "js faderamp.js <offset>"), the offset
+// shifts to a later index. Reading from the end is robust either way.
+var offset = (jsarguments.length > 0) ? Number(jsarguments[jsarguments.length - 1]) : 0;
 var index = 1;
 
-function msg_int(value) {
+function handle(value) {
+	value = Number(value);
 	if (inlet === 1) {
 		index = value - offset;
 		return;
 	}
+	if (isNaN(index) || isNaN(value)) {
+		post("faderamp.js (offset " + offset + "): dropping bad message - index=" + index + " value=" + value + "\n");
+		return;
+	}
 	outlet(0, "select", index, value / 125);
 }
+
+function msg_int(value) { handle(value); }
+function msg_float(value) { handle(value); }
+function list(value) { handle(arguments[0]); }
+function anything() { handle(arguments[0]); }
