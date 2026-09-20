@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 61.0, 107.0, 670.0, 464.0 ],
+		"rect" : [ 60.0, 106.0, 670.0, 465.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -20,7 +20,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 797.0, 420.0, 50.0, 22.0 ],
-					"text" : "82",
+					"text" : "60",
 					"varname" : "obj-162"
 				}
 
@@ -2388,7 +2388,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 655.162622213363647, 868.26861047744751, 307.0, 31.0 ],
-									"text" : "jk.push @pad 15 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 63 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-62"
 								}
 
@@ -2460,7 +2460,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 462.408997416496277, 868.26861047744751, 382.0, 20.0 ],
-									"text" : "jk.push @pad 14 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 62 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-60"
 								}
 
@@ -2532,7 +2532,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 263.85827112197876, 872.61643660068512, 382.0, 20.0 ],
-									"text" : "jk.push @pad 13 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 61 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-58"
 								}
 
@@ -2604,7 +2604,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 69.655370950698853, 872.61643660068512, 382.0, 20.0 ],
-									"text" : "jk.push @pad 12 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 60 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-56"
 								}
 
@@ -2677,7 +2677,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 655.903403655687725, 772.978719234466553, 306.0, 31.0 ],
-									"text" : "jk.push @pad 11 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 59 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-54"
 								}
 
@@ -2749,7 +2749,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 462.425146476427471, 772.978719234466553, 382.0, 20.0 ],
-									"text" : "jk.push @pad 10 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 58 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-52"
 								}
 
@@ -2816,12 +2816,13 @@
 								"box" : 								{
 									"fontsize" : 10.0,
 									"id" : "obj-192",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 263.85827112197876, 777.047054290771484, 376.0, 20.0 ],
-									"text" : "jk.push @pad 9 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 57 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-50"
 								}
 
@@ -2894,7 +2895,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 70.380013942718506, 777.047054290771484, 159.782605648040771, 42.0 ],
-									"text" : "jk.push @pad 8 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 56 @oncolor r @offcolor y @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-48"
 								}
 
@@ -2967,7 +2968,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 679.0322265625, 648.7613525390625, 151.515138149261475, 42.0 ],
-									"text" : "jk.push @pad 31 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 55 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-46"
 								}
 
@@ -3040,7 +3041,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 471.0322265625, 644.7613525390625, 151.515138149261475, 42.0 ],
-									"text" : "jk.push @pad 30 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 54 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-44"
 								}
 
@@ -3113,7 +3114,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 281.0322265625, 644.7613525390625, 151.515138149261475, 42.0 ],
-									"text" : "jk.push @pad 29 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 53 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-42"
 								}
 
@@ -3186,7 +3187,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 71.0322265625, 644.7613525390625, 151.515138149261475, 42.0 ],
-									"text" : "jk.push @pad 28 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 52 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-40"
 								}
 
@@ -3259,7 +3260,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 679.0322265625, 532.7613525390625, 151.515138149261475, 42.0 ],
-									"text" : "jk.push @pad 27 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 51 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-38"
 								}
 
@@ -3332,7 +3333,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 473.0322265625, 530.7613525390625, 151.515138149261475, 42.0 ],
-									"text" : "jk.push @pad 26 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 50 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-36"
 								}
 
@@ -3405,7 +3406,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 281.0322265625, 530.7613525390625, 151.515138149261475, 42.0 ],
-									"text" : "jk.push @pad 25 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 49 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-34"
 								}
 
@@ -3478,7 +3479,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 73.0322265625, 530.7613525390625, 153.030289530754089, 42.0 ],
-									"text" : "jk.push @pad 24 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 48 @oncolor r @offcolor p @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-32"
 								}
 
@@ -4135,7 +4136,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 297.483855605125427, 106.954905390739441, 201.612904667854309, 31.0 ],
-									"text" : "jk.push @pad 57 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 33 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-14"
 								}
 
@@ -4207,7 +4208,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 71.677402377128601, 52.0, 382.0, 20.0 ],
-									"text" : "jk.push @pad 56 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 32 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-12"
 								}
 
@@ -4280,7 +4281,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 765.225794434547424, 106.954905390739441, 199.0, 31.0 ],
-									"text" : "jk.push @pad 59 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 35 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-10"
 								}
 
@@ -4353,7 +4354,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 541.032244443893433, 106.954905390739441, 201.612904667854309, 31.0 ],
-									"text" : "jk.push @pad 58 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 34 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-8"
 								}
 
@@ -4426,7 +4427,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 292.645145893096924, 184.374260783195496, 200.0, 31.0 ],
-									"text" : "jk.push @pad 61 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 37 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-6"
 								}
 
@@ -4499,7 +4500,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 68.451595902442932, 184.374260783195496, 200.0, 31.0 ],
-									"text" : "jk.push @pad 60 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 36 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-4"
 								}
 
@@ -4572,7 +4573,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 739.419342637062073, 184.374260783195496, 199.0, 31.0 ],
-									"text" : "jk.push @pad 63 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 39 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-2"
 								}
 
@@ -4645,7 +4646,7 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "int", "", "", "" ],
 									"patching_rect" : [ 513.612889409065247, 184.374260783195496, 202.0, 31.0 ],
-									"text" : "jk.push @pad 62 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
+									"text" : "jk.push @pad 38 @oncolor r @offcolor c @texton boppity @textoff bippity @mode b",
 									"varname" : "obj-0"
 								}
 
@@ -5236,6 +5237,18 @@
 ,
 									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
 									"varname" : "padhold_32"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 70.0, 8.0, 3069.0, 0.0 ],
+									"text" : "Push pad LEDs. Each pad is jk.push @pad N where N = MIDI note - 36. @pad is a creation arg read by patcherargs so this is a SEPARATE address space from the note map in parameter_map.midi that decides which VOICE a pad plays. Change both together or sound and light drift apart. Rows top-down: soprano @pad 56-63 / alto 48-55 / tenor 40-47 / bass 32-39. Each row's 8 live.text mirrors also feed a sel 1 -> 0/1/2/3 msg -> outlet = last-pad-pressed voice target. See ADR 0004.",
+									"varname" : "cmt_pad_address_space"
 								}
 
 							}
@@ -6583,7 +6596,7 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "int", "", "", "" ],
 					"patching_rect" : [ 1235.0, 597.857127904891968, 171.0, 76.0 ],
-					"text" : "jk.push @button scene7 @oncolor w @offcolor b @textoff soprano @texton soprano @mode r @radio volumes",
+					"text" : "jk.push @button scene1 @oncolor w @offcolor b @textoff soprano @texton soprano @mode r @radio volumes",
 					"varname" : "jkpush16[1]"
 				}
 
@@ -6655,7 +6668,7 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "int", "", "", "" ],
 					"patching_rect" : [ 1235.0, 517.857135534286499, 171.0, 62.0 ],
-					"text" : "jk.push @button scene5 @oncolor w @offcolor b @textoff alto @texton alto @mode r @radio volumes",
+					"text" : "jk.push @button scene2 @oncolor w @offcolor b @textoff alto @texton alto @mode r @radio volumes",
 					"varname" : "jkpush18[1]"
 				}
 
@@ -6799,7 +6812,7 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "int", "", "", "" ],
 					"patching_rect" : [ 1235.0, 352.85715126991272, 171.0, 62.0 ],
-					"text" : "jk.push @button scene1 @oncolor w @offcolor b @textoff bass @texton bass @mode r @radio volumes",
+					"text" : "jk.push @button scene4 @oncolor w @offcolor b @textoff bass @texton bass @mode r @radio volumes",
 					"varname" : "jkpush22[1]"
 				}
 
@@ -7048,7 +7061,7 @@
 				"box" : 				{
 					"fontsize" : 10.0,
 					"id" : "obj-120",
-					"items" : [ "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "UltraLite-mk4 MIDI In", ",", "to Max 1", ",", "to Max 2", ",", "Ableton Push 2 Live Port", ",", "Ableton Push 2 User Port" ],
+					"items" : [ "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "Ableton Push 2 Live Port", ",", "Ableton Push 2 User Port", ",", "UltraLite-mk4 MIDI In", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -7153,7 +7166,7 @@
 				"box" : 				{
 					"fontsize" : 10.0,
 					"id" : "obj-127",
-					"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "UltraLite-mk4 MIDI Out", ",", "from Max 1", ",", "from Max 2", ",", "Ableton Push 2 Live Port", ",", "Ableton Push 2 User Port" ],
+					"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "Ableton Push 2 Live Port", ",", "Ableton Push 2 User Port", ",", "UltraLite-mk4 MIDI Out", ",", "from Max 1", ",", "from Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -8264,6 +8277,30 @@
 ,
 					"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/encoderamp.js\" 0.01",
 					"varname" : "encamp_js"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-104",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1235.0, 318.0, 951.0, 20.0 ],
+					"text" : "Voice-select: jk.push @button sceneN addresses Push grid row 9-N. scene1 = top row. soprano/alto/tenor/bass = rows 8/7/6/5. See ADR 0004.",
+					"varname" : "cmt_voiceselect_scenes"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-131",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 700.0, 318.0, 982.0, 20.0 ],
+					"text" : "p = Push pad LED mirrors + per-pad hold (padhold.js). The pad-to-voice NOTE mapping is NOT here - it lives in parameter_map.midi. See ADR 0004.",
+					"varname" : "cmt_padled_pointer"
 				}
 
 			}
@@ -10674,36 +10711,8 @@
 ,
 		"parameter_map" : 		{
 			"midi" : 			{
-				"button[9]" : 				{
-					"srcname" : "20.ctrl.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 2
-				}
-,
-				"button[10]" : 				{
-					"srcname" : "21.ctrl.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 2
-				}
-,
-				"button[11]" : 				{
-					"srcname" : "22.ctrl.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 2
-				}
-,
-				"button[12]" : 				{
-					"srcname" : "23.ctrl.0.chan.midi",
-					"min" : 0.0,
-					"max" : 1.0,
-					"flags" : 2
-				}
-,
 				"live.button[28]" : 				{
-					"srcname" : "92.note.0.chan.midi",
+					"srcname" : "68.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10711,7 +10720,7 @@
 				}
 ,
 				"live.button[22]" : 				{
-					"srcname" : "93.note.0.chan.midi",
+					"srcname" : "69.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10719,7 +10728,7 @@
 				}
 ,
 				"live.button[24]" : 				{
-					"srcname" : "94.note.0.chan.midi",
+					"srcname" : "70.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10727,7 +10736,7 @@
 				}
 ,
 				"live.button[27]" : 				{
-					"srcname" : "95.note.0.chan.midi",
+					"srcname" : "71.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10735,7 +10744,7 @@
 				}
 ,
 				"live.button[25]" : 				{
-					"srcname" : "96.note.0.chan.midi",
+					"srcname" : "72.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10743,7 +10752,7 @@
 				}
 ,
 				"live.button[26]" : 				{
-					"srcname" : "97.note.0.chan.midi",
+					"srcname" : "73.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10751,7 +10760,7 @@
 				}
 ,
 				"live.button[23]" : 				{
-					"srcname" : "98.note.0.chan.midi",
+					"srcname" : "74.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10759,7 +10768,7 @@
 				}
 ,
 				"live.button[29]" : 				{
-					"srcname" : "99.note.0.chan.midi",
+					"srcname" : "75.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10831,7 +10840,7 @@
 				}
 ,
 				"live.button[48]" : 				{
-					"srcname" : "60.note.0.chan.midi",
+					"srcname" : "84.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10839,7 +10848,7 @@
 				}
 ,
 				"live.button[53]" : 				{
-					"srcname" : "61.note.0.chan.midi",
+					"srcname" : "85.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10847,7 +10856,7 @@
 				}
 ,
 				"live.button[49]" : 				{
-					"srcname" : "62.note.0.chan.midi",
+					"srcname" : "86.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10855,7 +10864,7 @@
 				}
 ,
 				"live.button[46]" : 				{
-					"srcname" : "63.note.0.chan.midi",
+					"srcname" : "87.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10863,7 +10872,7 @@
 				}
 ,
 				"live.button[52]" : 				{
-					"srcname" : "64.note.0.chan.midi",
+					"srcname" : "88.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10871,7 +10880,7 @@
 				}
 ,
 				"live.button[47]" : 				{
-					"srcname" : "65.note.0.chan.midi",
+					"srcname" : "89.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10879,7 +10888,7 @@
 				}
 ,
 				"live.button[51]" : 				{
-					"srcname" : "66.note.0.chan.midi",
+					"srcname" : "90.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10887,7 +10896,7 @@
 				}
 ,
 				"live.button[50]" : 				{
-					"srcname" : "67.note.0.chan.midi",
+					"srcname" : "91.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10895,7 +10904,7 @@
 				}
 ,
 				"live.button[37]" : 				{
-					"srcname" : "44.note.0.chan.midi",
+					"srcname" : "92.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10903,7 +10912,7 @@
 				}
 ,
 				"live.button[35]" : 				{
-					"srcname" : "45.note.0.chan.midi",
+					"srcname" : "93.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10911,7 +10920,7 @@
 				}
 ,
 				"live.button[31]" : 				{
-					"srcname" : "46.note.0.chan.midi",
+					"srcname" : "94.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10919,7 +10928,7 @@
 				}
 ,
 				"live.button[34]" : 				{
-					"srcname" : "47.note.0.chan.midi",
+					"srcname" : "95.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10927,7 +10936,7 @@
 				}
 ,
 				"live.button[30]" : 				{
-					"srcname" : "48.note.0.chan.midi",
+					"srcname" : "96.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10935,7 +10944,7 @@
 				}
 ,
 				"live.button[33]" : 				{
-					"srcname" : "49.note.0.chan.midi",
+					"srcname" : "97.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10943,7 +10952,7 @@
 				}
 ,
 				"live.button[36]" : 				{
-					"srcname" : "50.note.0.chan.midi",
+					"srcname" : "98.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,
@@ -10951,7 +10960,7 @@
 				}
 ,
 				"live.button[32]" : 				{
-					"srcname" : "51.note.0.chan.midi",
+					"srcname" : "99.note.0.chan.midi",
 					"min" : 0.0,
 					"max" : 1.0,
 					"flags" : 3,

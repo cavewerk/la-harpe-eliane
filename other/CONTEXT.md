@@ -36,7 +36,7 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   (implemented in `code/sustain.js`, gating `MCLyra`'s existing
   toggle→ADSR chain). Has a manual polarity-invert switch for pedals wired
   with reversed up/down values. See
-  [docs/ARCHITECTURE.md#sustain-pedal](docs/ARCHITECTURE.md#sustain-pedal).
+  [ARCHITECTURE.md#sustain-pedal](ARCHITECTURE.md#sustain-pedal).
 - **Encoder-mode pedal** (aka **pedal 2**) — a second global MIDI
   footswitch (CC 69) that, **while held**, switches the 8 Push macro
   encoders (rotaries 3–10) from microtuning to **partial-amplitude
@@ -92,6 +92,30 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   screen label when the patch is in Presentation mode. (Corrects last
   session's read of this as dead/vestigial wiring — it's a UI label, kept
   intentionally.)
+- **Pad row** — one row of 8 Push pads, driving one voice's 8 inner
+  voices left-to-right. Since 2026-09-20 the four voices sit on the
+  **top four rows**, highest voice at the top: soprano (row 8, notes
+  92-99), alto (row 7, 84-91), tenor (row 6, 76-83), bass (row 5,
+  68-75). The bottom four rows are free and contiguous. Grid numbering:
+  note 36 is bottom-left, +1 rightwards, +8 per row upward. See
+  [ADR 0004](../docs/adr/0004-pad-row-relayout.md).
+- **Pad address spaces** — a pad's identity is stored in **three**
+  independent places that nothing reconciles automatically: which voice
+  it *plays* (`parameter_map.midi`, keyed to `live.button`s inside the
+  four `MCLyra` bpatcher instances), which pad *lights* (`jk.push
+  @pad N`, where N = note − 36, in the `p` subpatcher), and
+  voice-select (`jk.push @button sceneN`, where scene N is grid row
+  9−N). Changing a layout means changing all three. The latter two are
+  `patcherargs` **creation** arguments — not settable at runtime — and
+  `parameter_map.midi` can only be edited in the `.maxpat` JSON with
+  Max closed. See
+  [ARCHITECTURE.md](ARCHITECTURE.md#push-pad-layout--three-independent-address-spaces).
+- **autoorganize** — a flag in `LivingStringProject.maxproj`. While it
+  was on, Max re-filed unrecognised files (including all project
+  Markdown) into its own category folders — notably `other/` — every
+  time it opened the project. This was the cause of ADRs repeatedly
+  relocating out of `docs/adr/`. Turned **off** 2026-09-20; see
+  [ARCHITECTURE.md](ARCHITECTURE.md#max-project-auto-organize-why-docs-kept-moving).
 - **jk.push family** — the vendored third-party Ableton Push abstraction
   library (by Jeff Kaiser, CC BY-NC-SA 4.0) this patch's entire hardware UI
   is built from. Treat as a dependency, not project code — see README.

@@ -215,6 +215,70 @@ a pedal rather than the Push button the roadmap originally sketched.
   mechanism, unchanged — the pedal switches what the encoders *do*, not
   which voice they address.
 
+## Push pad layout — three independent address spaces
+
+As of 2026-09-20 the four voices occupy the **top four rows** of the
+Push 8x8 grid, highest voice at the top. See
+[ADR 0004](../docs/adr/0004-pad-row-relayout.md).
+
+| voice   | grid row | notes | `@pad` | colour | scene |
+|---------|----------|-------|--------|--------|-------|
+| soprano | 8 (top)  | 92-99 | 56-63  | yellow | 1     |
+| alto    | 7        | 84-91 | 48-55  | purple | 2     |
+| tenor   | 6        | 76-83 | 40-47  | green  | 3     |
+| bass    | 5        | 68-75 | 32-39  | cyan   | 4     |
+
+Grid note numbering: 36 is bottom-left, +1 rightwards, +8 per row
+upward. The bottom four rows (notes 36-67, `@pad` 0-31) are unused and
+contiguous — cleared for a possible 8-voice version, which is otherwise
+not started (see [ROADMAP.md](ROADMAP.md)).
+
+**There is no single place that decides which voice a pad plays.**
+Three separate address spaces carry this layout, and nothing keeps them
+in agreement — they match only because they are maintained together:
+
+1. **Which voice a pad plays** — `patcher.parameter_map.midi` in
+   `LivingStringProject.maxpat`: 32 entries keyed by
+   `parameter_longname`, each with an srcname
+   `"<note>.note.0.chan.midi"`. Those longnames belong to the 8
+   `live.button`s inside `MCLyra.maxpat` — there are **no**
+   `live.button` objects in the top-level patch. Since `MCLyra` is
+   loaded as four bpatcher instances, Max uniquifies their longnames
+   per instance in the top-level `parameters` block: `obj-15` = bass,
+   `obj-17` = tenor, `obj-12` = alto, `obj-1` = soprano. This is the
+   audio path; it is *not* hidden in Live.
+2. **Which pad lights up** — a hardcoded `@pad N` creation argument on
+   32 `jk.push` objects inside the `p` subpatcher (varname `obj-49`),
+   where `@pad N` corresponds to note `N+36`. The LED path is a closed
+   ring that never sees a MIDI note: `jk.push @pad N` →
+   [`code/padhold.js`](../code/padhold.js) → `live.text` mirror → back
+   into the same `jk.push`, with `r sustain_pedal` on the `js`
+   object's second inlet. The 32 `live.text` objects have Live
+   parameter longnames but deliberately do **not** appear in
+   `parameter_map.midi` — they are on-screen mirrors, not MIDI-mapped
+   controls.
+3. **Voice-select** — the four `jk.push @button sceneN` objects, where
+   scene N addresses grid row 9−N (`scene1` is the top button, per
+   `Max 9/Packages/jk.push 2/misc/buttonnames.json`, which maps
+   `scene1`=43 down to `scene8`=36).
+
+Each row's 8 `live.text` mirrors also feed a shared `sel 1` → a
+`0`/`1`/`2`/`3` message → the subpatcher's outlet: this is the
+**last pad pressed** half of the voice-targeting mechanism described
+under [Voice-select buttons](#voice-select-buttons) above.
+
+Two practical consequences:
+
+- **Changing the layout means editing all three.** Changing the note
+  map alone moves the sound and leaves the lights behind.
+- **`@pad` and `@button` are `patcherargs` creation arguments** — read
+  once at instantiation, not settable by a runtime message, and only
+  effective on a fresh load of the file. And `parameter_map.midi` is
+  not reachable from inside Max at all, so editing it means editing the
+  `.maxpat` JSON **with Max closed** — Max holds the file and
+  overwrites it on save, so an edit made while Max is open is silently
+  lost.
+
 ## Fader-to-amplitude mapping
 
 Each wired voice's 8 harmonic-amplitude faders live on one bank of 8
@@ -242,6 +306,33 @@ consecutive MIDI CCs from an external controller (bass: CC 32–39, tenor: CC
   carried over unchanged from the original `scale 0. 125. 0. 1.` object).
   Confirmed intentional by the project's author: their physical faders
   top out at 125, not the full 0–127 MIDI range.
+
+## Max project auto-organize (why docs kept moving)
+
+`LivingStringProject.maxproj` is a Max **project** file, and it carried
+`"autoorganize" : 1`. With that on, Max sweeps the project folder every
+time it opens the project and files everything into its own standard
+category subfolders — `patchers/`, `code/`, `data/`, `media/`, and
+**`other/`** for anything it doesn't recognise. Markdown is not a Max
+file type, so project docs were being relocated into `other/` on Max
+launch.
+
+This is why `ARCHITECTURE.md`, `CONTEXT.md`, `README.md` and
+`ROADMAP.md` live in `other/` rather than a folder anyone chose, and
+why `docs/adr/*.md` kept reappearing there across three separate
+sessions with no apparent trigger — the trigger was simply starting
+Max. The tell that confirmed it: `docs/adr/README.md` was the one file
+that *never* moved, because `other/README.md` already exists and the
+move would collide, so Max left it behind.
+
+**Set to `"autoorganize" : 0` on 2026-09-20** and verified by relaunching
+Max and confirming `docs/adr/` kept all four files. Repo layout is now
+the project's own. If ADRs or docs ever start relocating again, check
+this flag first — Max may rewrite it, and it is only editable with Max
+closed, since Max overwrites the `.maxproj` on quit.
+
+The four docs currently in `other/` were left where they are; moving
+them is a separate decision and would break existing links.
 
 ## What's original vs. vendored
 

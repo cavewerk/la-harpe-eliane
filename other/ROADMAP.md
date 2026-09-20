@@ -105,8 +105,12 @@ Reordered 2026-09-10 per the project's author.
    scheduled after this window.
    In progress: both fader banks, the sustain-pedal block, the new
    pedal-2 block, the encoder gate and the `MCModule` ampstate tap now
-   carry in-patch comments. `patcherargs` still has zero uses in
-   project code.
+   carry in-patch comments. Added 2026-09-20 alongside the pad-row
+   relayout: a comment inside the `p` pad/LED subpatcher spelling out
+   the `@pad` vs `parameter_map.midi` split, a pointer comment beside
+   that subpatcher at the top level, and one above the voice-select
+   buttons giving the `scene N = row 9-N` rule. `patcherargs` still
+   has zero uses in project code.
 6. `[ ]` **Snapshot + interpolation system** — capture a voice's 8
    partial-amplitude fader values as a named snapshot; blend between two
    snapshots by a 0–1 amount. Build as a software feature first
@@ -135,6 +139,20 @@ Reordered 2026-09-10 per the project's author.
 3. `[ ]` **Preset system for pad rows** — switch between the current
    4-row and a future 8-row pad layout, and assign a given row to a
    voice. Low urgency while only 4 voices are in use.
+
+   Groundwork landed 2026-09-20: the four voices were squeezed onto
+   the **top four rows** (rows 8-5, soprano at the top down to bass),
+   freeing the bottom four contiguously — see
+   [ADR 0004](../docs/adr/0004-pad-row-relayout.md). That ADR also
+   records the constraint this item has to design around: a pad's
+   identity lives in **three** independent address spaces
+   (`parameter_map.midi` for which voice it plays, `jk.push @pad` for
+   which pad lights, `jk.push @button sceneN` for voice-select), and
+   `@pad`/`@button` are `patcherargs` **creation** arguments. They
+   cannot be rewritten by a runtime message, so live row reassignment
+   cannot work by editing them — it needs a gate/router between pads
+   and voices, or an LED path addressed by message instead (one of the
+   things the custom Push external, under Unscheduled, would unlock).
 4. `[ ]` **Expression pedal via Push sysex** — genuinely undecided
    whether this fits short-term or long-term; revisit priority once the
    short-term list is further along. Real protocol docs exist:
@@ -171,7 +189,15 @@ Reordered 2026-09-10 per the project's author.
   given how much it would touch.
 - `[ ]` **8-voice extension** — a "someday" consideration already
   shaping current design choices (e.g. capping planned fader-bank count
-  around 4 groups even at 8 voices), not an active goal.
+  around 4 groups even at 8 voices), not an active goal. Still
+  unscheduled and aspirational: it needs its own scoping conversation
+  about electromagnets, fader banks and per-voice modules before any
+  of it is built. As of 2026-09-20 the Push grid no longer blocks it —
+  the bottom four rows (notes 36-67, `@pad` 0-31) are free and
+  contiguous (see [ADR 0004](../docs/adr/0004-pad-row-relayout.md)) —
+  but clearing the grid was the *only* part done, and the three
+  address spaces that ADR describes are what any expansion has to
+  wire up.
 
 ## Explicitly parked
 
