@@ -187,14 +187,17 @@ have to be round-tripped through Max.
   recalling any existing snapshot will not restore `alpha`'s state at
   all.
 
-  This was not known before phase 1 and is unresolved. It affects every
-  remaining phase — phase 2 triples it — and it overlaps the snapshot /
+  This was not known before phase 1. The output-channel half was
+  resolved immediately afterwards by moving that value out of snapshot
+  state entirely — `MCHelper` now takes its channel as a `patcherargs`
+  creation argument — see
+  [ADR 0006](0006-mchelper-output-channel-as-creation-argument.md).
+  The general gap remains: snapshots still contain no new-voice
+  parameters, so recalling `MASTER` or `jam1` restores the four original
+  voices and leaves the new ones untouched. It overlaps the snapshot /
   interpolation system on the roadmap, which turns out not to be a
-  greenfield feature: a snapshot mechanism already exists and is in
-  active use. Deciding what to do (re-capture all 18, write the new
-  longnames into them programmatically, or give new voices
-  `parameter_initial` values so they no longer depend on snapshots) is
-  the next thing to settle.
+  greenfield feature — a snapshot mechanism already exists and is in
+  active use.
 
 Hardware-tested and confirmed 2026-09-20: row 4 plays `alpha` out
 channel 7, lights orange, and the sustain pedal holds its LEDs.

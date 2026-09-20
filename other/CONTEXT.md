@@ -72,9 +72,15 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   3-10 (current convention: bass→3, tenor→4, alto→5, soprano→6,
   alpha→7, with beta/gamma/delta→8/9/10 once built — reconfigurable per
   setup, not hardcoded). This is what physically drives the string.
-  Never routed to a speaker — it would damage one. **A newly added
-  voice's `MCHelper` has no saved menu value** and defaults to channel
-  3, colliding with bass — set it by hand on first open.
+  Never routed to a speaker — it would damage one.
+
+  **A voice's starting channel is its `MCHelper` bpatcher's creation
+  argument** (`MCHelper 7`), read via `patcherargs` — see
+  [ADR 0006](../docs/adr/0006-mchelper-output-channel-as-creation-argument.md).
+  The menu still overrides at runtime; the argument only decides where
+  the voice starts. Before that change the channel was restored *only*
+  from the patcher snapshot, so a newly added voice silently came up on
+  channel 3 and collided with bass.
 - **Monitor mix** — the bipolar (-1 to 1) stereo path (→ shared
   `live.gain~` → main `dac~ 1 2`). An occasional-use audible check of what
   the electromagnets are being sent; not a primary output. Its level is

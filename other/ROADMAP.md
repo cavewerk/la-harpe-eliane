@@ -109,8 +109,12 @@ Reordered 2026-09-10 per the project's author.
    relayout: a comment inside the `p` pad/LED subpatcher spelling out
    the `@pad` vs `parameter_map.midi` split, a pointer comment beside
    that subpatcher at the top level, and one above the voice-select
-   buttons giving the `scene N = row 9-N` rule. `patcherargs` still
-   has zero uses in project code.
+   buttons giving the `scene N = row 9-N` rule. **`patcherargs` is now
+   adopted in project code** — `MCHelper` takes its output channel as a
+   creation argument (see
+   [ADR 0006](../docs/adr/0006-mchelper-output-channel-as-creation-argument.md)),
+   the first use outside the vendored library and the worked example for
+   MCModule and MCLyra.
 6. `[ ]` **Snapshot + interpolation system** — capture a voice's 8
    partial-amplitude fader values as a named snapshot; blend between two
    snapshots by a 0–1 amount. Build as a software feature first
@@ -179,10 +183,11 @@ Reordered 2026-09-10 per the project's author.
   and an audit of the top-level wiring for inefficient or confusing
   sections.
 - **Adopt `patcherargs`** in the project's own bpatchers (MCModule,
-  MCLyra, MCHelper, per-voice control wiring) instead of bare
-  `#1`-substitution or hand-repeated instances. Currently `patcherargs`
-  only appears inside the *vendored* `jk.push.maxpat` /
-  `jk.pushrotaryAlt.maxpat` — zero uses in project code.
+  MCLyra, per-voice control wiring) instead of bare `#1`-substitution or
+  hand-repeated instances. **Started 2026-09-20**: `MCHelper` now takes
+  its output channel as a creation argument (ADR 0006) — the first use
+  outside the vendored `jk.push.maxpat` / `jk.pushrotaryAlt.maxpat`.
+  MCModule and MCLyra are still on `#1`-substitution.
 - **Not in scope**: the `.js` files (`sustain.js`, `faderamp.js`,
   `padhold.js`) — not a stated pain point, leave alone unless something
   specific comes up.
@@ -214,17 +219,18 @@ Reordered 2026-09-10 per the project's author.
     LEDs. 398 → 446 cords, 0 lost. Key finding that unblocks the rest:
     **Max preserves hand-minted parameter longnames across a save**, so
     voices can be cloned in the JSON without round-tripping through Max.
-  - `[!]` **BLOCKER found in phase 1 — snapshots don't know about new
-    voices.** The patch has an active snapshot plus **18 named ones**
-    (`MASTER`, `jam1`, `jam4`, `May10`, ...), each a longname-keyed
-    `parameter_values` map. None contains `alpha`'s longnames, so its
-    output channel reverts to channel 3 (colliding with bass) on every
-    reopen, and recalling a snapshot won't restore it. Settle this
-    before phase 2, which would triple the problem. Options: re-capture
-    all 18 in Max, inject the new longnames into them programmatically,
-    or give new voices `parameter_initial` values so they don't depend
-    on snapshots at all. See
-    [ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md).
+  - `[x]` **Phase 1b — output channel as a creation argument.** Resolves
+    the snapshot blocker phase 1 uncovered: new voices never enter a
+    snapshot, so `alpha` came up on channel 3 and collided with bass.
+    `MCHelper` now reads its channel from a `patcherargs` creation
+    argument; each instance is given its current channel, so the
+    argument and the snapshot agree for the original four and `alpha`
+    is governed by the argument alone. Landed and hardware-tested
+    2026-09-20 — see
+    [ADR 0006](../docs/adr/0006-mchelper-output-channel-as-creation-argument.md).
+    **Still open**: snapshots contain no new-voice parameters at all, so
+    recalling `MASTER`/`jam1` won't restore them. Only the channel was
+    lifted out of snapshot state.
   - `[ ]` **Phase 2 — `beta` / `gamma` / `delta`** (rows 3/2/1, blue /
     magenta / white, out ch 8/9/10). Straight replication of phase 1.
   - `[ ]` **Phase 3a — voice-select to eight.** Widen the 4-wide

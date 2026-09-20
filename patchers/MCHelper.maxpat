@@ -264,6 +264,44 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"id" : "obj-242",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 160.0, 300.0, 92.0, 22.0 ],
+					"text" : "patcherargs 3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-243",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 160.0, 332.0, 32.0, 22.0 ],
+					"text" : "- 3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 8.0,
+					"id" : "obj-244",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 200.0, 364.0, 300.0, 60.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 2.880658179521561, 154.732496500015259, 33.0, 15.0 ],
+					"text" : "Output channel comes from this bpatcher's creation argument (default 3). Channel number minus 3 = live.menu index. The menu still overrides at runtime."
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -313,6 +351,27 @@
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-242", 0 ],
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-243", 0 ],
+					"source" : [ "obj-242", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-20", 0 ],
+					"source" : [ "obj-243", 0 ]
 				}
 
 			}

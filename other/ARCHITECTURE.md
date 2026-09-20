@@ -68,10 +68,18 @@ MCHelper   -- mixdown, splits to:
   offers channels **3-10** (widened from 3-6 for the eight-voice
   expansion). Current convention: bass→3, tenor→4, alto→5, soprano→6,
   alpha→7, with beta/gamma/delta→8/9/10 once built — reconfigurable per
-  setup, not hardcoded in the file. **A newly added instance has no
-  saved menu value and defaults to channel 3**, colliding with bass, so
-  it must be set by hand on first open. Comment labels: "Drone" (the
-  electromagnet path) / "Output".
+  setup, not hardcoded in the file.
+
+  **The starting channel is a creation argument** on the bpatcher
+  (`MCHelper 7`), read by `patcherargs 3` and turned into a menu index
+  by `- 3`, which drives the existing `live.menu` → `set $1` → `dac~ 4`
+  chain. The menu still overrides at runtime. This is the project's
+  **first use of `patcherargs`** — see
+  [ADR 0006](../docs/adr/0006-mchelper-output-channel-as-creation-argument.md).
+  Before it, the channel was restored *only* from the patcher snapshot
+  (see below), so a newly added voice came up on channel 3 and collided
+  with bass. Comment labels: "Drone" (the electromagnet path) /
+  "Output".
 
 ## Top-level patch (`LivingStringProject.maxpat`)
 
@@ -330,6 +338,32 @@ consecutive MIDI CCs from an external controller (bass: CC 32–39, tenor: CC
   carried over unchanged from the original `scale 0. 125. 0. 1.` object).
   Confirmed intentional by the project's author: their physical faders
   top out at 125, not the full 0–127 MIDI range.
+
+## Patcher snapshots
+
+The patch uses Max's built-in **patcher snapshot** mechanism — not
+`pattr`/`pattrstorage`, of which it contains none. `patcher.snapshot`
+holds one active snapshot plus a `snapshotlist` of **18 named ones**
+(`MASTER`, `jam1`, `jam4`, `lolo`, `cmmsd`, `dialTest`, several `May*`
+and `jam*` variants). Each stores a `valuedictionary/parameter_values`
+map keyed by parameter longname, 186-194 entries.
+
+This is how the four original voices' state persists, and it was
+undocumented until the eight-voice work ran into it. Two things worth
+knowing:
+
+- **A snapshot is explicit stored state and is not rewritten when the
+  file is saved.** A newly added object never enters one by itself.
+- **Recall only writes the parameters a snapshot contains** and leaves
+  everything else alone. So recalling `MASTER` restores the four
+  original voices and leaves `alpha` (and any future voice) untouched.
+
+The output-channel case was resolved by moving that one value out of
+snapshot state and into a creation argument (see `MCHelper` above and
+[ADR 0006](../docs/adr/0006-mchelper-output-channel-as-creation-argument.md)).
+The general gap is still open, and overlaps the snapshot/interpolation
+item on the [roadmap](ROADMAP.md) — which is therefore not a greenfield
+feature.
 
 ## Max project auto-organize (why docs kept moving)
 
