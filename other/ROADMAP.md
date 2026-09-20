@@ -241,24 +241,37 @@ Reordered 2026-09-10 per the project's author.
     generator rather than by hand, and did not recur across 126 new
     cords. See
     [ADR 0007](../docs/adr/0007-eight-voice-expansion-phase-2.md).
-  - `[ ]` **Phase 3a — voice-select to eight.** *Now the blocking item:
-    all eight voices are audible but only four are selectable.* Widen
-    `sel 0 1 2 3` (`obj-103`) to eight outlets, add four `live.text`
-    mirrors + `5`/`6`/`7`/`8` messages into the shared `int` (`obj-59`)
-    that feeds `encoderamp.js` and the encoder gate, and add scene
-    buttons 5-8 with `@radio volumes` to match the existing four. Small
-    and self-contained, and it is what turns the four new voices from
-    audible into playable.
+  - `[x]` **Phase 3a — voice-select to eight.** Landed and
+    hardware-tested 2026-09-20: all eight scene buttons select their
+    voice and mutually exclude, and soprano's microtuning survives
+    selecting the new voices. `sel 0 1 2 3` widened to eight outlets,
+    four new `live.text` + index message + `jk.push @button scene5-8`,
+    and the dead `obj-24` removed. 590 → 609 cords, one removal and it
+    is the dead cord.
 
-    (An earlier note here claimed a `@radio volume`/`volumes` typo on
-    the soprano button. That was wrong — see the retraction in
-    [ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md).)
-  - `[ ]` **Phase 3b — second encoder bank.** Eight more unmodified
-    `jk.pushrotaryAlt` instances plus 32 `live.dial`s, 4 `pak`s and two
-    bank-select `expr`s; `encoderamp.js` `VOICES` 4 → 8. Chosen over
-    forking the vendored abstraction — see ADR 0005. Prove two
-    same-numbered instances coexist on hardware with a small probe
-    before building all eight.
+    Also guarded both consumers of the voice index, since emitting 5-8
+    into a path built for 1-4 is not inert: the encoder gate expression
+    now closes for out-of-bank voices, and `encoderamp.js` parks on "no
+    target" instead of silently keeping the previous voice. See
+    [ADR 0008](../docs/adr/0008-voice-select-to-eight.md).
+  - `[ ]` **Phase 3b — second encoder bank.** *Now the blocking item:
+    all eight voices are selectable but the encoders reach only four.*
+    Bank A's gate expression (`expr ($i1<=4)*$i1*(1-$i2)`) is already in
+    place from phase 3a, so this adds the complementary
+    `expr ($i1>4)*($i1-4)*(1-$i2)` plus eight more unmodified
+    `jk.pushrotaryAlt` instances, 32 `live.dial`s, 4 `pak`s and four
+    `s <voice>_micro`. Chosen over forking the vendored abstraction —
+    see ADR 0005. Prove two same-numbered instances coexist **on
+    hardware** with a small probe before building all eight; note the
+    in-Max probe rig tried in phase 3a could not be read back, so this
+    needs ears or LEDs rather than tool output (see ADR 0008).
+
+    **Splittable**: extending `encoderamp.js` to `VOICES = 8` (plus four
+    `r <voice>_ampstate`, four `s <voice>_amp`, and four more js inlets
+    and outlets) is independent of the rotary banks and would give the
+    new four **partial-amplitude control** on its own. Worth doing first
+    as 3b-i — much smaller, and the ampstate sends already broadcast for
+    all eight voices.
   - `[ ]` **Phase 4 — fader banks to eight targets.** `gate 4` →
     `gate 8` and four more `umenu` items on each existing bank.
 
