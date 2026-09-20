@@ -410,14 +410,7 @@ code, included so the patch is self-contained.
    No longer planned as a standalone hardcoded-CC extension; see
    [ROADMAP.md](ROADMAP.md) — this is now expected to resolve as a side
    effect of the dynamic fader-to-voice assignment feature.
-2. **`soprano`'s voice-select button is in the wrong radio group.** It
-   carries `@radio volume` while alto/tenor/bass carry `@radio volumes`.
-   `jk.push` builds its radio group name with `combine 0 radio`, so the
-   two are different groups and soprano does not mutually exclude with
-   the other three. Pre-existing and unrelated to the pad-row relayout;
-   scheduled for phase 3a of the eight-voice expansion, where four more
-   buttons join the group.
-3. **`obj-24` in the `p` subpatcher is dead** — a `0` message whose only
+2. **`obj-24` in the `p` subpatcher is dead** — a `0` message whose only
    cord writes its right inlet and whose outlet goes nowhere, almost
    certainly a relayout leftover. Left in place; removing it is a
    separate decision.

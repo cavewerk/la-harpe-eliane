@@ -163,12 +163,18 @@ have to be round-tripped through Max.
   cord writes its right inlet and whose outlet goes nowhere, almost
   certainly a relayout leftover. Not replicated for `alpha`, and left in
   place; removing it is a separate decision.
-- **Latent bug found, not yet fixed**: `soprano`'s voice-select button is
-  `@radio volume` while the other three are `@radio volumes`. `jk.push`
-  builds its radio group name with `combine 0 radio`, so soprano sits in
-  a radio group of one and does not mutually exclude with the others.
-  Pre-existing, unrelated to the relayout. Scheduled for phase 3a, where
-  four more buttons join the group.
+- ~~**Latent bug found, not yet fixed**: `soprano`'s voice-select button
+  is `@radio volume` while the other three are `@radio volumes`.~~
+  **Retracted 2026-09-20 — this was never true.** All four buttons are
+  and always have been `@radio volumes`, verified on disk and at HEAD.
+  The apparent difference was an artifact of the inspection script that
+  found it, which truncated object text to 100 characters; `scene1`'s
+  line is the longest of the four because "soprano" is longer than
+  "alto"/"tenor"/"bass", so its trailing `s` fell outside the cut. Left
+  recorded rather than deleted, because the claim reached three
+  documents before being checked, and the lesson is worth keeping:
+  verify a suspected one-character bug against the file, not against
+  tool output that may be abbreviating.
 - New `padhold.js` instances inherit the existing absolute-path
   convention for `js` script references (see README / known conditions).
 - **New voices are invisible to the patch's existing snapshots.** The

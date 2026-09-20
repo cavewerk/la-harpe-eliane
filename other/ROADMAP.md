@@ -243,11 +243,16 @@ Reordered 2026-09-10 per the project's author.
     [ADR 0007](../docs/adr/0007-eight-voice-expansion-phase-2.md).
   - `[ ]` **Phase 3a — voice-select to eight.** *Now the blocking item:
     all eight voices are audible but only four are selectable.* Widen
-    the 4-wide `sel 0 1 2 3` downstream of the `p` subpatcher outlet,
-    add scene buttons 5-8, and fix the `@radio volume` / `volumes` typo
-    that currently leaves soprano in a radio group of one. Small and
-    self-contained, and it is what turns the four new voices from
+    `sel 0 1 2 3` (`obj-103`) to eight outlets, add four `live.text`
+    mirrors + `5`/`6`/`7`/`8` messages into the shared `int` (`obj-59`)
+    that feeds `encoderamp.js` and the encoder gate, and add scene
+    buttons 5-8 with `@radio volumes` to match the existing four. Small
+    and self-contained, and it is what turns the four new voices from
     audible into playable.
+
+    (An earlier note here claimed a `@radio volume`/`volumes` typo on
+    the soprano button. That was wrong — see the retraction in
+    [ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md).)
   - `[ ]` **Phase 3b — second encoder bank.** Eight more unmodified
     `jk.pushrotaryAlt` instances plus 32 `live.dial`s, 4 `pak`s and two
     bank-select `expr`s; `encoderamp.js` `VOICES` 4 → 8. Chosen over
