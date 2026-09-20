@@ -12321,7 +12321,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1144.0, 1275.0, 1998.0, 20.0 ],
-					"text" : "Encoder mode-switch, phase 1 (partial amplitude while pedal 2 is held). r 71rot..78rot = jk.pushcore's raw relative CC for rotaries 3-10. Voice int from the same [int] the rotaries use; pedal from encmode_pedal; current partial levels from each MCModule's ampstate tap. Output = same select msg the faders send.",
+					"text" : "Encoder mode-switch (partial amplitude while pedal 2 is held). r 71rot..78rot = jk.pushcore's raw relative CC for rotaries 3-10. Voice int from the same [int] the rotaries use; pedal from encmode_pedal; current partial levels from each MCModule ampstate tap. Output = same select msg the faders send. AMPLITUDE covers all 8 voices; MICROTUNING is still 4-wide (jk.pushrotaryAlt has 4 internal accumulators) - see ADR 0008 / roadmap phase 3b.",
 					"varname" : "encamp_label"
 				}
 
@@ -12547,9 +12547,9 @@
 				"box" : 				{
 					"id" : "obj-167",
 					"maxclass" : "newobj",
-					"numinlets" : 14,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
+					"numinlets" : 18,
+					"numoutlets" : 8,
+					"outlettype" : [ "", "", "", "", "", "", "", "" ],
 					"patching_rect" : [ 1144.0, 1390.0, 558.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "encoderamp.js",
@@ -13349,6 +13349,106 @@
 					"text" : "Voice-select for the four expansion voices (scene5-8 = grid rows 4-1). Placed here only because the area under the original four scene buttons is occupied by the rotary bank. Same wiring: sel outlet -> live.text -> jk.push + index message -> the shared int. See ADR 0008.",
 					"texton" : "soprano",
 					"varname" : "cmt_scene_expansion"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-336",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1820.0, 1360.0, 140.0, 22.0 ],
+					"text" : "r alpha_ampstate",
+					"varname" : "encamp_rstate5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-337",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1584.0, 1450.0, 100.0, 22.0 ],
+					"text" : "s alpha_amp",
+					"varname" : "encamp_s5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-338",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1970.0, 1360.0, 140.0, 22.0 ],
+					"text" : "r beta_ampstate",
+					"varname" : "encamp_rstate6"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-339",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1694.0, 1450.0, 100.0, 22.0 ],
+					"text" : "s beta_amp",
+					"varname" : "encamp_s6"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-340",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 2120.0, 1360.0, 140.0, 22.0 ],
+					"text" : "r gamma_ampstate",
+					"varname" : "encamp_rstate7"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-341",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1804.0, 1450.0, 100.0, 22.0 ],
+					"text" : "s gamma_amp",
+					"varname" : "encamp_s7"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-342",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 2270.0, 1360.0, 140.0, 22.0 ],
+					"text" : "r delta_ampstate",
+					"varname" : "encamp_rstate8"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-343",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1914.0, 1450.0, 100.0, 22.0 ],
+					"text" : "s delta_amp",
+					"varname" : "encamp_s8"
 				}
 
 			}
@@ -15500,6 +15600,62 @@
 				"patchline" : {
 					"destination" : [ "obj-58", 0 ],
 					"source" : [ "obj-333", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-167", 14 ],
+					"source" : [ "obj-336", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-337", 0 ],
+					"source" : [ "obj-167", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-167", 15 ],
+					"source" : [ "obj-338", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-339", 0 ],
+					"source" : [ "obj-167", 5 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-167", 16 ],
+					"source" : [ "obj-340", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-341", 0 ],
+					"source" : [ "obj-167", 6 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-167", 17 ],
+					"source" : [ "obj-342", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-343", 0 ],
+					"source" : [ "obj-167", 7 ]
 				}
 
 			}

@@ -25,17 +25,22 @@
 	Inlets 0-7:   raw relative CC value from `r 71rot` .. `r 78rot`
 	              (jk.pushcore's per-rotary sends; rotary 3 = partial 1
 	              ... rotary 10 = partial 8 - see rotary.json)
-	Inlet 8:      target voice (the same int the jk.pushrotaryAlt objects
-	              get from the voice-select buttons / last pad). Since the
-	              eight-voice expansion this can be 1-8; anything above
-	              VOICES parks this object on "no target" until a second
-	              bank exists.
+	Inlet 8:      target voice 1-8 (the same int the jk.pushrotaryAlt
+	              objects get from the voice-select buttons / last pad).
+	              An index outside 1..VOICES parks this object on "no
+	              target" rather than silently keeping the previous one.
 	Inlet 9:      encoder-mode pedal state, 1 = held, 0 = released
-	Inlets 10-13: current 8-partial amplitude list for voice 1..4, from
-	              `r bass_ampstate` .. `r soprano_ampstate`
-	Outlets 0-3:  "select <partial> <0.-1.>" for voice 1..4, wired to
+	Inlets 10-17: current 8-partial amplitude list for voice 1..8, from
+	              `r bass_ampstate` .. `r delta_ampstate`
+	Outlets 0-7:  "select <partial> <0.-1.>" for voice 1..8, wired to
 	              `s bass_amp` / `s tenor_amp` / `s alto_amp` /
-	              `s soprano_amp`
+	              `s soprano_amp` / `s alpha_amp` / `s beta_amp` /
+	              `s gamma_amp` / `s delta_amp`
+
+	Note this object covers all eight voices for AMPLITUDE. Microtuning
+	is still four-wide: jk.pushrotaryAlt has four internal accumulators,
+	so voices 5-8 have nowhere to accumulate until a second bank exists
+	(see ADR 0008 and the roadmap's phase 3b).
 
 	Argument (last): amplitude change per encoder tick (default 0.01,
 	i.e. 100 ticks for the full 0-1 range). Read from the *end* of
@@ -43,10 +48,10 @@
 	that passes the script path as a leading argument can't shift it.
 */
 
-inlets = 14;
-outlets = 4;
+inlets = 18;
+outlets = 8;
 
-var PARTIALS = 8, VOICES = 4;
+var PARTIALS = 8, VOICES = 8;
 var FIRST_AMPSTATE_INLET = 10;
 
 var step = (jsarguments.length > 0) ? Number(jsarguments[jsarguments.length - 1]) : 0.01;

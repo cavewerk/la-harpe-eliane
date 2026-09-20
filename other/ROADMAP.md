@@ -254,8 +254,22 @@ Reordered 2026-09-10 per the project's author.
     now closes for out-of-bank voices, and `encoderamp.js` parks on "no
     target" instead of silently keeping the previous voice. See
     [ADR 0008](../docs/adr/0008-voice-select-to-eight.md).
-  - `[ ]` **Phase 3b — second encoder bank.** *Now the blocking item:
-    all eight voices are selectable but the encoders reach only four.*
+  - `[x]` **Phase 3b-i — encoder amplitude to eight voices.** Done first,
+    ahead of the rotary banks, because it turned out to be independent of
+    them: `encoderamp.js` reads the `71rot`-`78rot` sends directly rather
+    than through `jk.pushrotaryAlt`, and `MCModule` addresses its sends by
+    `#1` substitution, so all eight voices were already broadcasting
+    `#1_ampstate` and listening for `#1_amp` — nothing at the top level
+    was wired to them. `VOICES` 4 → 8, `inlets` 14 → 18, `outlets` 4 → 8,
+    plus four receives, four sends and eight cords. 609 → 617 cords, 0
+    lost. Landed and hardware-tested 2026-09-20: amplitude works on all
+    eight voices with no crosstalk. See
+    [ADR 0009](../docs/adr/0009-encoder-amplitude-to-eight-voices.md).
+
+    Leaves the encoders asymmetric between modes until 3b lands — pedal
+    held reaches eight voices, pedal released reaches four.
+  - `[ ]` **Phase 3b — second encoder bank (microtuning).** *The
+    remaining gap: amplitude reaches all eight, microtuning only four.*
     Bank A's gate expression (`expr ($i1<=4)*$i1*(1-$i2)`) is already in
     place from phase 3a, so this adds the complementary
     `expr ($i1>4)*($i1-4)*(1-$i2)` plus eight more unmodified
@@ -266,12 +280,6 @@ Reordered 2026-09-10 per the project's author.
     in-Max probe rig tried in phase 3a could not be read back, so this
     needs ears or LEDs rather than tool output (see ADR 0008).
 
-    **Splittable**: extending `encoderamp.js` to `VOICES = 8` (plus four
-    `r <voice>_ampstate`, four `s <voice>_amp`, and four more js inlets
-    and outlets) is independent of the rotary banks and would give the
-    new four **partial-amplitude control** on its own. Worth doing first
-    as 3b-i — much smaller, and the ampstate sends already broadcast for
-    all eight voices.
   - `[ ]` **Phase 4 — fader banks to eight targets.** `gate 4` →
     `gate 8` and four more `umenu` items on each existing bank.
 

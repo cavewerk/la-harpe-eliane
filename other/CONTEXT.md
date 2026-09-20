@@ -21,9 +21,10 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   [ADR 0007](../docs/adr/0007-eight-voice-expansion-phase-2.md).
 
   **All eight are selectable** as of ADR 0008 — by scene button and by
-  last-pad-pressed. **The Push encoders and fader banks still address
-  only the original four**; selecting a new voice is safe but currently
-  does nothing. See **Voice-select buttons** below.
+  last-pad-pressed — and as of ADR 0009 the Push encoders set **partial
+  amplitude** on any of the eight. **Microtuning and the fader banks
+  still address only the original four.** See **Voice-select buttons**
+  below.
 - **Global tuning** — a voice's fundamental / open-string frequency.
 - **Inner voice** (aka **harmonic**) — one of the 8 additive-synthesis
   partials inside a voice's oscillator bank (`MCModule`'s 8 `mc.*`
