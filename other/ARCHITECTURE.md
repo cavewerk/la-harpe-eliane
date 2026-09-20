@@ -240,21 +240,24 @@ Push 8x8 grid, highest voice at the top. See
 | tenor   | 6        | 76-83 | 40-47  | green   | 3     | 4      | yes   |
 | bass    | 5        | 68-75 | 32-39  | cyan    | 4     | 3      | yes   |
 | alpha   | 4        | 60-67 | 24-31  | orange  | 5     | 7      | yes   |
-| beta    | 3        | 52-59 | 16-23  | blue    | 6     | 8      | no    |
-| gamma   | 2        | 44-51 | 8-15   | magenta | 7     | 9      | no    |
-| delta   | 1        | 36-43 | 0-7    | white   | 8     | 10     | no    |
+| beta    | 3        | 52-59 | 16-23  | blue    | 6     | 8      | yes   |
+| gamma   | 2        | 44-51 | 8-15   | magenta | 7     | 9      | yes   |
+| delta   | 1        | 36-43 | 0-7    | white   | 8     | 10     | yes   |
 
 Grid note numbering: 36 is bottom-left, +1 rightwards, +8 per row
-upward. The bottom four rows are being filled by the **eight-voice
-expansion**; `alpha` landed 2026-09-20 (see
-[ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md)), the
-other three and the encoder / fader / voice-select widening are still
-to come (see [ROADMAP.md](ROADMAP.md)).
+upward. **The grid is now fully allocated** — 64 pads, eight voices,
+eight discrete electromagnet channels 3-10. `alpha` landed 2026-09-20
+([ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md)) and
+beta/gamma/delta the same day
+([ADR 0007](../docs/adr/0007-eight-voice-expansion-phase-2.md)).
 
 The `scene` column is the voice-select button. **Scenes 5-8 do not
-exist yet**, and `alpha` cannot be selected as an encoder target until
-the 4-wide `sel 0 1 2 3` downstream of the `p` subpatcher's outlet is
-widened to eight.
+exist yet**: the `p` subpatcher's outlet still feeds a 4-wide
+`sel 0 1 2 3`, so the four new voices **play but cannot be selected** —
+the eight Push encoders and both fader banks still only reach
+bass/tenor/alto/soprano. Widening that chain is the remaining work (see
+[ROADMAP.md](ROADMAP.md)); it is the gap between a voice being audible
+and being playable.
 
 Each pad's LED ring is **five** cords, not four: `padhold.js` →
 `live.text` → `jk.push` → `padhold.js`, plus one from the shared

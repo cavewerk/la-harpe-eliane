@@ -231,12 +231,23 @@ Reordered 2026-09-10 per the project's author.
     **Still open**: snapshots contain no new-voice parameters at all, so
     recalling `MASTER`/`jam1` won't restore them. Only the channel was
     lifted out of snapshot state.
-  - `[ ]` **Phase 2 — `beta` / `gamma` / `delta`** (rows 3/2/1, blue /
-    magenta / white, out ch 8/9/10). Straight replication of phase 1.
-  - `[ ]` **Phase 3a — voice-select to eight.** Widen the 4-wide
-    `sel 0 1 2 3` downstream of the `p` subpatcher outlet, add scene
-    buttons 5-8, and fix the `@radio volume` / `volumes` typo that
-    currently leaves soprano in a radio group of one.
+  - `[x]` **Phase 2 — `beta` / `gamma` / `delta`** (rows 3/2/1, blue /
+    magenta / white, out ch 8/9/10). Landed and hardware-tested
+    2026-09-20: all four bottom rows play, light, keep left-to-right
+    order, and hold LEDs under the sustain pedal. 446 → 590 cords, 0
+    lost. **The Push grid is now fully allocated** — 64 pads, eight
+    voices, eight discrete channels 3-10. The phase 1 cord defect
+    (cloned patchlines inheriting `midpoints`/`order`) was fixed in the
+    generator rather than by hand, and did not recur across 126 new
+    cords. See
+    [ADR 0007](../docs/adr/0007-eight-voice-expansion-phase-2.md).
+  - `[ ]` **Phase 3a — voice-select to eight.** *Now the blocking item:
+    all eight voices are audible but only four are selectable.* Widen
+    the 4-wide `sel 0 1 2 3` downstream of the `p` subpatcher outlet,
+    add scene buttons 5-8, and fix the `@radio volume` / `volumes` typo
+    that currently leaves soprano in a radio group of one. Small and
+    self-contained, and it is what turns the four new voices from
+    audible into playable.
   - `[ ]` **Phase 3b — second encoder bank.** Eight more unmodified
     `jk.pushrotaryAlt` instances plus 32 `live.dial`s, 4 `pak`s and two
     bank-select `expr`s; `encoderamp.js` `VOICES` 4 → 8. Chosen over

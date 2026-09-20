@@ -10,14 +10,19 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   physical output channel (see **Electromagnet channel** below). A voice
   is *not* eight strings and not thirty-two.
 
-  The instrument is being extended from four voices to **eight**; eight
-  strings and electromagnets physically exist, and the interface can
-  address ten or more discrete outputs. The original four are
-  **soprano**, **alto**, **tenor**, **bass** (grid rows 8-5). The new
-  four are **alpha**, **beta**, **gamma**, **delta** (rows 4-1) — named
-  to avoid the one-character collision an `altA`/`alto` pair would have
-  created between Max send names. As of 2026-09-20 only **alpha** is
-  built; see [ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md).
+  The instrument has **eight** voices. The original four are
+  **soprano**, **alto**, **tenor**, **bass** (grid rows 8-5). The four
+  added 2026-09-20 are **alpha**, **beta**, **gamma**, **delta**
+  (rows 4-1) — named to avoid the one-character collision an
+  `altA`/`alto` pair would have created between Max send names. All
+  eight exist as sound: each has its own string, electromagnet and
+  discrete output channel (3-10). See
+  [ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md) and
+  [ADR 0007](../docs/adr/0007-eight-voice-expansion-phase-2.md).
+
+  **The new four are not yet selectable.** Voice-select, the Push
+  encoders and the fader banks all still address only the original
+  four — see **Voice-select buttons** below.
 - **Global tuning** — a voice's fundamental / open-string frequency.
 - **Inner voice** (aka **harmonic**) — one of the 8 additive-synthesis
   partials inside a voice's oscillator bank (`MCModule`'s 8 `mc.*`
@@ -110,15 +115,13 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   session's read of this as dead/vestigial wiring — it's a UI label, kept
   intentionally.)
 - **Pad row** — one row of 8 Push pads, driving one voice's 8 inner
-  voices left-to-right. Since 2026-09-20 the original four voices sit on
-  the **top four rows**, highest voice at the top: soprano (row 8, notes
-  92-99), alto (row 7, 84-91), tenor (row 6, 76-83), bass (row 5,
-  68-75) — see [ADR 0004](../docs/adr/0004-pad-row-relayout.md). The
-  bottom four rows are being filled by the eight-voice expansion: alpha
-  (row 4, notes 60-67, built), beta (row 3, 52-59), gamma (row 2,
-  44-51), delta (row 1, 36-43) — see
-  [ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md). Grid
-  numbering: note 36 is bottom-left, +1 rightwards, +8 per row upward.
+  voices left-to-right. **All eight rows are now allocated**, highest
+  voice at the top: soprano (row 8, notes 92-99), alto (row 7, 84-91),
+  tenor (row 6, 76-83), bass (row 5, 68-75) — see
+  [ADR 0004](../docs/adr/0004-pad-row-relayout.md) — then alpha (row 4,
+  60-67), beta (row 3, 52-59), gamma (row 2, 44-51), delta (row 1,
+  36-43) — see ADR 0005 and 0007. Grid numbering: note 36 is
+  bottom-left, +1 rightwards, +8 per row upward.
 
   A pad ring is **five** cords, not four: `padhold.js` → `live.text` →
   `jk.push` → `padhold.js`, plus one from the shared
