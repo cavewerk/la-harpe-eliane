@@ -207,10 +207,23 @@ a pedal rather than the Push button the roadmap originally sketched.
 - **Microtuning suppression**, without editing the vendored library: each
   `jk.pushrotaryAlt`'s 5th inlet is the control inlet of its internal
   `gate 4` (voice 1–4 picks which per-voice accumulator the encoder
-  drives; 0 closes the gate). The voice-select `int` that used to feed
-  those inlets directly now passes through `pak i i` +
-  `expr $i1*(1-$i2)` alongside the pedal state, so a held pedal sends
-  every rotary 0 and a released one re-sends the current voice.
+  drives; 0 closes the gate). The voice-select `int` passes through
+  `pak i i` alongside the pedal state into a gate expression, so a held
+  pedal sends every rotary 0 and a released one re-sends the current
+  voice.
+
+  Since [ADR 0010](../docs/adr/0010-second-rotary-bank.md) there are
+  **two banks** of eight `jk.pushrotaryAlt`, because the abstraction is
+  four-voice throughout — four internal `accum` objects behind a
+  `gate 4`, four outlets. Both banks read the same `pak i i`, through
+  complementary expressions: bank A `expr ($i1<=4)*$i1*(1-$i2)` and
+  bank B `expr ($i1>4)*($i1-4)*(1-$i2)`. Exactly one bank is open at a
+  time, and a held pedal closes both. Bank B carries the **same rotary
+  numbers** as bank A — `jk.pushrotaryAlt 3` exists twice — which works
+  because the abstraction is a pure listener: it takes its deltas off
+  `jk.pushcore`'s named sends through a runtime-named `r` and contains
+  no `s` objects, so two instances of one rotary number have nothing to
+  contend over.
 - **Amplitude mode** is one [`code/encoderamp.js`](../code/encoderamp.js)
   at the top level. The raw encoder deltas never pass through a top-level
   inlet — each `jk.pushrotaryAlt` picks them up *inside* the abstraction
@@ -267,14 +280,13 @@ for every voice by button and by last-pad-pressed (see
 5-8 sit far below the original four in the patch (y≈3600 vs y≈353),
 because the space beneath them is occupied by the rotary bank.
 
-**The encoders reach all eight voices for amplitude, but only the
-original four for microtuning.** Holding pedal 2 sets partial amplitude
-on any of the eight (see
-[ADR 0009](../docs/adr/0009-encoder-amplitude-to-eight-voices.md));
-releasing it returns to microtuning, which is still four-wide because
-`jk.pushrotaryAlt` has four internal accumulators, so the encoder gate
-stays closed for voices 5-8. **The fader banks still reach only the
-original four.** See [ROADMAP.md](ROADMAP.md).
+**The encoders reach all eight voices in both modes** — partial
+amplitude while pedal 2 is held (see
+[ADR 0009](../docs/adr/0009-encoder-amplitude-to-eight-voices.md)), and
+microtuning when it is released, via a **second bank** of
+`jk.pushrotaryAlt` (see
+[ADR 0010](../docs/adr/0010-second-rotary-bank.md)). **The fader banks
+still reach only the original four.** See [ROADMAP.md](ROADMAP.md).
 
 Each pad's LED ring is **five** cords, not four: `padhold.js` →
 `live.text` → `jk.push` → `padhold.js`, plus one from the shared

@@ -13452,6 +13452,2083 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-344",
+					"linecount" : 5,
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 4,
+					"outlettype" : [ "float", "float", "float", "float" ],
+					"patching_rect" : [ 1160.0, 4000.4, 200.0, 64.0 ],
+					"text" : "jk.pushrotaryAlt 3 @dial1 r @dial2 b @init 500 @needle y @dialtextcolor k @bton y @btoff b @oncolor y @offcolor b @texton \"3\" @textoff \"Rotary 3\" @lo 0 @hi 1000 @inc 1",
+					"varname" : "rotB_3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-345",
+					"linecount" : 5,
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 4,
+					"outlettype" : [ "float", "float", "float", "float" ],
+					"patching_rect" : [ 1430.0, 4000.4, 200.0, 64.0 ],
+					"text" : "jk.pushrotaryAlt 4 @dial1 r @dial2 b @init 500 @needle y @dialtextcolor k @bton y @btoff b @oncolor y @offcolor b @texton \"3\" @textoff \"Rotary 3\" @lo 0 @hi 1000 @inc 1",
+					"varname" : "rotB_4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-346",
+					"linecount" : 5,
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 4,
+					"outlettype" : [ "float", "float", "float", "float" ],
+					"patching_rect" : [ 1682.5, 4000.4, 200.0, 64.0 ],
+					"text" : "jk.pushrotaryAlt 5 @dial1 r @dial2 b @init 500 @needle y @dialtextcolor k @bton y @btoff b @oncolor y @offcolor b @texton \"3\" @textoff \"Rotary 3\" @lo 0 @hi 1000 @inc 1",
+					"varname" : "rotB_5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-347",
+					"linecount" : 5,
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 4,
+					"outlettype" : [ "float", "float", "float", "float" ],
+					"patching_rect" : [ 1937.5, 4000.4, 200.0, 64.0 ],
+					"text" : "jk.pushrotaryAlt 6 @dial1 r @dial2 b @init 500 @needle y @dialtextcolor k @bton y @btoff b @oncolor y @offcolor b @texton \"3\" @textoff \"Rotary 3\" @lo 0 @hi 1000 @inc 1",
+					"varname" : "rotB_6"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-348",
+					"linecount" : 5,
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 4,
+					"outlettype" : [ "float", "float", "float", "float" ],
+					"patching_rect" : [ 1157.5, 4220.4, 200.0, 64.0 ],
+					"text" : "jk.pushrotaryAlt 7 @dial1 r @dial2 b @init 500 @needle y @dialtextcolor k @bton y @btoff b @oncolor y @offcolor b @texton \"3\" @textoff \"Rotary 3\" @lo 0 @hi 1000 @inc 1",
+					"varname" : "rotB_7"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-349",
+					"linecount" : 5,
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 4,
+					"outlettype" : [ "float", "float", "float", "float" ],
+					"patching_rect" : [ 1425.0, 4220.4, 200.0, 64.0 ],
+					"text" : "jk.pushrotaryAlt 8 @dial1 r @dial2 b @init 500 @needle y @dialtextcolor k @bton y @btoff b @oncolor y @offcolor b @texton \"3\" @textoff \"Rotary 3\" @lo 0 @hi 1000 @inc 1",
+					"varname" : "rotB_8"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-350",
+					"linecount" : 5,
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 4,
+					"outlettype" : [ "float", "float", "float", "float" ],
+					"patching_rect" : [ 1675.0, 4220.4, 200.0, 64.0 ],
+					"text" : "jk.pushrotaryAlt 9 @dial1 r @dial2 b @init 500 @needle y @dialtextcolor k @bton y @btoff b @oncolor y @offcolor b @texton \"3\" @textoff \"Rotary 3\" @lo 0 @hi 1000 @inc 1",
+					"varname" : "rotB_9"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-351",
+					"linecount" : 5,
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 4,
+					"outlettype" : [ "float", "float", "float", "float" ],
+					"patching_rect" : [ 1927.5, 4220.4, 202.4, 64.0 ],
+					"text" : "jk.pushrotaryAlt 10 @dial1 r @dial2 b @init 500 @needle y @dialtextcolor k @bton y @btoff b @oncolor y @offcolor b @texton \"3\" @textoff \"Rotary 3\" @lo 0 @hi 1000 @inc 1",
+					"varname" : "rotB_10"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-352",
+					"maxclass" : "newobj",
+					"numinlets" : 8,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1145.0, 4417.9, 92.5, 22.0 ],
+					"text" : "pak i i i i i i i i",
+					"varname" : "pakB_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-353",
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1145.0, 4442.9, 134.0, 22.0 ],
+					"text" : "scale 0 1000 -0.02 0.02",
+					"varname" : "scaleB_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-354",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1145.0, 4467.9, 79.0, 22.0 ],
+					"text" : "s alpha_micro",
+					"varname" : "sendB_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-355",
+					"maxclass" : "newobj",
+					"numinlets" : 8,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1325.0, 4417.9, 92.5, 22.0 ],
+					"text" : "pak i i i i i i i i",
+					"varname" : "pakB_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-356",
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1325.0, 4442.9, 134.0, 22.0 ],
+					"text" : "scale 0 1000 -0.02 0.02",
+					"varname" : "scaleB_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-357",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1325.0, 4467.9, 79.0, 22.0 ],
+					"text" : "s beta_micro",
+					"varname" : "sendB_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-358",
+					"maxclass" : "newobj",
+					"numinlets" : 8,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1505.0, 4417.9, 92.5, 22.0 ],
+					"text" : "pak i i i i i i i i",
+					"varname" : "pakB_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-359",
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1505.0, 4442.9, 134.0, 22.0 ],
+					"text" : "scale 0 1000 -0.02 0.02",
+					"varname" : "scaleB_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-360",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1505.0, 4467.9, 79.0, 22.0 ],
+					"text" : "s gamma_micro",
+					"varname" : "sendB_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-361",
+					"maxclass" : "newobj",
+					"numinlets" : 8,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1685.0, 4417.9, 92.5, 22.0 ],
+					"text" : "pak i i i i i i i i",
+					"varname" : "pakB_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-362",
+					"maxclass" : "newobj",
+					"numinlets" : 6,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1685.0, 4442.9, 134.0, 22.0 ],
+					"text" : "scale 0 1000 -0.02 0.02",
+					"varname" : "scaleB_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-363",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1685.0, 4467.9, 79.0, 22.0 ],
+					"text" : "s delta_micro",
+					"varname" : "sendB_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-364",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1160.0, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[32]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_3_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-365",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1217.0, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[33]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_3_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-366",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1274.0, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[34]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_3_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-367",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1331.0, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[35]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_3_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-368",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1430.0, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[36]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_4_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-369",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1487.0, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[37]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_4_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-370",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1544.0, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[38]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_4_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-371",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1601.0, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[39]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_4_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-372",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1682.5, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[40]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_5_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-373",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1739.5, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[41]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_5_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-374",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1796.5, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[42]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_5_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-375",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1853.5, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[43]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_5_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-376",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1937.5, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[44]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_6_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-377",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1994.5, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[45]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_6_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-378",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 2051.5, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[46]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_6_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-379",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 2108.5, 4073.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[47]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_6_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-380",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1157.5, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[48]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_7_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-381",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1214.5, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[49]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_7_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-382",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1271.5, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[50]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_7_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-383",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1328.5, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[51]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_7_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-384",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1425.0, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[52]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_8_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-385",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1482.0, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[53]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_8_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-386",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1539.0, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[54]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_8_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-387",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1596.0, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[55]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_8_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-388",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1675.0, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[56]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_9_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-389",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1732.0, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[57]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_9_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-390",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1789.0, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[58]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_9_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-391",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1846.0, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[59]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_9_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-392",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1927.5, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[60]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_10_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-393",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1984.5, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[61]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_10_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-394",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 2041.5, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[62]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_10_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activedialcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"activefgdialcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activeneedlecolor" : [ 1.0, 1.0, 0.0, 1.0 ],
+					"fgdialcolor" : [ 0.243137254901961, 0.698039215686274, 0.415686274509804, 1.0 ],
+					"focusbordercolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"id" : "obj-395",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 2098.5, 4293.4, 27.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"activedialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activefgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activeneedlecolor" : 						{
+							"expression" : ""
+						}
+,
+						"fgdialcolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_longname" : "2[63]",
+							"parameter_mmax" : 1000.0,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "2",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 0
+						}
+
+					}
+,
+					"varname" : "dialB_10_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-396",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1000.0, 4015.0, 129.0, 22.0 ],
+					"text" : "expr ($i1>4)*($i1-4)*(1-$i2)",
+					"varname" : "encgate_exprB"
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -15659,8 +17736,887 @@
 				}
 
 			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-353", 0 ],
+					"source" : [ "obj-352", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-354", 0 ],
+					"source" : [ "obj-353", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-356", 0 ],
+					"source" : [ "obj-355", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-357", 0 ],
+					"source" : [ "obj-356", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-359", 0 ],
+					"source" : [ "obj-358", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-360", 0 ],
+					"source" : [ "obj-359", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-362", 0 ],
+					"source" : [ "obj-361", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-363", 0 ],
+					"source" : [ "obj-362", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-364", 0 ],
+					"source" : [ "obj-344", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-344", 0 ],
+					"source" : [ "obj-364", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-352", 0 ],
+					"source" : [ "obj-364", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-365", 0 ],
+					"source" : [ "obj-344", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-344", 1 ],
+					"source" : [ "obj-365", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-355", 0 ],
+					"source" : [ "obj-365", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-366", 0 ],
+					"source" : [ "obj-344", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-344", 2 ],
+					"source" : [ "obj-366", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-358", 0 ],
+					"source" : [ "obj-366", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-367", 0 ],
+					"source" : [ "obj-344", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-344", 3 ],
+					"source" : [ "obj-367", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-361", 0 ],
+					"source" : [ "obj-367", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-368", 0 ],
+					"source" : [ "obj-345", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-345", 0 ],
+					"source" : [ "obj-368", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-352", 1 ],
+					"source" : [ "obj-368", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-369", 0 ],
+					"source" : [ "obj-345", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-345", 1 ],
+					"source" : [ "obj-369", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-355", 1 ],
+					"source" : [ "obj-369", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-370", 0 ],
+					"source" : [ "obj-345", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-345", 2 ],
+					"source" : [ "obj-370", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-358", 1 ],
+					"source" : [ "obj-370", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-371", 0 ],
+					"source" : [ "obj-345", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-345", 3 ],
+					"source" : [ "obj-371", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-361", 1 ],
+					"source" : [ "obj-371", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-372", 0 ],
+					"source" : [ "obj-346", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-346", 0 ],
+					"source" : [ "obj-372", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-352", 2 ],
+					"source" : [ "obj-372", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-373", 0 ],
+					"source" : [ "obj-346", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-346", 1 ],
+					"source" : [ "obj-373", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-355", 2 ],
+					"source" : [ "obj-373", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-374", 0 ],
+					"source" : [ "obj-346", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-346", 2 ],
+					"source" : [ "obj-374", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-358", 2 ],
+					"source" : [ "obj-374", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-375", 0 ],
+					"source" : [ "obj-346", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-346", 3 ],
+					"source" : [ "obj-375", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-361", 2 ],
+					"source" : [ "obj-375", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-376", 0 ],
+					"source" : [ "obj-347", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-347", 0 ],
+					"source" : [ "obj-376", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-352", 3 ],
+					"source" : [ "obj-376", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-377", 0 ],
+					"source" : [ "obj-347", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-347", 1 ],
+					"source" : [ "obj-377", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-355", 3 ],
+					"source" : [ "obj-377", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-378", 0 ],
+					"source" : [ "obj-347", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-347", 2 ],
+					"source" : [ "obj-378", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-358", 3 ],
+					"source" : [ "obj-378", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-379", 0 ],
+					"source" : [ "obj-347", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-347", 3 ],
+					"source" : [ "obj-379", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-361", 3 ],
+					"source" : [ "obj-379", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-380", 0 ],
+					"source" : [ "obj-348", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-348", 0 ],
+					"source" : [ "obj-380", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-352", 4 ],
+					"source" : [ "obj-380", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-381", 0 ],
+					"source" : [ "obj-348", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-348", 1 ],
+					"source" : [ "obj-381", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-355", 4 ],
+					"source" : [ "obj-381", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-382", 0 ],
+					"source" : [ "obj-348", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-348", 2 ],
+					"source" : [ "obj-382", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-358", 4 ],
+					"source" : [ "obj-382", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-383", 0 ],
+					"source" : [ "obj-348", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-348", 3 ],
+					"source" : [ "obj-383", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-361", 4 ],
+					"source" : [ "obj-383", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-384", 0 ],
+					"source" : [ "obj-349", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-349", 0 ],
+					"source" : [ "obj-384", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-352", 5 ],
+					"source" : [ "obj-384", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-385", 0 ],
+					"source" : [ "obj-349", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-349", 1 ],
+					"source" : [ "obj-385", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-355", 5 ],
+					"source" : [ "obj-385", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-386", 0 ],
+					"source" : [ "obj-349", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-349", 2 ],
+					"source" : [ "obj-386", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-358", 5 ],
+					"source" : [ "obj-386", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-387", 0 ],
+					"source" : [ "obj-349", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-349", 3 ],
+					"source" : [ "obj-387", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-361", 5 ],
+					"source" : [ "obj-387", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-388", 0 ],
+					"source" : [ "obj-350", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-350", 0 ],
+					"source" : [ "obj-388", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-352", 6 ],
+					"source" : [ "obj-388", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-389", 0 ],
+					"source" : [ "obj-350", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-350", 1 ],
+					"source" : [ "obj-389", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-355", 6 ],
+					"source" : [ "obj-389", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-390", 0 ],
+					"source" : [ "obj-350", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-350", 2 ],
+					"source" : [ "obj-390", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-358", 6 ],
+					"source" : [ "obj-390", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-391", 0 ],
+					"source" : [ "obj-350", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-350", 3 ],
+					"source" : [ "obj-391", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-361", 6 ],
+					"source" : [ "obj-391", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-392", 0 ],
+					"source" : [ "obj-351", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-351", 0 ],
+					"source" : [ "obj-392", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-352", 7 ],
+					"source" : [ "obj-392", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-393", 0 ],
+					"source" : [ "obj-351", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-351", 1 ],
+					"source" : [ "obj-393", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-355", 7 ],
+					"source" : [ "obj-393", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-394", 0 ],
+					"source" : [ "obj-351", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-351", 2 ],
+					"source" : [ "obj-394", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-358", 7 ],
+					"source" : [ "obj-394", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-395", 0 ],
+					"source" : [ "obj-351", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-351", 3 ],
+					"source" : [ "obj-395", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-361", 7 ],
+					"source" : [ "obj-395", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-396", 0 ],
+					"source" : [ "obj-129", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-344", 4 ],
+					"source" : [ "obj-396", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-344", 5 ],
+					"source" : [ "obj-77", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-345", 4 ],
+					"source" : [ "obj-396", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-345", 5 ],
+					"source" : [ "obj-77", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-346", 4 ],
+					"source" : [ "obj-396", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-346", 5 ],
+					"source" : [ "obj-77", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-347", 4 ],
+					"source" : [ "obj-396", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-347", 5 ],
+					"source" : [ "obj-77", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-348", 4 ],
+					"source" : [ "obj-396", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-348", 5 ],
+					"source" : [ "obj-77", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-349", 4 ],
+					"source" : [ "obj-396", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-349", 5 ],
+					"source" : [ "obj-77", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-350", 4 ],
+					"source" : [ "obj-396", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-350", 5 ],
+					"source" : [ "obj-77", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-351", 4 ],
+					"source" : [ "obj-396", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-351", 5 ],
+					"source" : [ "obj-77", 0 ]
+				}
+
+			}
  ],
 		"parameters" : 		{
+			"obj-364" : [ "2[32]", "2", 0 ],
+			"obj-365" : [ "2[33]", "2", 0 ],
+			"obj-366" : [ "2[34]", "2", 0 ],
+			"obj-367" : [ "2[35]", "2", 0 ],
+			"obj-368" : [ "2[36]", "2", 0 ],
+			"obj-369" : [ "2[37]", "2", 0 ],
+			"obj-370" : [ "2[38]", "2", 0 ],
+			"obj-371" : [ "2[39]", "2", 0 ],
+			"obj-372" : [ "2[40]", "2", 0 ],
+			"obj-373" : [ "2[41]", "2", 0 ],
+			"obj-374" : [ "2[42]", "2", 0 ],
+			"obj-375" : [ "2[43]", "2", 0 ],
+			"obj-376" : [ "2[44]", "2", 0 ],
+			"obj-377" : [ "2[45]", "2", 0 ],
+			"obj-378" : [ "2[46]", "2", 0 ],
+			"obj-379" : [ "2[47]", "2", 0 ],
+			"obj-380" : [ "2[48]", "2", 0 ],
+			"obj-381" : [ "2[49]", "2", 0 ],
+			"obj-382" : [ "2[50]", "2", 0 ],
+			"obj-383" : [ "2[51]", "2", 0 ],
+			"obj-384" : [ "2[52]", "2", 0 ],
+			"obj-385" : [ "2[53]", "2", 0 ],
+			"obj-386" : [ "2[54]", "2", 0 ],
+			"obj-387" : [ "2[55]", "2", 0 ],
+			"obj-388" : [ "2[56]", "2", 0 ],
+			"obj-389" : [ "2[57]", "2", 0 ],
+			"obj-390" : [ "2[58]", "2", 0 ],
+			"obj-391" : [ "2[59]", "2", 0 ],
+			"obj-392" : [ "2[60]", "2", 0 ],
+			"obj-393" : [ "2[61]", "2", 0 ],
+			"obj-394" : [ "2[62]", "2", 0 ],
+			"obj-395" : [ "2[63]", "2", 0 ],
 			"obj-323" : [ "pushtext[1]", "pushtext", 0 ],
 			"obj-326" : [ "pushtext[2]", "pushtext", 0 ],
 			"obj-329" : [ "pushtext[3]", "pushtext", 0 ],

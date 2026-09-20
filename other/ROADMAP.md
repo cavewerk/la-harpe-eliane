@@ -135,14 +135,28 @@ Reordered 2026-09-10 per the project's author.
 
 ## Long-term horizon — early December 2026
 
-1. `[ ]` **Full patcher hygiene pass** — comments and `patcherargs`
+1. `[~]` **Full patcher hygiene pass** — comments and `patcherargs`
    adoption across MCModule (currently ~2 comment objects in a 77KB
-   file), MCLyra, MCHelper, and the top-level per-voice wiring — e.g.
-   collapsing the four hand-copied voice-select `jk.push` instances (one
-   per voice, each with hardcoded arguments) into a single parameterized
-   definition instantiated four times. Mostly scheduled *after* the
+   file), MCLyra, and the top-level per-voice wiring — e.g. collapsing
+   the hand-copied voice-select `jk.push` instances (one per voice, each
+   with hardcoded arguments) into a single parameterized definition.
+   `MCHelper` is done (ADR 0006). Mostly scheduled *after* the
    short-term feature work; touch relevant sections as you go rather
    than waiting for one dedicated pass.
+
+   **Now the main pressure.** The eight-voice expansion took the patch
+   from 398 to 738 cords, and generated objects were placed in whatever
+   free space a collision check found rather than anywhere meaningful —
+   the expansion voices sit at y≈2000-3500, scene buttons 5-8 at
+   y≈3600 far from the original four, and rotary bank B at y≈4000.
+   A visual reorganisation pass is worth doing.
+
+   Two things that make it safe: **object positions are purely
+   cosmetic** — nothing in the patch or the tooling depends on
+   coordinates — and **box ids are the durable handle**, not varnames,
+   which Max regenerates on every save (see ADR 0008). So objects can be
+   moved freely; just re-run the cord-set diff against HEAD afterwards
+   to confirm nothing was disconnected while dragging.
 2. `[ ]` **Rotation function** — circular, interpolated shift of a
    voice's 8 harmonic-amplitude values (harmonic 1's value moves toward
    harmonic 2's slot, etc., smoothly rather than jumping). Same
@@ -268,17 +282,22 @@ Reordered 2026-09-10 per the project's author.
 
     Leaves the encoders asymmetric between modes until 3b lands — pedal
     held reaches eight voices, pedal released reaches four.
-  - `[ ]` **Phase 3b — second encoder bank (microtuning).** *The
-    remaining gap: amplitude reaches all eight, microtuning only four.*
-    Bank A's gate expression (`expr ($i1<=4)*$i1*(1-$i2)`) is already in
-    place from phase 3a, so this adds the complementary
-    `expr ($i1>4)*($i1-4)*(1-$i2)` plus eight more unmodified
-    `jk.pushrotaryAlt` instances, 32 `live.dial`s, 4 `pak`s and four
-    `s <voice>_micro`. Chosen over forking the vendored abstraction —
-    see ADR 0005. Prove two same-numbered instances coexist **on
-    hardware** with a small probe before building all eight; note the
-    in-Max probe rig tried in phase 3a could not be read back, so this
-    needs ears or LEDs rather than tool output (see ADR 0008).
+  - `[x]` **Phase 3b — second encoder bank (microtuning).** Landed and
+    hardware-tested 2026-09-20. Eight more **unmodified**
+    `jk.pushrotaryAlt` instances carrying the same rotary numbers as
+    bank A, plus 32 `live.dial`, 4 `pak`, 4 `scale`, 4 `s <voice>_micro`
+    and the complementary gate expression
+    `expr ($i1>4)*($i1-4)*(1-$i2)`. 617 → 738 cords, 0 lost. Nothing
+    vendored was edited. See
+    [ADR 0010](../docs/adr/0010-second-rotary-bank.md).
+
+    The coexistence question this phase rested on — do two instances of
+    the same rotary number fight over `jk.pushcore`'s sends? — is now
+    answered on hardware: they do not. Each bank keeps its own
+    accumulated value.
+
+    **Both encoder modes now reach all eight voices**, closing the
+    asymmetry ADR 0009 introduced.
 
   - `[ ]` **Phase 4 — fader banks to eight targets.** `gate 4` →
     `gate 8` and four more `umenu` items on each existing bank.
