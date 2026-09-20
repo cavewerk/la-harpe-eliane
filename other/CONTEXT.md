@@ -5,11 +5,19 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
 
 ## Terms
 
-- **Voice** — one of the four physical instrument parts: **soprano**,
-  **alto**, **tenor**, **bass**. Each voice is exactly **one physical
-  string and one electromagnet**, driven out one discrete physical output
-  channel (currently 3/4/5/6 — see **Electromagnet channel** below). There
-  are only four strings total, not eight and not thirty-two.
+- **Voice** — one physical instrument part. Each voice is exactly **one
+  physical string and one electromagnet**, driven out one discrete
+  physical output channel (see **Electromagnet channel** below). A voice
+  is *not* eight strings and not thirty-two.
+
+  The instrument is being extended from four voices to **eight**; eight
+  strings and electromagnets physically exist, and the interface can
+  address ten or more discrete outputs. The original four are
+  **soprano**, **alto**, **tenor**, **bass** (grid rows 8-5). The new
+  four are **alpha**, **beta**, **gamma**, **delta** (rows 4-1) — named
+  to avoid the one-character collision an `altA`/`alto` pair would have
+  created between Max send names. As of 2026-09-20 only **alpha** is
+  built; see [ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md).
 - **Global tuning** — a voice's fundamental / open-string frequency.
 - **Inner voice** (aka **harmonic**) — one of the 8 additive-synthesis
   partials inside a voice's oscillator bank (`MCModule`'s 8 `mc.*`
@@ -60,10 +68,13 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
 - **Electromagnet channel** — the real output of a voice: a unipolar (0–1,
   never negative — electromagnets pull one direction only) signal sent to
   a discrete physical output channel, picked live via the `live.menu`
-  dropdown in that voice's `MCHelper` instance (current convention:
-  bass→3, tenor→4, alto→5, soprano→6 — reconfigurable per setup, not
-  hardcoded). This is what physically drives the string. Never routed to
-  a speaker — it would damage one.
+  dropdown in that voice's `MCHelper` instance, which offers channels
+  3-10 (current convention: bass→3, tenor→4, alto→5, soprano→6,
+  alpha→7, with beta/gamma/delta→8/9/10 once built — reconfigurable per
+  setup, not hardcoded). This is what physically drives the string.
+  Never routed to a speaker — it would damage one. **A newly added
+  voice's `MCHelper` has no saved menu value** and defaults to channel
+  3, colliding with bass — set it by hand on first open.
 - **Monitor mix** — the bipolar (-1 to 1) stereo path (→ shared
   `live.gain~` → main `dac~ 1 2`). An occasional-use audible check of what
   the electromagnets are being sent; not a primary output. Its level is
@@ -93,12 +104,19 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   session's read of this as dead/vestigial wiring — it's a UI label, kept
   intentionally.)
 - **Pad row** — one row of 8 Push pads, driving one voice's 8 inner
-  voices left-to-right. Since 2026-09-20 the four voices sit on the
-  **top four rows**, highest voice at the top: soprano (row 8, notes
+  voices left-to-right. Since 2026-09-20 the original four voices sit on
+  the **top four rows**, highest voice at the top: soprano (row 8, notes
   92-99), alto (row 7, 84-91), tenor (row 6, 76-83), bass (row 5,
-  68-75). The bottom four rows are free and contiguous. Grid numbering:
-  note 36 is bottom-left, +1 rightwards, +8 per row upward. See
-  [ADR 0004](../docs/adr/0004-pad-row-relayout.md).
+  68-75) — see [ADR 0004](../docs/adr/0004-pad-row-relayout.md). The
+  bottom four rows are being filled by the eight-voice expansion: alpha
+  (row 4, notes 60-67, built), beta (row 3, 52-59), gamma (row 2,
+  44-51), delta (row 1, 36-43) — see
+  [ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md). Grid
+  numbering: note 36 is bottom-left, +1 rightwards, +8 per row upward.
+
+  A pad ring is **five** cords, not four: `padhold.js` → `live.text` →
+  `jk.push` → `padhold.js`, plus one from the shared
+  `receive sustain_pedal` into each `padhold.js` second inlet.
 - **Pad address spaces** — a pad's identity is stored in **three**
   independent places that nothing reconciles automatically: which voice
   it *plays* (`parameter_map.midi`, keyed to `live.button`s inside the

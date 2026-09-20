@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 60.0, 106.0, 670.0, 465.0 ],
+		"rect" : [ 219.0, 137.0, 670.0, 465.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -20,7 +20,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 797.0, 420.0, 50.0, 22.0 ],
-					"text" : "60",
+					"text" : "63",
 					"varname" : "obj-162"
 				}
 
@@ -5252,6 +5252,772 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"fontsize" : 10.0,
+									"id" : "obj-205",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "", "", "" ],
+									"patching_rect" : [ 50.0, 2000.0, 382.0, 20.0 ],
+									"text" : "jk.push @pad 24 @oncolor r @offcolor o @texton boppity @textoff bippity @mode b",
+									"varname" : "alpha_pad1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
+									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
+									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"fontname" : "Arial",
+									"fontsize" : 10.0,
+									"id" : "obj-206",
+									"maxclass" : "live.text",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"parameter_enable" : 1,
+									"patching_rect" : [ 450.0, 2000.0, 76.266666666666666, 34.0 ],
+									"saved_attribute_attributes" : 									{
+										"activebgcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activebgoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"bordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"focusbordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"valueof" : 										{
+											"parameter_enum" : [ "val1", "val2" ],
+											"parameter_longname" : "live.text[21]",
+											"parameter_mmax" : 1,
+											"parameter_modmode" : 0,
+											"parameter_shortname" : "live.text",
+											"parameter_type" : 2
+										}
+
+									}
+,
+									"text" : "bippity",
+									"texton" : "boppity",
+									"varname" : "alpha_lt1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-207",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 560.0, 2000.0, 506.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"filename" : "padhold.js",
+										"parameter_enable" : 0
+									}
+,
+									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"varname" : "padhold_33"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 10.0,
+									"id" : "obj-208",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "", "", "" ],
+									"patching_rect" : [ 50.0, 2024.0, 382.0, 20.0 ],
+									"text" : "jk.push @pad 25 @oncolor r @offcolor o @texton boppity @textoff bippity @mode b",
+									"varname" : "alpha_pad2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
+									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
+									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"fontname" : "Arial",
+									"fontsize" : 10.0,
+									"id" : "obj-209",
+									"maxclass" : "live.text",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"parameter_enable" : 1,
+									"patching_rect" : [ 450.0, 2040.0, 76.266666666666666, 34.0 ],
+									"saved_attribute_attributes" : 									{
+										"activebgcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activebgoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"bordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"focusbordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"valueof" : 										{
+											"parameter_enum" : [ "val1", "val2" ],
+											"parameter_longname" : "live.text[22]",
+											"parameter_mmax" : 1,
+											"parameter_modmode" : 0,
+											"parameter_shortname" : "live.text",
+											"parameter_type" : 2
+										}
+
+									}
+,
+									"text" : "bippity",
+									"texton" : "boppity",
+									"varname" : "alpha_lt2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-210",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 560.0, 2026.0, 506.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"filename" : "padhold.js",
+										"parameter_enable" : 0
+									}
+,
+									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"varname" : "padhold_34"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 10.0,
+									"id" : "obj-211",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "", "", "" ],
+									"patching_rect" : [ 50.0, 2048.0, 382.0, 20.0 ],
+									"text" : "jk.push @pad 26 @oncolor r @offcolor o @texton boppity @textoff bippity @mode b",
+									"varname" : "alpha_pad3"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
+									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
+									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"fontname" : "Arial",
+									"fontsize" : 10.0,
+									"id" : "obj-212",
+									"maxclass" : "live.text",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"parameter_enable" : 1,
+									"patching_rect" : [ 450.0, 2080.0, 76.266666666666666, 34.0 ],
+									"saved_attribute_attributes" : 									{
+										"activebgcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activebgoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"bordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"focusbordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"valueof" : 										{
+											"parameter_enum" : [ "val1", "val2" ],
+											"parameter_longname" : "live.text[23]",
+											"parameter_mmax" : 1,
+											"parameter_modmode" : 0,
+											"parameter_shortname" : "live.text",
+											"parameter_type" : 2
+										}
+
+									}
+,
+									"text" : "bippity",
+									"texton" : "boppity",
+									"varname" : "alpha_lt3"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-213",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 560.0, 2052.0, 506.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"filename" : "padhold.js",
+										"parameter_enable" : 0
+									}
+,
+									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"varname" : "padhold_35"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 10.0,
+									"id" : "obj-214",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "", "", "" ],
+									"patching_rect" : [ 50.0, 2072.0, 382.0, 20.0 ],
+									"text" : "jk.push @pad 27 @oncolor r @offcolor o @texton boppity @textoff bippity @mode b",
+									"varname" : "alpha_pad4"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
+									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
+									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"fontname" : "Arial",
+									"fontsize" : 10.0,
+									"id" : "obj-215",
+									"maxclass" : "live.text",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"parameter_enable" : 1,
+									"patching_rect" : [ 450.0, 2120.0, 76.266666666666666, 34.0 ],
+									"saved_attribute_attributes" : 									{
+										"activebgcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activebgoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"bordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"focusbordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"valueof" : 										{
+											"parameter_enum" : [ "val1", "val2" ],
+											"parameter_longname" : "live.text[25]",
+											"parameter_mmax" : 1,
+											"parameter_modmode" : 0,
+											"parameter_shortname" : "live.text",
+											"parameter_type" : 2
+										}
+
+									}
+,
+									"text" : "bippity",
+									"texton" : "boppity",
+									"varname" : "alpha_lt4"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-216",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 560.0, 2078.0, 506.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"filename" : "padhold.js",
+										"parameter_enable" : 0
+									}
+,
+									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"varname" : "padhold_36"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 10.0,
+									"id" : "obj-217",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "", "", "" ],
+									"patching_rect" : [ 50.0, 2096.0, 382.0, 20.0 ],
+									"text" : "jk.push @pad 28 @oncolor r @offcolor o @texton boppity @textoff bippity @mode b",
+									"varname" : "alpha_pad5"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
+									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
+									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"fontname" : "Arial",
+									"fontsize" : 10.0,
+									"id" : "obj-218",
+									"maxclass" : "live.text",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"parameter_enable" : 1,
+									"patching_rect" : [ 450.0, 2160.0, 76.266666666666666, 34.0 ],
+									"saved_attribute_attributes" : 									{
+										"activebgcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activebgoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"bordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"focusbordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"valueof" : 										{
+											"parameter_enum" : [ "val1", "val2" ],
+											"parameter_longname" : "live.text[26]",
+											"parameter_mmax" : 1,
+											"parameter_modmode" : 0,
+											"parameter_shortname" : "live.text",
+											"parameter_type" : 2
+										}
+
+									}
+,
+									"text" : "bippity",
+									"texton" : "boppity",
+									"varname" : "alpha_lt5"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-219",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 560.0, 2104.0, 506.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"filename" : "padhold.js",
+										"parameter_enable" : 0
+									}
+,
+									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"varname" : "padhold_37"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 10.0,
+									"id" : "obj-220",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "", "", "" ],
+									"patching_rect" : [ 50.0, 2120.0, 382.0, 20.0 ],
+									"text" : "jk.push @pad 29 @oncolor r @offcolor o @texton boppity @textoff bippity @mode b",
+									"varname" : "alpha_pad6"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
+									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
+									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"fontname" : "Arial",
+									"fontsize" : 10.0,
+									"id" : "obj-221",
+									"maxclass" : "live.text",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"parameter_enable" : 1,
+									"patching_rect" : [ 450.0, 2200.0, 76.266666666666666, 34.0 ],
+									"saved_attribute_attributes" : 									{
+										"activebgcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activebgoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"bordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"focusbordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"valueof" : 										{
+											"parameter_enum" : [ "val1", "val2" ],
+											"parameter_longname" : "live.text[27]",
+											"parameter_mmax" : 1,
+											"parameter_modmode" : 0,
+											"parameter_shortname" : "live.text",
+											"parameter_type" : 2
+										}
+
+									}
+,
+									"text" : "bippity",
+									"texton" : "boppity",
+									"varname" : "alpha_lt6"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-222",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 560.0, 2130.0, 506.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"filename" : "padhold.js",
+										"parameter_enable" : 0
+									}
+,
+									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"varname" : "padhold_38"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 10.0,
+									"id" : "obj-223",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "", "", "" ],
+									"patching_rect" : [ 50.0, 2144.0, 382.0, 20.0 ],
+									"text" : "jk.push @pad 30 @oncolor r @offcolor o @texton boppity @textoff bippity @mode b",
+									"varname" : "alpha_pad7"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
+									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
+									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"fontname" : "Arial",
+									"fontsize" : 10.0,
+									"id" : "obj-224",
+									"maxclass" : "live.text",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"parameter_enable" : 1,
+									"patching_rect" : [ 450.0, 2240.0, 76.266666666666666, 34.0 ],
+									"saved_attribute_attributes" : 									{
+										"activebgcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activebgoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"bordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"focusbordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"valueof" : 										{
+											"parameter_enum" : [ "val1", "val2" ],
+											"parameter_longname" : "live.text[35]",
+											"parameter_mmax" : 1,
+											"parameter_modmode" : 0,
+											"parameter_shortname" : "live.text",
+											"parameter_type" : 2
+										}
+
+									}
+,
+									"text" : "bippity",
+									"texton" : "boppity",
+									"varname" : "alpha_lt7"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-225",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 560.0, 2156.0, 506.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"filename" : "padhold.js",
+										"parameter_enable" : 0
+									}
+,
+									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"varname" : "padhold_39"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 10.0,
+									"id" : "obj-226",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "", "", "" ],
+									"patching_rect" : [ 50.0, 2168.0, 382.0, 20.0 ],
+									"text" : "jk.push @pad 31 @oncolor r @offcolor o @texton boppity @textoff bippity @mode b",
+									"varname" : "alpha_pad8"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"activebgcolor" : [ 0.0, 1.0, 1.0, 1.0 ],
+									"activebgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+									"activetextcolor" : [ 0.15, 0.15, 0.15, 1.0 ],
+									"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+									"fontname" : "Arial",
+									"fontsize" : 10.0,
+									"id" : "obj-227",
+									"maxclass" : "live.text",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"parameter_enable" : 1,
+									"patching_rect" : [ 450.0, 2280.0, 76.266666666666666, 34.0 ],
+									"saved_attribute_attributes" : 									{
+										"activebgcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activebgoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextcolor" : 										{
+											"expression" : ""
+										}
+,
+										"activetextoncolor" : 										{
+											"expression" : ""
+										}
+,
+										"bordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"focusbordercolor" : 										{
+											"expression" : ""
+										}
+,
+										"valueof" : 										{
+											"parameter_enum" : [ "val1", "val2" ],
+											"parameter_longname" : "live.text[36]",
+											"parameter_mmax" : 1,
+											"parameter_modmode" : 0,
+											"parameter_shortname" : "live.text",
+											"parameter_type" : 2
+										}
+
+									}
+,
+									"text" : "bippity",
+									"texton" : "boppity",
+									"varname" : "alpha_lt8"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-228",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 560.0, 2182.0, 506.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"filename" : "padhold.js",
+										"parameter_enable" : 0
+									}
+,
+									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"varname" : "padhold_40"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-229",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
+									"patching_rect" : [ 1120.0, 2000.0, 34.0, 22.0 ],
+									"text" : "sel 1",
+									"varname" : "alpha_sel"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-230",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1120.0, 2040.0, 29.5, 22.0 ],
+									"text" : "4",
+									"varname" : "alpha_idx"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 50.0, 1930.0, 3499.0, 0.0 ],
+									"text" : "alpha pad row - 8-voice expansion phase 1. See ADR 0005. @pad 24-31 = notes 60-67 = grid row 4 from the bottom. Each pad is a 5-cord ring: padhold.js -> live.text -> jk.push -> padhold.js - plus one from the shared r sustain_pedal into each padhold.js second inlet. Cord order matters here: live.text -> sel is order 0 (voice index first) and live.text -> jk.push is order 1 (LED second). The sel 1 feeds message 4 = voice index 5. That index does NOT reach the encoders yet - the outlet feeds a 4-wide sel 0 1 2 3 at the top level. Widening it is phase 3a.",
+									"varname" : "alpha_row_note"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -6026,7 +6792,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 1 ],
-									"order" : 30,
+									"order" : 38,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6034,7 +6800,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 1 ],
-									"order" : 27,
+									"order" : 35,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6042,7 +6808,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-15", 1 ],
-									"order" : 23,
+									"order" : 31,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6050,7 +6816,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 1 ],
-									"order" : 19,
+									"order" : 27,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6065,8 +6831,72 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-207", 1 ],
+									"order" : 23,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-21", 1 ],
 									"order" : 11,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-210", 1 ],
+									"order" : 22,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-213", 1 ],
+									"order" : 21,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-216", 1 ],
+									"order" : 20,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-219", 1 ],
+									"order" : 19,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-222", 1 ],
+									"order" : 18,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-225", 1 ],
+									"order" : 17,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-228", 1 ],
+									"order" : 16,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6090,7 +6920,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-26", 1 ],
-									"order" : 31,
+									"order" : 39,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6098,7 +6928,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-27", 1 ],
-									"order" : 26,
+									"order" : 34,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6106,7 +6936,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-32", 1 ],
-									"order" : 22,
+									"order" : 30,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6114,7 +6944,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-33", 1 ],
-									"order" : 18,
+									"order" : 26,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6154,7 +6984,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-38", 1 ],
-									"order" : 29,
+									"order" : 37,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6162,7 +6992,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-39", 1 ],
-									"order" : 25,
+									"order" : 33,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6170,7 +7000,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 1 ],
-									"order" : 21,
+									"order" : 29,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6178,7 +7008,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 1 ],
-									"order" : 17,
+									"order" : 25,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6218,7 +7048,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-46", 1 ],
-									"order" : 28,
+									"order" : 36,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6226,7 +7056,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-47", 1 ],
-									"order" : 24,
+									"order" : 32,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6234,7 +7064,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-48", 1 ],
-									"order" : 20,
+									"order" : 28,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6242,7 +7072,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-49", 1 ],
-									"order" : 16,
+									"order" : 24,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -6343,8 +7173,158 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-207", 0 ],
+									"source" : [ "obj-205", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-205", 0 ],
+									"order" : 1,
+									"source" : [ "obj-206", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-229", 0 ],
+									"order" : 0,
+									"source" : [ "obj-206", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-206", 0 ],
+									"source" : [ "obj-207", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-210", 0 ],
+									"source" : [ "obj-208", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-208", 0 ],
+									"order" : 1,
+									"source" : [ "obj-209", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-229", 0 ],
+									"order" : 0,
+									"source" : [ "obj-209", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-112", 0 ],
 									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-209", 0 ],
+									"source" : [ "obj-210", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-213", 0 ],
+									"source" : [ "obj-211", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-211", 0 ],
+									"order" : 1,
+									"source" : [ "obj-212", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-229", 0 ],
+									"order" : 0,
+									"source" : [ "obj-212", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-212", 0 ],
+									"source" : [ "obj-213", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-216", 0 ],
+									"source" : [ "obj-214", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-214", 0 ],
+									"order" : 1,
+									"source" : [ "obj-215", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-229", 0 ],
+									"order" : 0,
+									"source" : [ "obj-215", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-215", 0 ],
+									"source" : [ "obj-216", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-219", 0 ],
+									"source" : [ "obj-217", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-217", 0 ],
+									"order" : 1,
+									"source" : [ "obj-218", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-229", 0 ],
+									"order" : 0,
+									"source" : [ "obj-218", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-218", 0 ],
+									"source" : [ "obj-219", 0 ]
 								}
 
 							}
@@ -6357,8 +7337,112 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-222", 0 ],
+									"source" : [ "obj-220", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-220", 0 ],
+									"order" : 1,
+									"source" : [ "obj-221", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-229", 0 ],
+									"order" : 0,
+									"source" : [ "obj-221", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-221", 0 ],
+									"source" : [ "obj-222", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-225", 0 ],
+									"source" : [ "obj-223", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-223", 0 ],
+									"order" : 1,
+									"source" : [ "obj-224", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-229", 0 ],
+									"order" : 0,
+									"source" : [ "obj-224", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-224", 0 ],
+									"source" : [ "obj-225", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-228", 0 ],
+									"source" : [ "obj-226", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-226", 0 ],
+									"order" : 1,
+									"source" : [ "obj-227", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-229", 0 ],
+									"order" : 0,
+									"source" : [ "obj-227", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-227", 0 ],
+									"source" : [ "obj-228", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-230", 0 ],
+									"source" : [ "obj-229", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-118", 0 ],
 									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-230", 0 ]
 								}
 
 							}
@@ -8304,6 +9388,106 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"args" : [ "alpha" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-307",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "MCModule.maxpat",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "signal", "signal", "" ],
+					"patching_rect" : [ 1560.0, 1993.0, 401.300000000000011, 247.300000000000011 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 11.206897139549255, 10.344828128814697, 379.0, 254.0 ],
+					"varname" : "alpha_mcmodule",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-308",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "MCLyra.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "multichannelsignal" ],
+					"patching_rect" : [ 2010.700000000000045, 2212.300000000000182, 109.799999999999997, 46.700000000000003 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 11.206897139549255, 265.517255306243896, 336.134433746337891, 52.941173315048218 ],
+					"varname" : "alpha_mclyra",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-309",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "MCHelper.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "", "int" ],
+					"patching_rect" : [ 2012.299999999999955, 2018.700000000000045, 106.599999999999994, 186.099999999999994 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 392.241399884223938, 10.344828128814697, 99.999997615814209, 182.499995648860931 ],
+					"varname" : "alpha_mchelper",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-310",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1945.5, 2237.0, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 417.241401195526123, 238.793115973472595, 50.0, 22.0 ],
+					"text" : "alpha",
+					"varname" : "alpha_label"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-106",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1605.0, 1930.0, 2846.0, 20.0 ],
+					"text" : "alpha - voice 5 of the 8-voice expansion. See ADR 0005. Cloned from bass: MCModule alpha + MCLyra + MCHelper. 6 cords. Identical topology to every other voice. Its pads are row 4 (notes 60-67 / @pad 24-31) inside the p subpatcher. NOTE: a freshly added MCHelper has no saved output-menu value. It defaults to channel 3 and collides with bass - set it to 7. The menu now offers 3-10. beta / gamma / delta (rows 3/2/1 - ch 8/9/10) are phase 2.",
+					"varname" : "alpha_note"
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -9111,6 +10295,48 @@
 				"patchline" : 				{
 					"destination" : [ "obj-303", 1 ],
 					"source" : [ "obj-305", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 1 ],
+					"source" : [ "obj-307", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-309", 0 ],
+					"source" : [ "obj-307", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-310", 1 ],
+					"source" : [ "obj-307", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-307", 2 ],
+					"source" : [ "obj-308", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-307", 1 ],
+					"source" : [ "obj-309", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-307", 0 ],
+					"source" : [ "obj-309", 0 ]
 				}
 
 			}
@@ -10263,6 +11489,40 @@
 			"obj-212" : [ "2[1]", "2", 0 ],
 			"obj-213" : [ "2[2]", "2", 0 ],
 			"obj-23" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-307::obj-104" : [ "-[64]", "1", 0 ],
+			"obj-307::obj-105" : [ "-[65]", "1", 0 ],
+			"obj-307::obj-106" : [ "-[66]", "1", 0 ],
+			"obj-307::obj-107" : [ "-[67]", "1", 0 ],
+			"obj-307::obj-16" : [ "slider[4]", "slider", 0 ],
+			"obj-307::obj-168" : [ "button[2]", "button", 0 ],
+			"obj-307::obj-224" : [ "-[68]", "1", 0 ],
+			"obj-307::obj-225" : [ "-[69]", "1", 0 ],
+			"obj-307::obj-226" : [ "-[70]", "1", 0 ],
+			"obj-307::obj-227" : [ "-[71]", "1", 0 ],
+			"obj-307::obj-228" : [ "-[72]", "1", 0 ],
+			"obj-307::obj-229" : [ "-[73]", "1", 0 ],
+			"obj-307::obj-230" : [ "-[74]", "1", 0 ],
+			"obj-307::obj-231" : [ "-[75]", "1", 0 ],
+			"obj-307::obj-9" : [ "multislider[4]", "multislider", 0 ],
+			"obj-307::obj-96" : [ "-[76]", "1", 0 ],
+			"obj-307::obj-97" : [ "-[77]", "1", 0 ],
+			"obj-307::obj-98" : [ "-[78]", "1", 0 ],
+			"obj-307::obj-99" : [ "-[79]", "1", 0 ],
+			"obj-308::obj-159" : [ "live.button[1]", "live.button[1]", 0 ],
+			"obj-308::obj-162" : [ "live.button[2]", "live.button[1]", 0 ],
+			"obj-308::obj-165" : [ "live.button[3]", "live.button[1]", 0 ],
+			"obj-308::obj-172" : [ "live.button[4]", "live.button[1]", 0 ],
+			"obj-308::obj-175" : [ "live.button[5]", "live.button[1]", 0 ],
+			"obj-308::obj-178" : [ "live.button[6]", "live.button[1]", 0 ],
+			"obj-308::obj-181" : [ "live.button[7]", "live.button[1]", 0 ],
+			"obj-308::obj-70" : [ "live.button[8]", "live.button[1]", 0 ],
+			"obj-308::obj-89" : [ "flonum[1]", "flonum", 0 ],
+			"obj-308::obj-90" : [ "number[1]", "number[2]", 0 ],
+			"obj-308::obj-91" : [ "number[2]", "number[2]", 0 ],
+			"obj-308::obj-92" : [ "number[3]", "number[2]", 0 ],
+			"obj-309::obj-20" : [ "live.menu[2]", "live.menu", 0 ],
+			"obj-309::obj-4" : [ "live.dial[2]", "Gobal Freq", 0 ],
+			"obj-309::obj-6" : [ "toggle[4]", "toggle", 0 ],
 			"obj-33" : [ "pushtext16[1]", "pushtext16", 0 ],
 			"obj-35" : [ "pushtext18[1]", "pushtext18", 0 ],
 			"obj-37" : [ "pushtext22[1]", "pushtext22", 0 ],
@@ -10298,6 +11558,14 @@
 			"obj-40::obj-199" : [ "live.text[32]", "live.text", 0 ],
 			"obj-40::obj-201" : [ "live.text[33]", "live.text", 0 ],
 			"obj-40::obj-203" : [ "live.text[34]", "live.text", 0 ],
+			"obj-40::obj-206" : [ "live.text[21]", "live.text", 0 ],
+			"obj-40::obj-209" : [ "live.text[22]", "live.text", 0 ],
+			"obj-40::obj-212" : [ "live.text[23]", "live.text", 0 ],
+			"obj-40::obj-215" : [ "live.text[25]", "live.text", 0 ],
+			"obj-40::obj-218" : [ "live.text[26]", "live.text", 0 ],
+			"obj-40::obj-221" : [ "live.text[27]", "live.text", 0 ],
+			"obj-40::obj-224" : [ "live.text[35]", "live.text", 0 ],
+			"obj-40::obj-227" : [ "live.text[36]", "live.text", 0 ],
 			"obj-47" : [ "2[3]", "2", 0 ],
 			"obj-48" : [ "2[4]", "2", 0 ],
 			"obj-49" : [ "2[5]", "2", 0 ],
@@ -10700,6 +11968,142 @@
 					"parameter_longname" : "live.button[37]"
 				}
 ,
+				"obj-307::obj-104" : 				{
+					"parameter_longname" : "-[64]"
+				}
+,
+				"obj-307::obj-105" : 				{
+					"parameter_longname" : "-[65]"
+				}
+,
+				"obj-307::obj-106" : 				{
+					"parameter_longname" : "-[66]"
+				}
+,
+				"obj-307::obj-107" : 				{
+					"parameter_longname" : "-[67]"
+				}
+,
+				"obj-307::obj-16" : 				{
+					"parameter_longname" : "slider[4]"
+				}
+,
+				"obj-307::obj-168" : 				{
+					"parameter_longname" : "button[2]"
+				}
+,
+				"obj-307::obj-224" : 				{
+					"parameter_longname" : "-[68]"
+				}
+,
+				"obj-307::obj-225" : 				{
+					"parameter_longname" : "-[69]"
+				}
+,
+				"obj-307::obj-226" : 				{
+					"parameter_longname" : "-[70]"
+				}
+,
+				"obj-307::obj-227" : 				{
+					"parameter_longname" : "-[71]"
+				}
+,
+				"obj-307::obj-228" : 				{
+					"parameter_longname" : "-[72]"
+				}
+,
+				"obj-307::obj-229" : 				{
+					"parameter_longname" : "-[73]"
+				}
+,
+				"obj-307::obj-230" : 				{
+					"parameter_longname" : "-[74]"
+				}
+,
+				"obj-307::obj-231" : 				{
+					"parameter_longname" : "-[75]"
+				}
+,
+				"obj-307::obj-9" : 				{
+					"parameter_longname" : "multislider[4]"
+				}
+,
+				"obj-307::obj-96" : 				{
+					"parameter_longname" : "-[76]"
+				}
+,
+				"obj-307::obj-97" : 				{
+					"parameter_longname" : "-[77]"
+				}
+,
+				"obj-307::obj-98" : 				{
+					"parameter_longname" : "-[78]"
+				}
+,
+				"obj-307::obj-99" : 				{
+					"parameter_longname" : "-[79]"
+				}
+,
+				"obj-308::obj-159" : 				{
+					"parameter_longname" : "live.button[1]"
+				}
+,
+				"obj-308::obj-162" : 				{
+					"parameter_longname" : "live.button[2]"
+				}
+,
+				"obj-308::obj-165" : 				{
+					"parameter_longname" : "live.button[3]"
+				}
+,
+				"obj-308::obj-172" : 				{
+					"parameter_longname" : "live.button[4]"
+				}
+,
+				"obj-308::obj-175" : 				{
+					"parameter_longname" : "live.button[5]"
+				}
+,
+				"obj-308::obj-178" : 				{
+					"parameter_longname" : "live.button[6]"
+				}
+,
+				"obj-308::obj-181" : 				{
+					"parameter_longname" : "live.button[7]"
+				}
+,
+				"obj-308::obj-70" : 				{
+					"parameter_longname" : "live.button[8]"
+				}
+,
+				"obj-308::obj-89" : 				{
+					"parameter_longname" : "flonum[1]"
+				}
+,
+				"obj-308::obj-90" : 				{
+					"parameter_longname" : "number[1]"
+				}
+,
+				"obj-308::obj-91" : 				{
+					"parameter_longname" : "number[2]"
+				}
+,
+				"obj-308::obj-92" : 				{
+					"parameter_longname" : "number[3]"
+				}
+,
+				"obj-309::obj-20" : 				{
+					"parameter_longname" : "live.menu[2]"
+				}
+,
+				"obj-309::obj-4" : 				{
+					"parameter_longname" : "live.dial[2]"
+				}
+,
+				"obj-309::obj-6" : 				{
+					"parameter_longname" : "toggle[4]"
+				}
+,
 				"obj-9::obj-4" : 				{
 					"parameter_longname" : "live.dial[1]"
 				}
@@ -10711,6 +12115,70 @@
 ,
 		"parameter_map" : 		{
 			"midi" : 			{
+				"live.button[8]" : 				{
+					"srcname" : "60.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[1]" : 				{
+					"srcname" : "61.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[2]" : 				{
+					"srcname" : "62.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[3]" : 				{
+					"srcname" : "63.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[7]" : 				{
+					"srcname" : "64.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[6]" : 				{
+					"srcname" : "65.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[5]" : 				{
+					"srcname" : "66.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
+				"live.button[4]" : 				{
+					"srcname" : "67.note.0.chan.midi",
+					"min" : 0.0,
+					"max" : 1.0,
+					"flags" : 3,
+					"trigger" : 1
+				}
+,
 				"live.button[28]" : 				{
 					"srcname" : "68.note.0.chan.midi",
 					"min" : 0.0,

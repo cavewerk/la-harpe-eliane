@@ -157,9 +157,9 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_annotation_name" : "Output",
-							"parameter_enum" : [ "3", "4", "5", "6" ],
+							"parameter_enum" : [ "3", "4", "5", "6", "7", "8", "9", "10" ],
 							"parameter_longname" : "live.menu[1]",
-							"parameter_mmax" : 3,
+							"parameter_mmax" : 7,
 							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.menu",
 							"parameter_type" : 2

@@ -64,9 +64,13 @@ MCHelper   -- mixdown, splits to:
   functional DSP.
 - **`MCHelper.maxpat`** — mixes the voice down and routes it to a `dac~ 4`
   whose target channel is set live via a `live.menu` dropdown (sending a
-  `set $1` message) — this is the actual electromagnet output. Current
-  convention: bass→3, tenor→4, alto→5, soprano→6, but it's reconfigurable
-  per setup, not hardcoded in the file. Comment labels: "Drone" (the
+  `set $1` message) — this is the actual electromagnet output. The menu
+  offers channels **3-10** (widened from 3-6 for the eight-voice
+  expansion). Current convention: bass→3, tenor→4, alto→5, soprano→6,
+  alpha→7, with beta/gamma/delta→8/9/10 once built — reconfigurable per
+  setup, not hardcoded in the file. **A newly added instance has no
+  saved menu value and defaults to channel 3**, colliding with bass, so
+  it must be set by hand on first open. Comment labels: "Drone" (the
   electromagnet path) / "Output".
 
 ## Top-level patch (`LivingStringProject.maxpat`)
@@ -221,17 +225,37 @@ As of 2026-09-20 the four voices occupy the **top four rows** of the
 Push 8x8 grid, highest voice at the top. See
 [ADR 0004](../docs/adr/0004-pad-row-relayout.md).
 
-| voice   | grid row | notes | `@pad` | colour | scene |
-|---------|----------|-------|--------|--------|-------|
-| soprano | 8 (top)  | 92-99 | 56-63  | yellow | 1     |
-| alto    | 7        | 84-91 | 48-55  | purple | 2     |
-| tenor   | 6        | 76-83 | 40-47  | green  | 3     |
-| bass    | 5        | 68-75 | 32-39  | cyan   | 4     |
+| voice   | grid row | notes | `@pad` | colour  | scene | out ch | built |
+|---------|----------|-------|--------|---------|-------|--------|-------|
+| soprano | 8 (top)  | 92-99 | 56-63  | yellow  | 1     | 6      | yes   |
+| alto    | 7        | 84-91 | 48-55  | purple  | 2     | 5      | yes   |
+| tenor   | 6        | 76-83 | 40-47  | green   | 3     | 4      | yes   |
+| bass    | 5        | 68-75 | 32-39  | cyan    | 4     | 3      | yes   |
+| alpha   | 4        | 60-67 | 24-31  | orange  | 5     | 7      | yes   |
+| beta    | 3        | 52-59 | 16-23  | blue    | 6     | 8      | no    |
+| gamma   | 2        | 44-51 | 8-15   | magenta | 7     | 9      | no    |
+| delta   | 1        | 36-43 | 0-7    | white   | 8     | 10     | no    |
 
 Grid note numbering: 36 is bottom-left, +1 rightwards, +8 per row
-upward. The bottom four rows (notes 36-67, `@pad` 0-31) are unused and
-contiguous — cleared for a possible 8-voice version, which is otherwise
-not started (see [ROADMAP.md](ROADMAP.md)).
+upward. The bottom four rows are being filled by the **eight-voice
+expansion**; `alpha` landed 2026-09-20 (see
+[ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md)), the
+other three and the encoder / fader / voice-select widening are still
+to come (see [ROADMAP.md](ROADMAP.md)).
+
+The `scene` column is the voice-select button. **Scenes 5-8 do not
+exist yet**, and `alpha` cannot be selected as an encoder target until
+the 4-wide `sel 0 1 2 3` downstream of the `p` subpatcher's outlet is
+widened to eight.
+
+Each pad's LED ring is **five** cords, not four: `padhold.js` →
+`live.text` → `jk.push` → `padhold.js`, plus one from the shared
+`receive sustain_pedal` (`obj-2`) into each `padhold.js` second inlet.
+That fan-out now carries 40 cords with distinct `order` values 0-39.
+Cord `order` is load-bearing here: the convention is `live.text` →
+`sel` = order 0 (voice index first), `live.text` → `jk.push` = order 1
+(LED second), with `midpoints` only on the `live.text` → `jk.push`
+cords.
 
 **There is no single place that decides which voice a pad plays.**
 Three separate address spaces carry this layout, and nothing keeps them
@@ -349,6 +373,17 @@ code, included so the patch is self-contained.
    No longer planned as a standalone hardcoded-CC extension; see
    [ROADMAP.md](ROADMAP.md) — this is now expected to resolve as a side
    effect of the dynamic fader-to-voice assignment feature.
+2. **`soprano`'s voice-select button is in the wrong radio group.** It
+   carries `@radio volume` while alto/tenor/bass carry `@radio volumes`.
+   `jk.push` builds its radio group name with `combine 0 radio`, so the
+   two are different groups and soprano does not mutually exclude with
+   the other three. Pre-existing and unrelated to the pad-row relayout;
+   scheduled for phase 3a of the eight-voice expansion, where four more
+   buttons join the group.
+3. **`obj-24` in the `p` subpatcher is dead** — a `0` message whose only
+   cord writes its right inlet and whose outlet goes nowhere, almost
+   certainly a relayout leftover. Left in place; removing it is a
+   separate decision.
 
 Lightshow (previously listed here) has been scrapped as a feature entirely
 — not being pursued or investigated further.

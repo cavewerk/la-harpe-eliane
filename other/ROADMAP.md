@@ -117,6 +117,14 @@ Reordered 2026-09-10 per the project's author.
    (testable with an on-screen slider) before any Arc integration.
    Pulled forward from the long-term horizon on 2026-09-10.
 
+   **Not greenfield** — discovered 2026-09-20 during the 8-voice work:
+   the patch already has Max's built-in patcher-snapshot mechanism in
+   active use, with 18 named snapshots stored in `patcher.snapshot` as
+   longname-keyed `parameter_values` maps. Whatever gets built should
+   start from what is already there rather than alongside it. This is
+   also the mechanism that phase 1 of the 8-voice expansion collided
+   with — see the blocker under Unscheduled.
+
 **Stretch, if the above land early:**
 - Harmonic multiplier as the encoder mode-switch's third target.
 - Decide encoder 11's job (currently deliberately open).
@@ -138,7 +146,9 @@ Reordered 2026-09-10 per the project's author.
    see above).
 3. `[ ]` **Preset system for pad rows** — switch between the current
    4-row and a future 8-row pad layout, and assign a given row to a
-   voice. Low urgency while only 4 voices are in use.
+   voice. Urgency rising: the 8-row layout is no longer hypothetical —
+   the 8-voice extension is in progress (see Unscheduled, below, which
+   is now `[~]`), and `alpha` already occupies row 4.
 
    Groundwork landed 2026-09-20: the four voices were squeezed onto
    the **top four rows** (rows 8-5, soprano at the top down to bass),
@@ -187,17 +197,48 @@ Reordered 2026-09-10 per the project's author.
   eventually unlock native screen display and sysex handling without
   fighting the vendored library. Worth an ADR once real work starts,
   given how much it would touch.
-- `[ ]` **8-voice extension** — a "someday" consideration already
-  shaping current design choices (e.g. capping planned fader-bank count
-  around 4 groups even at 8 voices), not an active goal. Still
-  unscheduled and aspirational: it needs its own scoping conversation
-  about electromagnets, fader banks and per-voice modules before any
-  of it is built. As of 2026-09-20 the Push grid no longer blocks it —
-  the bottom four rows (notes 36-67, `@pad` 0-31) are free and
-  contiguous (see [ADR 0004](../docs/adr/0004-pad-row-relayout.md)) —
-  but clearing the grid was the *only* part done, and the three
-  address spaces that ADR describes are what any expansion has to
-  wire up.
+- `[~]` **8-voice extension** — **now active and in progress.** Scoped
+  2026-09-20; the scoping conversation this item was waiting on has
+  happened and its outcomes are recorded in
+  [ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md).
+  Confirmed: eight strings and electromagnets physically exist and the
+  interface addresses ten or more discrete outputs, so this is a
+  hardware phase, not software-only.
+
+  New voices are **alpha / beta / gamma / delta** on rows 4-1 (named to
+  avoid the one-character `altA`/`alto` send-name collision).
+
+  - `[x]` **Phase 1 — `alpha`** (rows 4, notes 60-67, orange, out ch 7).
+    bpatcher trio, pad row, and `parameter_map` bindings. Landed and
+    hardware-tested 2026-09-20: plays, lights orange, sustain holds its
+    LEDs. 398 → 446 cords, 0 lost. Key finding that unblocks the rest:
+    **Max preserves hand-minted parameter longnames across a save**, so
+    voices can be cloned in the JSON without round-tripping through Max.
+  - `[!]` **BLOCKER found in phase 1 — snapshots don't know about new
+    voices.** The patch has an active snapshot plus **18 named ones**
+    (`MASTER`, `jam1`, `jam4`, `May10`, ...), each a longname-keyed
+    `parameter_values` map. None contains `alpha`'s longnames, so its
+    output channel reverts to channel 3 (colliding with bass) on every
+    reopen, and recalling a snapshot won't restore it. Settle this
+    before phase 2, which would triple the problem. Options: re-capture
+    all 18 in Max, inject the new longnames into them programmatically,
+    or give new voices `parameter_initial` values so they don't depend
+    on snapshots at all. See
+    [ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md).
+  - `[ ]` **Phase 2 — `beta` / `gamma` / `delta`** (rows 3/2/1, blue /
+    magenta / white, out ch 8/9/10). Straight replication of phase 1.
+  - `[ ]` **Phase 3a — voice-select to eight.** Widen the 4-wide
+    `sel 0 1 2 3` downstream of the `p` subpatcher outlet, add scene
+    buttons 5-8, and fix the `@radio volume` / `volumes` typo that
+    currently leaves soprano in a radio group of one.
+  - `[ ]` **Phase 3b — second encoder bank.** Eight more unmodified
+    `jk.pushrotaryAlt` instances plus 32 `live.dial`s, 4 `pak`s and two
+    bank-select `expr`s; `encoderamp.js` `VOICES` 4 → 8. Chosen over
+    forking the vendored abstraction — see ADR 0005. Prove two
+    same-numbered instances coexist on hardware with a small probe
+    before building all eight.
+  - `[ ]` **Phase 4 — fader banks to eight targets.** `gate 4` →
+    `gate 8` and four more `umenu` items on each existing bank.
 
 ## Explicitly parked
 
