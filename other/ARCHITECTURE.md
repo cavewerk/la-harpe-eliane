@@ -38,6 +38,12 @@ MCHelper   -- mixdown, splits to:
   microtuning ramp (`line~`) and `mc.line~`/`mc.selector~` logic for setting
   individual harmonics' values via `pak`/`unpack i i i i i i i i` (8
   channels, one per inner voice).
+  It also carries one **ampstate tap**: the amplitude `multislider`'s
+  outlet feeds `s #1_ampstate` (plus a `loadbang` that bangs the
+  multislider once at load to seed it), broadcasting that voice's current
+  8 partial levels. Added for the encoder mode-switch below, which needs
+  a starting value for relative encoder nudges; the snapshot system on
+  the [roadmap](ROADMAP.md) will read the same send.
 - **`MCLyra.maxpat`** — wraps `mc.live.adsr~ 600. 100. 1. 1000. @chans 8`
   (attack/decay/sustain/release, defaults 600ms/100ms/1.0/1000ms) across the
   8 inner voices. In **drone mode**, a sustained "on" is sent straight to
@@ -71,7 +77,8 @@ MCHelper   -- mixdown, splits to:
   abstractions (see [README](../README.md#third-party--vendored-code)) —
   `jk.pushcore` (core Push comms), `jk.push` (buttons), `jk.pushrotaryAlt`
   (the 8 endless rotary encoders, `jk.pushrotaryAlt 3`–`10`, used for
-  microtuning).
+  microtuning by default and for partial amplitude while pedal 2 is held
+  — see [Encoder mode-switch](#encoder-mode-switch) below).
 - **Drone mode control surface**: raw MIDI CC input via `ctlin`, separate
   hardware from the Push (an external fader bank). Only bass and tenor are
   wired so far — alto/soprano have no fader chain yet (see
@@ -164,10 +171,49 @@ chain, without changing how notes normally start/stop.
   goes from down to up, every still-pending channel gets its deferred
   `setvalue <channel> 0` flushed at once.
 
-Not verified against real hardware — this environment can't run Max. Open
-it, test against the actual pedal, and in particular confirm the assumed
-polarity (127 = pressed, 0 = at rest) is either right or gets corrected by
-the invert toggle.
+Hardware-tested and confirmed 2026-09-10, including the repress-to-release
+behavior added on top of it (see
+[ADR 0001](../docs/adr/0001-sustain-repress-to-release.md)). The assumed
+polarity (127 = pressed, 0 = at rest) holds for the pedal in use; the
+invert toggle covers pedals wired the other way.
+
+## Encoder mode-switch
+
+A second global footswitch ("pedal 2") that, **while held**, repurposes the
+8 Push macro encoders (rotaries 3–10) from microtuning to **partial
+amplitude** — the same per-harmonic levels the drone-mode fader banks set.
+Releasing it hands the encoders straight back to microtuning, with their
+microtuning values untouched by anything done while the pedal was down.
+Momentary, not latched: there's no mode to lose track of mid-performance.
+See [ADR 0003](../docs/adr/0003-encoder-mode-switch-pedal.md) for why it's
+a pedal rather than the Push button the roadmap originally sketched.
+
+- **Pedal read** mirrors the sustain-pedal block exactly: `ctlin 69` →
+  `> 63` → `!= 0` → `s encmode_pedal`, with its **own** manual
+  polarity-invert toggle. Deliberately not shared with the sustain pedal's
+  toggle — a performer could have the two pedals wired oppositely.
+- **Microtuning suppression**, without editing the vendored library: each
+  `jk.pushrotaryAlt`'s 5th inlet is the control inlet of its internal
+  `gate 4` (voice 1–4 picks which per-voice accumulator the encoder
+  drives; 0 closes the gate). The voice-select `int` that used to feed
+  those inlets directly now passes through `pak i i` +
+  `expr $i1*(1-$i2)` alongside the pedal state, so a held pedal sends
+  every rotary 0 and a released one re-sends the current voice.
+- **Amplitude mode** is one [`code/encoderamp.js`](../code/encoderamp.js)
+  at the top level. The raw encoder deltas never pass through a top-level
+  inlet — each `jk.pushrotaryAlt` picks them up *inside* the abstraction
+  from named sends `jk.pushcore` broadcasts (`71rot`–`78rot` for rotaries
+  3–10, per `jk.push 2/misc/rotary.json`) — so this object listens to the
+  same eight sends rather than intercepting anything upstream. Push
+  encoders are relative (1–63 clockwise, 127–65 counter-clockwise), so it
+  keeps a shadow copy of each voice's 8 levels, fed by the four
+  `r <voice>_ampstate` taps above, nudges by 0.01 per tick, clamps to
+  0–1, and emits the same `select <partial> <0.-1.>` message the fader
+  banks emit into `s <voice>_amp`. Deltas arriving while the pedal is up
+  are dropped.
+- The **target voice** comes from the existing voice-select / last-pad
+  mechanism, unchanged — the pedal switches what the encoders *do*, not
+  which voice they address.
 
 ## Fader-to-amplitude mapping
 

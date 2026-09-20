@@ -10,16 +10,43 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 65.0, 160.0, 670.0, 412.0 ],
+		"rect" : [ 61.0, 107.0, 670.0, 464.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-36",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 797.0, 420.0, 50.0, 22.0 ],
+					"text" : "4",
+					"varname" : "obj-162"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "int", "int" ],
+					"patching_rect" : [ 773.580000000000041, 350.95999999999998, 41.0, 22.0 ],
+					"text" : "notein",
+					"varname" : "obj-161"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1877.1099999999999, 372.649999999999977, 100.0, 22.0 ]
+					"patching_rect" : [ 1877.1099999999999, 372.649999999999977, 100.0, 22.0 ],
+					"varname" : "obj-160"
 				}
 
 			}
@@ -381,7 +408,8 @@
 						}
 
 					}
-
+,
+					"varname" : "obj-137"
 				}
 
 			}
@@ -604,7 +632,8 @@
 						}
 
 					}
-
+,
+					"varname" : "obj-133[1]"
 				}
 
 			}
@@ -842,7 +871,8 @@
 						}
 
 					}
-
+,
+					"varname" : "obj-128"
 				}
 
 			}
@@ -1080,7 +1110,8 @@
 						}
 
 					}
-
+,
+					"varname" : "obj-123"
 				}
 
 			}
@@ -1514,7 +1545,8 @@
 						}
 
 					}
-
+,
+					"varname" : "obj-113"
 				}
 
 			}
@@ -1778,7 +1810,8 @@
 						}
 
 					}
-
+,
+					"varname" : "obj-106"
 				}
 
 			}
@@ -2029,7 +2062,8 @@
 						}
 
 					}
-
+,
+					"varname" : "obj-100[1]"
 				}
 
 			}
@@ -6998,7 +7032,8 @@
 						}
 
 					}
-
+,
+					"varname" : "obj-82[1]"
 				}
 
 			}
@@ -7021,7 +7056,7 @@
 				"box" : 				{
 					"fontsize" : 10.0,
 					"id" : "obj-120",
-					"items" : [ "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "Ableton Push 2 Live Port", ",", "Ableton Push 2 User Port", ",", "UltraLite-mk4 MIDI In", ",", "16n Port 1", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -7126,7 +7161,7 @@
 				"box" : 				{
 					"fontsize" : 10.0,
 					"id" : "obj-127",
-					"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "Ableton Push 2 Live Port", ",", "Ableton Push 2 User Port", ",", "UltraLite-mk4 MIDI Out", ",", "16n Port 1", ",", "from Max 1", ",", "from Max 2" ],
+					"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "from Max 1", ",", "from Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -7172,7 +7207,7 @@
 					"patching_rect" : [ 397.540972232818604, 477.049166679382324, 109.836062431335449, 46.721310138702393 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 538.793131709098816, 265.517255306243896, 336.065564155578613, 53.278687000274658 ],
-					"varname" : "obj-48[1]",
+					"varname" : "obj-71",
 					"viewvisibility" : 1
 				}
 
@@ -7196,7 +7231,7 @@
 					"patching_rect" : [ 412.295070171356201, 292.622942447662354, 104.098357677459717, 186.065568447113037 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 920.689703464508057, 11.206897139549255, 100.833330929279327, 181.666662335395813 ],
-					"varname" : "obj-47",
+					"varname" : "obj-70",
 					"viewvisibility" : 1
 				}
 
@@ -7221,7 +7256,7 @@
 					"patching_rect" : [ 1.0, 284.0, 401.098920702934265, 264.247198224067688 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 538.793131709098816, 11.206897139549255, 379.0, 252.5 ],
-					"varname" : "obj-46",
+					"varname" : "obj-69",
 					"viewvisibility" : 1
 				}
 
@@ -7245,7 +7280,7 @@
 					"patching_rect" : [ 388.524579048156738, 719.672110557556152, 109.836062431335449, 46.721310138702393 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 11.206897139549255, 593.103479385375977, 336.065564155578613, 53.278687000274658 ],
-					"varname" : "obj-45",
+					"varname" : "obj-68",
 					"viewvisibility" : 1
 				}
 
@@ -7269,7 +7304,7 @@
 					"patching_rect" : [ 413.934414386749268, 561.475393772125244, 101.639341354370117, 180.327863693237305 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 392.241399884223938, 339.655190229415894, 100.833330929279327, 187.499995529651642 ],
-					"varname" : "obj-44",
+					"varname" : "obj-67[1]",
 					"viewvisibility" : 1
 				}
 
@@ -7294,7 +7329,7 @@
 					"patching_rect" : [ 5.0, 560.0, 401.098920702934265, 264.247198224067688 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 11.206897139549255, 339.655190229415894, 379.0, 252.5 ],
-					"varname" : "obj-43",
+					"varname" : "obj-66[1]",
 					"viewvisibility" : 1
 				}
 
@@ -7318,7 +7353,7 @@
 					"patching_rect" : [ 397.540972232818604, 998.360627174377441, 109.836062431335449, 46.721310138702393 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 538.793131709098816, 593.103479385375977, 336.065564155578613, 53.278687000274658 ],
-					"varname" : "obj-42",
+					"varname" : "obj-65[1]",
 					"viewvisibility" : 1
 				}
 
@@ -7342,7 +7377,7 @@
 					"patching_rect" : [ 410.655725955963135, 212.2950758934021, 109.836062431335449, 46.721310138702393 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 11.206897139549255, 265.517255306243896, 336.134433746337891, 52.941173315048218 ],
-					"varname" : "obj-41",
+					"varname" : "obj-64",
 					"viewvisibility" : 1
 				}
 
@@ -7366,7 +7401,7 @@
 					"patching_rect" : [ 413.114742279052734, 831.147517204284668, 103.278685569763184, 181.967207908630371 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 920.689703464508057, 339.655190229415894, 100.833330929279327, 183.33332896232605 ],
-					"varname" : "obj-40",
+					"varname" : "obj-63",
 					"viewvisibility" : 1
 				}
 
@@ -7391,7 +7426,7 @@
 					"patching_rect" : [ 5.494505763053894, 832.967073678970337, 401.098920702934265, 264.247198224067688 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 538.793131709098816, 339.655190229415894, 379.0, 252.0 ],
-					"varname" : "obj-39",
+					"varname" : "obj-62",
 					"viewvisibility" : 1
 				}
 
@@ -7415,7 +7450,7 @@
 					"patching_rect" : [ 412.295070171356201, 18.68131959438324, 106.557374000549316, 186.065568447113037 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 392.241399884223938, 10.344828128814697, 99.999997615814209, 182.499995648860931 ],
-					"varname" : "obj-38",
+					"varname" : "obj-61",
 					"viewvisibility" : 1
 				}
 
@@ -7440,7 +7475,7 @@
 					"patching_rect" : [ 5.333333492279053, 19.333333909511566, 401.333345293998718, 247.333340704441071 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 11.206897139549255, 10.344828128814697, 379.0, 254.0 ],
-					"varname" : "obj-37",
+					"varname" : "obj-60[1]",
 					"viewvisibility" : 1
 				}
 
@@ -7866,6 +7901,380 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"id" : "obj-56",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1720.0, 49.0, 1073.0, 20.0 ],
+					"text" : "Encoder-mode pedal (CC 69): HOLD = macro encoders 3-10 set partial amplitude, RELEASE = microtuning (default). Mirrors the sustain block; own polarity switch.",
+					"varname" : "encmode_label"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-68",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "int", "int" ],
+					"patching_rect" : [ 1720.0, 79.0, 62.0, 22.0 ],
+					"text" : "ctlin 69",
+					"varname" : "encmode_ctlin"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-73",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 1720.0, 119.0, 43.0, 22.0 ],
+					"text" : "> 63",
+					"varname" : "encmode_gt"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-76",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 1720.0, 159.0, 40.0, 22.0 ],
+					"text" : "!= 0",
+					"varname" : "encmode_xor"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-105",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1800.0, 159.0, 24.0, 24.0 ],
+					"varname" : "encmode_invert"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-108",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1835.0, 159.0, 256.0, 20.0 ],
+					"text" : "Invert polarity (pedal 2 only)",
+					"varname" : "encmode_invert_label"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-111",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1720.0, 199.0, 121.0, 22.0 ],
+					"text" : "s encmode_pedal",
+					"varname" : "encmode_send"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-114",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1000.0, 700.0, 119.0, 22.0 ],
+					"text" : "r encmode_pedal",
+					"varname" : "encgate_rpedal"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-129",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1000.0, 735.0, 55.0, 22.0 ],
+					"text" : "pak i i",
+					"varname" : "encgate_pak"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-130",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1000.0, 770.0, 109.0, 22.0 ],
+					"text" : "expr $i1*(1-$i2)",
+					"varname" : "encgate_expr"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-132",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1144.0, 1275.0, 1998.0, 20.0 ],
+					"text" : "Encoder mode-switch, phase 1 (partial amplitude while pedal 2 is held). r 71rot..78rot = jk.pushcore's raw relative CC for rotaries 3-10. Voice int from the same [int] the rotaries use; pedal from encmode_pedal; current partial levels from each MCModule's ampstate tap. Output = same select msg the faders send.",
+					"varname" : "encamp_label"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-133",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1144.0, 1330.0, 55.0, 22.0 ],
+					"text" : "r 71rot",
+					"varname" : "encamp_r1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-134",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1214.0, 1330.0, 58.0, 22.0 ],
+					"text" : "r 72rot",
+					"varname" : "encamp_r2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-135",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1284.0, 1330.0, 58.0, 22.0 ],
+					"text" : "r 73rot",
+					"varname" : "encamp_r3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-136",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1354.0, 1330.0, 58.0, 22.0 ],
+					"text" : "r 74rot",
+					"varname" : "encamp_r4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-137",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1424.0, 1330.0, 58.0, 22.0 ],
+					"text" : "r 75rot",
+					"varname" : "encamp_r5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-138",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1494.0, 1330.0, 58.0, 22.0 ],
+					"text" : "r 76rot",
+					"varname" : "encamp_r6"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-139",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1564.0, 1330.0, 58.0, 22.0 ],
+					"text" : "r 77rot",
+					"varname" : "encamp_r7"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-140",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1634.0, 1330.0, 58.0, 22.0 ],
+					"text" : "r 78rot",
+					"varname" : "encamp_r8"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-141",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1704.0, 1330.0, 119.0, 22.0 ],
+					"text" : "r encmode_pedal",
+					"varname" : "encamp_rpedal"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-142",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1820.0, 1330.0, 117.0, 22.0 ],
+					"text" : "r bass_ampstate",
+					"varname" : "encamp_rstate1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-143",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1940.0, 1330.0, 121.0, 22.0 ],
+					"text" : "r tenor_ampstate",
+					"varname" : "encamp_rstate2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-144",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 2060.0, 1330.0, 113.0, 22.0 ],
+					"text" : "r alto_ampstate",
+					"varname" : "encamp_rstate3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-146",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 2180.0, 1330.0, 138.0, 22.0 ],
+					"text" : "r soprano_ampstate",
+					"varname" : "encamp_rstate4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-149",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1144.0, 1450.0, 88.0, 22.0 ],
+					"text" : "s bass_amp",
+					"varname" : "encamp_s1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-150",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1254.0, 1450.0, 92.0, 22.0 ],
+					"text" : "s tenor_amp",
+					"varname" : "encamp_s2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-151",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1364.0, 1450.0, 84.0, 22.0 ],
+					"text" : "s alto_amp",
+					"varname" : "encamp_s3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-152",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1474.0, 1450.0, 109.0, 22.0 ],
+					"text" : "s soprano_amp",
+					"varname" : "encamp_s4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-167",
+					"maxclass" : "newobj",
+					"numinlets" : 14,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 1144.0, 1390.0, 558.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"filename" : "/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/encoderamp.js",
+						"parameter_enable" : 0
+					}
+,
+					"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/encoderamp.js\" 0.01",
+					"varname" : "encamp_js"
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -7976,6 +8385,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-76", 1 ],
+					"source" : [ "obj-105", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-117", 0 ],
 					"midpoints" : [ 1334.499873638153076, 1219.415940761566162, 1334.499873638153076, 1219.415940761566162 ],
 					"source" : [ "obj-107", 0 ]
@@ -8032,6 +8448,13 @@
 					"destination" : [ "obj-119", 0 ],
 					"midpoints" : [ 1676.999840974807739, 1219.415940761566162, 1676.999840974807739, 1219.415940761566162 ],
 					"source" : [ "obj-113", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-129", 1 ],
+					"source" : [ "obj-114", 0 ]
 				}
 
 			}
@@ -8140,6 +8563,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-130", 0 ],
+					"source" : [ "obj-129", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-14", 1 ],
 					"source" : [ "obj-13", 1 ]
 				}
@@ -8149,6 +8579,119 @@
 				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
 					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-101", 4 ],
+					"order" : 7,
+					"source" : [ "obj-130", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-210", 4 ],
+					"order" : 6,
+					"source" : [ "obj-130", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-52", 4 ],
+					"order" : 4,
+					"source" : [ "obj-130", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-67", 4 ],
+					"order" : 2,
+					"source" : [ "obj-130", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-82", 4 ],
+					"order" : 0,
+					"source" : [ "obj-130", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-87", 4 ],
+					"order" : 1,
+					"source" : [ "obj-130", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-92", 4 ],
+					"order" : 3,
+					"source" : [ "obj-130", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-97", 4 ],
+					"order" : 5,
+					"source" : [ "obj-130", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-167", 0 ],
+					"source" : [ "obj-133", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-167", 1 ],
+					"source" : [ "obj-134", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-167", 2 ],
+					"source" : [ "obj-135", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-167", 3 ],
+					"source" : [ "obj-136", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-167", 4 ],
+					"source" : [ "obj-137", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-167", 5 ],
+					"source" : [ "obj-138", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-167", 6 ],
+					"source" : [ "obj-139", 0 ]
 				}
 
 			}
@@ -8175,6 +8718,41 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-167", 7 ],
+					"source" : [ "obj-140", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-167", 9 ],
+					"source" : [ "obj-141", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-167", 10 ],
+					"source" : [ "obj-142", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-167", 11 ],
+					"source" : [ "obj-143", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-167", 12 ],
+					"source" : [ "obj-144", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-75", 1 ],
 					"source" : [ "obj-145", 1 ]
 				}
@@ -8189,6 +8767,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-167", 13 ],
+					"source" : [ "obj-146", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-7", 2 ],
 					"source" : [ "obj-15", 0 ]
 				}
@@ -8198,6 +8783,34 @@
 				"patchline" : 				{
 					"destination" : [ "obj-27", 0 ],
 					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-149", 0 ],
+					"source" : [ "obj-167", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-150", 0 ],
+					"source" : [ "obj-167", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-151", 0 ],
+					"source" : [ "obj-167", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-152", 0 ],
+					"source" : [ "obj-167", 3 ]
 				}
 
 			}
@@ -8434,6 +9047,13 @@
 					"destination" : [ "obj-37", 0 ],
 					"midpoints" : [ 1244.5, 430.079827189445496, 1229.630098938941956, 430.079827189445496, 1229.630098938941956, 418.079827189445496, 1175.630098938941956, 418.079827189445496, 1175.630098938941956, 349.079827189445496, 1199.499886512756348, 349.079827189445496 ],
 					"source" : [ "obj-270", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-36", 1 ],
+					"source" : [ "obj-3", 0 ]
 				}
 
 			}
@@ -8710,53 +9330,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-101", 4 ],
-					"midpoints" : [ 1171.999889135360718, 739.415940761566162, 1396.529236555099487, 739.415940761566162, 1396.529236555099487, 961.415940761566162, 1311.799896287918045, 961.415940761566162 ],
-					"order" : 7,
-					"source" : [ "obj-58", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-210", 4 ],
-					"midpoints" : [ 1171.999889135360718, 715.415940761566162, 1314.299896049499466, 715.415940761566162 ],
-					"order" : 6,
-					"source" : [ "obj-58", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-52", 4 ],
-					"midpoints" : [ 1171.999889135360718, 739.415940761566162, 1584.299870300292923, 739.415940761566162 ],
-					"order" : 4,
-					"source" : [ "obj-58", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-67", 4 ],
-					"midpoints" : [ 1171.999889135360718, 739.415940761566162, 1836.799846220016434, 739.415940761566162 ],
-					"order" : 2,
-					"source" : [ "obj-58", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-82", 4 ],
-					"midpoints" : [ 1171.999889135360718, 739.415940761566162, 2091.799821901321593, 739.415940761566162 ],
-					"order" : 0,
-					"source" : [ "obj-58", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-87", 4 ],
-					"midpoints" : [ 1171.999889135360718, 739.415940761566162, 1921.529236555099487, 739.415940761566162, 1921.529236555099487, 961.415940761566162, 2083.682175874710083, 961.415940761566162 ],
+					"destination" : [ "obj-129", 0 ],
 					"order" : 1,
 					"source" : [ "obj-58", 0 ]
 				}
@@ -8764,18 +9338,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-92", 4 ],
-					"midpoints" : [ 1171.999889135360718, 739.415940761566162, 1666.529236555099487, 739.415940761566162, 1666.529236555099487, 961.415940761566162, 1829.299846935272171, 961.415940761566162 ],
-					"order" : 3,
-					"source" : [ "obj-58", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-97", 4 ],
-					"midpoints" : [ 1171.999889135360718, 739.415940761566162, 1645.529236555099487, 739.415940761566162, 1645.529236555099487, 961.415940761566162, 1579.299870777130081, 961.415940761566162 ],
-					"order" : 5,
+					"destination" : [ "obj-167", 8 ],
+					"order" : 0,
 					"source" : [ "obj-58", 0 ]
 				}
 
@@ -8942,6 +9506,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-73", 0 ],
+					"source" : [ "obj-68", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-57", 0 ],
 					"source" : [ "obj-69", 0 ]
 				}
@@ -8985,8 +9556,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-76", 0 ],
+					"source" : [ "obj-73", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-61", 1 ],
 					"source" : [ "obj-75", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-111", 0 ],
+					"source" : [ "obj-76", 0 ]
 				}
 
 			}
@@ -10474,6 +11059,13 @@
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
 				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "encoderamp.js",
+				"bootpath" : "~/Claude Drive/MaxMsp/LivingStringProject/code",
+				"patcherrelativepath" : "../code",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

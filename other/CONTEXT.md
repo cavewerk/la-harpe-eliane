@@ -37,6 +37,26 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   toggle→ADSR chain). Has a manual polarity-invert switch for pedals wired
   with reversed up/down values. See
   [docs/ARCHITECTURE.md#sustain-pedal](docs/ARCHITECTURE.md#sustain-pedal).
+- **Encoder-mode pedal** (aka **pedal 2**) — a second global MIDI
+  footswitch (CC 69) that, **while held**, switches the 8 Push macro
+  encoders (rotaries 3–10) from microtuning to **partial-amplitude
+  mode**; releasing it returns them to microtuning. Momentary, not a
+  toggle. Has its own polarity-invert switch, separate from the sustain
+  pedal's — the two pedals could be wired oppositely. Implemented in
+  `code/encoderamp.js` plus a small gate at the top level; see
+  [ARCHITECTURE.md#encoder-mode-switch](ARCHITECTURE.md#encoder-mode-switch)
+  and [ADR 0003](../docs/adr/0003-encoder-mode-switch-pedal.md).
+- **Partial amplitude** — an inner voice's amplitude, the same value a
+  drone-mode fader sets (`select <partial> <0.-1.>` into a voice's
+  `<voice>_amp`). Reachable from two physical controls: the fader banks
+  always, and the macro encoders while the encoder-mode pedal is held.
+  Last writer wins.
+- **ampstate** (`<voice>_ampstate`) — a broadcast of a voice's current 8
+  partial-amplitude levels, tapped off `MCModule`'s amplitude
+  `multislider`. Exists because the Push encoders are *relative*: a tick
+  has to nudge a partial from wherever it already is, so the sender needs
+  the current value. Also the primitive the planned snapshot/
+  interpolation system will read.
 - **Electromagnet channel** — the real output of a voice: a unipolar (0–1,
   never negative — electromagnets pull one direction only) signal sent to
   a discrete physical output channel, picked live via the `live.menu`

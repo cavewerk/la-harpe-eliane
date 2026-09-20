@@ -64,6 +64,10 @@ patchers/
 code/
   helpargs.js                     Vendored Max stock jsui helper (third-party)
   sustain.js                      Sustain-pedal gate for MCLyra's 8 ADSRs (own work)
+  padhold.js                      Per-pad sustain-pedal LED hold (own work)
+  faderamp.js                     Fader CC -> per-partial amplitude message (own work)
+  encoderamp.js                   Push encoder -> per-partial amplitude, while pedal 2 is held (own work)
+docs/adr/                         Architecture decision records
 ```
 
 ## Third-party / vendored code
@@ -82,14 +86,17 @@ self-contained and doesn't require installing a separate Max package:
   used to render an object's "Arguments" list inside a patcher background).
 
 Only `LivingStringProject.maxpat`, `MCModule.maxpat`, `MCLyra.maxpat`,
-`MCHelper.maxpat`, and `code/sustain.js` are original to this project.
+`MCHelper.maxpat`, and everything in `code/` except `helpargs.js` are
+original to this project.
 
 ## Status
 
 Documented, tidied of one dead control path (`gridmodule.maxpat`, a
 16-step sequencer that wasn't part of how the instrument is actually
-played — removed), and extended with a global sustain pedal for keys mode
-(CC 64, with a polarity-invert switch — see
-[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md#sustain-pedal)). The sustain
-pedal hasn't been tested against real hardware yet — this environment
-can't run Max.
+played — removed), and extended with three hardware-tested features: a
+global sustain pedal for keys mode (CC 64, with a polarity-invert
+switch), dynamic fader-bank → voice assignment, and an encoder
+mode-switch on a second momentary footswitch (CC 69) that puts the 8
+Push macro encoders on partial amplitude while it's held. See
+[ARCHITECTURE.md](ARCHITECTURE.md) for how each is wired, `docs/adr/`
+for why, and [ROADMAP.md](ROADMAP.md) for what's next.

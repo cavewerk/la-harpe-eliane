@@ -44,15 +44,43 @@ Reordered 2026-09-10 per the project's author.
    same old press/defer/flush behavior and needed the same fix so the
    LED matches the sound). Hardware-tested and confirmed 2026-09-10 —
    see [ADR 0001](../docs/adr/0001-sustain-repress-to-release.md).
-2. `[ ]` **Encoder mode-switch, phase 1** — one Push button cycles the 8
-   macro encoders (3–10) between **microtuning** (existing) and
-   **partial amplitude**. Encoders 1 & 2 become permanently dedicated to
-   **global tuning** and **master fader** (per-voice, not per-harmonic)
-   — no mode-switch needed for those two. Encoder 11 stays unassigned
-   (see Parked, below). Harmonic multiplier as a third mode-switch
-   target is a stretch item if time allows.
-3. `[ ]` **Start the ADR habit** — see [docs/adr/](../docs/adr/README.md).
-   First real candidates: items 1 and 2 above.
+2. `[x]` **Encoder mode-switch, phase 1** — the 8 macro encoders (3–10)
+   switch between **microtuning** (existing default) and **partial
+   amplitude**. Encoders 1 & 2 stay permanently dedicated to **global
+   tuning** and **master fader** (per-voice, not per-harmonic) — no
+   mode-switch involvement, and neither exists in the patch yet.
+   Encoder 11 stays unassigned (see Parked, below). Harmonic
+   multiplier as a third mode-switch target remains a stretch item.
+
+   Redesigned before building, per the project's author: **not** a Push
+   button toggling between modes, but a **second physical footswitch**
+   ("pedal 2", CC 69) held **momentarily** — hold for partial
+   amplitude, release for microtuning. Hands stay on the Push and
+   there's no latched mode to lose track of on stage.
+
+   Landed 2026-09-14, hardware-tested and confirmed working 2026-09-20
+   — see [ADR 0003](../docs/adr/0003-encoder-mode-switch-pedal.md).
+   `ctlin 69` → `> 63` → `!= 0` with its **own** polarity-invert toggle
+   (separate from the sustain pedal's, since the two pedals could be
+   wired oppositely) → `s encmode_pedal`. The voice-select int now
+   reaches the `jk.pushrotaryAlt` objects through `pak i i` +
+   `expr $i1*(1-$i2)`, so a held pedal feeds them voice 0 and closes
+   their internal gate instead of editing vendored code. A new
+   [`code/encoderamp.js`](../code/encoderamp.js) reads the raw relative
+   encoder deltas off the same `71rot`–`78rot` sends `jk.pushcore`
+   already broadcasts, nudges by 0.01 per tick, and emits the same
+   `select <partial> <0.-1.>` message the fader banks emit. `MCModule`
+   gained one tap — its amplitude multislider → `s #1_ampstate`, plus a
+   `loadbang` to seed it — so nudges start from the real current value
+   rather than jumping. That tap is also the primitive the snapshot
+   system (item 6) will need.
+3. `[x]` **Start the ADR habit** — see [docs/adr/](../docs/adr/README.md).
+   Both first candidates are written ([ADR 0001](../docs/adr/0001-sustain-repress-to-release.md)
+   for item 1, [ADR 0003](../docs/adr/0003-encoder-mode-switch-pedal.md)
+   for item 2), plus [ADR 0002](../docs/adr/0002-dynamic-fader-voice-assignment.md)
+   for item 4. The habit is established; keep writing one per
+   hard-to-reverse decision rather than treating this as a finished
+   task.
 4. `[x]` **Dynamic fader → voice assignment (minimum viable)** — a
    selector (dropdown/`umenu` is enough for v1) per existing 8-CC fader
    block (the bass/tenor hardware already wired) choosing which voice it
@@ -70,11 +98,15 @@ Reordered 2026-09-10 per the project's author.
    before). Each umenu defaults on load to its bank's original target
    (bass bank → bass, tenor bank → tenor) via `loadbang`, so behavior
    is unchanged until someone touches the dropdown.
-5. `[ ]` **Interleaved cleanup** — as the items above touch the
+5. `[~]` **Interleaved cleanup** — as the items above touch the
    fader-chain code, `sustain.js`, and the encoder wiring, comment those
    sections and adopt `patcherargs` there if it helps. Not a separate
    pass — see Code Cleanup below for the full pass, which is mostly
    scheduled after this window.
+   In progress: both fader banks, the sustain-pedal block, the new
+   pedal-2 block, the encoder gate and the `MCModule` ampstate tap now
+   carry in-patch comments. `patcherargs` still has zero uses in
+   project code.
 6. `[ ]` **Snapshot + interpolation system** — capture a voice's 8
    partial-amplitude fader values as a named snapshot; blend between two
    snapshots by a 0–1 amount. Build as a software feature first
