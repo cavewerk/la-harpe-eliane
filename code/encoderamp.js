@@ -25,8 +25,11 @@
 	Inlets 0-7:   raw relative CC value from `r 71rot` .. `r 78rot`
 	              (jk.pushcore's per-rotary sends; rotary 3 = partial 1
 	              ... rotary 10 = partial 8 - see rotary.json)
-	Inlet 8:      target voice 1-4 (the same int the jk.pushrotaryAlt
-	              objects get from the voice-select buttons / last pad)
+	Inlet 8:      target voice (the same int the jk.pushrotaryAlt objects
+	              get from the voice-select buttons / last pad). Since the
+	              eight-voice expansion this can be 1-8; anything above
+	              VOICES parks this object on "no target" until a second
+	              bank exists.
 	Inlet 9:      encoder-mode pedal state, 1 = held, 0 = released
 	Inlets 10-13: current 8-partial amplitude list for voice 1..4, from
 	              `r bass_ampstate` .. `r soprano_ampstate`
@@ -49,7 +52,8 @@ var FIRST_AMPSTATE_INLET = 10;
 var step = (jsarguments.length > 0) ? Number(jsarguments[jsarguments.length - 1]) : 0.01;
 if (isNaN(step) || step <= 0) step = 0.01;
 
-var voice = 1;        // 1-4, target voice for amplitude nudges
+var voice = 1;        // 1-VOICES = target voice for amplitude nudges,
+                      // 0 = selected voice is outside this bank (see setVoice)
 var pedalDown = 0;    // 1 while the encoder-mode pedal is held
 var amp = [];         // amp[voice-1][partial-1], 0.-1.
 for (var v = 0; v < VOICES; v++) {
@@ -67,6 +71,7 @@ function ticksFromCC(raw) {
 
 function nudge(partial, raw) {
 	if (!pedalDown) return; // microtuning mode: jk.pushrotaryAlt owns the encoder
+	if (voice < 1) return;  // selected voice is outside this bank - no target
 	var ticks = ticksFromCC(raw);
 	if (ticks === 0) return;
 	var v = voice - 1;
@@ -79,7 +84,11 @@ function nudge(partial, raw) {
 
 function setVoice(value) {
 	value = Number(value);
-	if (value >= 1 && value <= VOICES) voice = value;
+	// Voice-select emits 1-8 since the eight-voice expansion, but this object
+	// only shadows VOICES banks. An index past that means "no target" rather
+	// than silently keeping the previous one, which would send every nudge to
+	// whichever voice happened to be selected before.
+	voice = (value >= 1 && value <= VOICES) ? value : 0;
 }
 
 function msg_int(value) {

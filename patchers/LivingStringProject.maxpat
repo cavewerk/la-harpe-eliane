@@ -223,10 +223,10 @@
 					"id" : "obj-128",
 					"maxclass" : "newobj",
 					"numinlets" : 5,
-					"numoutlets" : 5,
-					"outlettype" : [ "bang", "bang", "bang", "bang", "" ],
+					"numoutlets" : 9,
+					"outlettype" : [ "bang", "bang", "bang", "bang", "bang", "bang", "bang", "bang", "" ],
 					"patching_rect" : [ 1094.999895572662354, 375.357149124145508, 64.0, 22.0 ],
-					"text" : "sel 0 1 2 3",
+					"text" : "sel 0 1 2 3 4 5 6 7",
 					"varname" : "obj-103"
 				}
 
@@ -2246,19 +2246,6 @@
 									"patching_rect" : [ 774.0, 314.0, 34.0, 22.0 ],
 									"text" : "sel 1",
 									"varname" : "obj-70"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-24",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 797.0, 269.0, 50.0, 22.0 ],
-									"text" : "0",
-									"varname" : "obj-69"
 								}
 
 							}
@@ -8337,14 +8324,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-24", 1 ],
-									"order" : 0,
-									"source" : [ "obj-116", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-28", 0 ],
 									"order" : 1,
 									"source" : [ "obj-116", 0 ]
@@ -12330,7 +12309,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1000.0, 770.0, 109.0, 22.0 ],
-					"text" : "expr $i1*(1-$i2)",
+					"text" : "expr ($i1<=4)*$i1*(1-$i2)",
 					"varname" : "encgate_expr"
 				}
 
@@ -12972,6 +12951,404 @@
 					"presentation_rect" : [ 417.241401195526123, 238.793115973472595, 50.0, 22.0 ],
 					"text" : "delta",
 					"varname" : "delta_label"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-323",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1190.0, 3600.0, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "pushtext[1]",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "pushtext22",
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"text" : "alpha",
+					"texton" : "alpha",
+					"varname" : "scenetext_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-324",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1190.0, 3620.0, 29.5, 22.0 ],
+					"text" : "5",
+					"varname" : "sceneidx_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-325",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 1235.0, 3600.0, 171.0, 62.0 ],
+					"text" : "jk.push @button scene5 @oncolor w @offcolor b @textoff alpha @texton alpha @mode r @radio volumes",
+					"varname" : "jkpush_scene5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-326",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1190.0, 3682.5, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "pushtext[2]",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "pushtext22",
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"text" : "beta",
+					"texton" : "beta",
+					"varname" : "scenetext_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-327",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1190.0, 3702.5, 29.5, 22.0 ],
+					"text" : "6",
+					"varname" : "sceneidx_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-328",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 1235.0, 3682.5, 171.0, 62.0 ],
+					"text" : "jk.push @button scene6 @oncolor w @offcolor b @textoff beta @texton beta @mode r @radio volumes",
+					"varname" : "jkpush_scene6"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-329",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1190.0, 3765.0, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "pushtext[3]",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "pushtext22",
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"text" : "gamma",
+					"texton" : "gamma",
+					"varname" : "scenetext_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-330",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1190.0, 3785.0, 29.5, 22.0 ],
+					"text" : "7",
+					"varname" : "sceneidx_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-331",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 1235.0, 3765.0, 171.0, 62.0 ],
+					"text" : "jk.push @button scene7 @oncolor w @offcolor b @textoff gamma @texton gamma @mode r @radio volumes",
+					"varname" : "jkpush_scene7"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-332",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1190.0, 3847.5, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "pushtext[4]",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "pushtext22",
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"text" : "delta",
+					"texton" : "delta",
+					"varname" : "scenetext_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-333",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1190.0, 3867.5, 29.5, 22.0 ],
+					"text" : "8",
+					"varname" : "sceneidx_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-334",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 1235.0, 3847.5, 171.0, 62.0 ],
+					"text" : "jk.push @button scene8 @oncolor w @offcolor b @textoff delta @texton delta @mode r @radio volumes",
+					"varname" : "jkpush_scene8"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-335",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1420.0, 3560.0, 900.0, 34.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activebgoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextcolor" : 						{
+							"expression" : ""
+						}
+,
+						"activetextoncolor" : 						{
+							"expression" : ""
+						}
+,
+						"bordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "pushtext16[1]",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "pushtext16",
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"text" : "Voice-select for the four expansion voices (scene5-8 = grid rows 4-1). Placed here only because the area under the original four scene buttons is occupied by the rotary bank. Same wiring: sel outlet -> live.text -> jk.push + index message -> the shared int. See ADR 0008.",
+					"texton" : "soprano",
+					"varname" : "cmt_scene_expansion"
 				}
 
 			}
@@ -14978,8 +15355,160 @@
 				}
 
 			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-323", 0 ],
+					"source" : [ "obj-128", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-325", 0 ],
+					"order" : 0,
+					"source" : [ "obj-323", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-324", 0 ],
+					"order" : 1,
+					"source" : [ "obj-323", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-323", 0 ],
+					"source" : [ "obj-325", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-58", 0 ],
+					"source" : [ "obj-324", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-326", 0 ],
+					"source" : [ "obj-128", 5 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-328", 0 ],
+					"order" : 0,
+					"source" : [ "obj-326", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-327", 0 ],
+					"order" : 1,
+					"source" : [ "obj-326", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-326", 0 ],
+					"source" : [ "obj-328", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-58", 0 ],
+					"source" : [ "obj-327", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-329", 0 ],
+					"source" : [ "obj-128", 6 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-331", 0 ],
+					"order" : 0,
+					"source" : [ "obj-329", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-330", 0 ],
+					"order" : 1,
+					"source" : [ "obj-329", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-329", 0 ],
+					"source" : [ "obj-331", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-58", 0 ],
+					"source" : [ "obj-330", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-332", 0 ],
+					"source" : [ "obj-128", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-334", 0 ],
+					"order" : 0,
+					"source" : [ "obj-332", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-333", 0 ],
+					"order" : 1,
+					"source" : [ "obj-332", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-332", 0 ],
+					"source" : [ "obj-334", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-58", 0 ],
+					"source" : [ "obj-333", 0 ]
+				}
+
+			}
  ],
 		"parameters" : 		{
+			"obj-323" : [ "pushtext[1]", "pushtext", 0 ],
+			"obj-326" : [ "pushtext[2]", "pushtext", 0 ],
+			"obj-329" : [ "pushtext[3]", "pushtext", 0 ],
+			"obj-332" : [ "pushtext[4]", "pushtext", 0 ],
 			"obj-100" : [ "2[29]", "2", 0 ],
 			"obj-102" : [ "2[30]", "2", 0 ],
 			"obj-103" : [ "2[31]", "2", 0 ],

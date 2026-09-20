@@ -251,13 +251,19 @@ eight discrete electromagnet channels 3-10. `alpha` landed 2026-09-20
 beta/gamma/delta the same day
 ([ADR 0007](../docs/adr/0007-eight-voice-expansion-phase-2.md)).
 
-The `scene` column is the voice-select button. **Scenes 5-8 do not
-exist yet**: the `p` subpatcher's outlet still feeds a 4-wide
-`sel 0 1 2 3`, so the four new voices **play but cannot be selected** —
-the eight Push encoders and both fader banks still only reach
-bass/tenor/alto/soprano. Widening that chain is the remaining work (see
-[ROADMAP.md](ROADMAP.md)); it is the gap between a voice being audible
-and being playable.
+The `scene` column is the voice-select button. **All eight now exist**
+— the `p` subpatcher's outlet feeds `sel 0 1 2 3 4 5 6 7`, and all
+eight buttons share one `@radio volumes` group, so voice-select works
+for every voice by button and by last-pad-pressed (see
+[ADR 0008](../docs/adr/0008-voice-select-to-eight.md)). Scene buttons
+5-8 sit far below the original four in the patch (y≈3600 vs y≈353),
+because the space beneath them is occupied by the rotary bank.
+
+**The encoders and fader banks still reach only the original four.**
+Selecting a new voice is safe but currently inert: the encoder gate is
+closed for indices 5-8 and `encoderamp.js` parks on "no target". Giving
+those voices somewhere to land is the remaining work — see
+[ROADMAP.md](ROADMAP.md).
 
 Each pad's LED ring is **five** cords, not four: `padhold.js` →
 `live.text` → `jk.push` → `padhold.js`, plus one from the shared
@@ -410,10 +416,14 @@ code, included so the patch is self-contained.
    No longer planned as a standalone hardcoded-CC extension; see
    [ROADMAP.md](ROADMAP.md) — this is now expected to resolve as a side
    effect of the dynamic fader-to-voice assignment feature.
-2. **`obj-24` in the `p` subpatcher is dead** — a `0` message whose only
-   cord writes its right inlet and whose outlet goes nowhere, almost
-   certainly a relayout leftover. Left in place; removing it is a
-   separate decision.
+2. **Varnames do not survive a Max save.** Max regenerates them across
+   the patch, including pre-existing ones (`obj-60[1]` -> `obj-79`), so
+   descriptive names set on bpatchers by tooling are lost at the next
+   save. **Box ids are stable** and are the durable handle for anything
+   that needs to find an object later. This limits how far the
+   patcher-hygiene item can rely on naming.
+
+   (`obj-24`, previously listed here as dead, was removed in ADR 0008.)
 
 Lightshow (previously listed here) has been scrapped as a feature entirely
 — not being pursued or investigated further.
