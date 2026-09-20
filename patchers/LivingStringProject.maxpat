@@ -20,7 +20,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 797.0, 420.0, 50.0, 22.0 ],
-					"text" : "4",
+					"text" : "82",
 					"varname" : "obj-162"
 				}
 
@@ -408,8 +408,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-137"
+
 				}
 
 			}
@@ -632,8 +631,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-133[1]"
+
 				}
 
 			}
@@ -871,8 +869,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-128"
+
 				}
 
 			}
@@ -1110,8 +1107,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-123"
+
 				}
 
 			}
@@ -1545,8 +1541,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-113"
+
 				}
 
 			}
@@ -1810,8 +1805,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-106"
+
 				}
 
 			}
@@ -2062,8 +2056,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-100[1]"
+
 				}
 
 			}
@@ -7032,8 +7025,7 @@
 						}
 
 					}
-,
-					"varname" : "obj-82[1]"
+
 				}
 
 			}
@@ -7056,7 +7048,7 @@
 				"box" : 				{
 					"fontsize" : 10.0,
 					"id" : "obj-120",
-					"items" : [ "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "UltraLite-mk4 MIDI In", ",", "to Max 1", ",", "to Max 2", ",", "Ableton Push 2 Live Port", ",", "Ableton Push 2 User Port" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -7161,7 +7153,7 @@
 				"box" : 				{
 					"fontsize" : 10.0,
 					"id" : "obj-127",
-					"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "from Max 1", ",", "from Max 2" ],
+					"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "Euphonix MIDI Euphonix Port 1", ",", "Euphonix MIDI Euphonix Port 2", ",", "Euphonix MIDI Euphonix Port 3", ",", "Euphonix MIDI Euphonix Port 4", ",", "UltraLite-mk4 MIDI Out", ",", "from Max 1", ",", "from Max 2", ",", "Ableton Push 2 Live Port", ",", "Ableton Push 2 User Port" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
