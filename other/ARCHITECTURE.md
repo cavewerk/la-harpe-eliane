@@ -270,10 +270,12 @@ Push 8x8 grid, highest voice at the top. See
 | gamma   | 2        | 44-51 | 8-15   | magenta | 7     | 9      | yes   |
 | delta   | 1        | 36-43 | 0-7    | white   | 8     | 10     | yes   |
 
-\* **Alpha and delta are currently both white.** Alpha was changed from
-orange on 2026-09-22 without noticing delta already held `w`. `o` is the
-only free solid colour; the intended fix is `wd` (white-dimmed) for
-alpha, pending a Max-closed window.
+\* **Alpha and delta are both white**, and that is accepted for now.
+Alpha was changed from orange on 2026-09-22; delta already held `w`. The
+two rows sit at opposite ends of the grid (row 4 and row 1), so they are
+not especially confusable in play. If it ever needs separating, `o` is
+the only free solid colour and `wd` (white-dimmed) is the closest
+variant to the current look.
 
 Grid note numbering: 36 is bottom-left, +1 rightwards, +8 per row
 upward. **The grid is now fully allocated** — 64 pads, eight voices,
