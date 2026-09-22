@@ -1,6 +1,6 @@
 # Roadmap
 
-_Last updated: 2026-09-10, from a grilling session naming this roadmap's
+_Last updated: 2026-09-22 (eight-voice expansion complete). Originally written 2026-09-10, from a grilling session naming this roadmap's
 destination. See [CONTEXT.md](CONTEXT.md) and [ARCHITECTURE.md](ARCHITECTURE.md)
 for current-state definitions and architecture — this file is where
 they're headed._
@@ -98,6 +98,8 @@ Reordered 2026-09-10 per the project's author.
    before). Each umenu defaults on load to its bank's original target
    (bass bank → bass, tenor bank → tenor) via `loadbang`, so behavior
    is unchanged until someone touches the dropdown.
+   Widened to all eight voices (`gate 8`) on 2026-09-22 — see
+   [ADR 0012](../docs/adr/0012-fader-banks-to-eight-targets.md).
 5. `[~]` **Interleaved cleanup** — as the items above touch the
    fader-chain code, `sustain.js`, and the encoder wiring, comment those
    sections and adopt `patcherargs` there if it helps. Not a separate
@@ -166,9 +168,9 @@ Reordered 2026-09-10 per the project's author.
    see above).
 3. `[ ]` **Preset system for pad rows** — switch between the current
    4-row and a future 8-row pad layout, and assign a given row to a
-   voice. Urgency rising: the 8-row layout is no longer hypothetical —
-   the 8-voice extension is in progress (see Unscheduled, below, which
-   is now `[~]`), and `alpha` already occupies row 4.
+   voice. The 8-row layout is no longer hypothetical — the 8-voice
+   extension is complete (see Unscheduled, below) and all 64 pads are
+   allocated, so what remains of this item is assigning rows to voices.
 
    Groundwork landed 2026-09-20: the four voices were squeezed onto
    the **top four rows** (rows 8-5, soprano at the top down to bass),
@@ -218,7 +220,7 @@ Reordered 2026-09-10 per the project's author.
   eventually unlock native screen display and sysex handling without
   fighting the vendored library. Worth an ADR once real work starts,
   given how much it would touch.
-- `[~]` **8-voice extension** — **now active and in progress.** Scoped
+- `[x]` **8-voice extension** — **complete 2026-09-22** (phase 4, ADR 0012). Scoped
   2026-09-20; the scoping conversation this item was waiting on has
   happened and its outcomes are recorded in
   [ADR 0005](../docs/adr/0005-eight-voice-expansion-phase-1.md).
@@ -301,8 +303,16 @@ Reordered 2026-09-10 per the project's author.
     **Both encoder modes now reach all eight voices**, closing the
     asymmetry ADR 0009 introduced.
 
-  - `[ ]` **Phase 4 — fader banks to eight targets.** `gate 4` →
-    `gate 8` and four more `umenu` items on each existing bank.
+  - `[x]` **Phase 4 — fader banks to eight targets.** Landed and
+    hardware-tested 2026-09-22. Both banks' `gate 4` → `gate 8`, both
+    `umenu`s gain alpha/beta/gamma/delta, and four new
+    `s <voice>_amp` sends shared by both gates. Loadbang defaults kept
+    (bank 1 → bass, bank 2 → tenor). 738 → 746 cords, 0 lost. See
+    [ADR 0012](../docs/adr/0012-fader-banks-to-eight-targets.md).
+
+  **The expansion is complete**: pads, voice-select, both encoder modes
+  and both fader banks all reach all eight voices. Next pressure is the
+  patcher hygiene pass (long-term item 1).
 
 ## Explicitly parked
 

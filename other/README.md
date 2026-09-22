@@ -55,7 +55,7 @@ Each voice is one instance of three bpatchers, chained together — see
 ```
 LivingStringProject.maxproj      Max project file (entry point)
 patchers/
-  LivingStringProject.maxpat     Top-level patch: Push/fader UI, MIDI mapping, 4 voices
+  LivingStringProject.maxpat     Top-level patch: Push/fader UI, MIDI mapping, 8 voices
   MCModule.maxpat                Per-voice additive engine (own work)
   MCLyra.maxpat                  Per-voice ADSR envelope (own work)
   MCHelper.maxpat                Per-voice electromagnet output stage (own work)

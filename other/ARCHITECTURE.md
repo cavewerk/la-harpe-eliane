@@ -92,12 +92,11 @@ MCHelper   -- mixdown, splits to:
   microtuning by default and for partial amplitude while pedal 2 is held
   — see [Encoder mode-switch](#encoder-mode-switch) below).
 - **Drone mode control surface**: raw MIDI CC input via `ctlin`, separate
-  hardware from the Push (an external fader bank). Only bass and tenor are
-  wired so far — alto/soprano have no fader chain yet (see
-  [Open items](#open-items)). Each wired voice is `ctlin` → one
-  [`code/faderamp.js`](../code/faderamp.js) instance → `s bass_amp` / `s
-  tenor_amp`. See [Fader-to-amplitude mapping](#fader-to-amplitude-mapping)
-  below.
+  hardware from the Push (an external fader controller with two banks of
+  8). Each bank is `ctlin` → one [`code/faderamp.js`](../code/faderamp.js)
+  instance → a `gate 8` steered by that bank's own voice dropdown → any
+  of the eight `s <voice>_amp`. See
+  [Fader-to-amplitude mapping](#fader-to-amplitude-mapping) below.
 - **Voice-select buttons** (formerly documented as plain "scene volume
   buttons"): a `jk.push`-driven radio group, one button per voice
   (labels renamed from `0dB`/`-6dB`/`-12dB`/`-18dB` to
@@ -297,8 +296,9 @@ amplitude while pedal 2 is held (see
 [ADR 0009](../docs/adr/0009-encoder-amplitude-to-eight-voices.md)), and
 microtuning when it is released, via a **second bank** of
 `jk.pushrotaryAlt` (see
-[ADR 0010](../docs/adr/0010-second-rotary-bank.md)). **The fader banks
-still reach only the original four.** See [ROADMAP.md](ROADMAP.md).
+[ADR 0010](../docs/adr/0010-second-rotary-bank.md)). **Both fader banks
+reach all eight** too, each through its own dropdown (see
+[ADR 0012](../docs/adr/0012-fader-banks-to-eight-targets.md)).
 
 Each pad's LED ring is **five** cords, not four: `padhold.js` →
 `live.text` → `jk.push` → `padhold.js`, plus one from the shared
@@ -357,22 +357,33 @@ Two practical consequences:
 
 ## Fader-to-amplitude mapping
 
-Each wired voice's 8 harmonic-amplitude faders live on one bank of 8
-consecutive MIDI CCs from an external controller (bass: CC 32–39, tenor: CC
-40–47 — alto/soprano aren't wired yet, see [Open items](#open-items)).
+The external controller has two **fader banks** of 8 consecutive MIDI
+CCs — bank 1 on CC 32–39, bank 2 on CC 40–47. Each bank drives the 8
+harmonic amplitudes of whichever voice its dropdown selects.
 
-- **Top level** (`LivingStringProject.maxpat`): `ctlin` reads the whole CC
-  range at once, outputting `[value 0-127, controller#, channel]`. Its value
-  and controller# outlets feed one [`code/faderamp.js`](../code/faderamp.js)
-  instance per voice — `js faderamp.js 31` for bass, `js faderamp.js 39` for
-  tenor — whose single argument is that voice's CC-to-slider-index offset
-  (its lowest fader's CC number, minus 1). The object turns a fader move
-  into a `"select <1-8> <0.-1.>"` message and sends it on `s bass_amp` / `s
-  tenor_amp`. This replaced an equivalent five-object chain per voice (a
-  subtract, a `scale`, a `pack`, a `zl.rot`, and a `select $1 $2` message
-  box) with one parameterized object, making it straightforward to wire up
-  alto/soprano later (just a `ctlin` and a `faderamp.js` with the right
-  offset).
+- **Top level** (`LivingStringProject.maxpat`): per bank, `ctlin` reads the
+  whole CC range at once, outputting `[value 0-127, controller#, channel]`.
+  Its value and controller# outlets feed one
+  [`code/faderamp.js`](../code/faderamp.js) instance — `js faderamp.js 31`
+  for bank 1, `js faderamp.js 39` for bank 2 — whose single argument is
+  the bank's CC-to-slider-index offset (its lowest fader's CC number,
+  minus 1). The object turns a fader move into a
+  `"select <1-8> <0.-1.>"` message. This replaced an equivalent
+  five-object chain per voice (a subtract, a `scale`, a `pack`, a
+  `zl.rot`, and a `select $1 $2` message box) with one parameterized
+  object.
+- **Target selection** ([ADR 0002](../docs/adr/0002-dynamic-fader-voice-assignment.md),
+  widened in [ADR 0012](../docs/adr/0012-fader-banks-to-eight-targets.md)):
+  that message enters the right inlet of a `gate 8` (`obj-27` bank 1,
+  `obj-61` bank 2). A `umenu` per bank (bass … soprano, alpha … delta)
+  → `+ 1` drives the gate's control inlet, and outlets 0-7 feed
+  `s bass_amp`, `s tenor_amp`, `s alto_amp`, `s soprano_amp`,
+  `s alpha_amp`, `s beta_amp`, `s gamma_amp`, `s delta_amp` — one set of
+  eight sends **shared by both gates**, and separate from
+  `encoderamp.js`'s own copies of the same send names. A `loadbang` per
+  bank sets its default: bank 1 → bass, bank 2 → tenor. The two
+  dropdowns are independent of encoder voice-select and of each other;
+  both can point at the same voice.
 - **`MCModule.maxpat`**: `r #1_amp` receives that message directly into a
   `multislider` (the on-screen per-harmonic amplitude display), whose
   further `iter`/`counter`/`pack`/`zl.rot` chain feeds each harmonic's
@@ -452,12 +463,7 @@ code, included so the patch is self-contained.
 
 ## Open items
 
-1. **Alto/soprano have no drone-mode fader chain** — confirmed absent (only
-   two `ctlin` objects exist in the whole patch, both for bass/tenor).
-   No longer planned as a standalone hardcoded-CC extension; see
-   [ROADMAP.md](ROADMAP.md) — this is now expected to resolve as a side
-   effect of the dynamic fader-to-voice assignment feature.
-2. **Varnames do not survive a Max save.** Max regenerates them across
+1. **Varnames do not survive a Max save.** Max regenerates them across
    the patch, including pre-existing ones (`obj-60[1]` -> `obj-79`), so
    descriptive names set on bpatchers by tooling are lost at the next
    save. **Box ids are stable** and are the durable handle for anything

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 219.0, 135.0, 670.0, 465.0 ],
+		"rect" : [ 215.0, 133.0, 670.0, 465.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -11988,7 +11988,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-8",
-					"items" : [ "bass", ",", "tenor", ",", "alto", ",", "soprano" ],
+					"items" : [ "bass", ",", "tenor", ",", "alto", ",", "soprano", ",", "alpha", ",", "beta", ",", "gamma", ",", "delta" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12017,10 +12017,10 @@
 					"id" : "obj-27",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
+					"numoutlets" : 8,
+					"outlettype" : [ "", "", "", "", "", "", "", "" ],
 					"patching_rect" : [ 1944.0, 595.0, 54.0, 22.0 ],
-					"text" : "gate 4",
+					"text" : "gate 8",
 					"varname" : "fadertarget_bass_gate"
 				}
 
@@ -12078,7 +12078,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-57",
-					"items" : [ "bass", ",", "tenor", ",", "alto", ",", "soprano" ],
+					"items" : [ "bass", ",", "tenor", ",", "alto", ",", "soprano", ",", "alpha", ",", "beta", ",", "gamma", ",", "delta" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12107,10 +12107,10 @@
 					"id" : "obj-61",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
+					"numoutlets" : 8,
+					"outlettype" : [ "", "", "", "", "", "", "", "" ],
 					"patching_rect" : [ 2089.0, 595.0, 54.0, 22.0 ],
-					"text" : "gate 4",
+					"text" : "gate 8",
 					"varname" : "fadertarget_tenor_gate"
 				}
 
@@ -12147,8 +12147,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1801.0, 434.0, 561.0, 20.0 ],
-					"text" : "Fader bank 1 (CC 32-39) -> voice (independent from encoder targeting)",
+					"patching_rect" : [ 1801.0, 420.0, 1100.0, 20.0 ],
+					"text" : "Fader banks -> voice (independent from encoder targeting). Each bank: ctlin -> js faderamp.js -> gate 8, steered by its umenu -> + 1. Reaches all 8 voices; both banks share the 8 s <voice>_amp below. loadbang defaults: bank 1 (CC 32-39) -> bass, bank 2 (CC 40-47) -> tenor. See ADR 0002 / 0012.",
 					"varname" : "fadertarget_bass_label"
 				}
 
@@ -15573,6 +15573,54 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"id" : "obj-397",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 2480.0, 647.0, 107.0, 22.0 ],
+					"text" : "s alpha_amp",
+					"varname" : "fadertarget_alpha_send"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-398",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 2597.0, 647.0, 100.0, 22.0 ],
+					"text" : "s beta_amp",
+					"varname" : "fadertarget_beta_send"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-399",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 2707.0, 647.0, 107.0, 22.0 ],
+					"text" : "s gamma_amp",
+					"varname" : "fadertarget_gamma_send"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-400",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 2824.0, 647.0, 107.0, 22.0 ],
+					"text" : "s delta_amp",
+					"varname" : "fadertarget_delta_send"
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -18706,6 +18754,62 @@
 					"midpoints" : [ 1286.999878168106079, 1156.415940761566162, 1548.999857187271118, 1156.415940761566162 ],
 					"order" : 0,
 					"source" : [ "obj-99", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-397", 0 ],
+					"source" : [ "obj-27", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-397", 0 ],
+					"source" : [ "obj-61", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-398", 0 ],
+					"source" : [ "obj-27", 5 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-398", 0 ],
+					"source" : [ "obj-61", 5 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-399", 0 ],
+					"source" : [ "obj-27", 6 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-399", 0 ],
+					"source" : [ "obj-61", 6 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-400", 0 ],
+					"source" : [ "obj-27", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-400", 0 ],
+					"source" : [ "obj-61", 7 ]
 				}
 
 			}

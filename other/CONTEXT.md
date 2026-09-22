@@ -23,8 +23,10 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   **All eight are selectable** as of ADR 0008 — by scene button and by
   last-pad-pressed — and the Push encoders reach all eight in both
   modes: **partial amplitude** (ADR 0009) and **microtuning** via a
-  second rotary bank (ADR 0010). **The fader banks still address only
-  the original four.** See **Voice-select buttons** below.
+  second rotary bank (ADR 0010). Both **fader banks** can target any of
+  the eight from their dropdowns (ADR 0012), which completes the
+  expansion: every control surface reaches every voice. See
+  **Voice-select buttons** below.
 - **Global tuning** — a voice's fundamental / open-string frequency.
 - **Inner voice** (aka **harmonic**) — one of the 8 additive-synthesis
   partials inside a voice's oscillator bank (`MCModule`'s 8 `mc.*`
@@ -66,8 +68,17 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
 - **Partial amplitude** — an inner voice's amplitude, the same value a
   drone-mode fader sets (`select <partial> <0.-1.>` into a voice's
   `<voice>_amp`). Reachable from two physical controls: the fader banks
-  always, and the macro encoders while the encoder-mode pedal is held.
-  Last writer wins.
+  always (each bank aimed at any of the eight voices by its own
+  dropdown — see **Fader bank** below), and the macro encoders while the
+  encoder-mode pedal is held. Last writer wins.
+- **Fader bank** — one group of 8 consecutive CCs on the external fader
+  controller, driving one voice's 8 partial amplitudes. There are two:
+  bank 1 (CC 32-39) and bank 2 (CC 40-47). Each has a `umenu` choosing
+  its target voice, **independent** of encoder voice-select; it defaults
+  on load to bass (bank 1) and tenor (bank 2). All eight voices are
+  targets as of [ADR 0012](../docs/adr/0012-fader-banks-to-eight-targets.md);
+  the mechanism is [ADR 0002](../docs/adr/0002-dynamic-fader-voice-assignment.md).
+  Both banks can point at the same voice.
 - **ampstate** (`<voice>_ampstate`) — a broadcast of a voice's current 8
   partial-amplitude levels, tapped off `MCModule`'s amplitude
   `multislider`. Exists because the Push encoders are *relative*: a tick
