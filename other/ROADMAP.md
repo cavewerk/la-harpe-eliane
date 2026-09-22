@@ -121,13 +121,15 @@ Reordered 2026-09-10 per the project's author.
    (testable with an on-screen slider) before any Arc integration.
    Pulled forward from the long-term horizon on 2026-09-10.
 
-   **Not greenfield** — discovered 2026-09-20 during the 8-voice work:
-   the patch already has Max's built-in patcher-snapshot mechanism in
-   active use, with 18 named snapshots stored in `patcher.snapshot` as
-   longname-keyed `parameter_values` maps. Whatever gets built should
-   start from what is already there rather than alongside it. This is
-   also the mechanism that phase 1 of the 8-voice expansion collided
-   with — see the blocker under Unscheduled.
+   **Not greenfield** — the patch already uses Max's built-in patcher
+   snapshots, and as of 2026-09-22 they are consolidated to an
+   eight-voice baseline, `octo`, holding 371 parameter values across all
+   eight voices ([ADR 0011](../docs/adr/0011-octo-snapshot-baseline.md)).
+   Whatever gets built should extend that rather than sit alongside it,
+   and it now has a working eight-voice reference point to blend
+   against. The "snapshots don't know about the new voices" blocker
+   raised during the expansion is **closed**.
+
 
 **Stretch, if the above land early:**
 - Harmonic multiplier as the encoder mode-switch's third target.

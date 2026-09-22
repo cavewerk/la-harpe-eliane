@@ -237,6 +237,11 @@ a pedal rather than the Push button the roadmap originally sketched.
   the fader banks emit into `s <voice>_amp` (outlets 0-7). Deltas
   arriving while the pedal is up are dropped.
 
+  **Microtuning range** is set by the `scale 0 1000 -0.03 0.03` sitting
+  between each voice's `pak` and its `s <voice>_micro`, i.e. ±0.03.
+  Widened from ±0.02 on 2026-09-22, consistently across all eight
+  voices in both rotary banks.
+
   **This path covers all eight voices**, and got there without touching
   `jk.pushrotaryAlt` — it never went through that abstraction, and
   `MCModule` addresses its sends by `#1` substitution, so all eight
@@ -260,10 +265,15 @@ Push 8x8 grid, highest voice at the top. See
 | alto    | 7        | 84-91 | 48-55  | purple  | 2     | 5      | yes   |
 | tenor   | 6        | 76-83 | 40-47  | green   | 3     | 4      | yes   |
 | bass    | 5        | 68-75 | 32-39  | cyan    | 4     | 3      | yes   |
-| alpha   | 4        | 60-67 | 24-31  | orange  | 5     | 7      | yes   |
+| alpha   | 4        | 60-67 | 24-31  | white*  | 5     | 7      | yes   |
 | beta    | 3        | 52-59 | 16-23  | blue    | 6     | 8      | yes   |
 | gamma   | 2        | 44-51 | 8-15   | magenta | 7     | 9      | yes   |
 | delta   | 1        | 36-43 | 0-7    | white   | 8     | 10     | yes   |
+
+\* **Alpha and delta are currently both white.** Alpha was changed from
+orange on 2026-09-22 without noticing delta already held `w`. `o` is the
+only free solid colour; the intended fix is `wd` (white-dimmed) for
+alpha, pending a Max-closed window.
 
 Grid note numbering: 36 is bottom-left, +1 rightwards, +8 per row
 upward. **The grid is now fully allocated** — 64 pads, eight voices,
@@ -375,27 +385,33 @@ consecutive MIDI CCs from an external controller (bass: CC 32–39, tenor: CC
 
 The patch uses Max's built-in **patcher snapshot** mechanism — not
 `pattr`/`pattrstorage`, of which it contains none. `patcher.snapshot`
-holds one active snapshot plus a `snapshotlist` of **18 named ones**
-(`MASTER`, `jam1`, `jam4`, `lolo`, `cmmsd`, `dialTest`, several `May*`
-and `jam*` variants). Each stores a `valuedictionary/parameter_values`
-map keyed by parameter longname, 186-194 entries.
+holds one active snapshot plus a `snapshotlist`, each storing a
+`valuedictionary/parameter_values` map keyed by parameter longname.
 
-This is how the four original voices' state persists, and it was
-undocumented until the eight-voice work ran into it. Two things worth
-knowing:
+This is how a voice's state persists, and it was undocumented until the
+eight-voice work ran into it. Two things worth knowing:
 
 - **A snapshot is explicit stored state and is not rewritten when the
-  file is saved.** A newly added object never enters one by itself.
+  file is saved.** A newly added object never enters one by itself —
+  which is why every voice added during the expansion was initially
+  invisible to every snapshot.
 - **Recall only writes the parameters a snapshot contains** and leaves
-  everything else alone. So recalling `MASTER` restores the four
-  original voices and leaves `alpha` (and any future voice) untouched.
+  everything else alone, so a partial snapshot silently leaves the
+  voices it does not mention wherever they were.
 
-The output-channel case was resolved by moving that one value out of
-snapshot state and into a creation argument (see `MCHelper` above and
-[ADR 0006](../docs/adr/0006-mchelper-output-channel-as-creation-argument.md)).
-The general gap is still open, and overlaps the snapshot/interpolation
-item on the [roadmap](ROADMAP.md) — which is therefore not a greenfield
-feature.
+As of 2026-09-22 the list is **two**: `6-1-5-7`, and **`octo`** — an
+eight-voice baseline holding 371 parameter values (against 186 before),
+covering all 64 pad buttons and all eight output channels. `octo` is
+also the active snapshot, so a fresh open comes up with all eight voices
+in a known state. The sixteen older four-voice snapshots (`MASTER`,
+`jam1`, `jam4`, the `May*` set and others) were deliberately retired —
+see [ADR 0011](../docs/adr/0011-octo-snapshot-baseline.md). Snapshot
+files live in `data/`.
+
+The output channel is deliberately **not** carried by snapshots at all:
+it is a `patcherargs` creation argument (see `MCHelper` above and
+[ADR 0006](../docs/adr/0006-mchelper-output-channel-as-creation-argument.md)),
+so a newly added voice is correct before any snapshot is recalled.
 
 ## Max project auto-organize (why docs kept moving)
 

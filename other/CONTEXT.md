@@ -34,7 +34,9 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   electromagnet for that voice. (Corrects last session's CONTEXT.md, which
   wrongly called these "8 strings per voice.")
 - **Microtuning (`#1_micro`)** — a small per-inner-voice fine-tuning offset
-  layered on top of a harmonic's frequency.
+  layered on top of a harmonic's frequency. Range is **±0.03** (widened
+  from ±0.02 on 2026-09-22), set by the `scale 0 1000 -0.03 0.03` in
+  front of each voice's `s <voice>_micro`.
 - **Drone mode** — a performance mode: a sustained "on" is sent directly to
   an inner voice's ADSR, typically driven by the external MIDI fader
   controller. Continuous excitation of the string.
