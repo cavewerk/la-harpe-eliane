@@ -115,9 +115,13 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   repurposing, have since been removed outright.)
 - **Presentation title** — `MCModule`'s third outlet re-emits the voice's
   own name (e.g. `"soprano"`) into a message box that serves as an on-
-  screen label when the patch is in Presentation mode. (Corrects last
-  session's read of this as dead/vestigial wiring — it's a UI label, kept
-  intentionally.)
+  screen label when the patch is in Presentation mode. (Corrects an early
+  read of this as dead/vestigial wiring — it's a UI label, kept
+  intentionally.) All **eight** voices have one. Two of them were briefly
+  left static during the 2026-09-22 presentation rearrangement — the
+  message boxes were replaced without being reconnected, so they still
+  showed the right text but would not have followed a rename — and were
+  reconnected the same day.
 - **Pad row** — one row of 8 Push pads, driving one voice's 8 inner
   voices left-to-right. **All eight rows are now allocated**, highest
   voice at the top: soprano (row 8, notes 92-99), alto (row 7, 84-91),
