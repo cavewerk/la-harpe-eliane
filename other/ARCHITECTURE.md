@@ -287,9 +287,10 @@ The `scene` column is the voice-select button. **All eight now exist**
 — the `p` subpatcher's outlet feeds `sel 0 1 2 3 4 5 6 7`, and all
 eight buttons share one `@radio volumes` group, so voice-select works
 for every voice by button and by last-pad-pressed (see
-[ADR 0008](../docs/adr/0008-voice-select-to-eight.md)). Scene buttons
-5-8 sit far below the original four in the patch (y≈3600 vs y≈353),
-because the space beneath them is occupied by the rotary bank.
+[ADR 0008](../docs/adr/0008-voice-select-to-eight.md)). In the patch,
+scene buttons 1-4 (bass … soprano, index 1-4) and 5-8 (alpha … delta,
+index 5-8) sit as two side-by-side columns, both feeding the shared
+`int`.
 
 **The encoders reach all eight voices in both modes** — partial
 amplitude while pedal 2 is held (see

@@ -1,6 +1,6 @@
 # Roadmap
 
-_Last updated: 2026-09-22 (eight-voice expansion complete). Originally written 2026-09-10, from a grilling session naming this roadmap's
+_Last updated: 2026-09-23 (patcher layout pass; baseline restated for eight voices). Originally written 2026-09-10, from a grilling session naming this roadmap's
 destination. See [CONTEXT.md](CONTEXT.md) and [ARCHITECTURE.md](ARCHITECTURE.md)
 for current-state definitions and architecture — this file is where
 they're headed._
@@ -26,11 +26,12 @@ chat can tell what's done without digging through git log:
 ## Baseline
 
 "Done" for this effort isn't a fixed ship date — it's an ongoing target:
-all four voices (bass/tenor/alto/soprano) at full drone-mode + keys-mode
-parity, hardware-verified on real Push + fader hardware, plus the fuller
-feature list below. The one known parity gap (alto/soprano's missing
-drone-mode fader chain) is no longer a standalone task — see **dynamic
-fader → voice assignment** below.
+all eight voices (soprano/alto/tenor/bass and alpha/beta/gamma/delta) at
+full drone-mode + keys-mode parity, hardware-verified on real Push + fader
+hardware, plus the fuller feature list below. Parity across all eight was
+reached 2026-09-22 ([ADR 0012](../docs/adr/0012-fader-banks-to-eight-targets.md));
+what remains is the feature list, and keeping that parity as things
+change.
 
 ## Short-term horizon — by ~2026-09-24
 
@@ -151,9 +152,20 @@ Reordered 2026-09-10 per the project's author.
    **Now the main pressure.** The eight-voice expansion took the patch
    from 398 to 738 cords, and generated objects were placed in whatever
    free space a collision check found rather than anywhere meaningful —
-   the expansion voices sit at y≈2000-3500, scene buttons 5-8 at
+   the expansion voices sat at y≈2000-3500, scene buttons 5-8 at
    y≈3600 far from the original four, and rotary bank B at y≈4000.
-   A visual reorganisation pass is worth doing.
+
+   **Layout pass done 2026-09-23** (top-level patch, positions only —
+   746 cords before and after, 0 lost, 0 added): all eight voices on one
+   template stacked in voice order in the left column; scene buttons 5-8
+   as a second column beside 1-4; the two fader banks as matching
+   columns over one shared row of eight sends; rotary bank B directly
+   under bank A, with the encoderamp block below both. Two stale
+   comments (`obj-106`, `obj-132`) rewritten, `obj-104` widened to cover
+   both scene columns, and two cordless leftovers removed (`obj-2`, an
+   empty box; `obj-335`, a `live.text` used as a label). Still open under
+   this item: MCModule/MCLyra comments and `patcherargs`, and collapsing
+   the per-voice scene-button instances.
 
    Two things that make it safe: **object positions are purely
    cosmetic** — nothing in the patch or the tooling depends on
