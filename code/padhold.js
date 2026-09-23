@@ -67,3 +67,10 @@ function msg_int(value) {
 	// release while already OFF or SUSTAINED: trailing edge of a
 	// repress-to-release (or a stray release) - nothing to do.
 }
+
+// jk.push also emits live.text styling (text, texton, bordercolor,
+// activebgcolor, ...) out of the same outlet, expecting a live.text on
+// the other end. Dropped deliberately: without this, every load printed
+// "no function <attr>" for each of the 32 pads.
+function anything() {
+}
