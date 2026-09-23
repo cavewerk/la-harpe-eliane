@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 383.0, 116.0, 507.0, 659.0 ],
+		"rect" : [ 380.0, 113.0, 507.0, 659.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"assistshowspatchername" : 1,
@@ -182,7 +182,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 182.0, 27.749511957168579, 128.888895034790039, 76.666670322418213 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 54.0, 20.0, 200.0, 31.0 ]
+					"presentation_rect" : [ 54.0, 7.0, 200.0, 49.0 ]
 				}
 
 			}
@@ -262,8 +262,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 200.0, 364.0, 302.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 22,
-					"presentation_rect" : [ 67.586202263832092, 353.103424072265625, 41.0, 203.0 ],
+					"presentation_linecount" : 17,
+					"presentation_rect" : [ 67.586202263832092, 353.103424072265625, 46.0, 158.0 ],
 					"text" : "Output channel comes from this bpatcher's creation argument (default 3). Channel number minus 3 = live.menu index. The menu still overrides at runtime."
 				}
 
