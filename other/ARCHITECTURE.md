@@ -92,10 +92,11 @@ MCHelper   -- mixdown, splits to:
   microtuning by default and for partial amplitude while pedal 2 is held
   — see [Encoder mode-switch](#encoder-mode-switch) below).
 - **Drone mode control surface**: raw MIDI CC input via `ctlin`, separate
-  hardware from the Push (an external fader controller with two banks of
-  8). Each bank is `ctlin` → one [`code/faderamp.js`](../code/faderamp.js)
-  instance → a `gate 8` steered by that bank's own voice dropdown → any
-  of the eight `s <voice>_amp`. See
+  hardware from the Push: two external fader controllers, each split
+  into two banks of 8, which makes **four banks**. Each bank is `ctlin` →
+  one [`code/faderamp.js`](../code/faderamp.js) instance → a `gate 8`
+  steered by that bank's own voice dropdown → any of the eight
+  `s <voice>_amp`. See
   [Fader-to-amplitude mapping](#fader-to-amplitude-mapping) below.
 - **Voice-select buttons** (formerly documented as plain "scene volume
   buttons"): a `jk.push`-driven radio group, one button per voice
@@ -297,9 +298,10 @@ amplitude while pedal 2 is held (see
 [ADR 0009](../docs/adr/0009-encoder-amplitude-to-eight-voices.md)), and
 microtuning when it is released, via a **second bank** of
 `jk.pushrotaryAlt` (see
-[ADR 0010](../docs/adr/0010-second-rotary-bank.md)). **Both fader banks
-reach all eight** too, each through its own dropdown (see
-[ADR 0012](../docs/adr/0012-fader-banks-to-eight-targets.md)).
+[ADR 0010](../docs/adr/0010-second-rotary-bank.md)). **All four fader
+banks reach all eight** too, each through its own dropdown (see
+[ADR 0012](../docs/adr/0012-fader-banks-to-eight-targets.md) and
+[ADR 0013](../docs/adr/0013-second-fader-controller.md)).
 
 Each pad's LED ring is **five** cords, not four: `padhold.js` →
 `live.text` → `jk.push` → `padhold.js`, plus one from the shared
@@ -358,33 +360,50 @@ Two practical consequences:
 
 ## Fader-to-amplitude mapping
 
-The external controller has two **fader banks** of 8 consecutive MIDI
-CCs — bank 1 on CC 32–39, bank 2 on CC 40–47. Each bank drives the 8
-harmonic amplitudes of whichever voice its dropdown selects.
+There are four **fader banks** of 8 consecutive MIDI CCs, on two
+controllers. Each bank drives the 8 harmonic amplitudes of whichever
+voice its dropdown selects.
 
-- **Top level** (`LivingStringProject.maxpat`): per bank, `ctlin` reads the
-  whole CC range at once, outputting `[value 0-127, controller#, channel]`.
-  Its value and controller# outlets feed one
-  [`code/faderamp.js`](../code/faderamp.js) instance — `js faderamp.js 31`
-  for bank 1, `js faderamp.js 39` for bank 2 — whose single argument is
-  the bank's CC-to-slider-index offset (its lowest fader's CC number,
-  minus 1). The object turns a fader move into a
+| bank | controller | CCs     | `ctlin`                                  | `faderamp.js` | gate     | umenu    | default |
+|------|------------|---------|------------------------------------------|---------------|----------|----------|---------|
+| 1    | original   | 32-39   | `ctlin` (any port, any channel)          | `31`          | `obj-27` | `obj-8`  | bass    |
+| 2    | original   | 40-47   | `ctlin` (any port, any channel)          | `39`          | `obj-61` | `obj-57` | tenor   |
+| 3    | `EM-16C CC` | 102-109 | `ctlin "EM-16C CC" -1 2 @matchport 1`     | `101`         | `obj-407`| `obj-405`| alto    |
+| 4    | `EM-16C CC` | 110-117 | `ctlin "EM-16C CC" -1 2 @matchport 1`     | `109`         | `obj-415`| `obj-413`| soprano |
+
+- **Top level** (`LivingStringProject.maxpat`): per bank, `ctlin`'s value
+  and controller# outlets feed one
+  [`code/faderamp.js`](../code/faderamp.js) instance, whose single
+  argument is the bank's CC-to-slider-index offset (its lowest fader's CC
+  number, minus 1). The object turns a fader move into a
   `"select <1-8> <0.-1.>"` message. This replaced an equivalent
   five-object chain per voice (a subtract, a `scale`, a `pack`, a
   `zl.rot`, and a `select $1 $2` message box) with one parameterized
   object.
 - **Target selection** ([ADR 0002](../docs/adr/0002-dynamic-fader-voice-assignment.md),
   widened in [ADR 0012](../docs/adr/0012-fader-banks-to-eight-targets.md)):
-  that message enters the right inlet of a `gate 8` (`obj-27` bank 1,
-  `obj-61` bank 2). A `umenu` per bank (bass … soprano, alpha … delta)
-  → `+ 1` drives the gate's control inlet, and outlets 0-7 feed
-  `s bass_amp`, `s tenor_amp`, `s alto_amp`, `s soprano_amp`,
-  `s alpha_amp`, `s beta_amp`, `s gamma_amp`, `s delta_amp` — one set of
-  eight sends **shared by both gates**, and separate from
-  `encoderamp.js`'s own copies of the same send names. A `loadbang` per
-  bank sets its default: bank 1 → bass, bank 2 → tenor. The two
-  dropdowns are independent of encoder voice-select and of each other;
-  both can point at the same voice.
+  that message enters the right inlet of the bank's `gate 8`. A `umenu`
+  per bank (bass … soprano, alpha … delta) → `+ 1` drives the gate's
+  control inlet, and outlets 0-7 feed `s bass_amp`, `s tenor_amp`,
+  `s alto_amp`, `s soprano_amp`, `s alpha_amp`, `s beta_amp`,
+  `s gamma_amp`, `s delta_amp` — one set of eight sends **shared by all
+  four gates**, and separate from `encoderamp.js`'s own copies of the
+  same send names. A `loadbang` per bank sets its default (see table).
+  The four dropdowns are independent of encoder voice-select and of
+  each other; any number can point at the same voice, and the last
+  writer wins. All four are in presentation, side by side.
+- **Input filtering** ([ADR 0013](../docs/adr/0013-second-fader-controller.md)):
+  banks 3 and 4 accept only port `EM-16C CC`, channel 2, through
+  `ctlin`'s own arguments (controller `-1` = all). The port is named
+  because, without one, `ctlin` interprets a channel number through MIDI
+  Setup's per-port channel offsets. With `@matchport 1`, an absent port
+  makes the bank silent instead of falling back to another port. The
+  filter is needed because the Push sends channel-1 CCs in 102-117
+  (track-above buttons, device, browse, mix, clip, quantize, double
+  loop). **Banks 1 and 2 are still unfiltered**, and the Push's CCs 35-47
+  fall in their range: convert, the scene (voice-select) buttons 36-43
+  and the arrows 44-47. That was found by reading the files and has not
+  yet been confirmed on hardware or fixed. See ADR 0013.
 - **`MCModule.maxpat`**: `r #1_amp` receives that message directly into a
   `multislider` (the on-screen per-harmonic amplitude display), whose
   further `iter`/`counter`/`pack`/`zl.rot` chain feeds each harmonic's
@@ -393,7 +412,10 @@ harmonic amplitudes of whichever voice its dropdown selects.
 - The value is scaled by 125, not 127 (`value / 125` in `faderamp.js`,
   carried over unchanged from the original `scale 0. 125. 0. 1.` object).
   Confirmed intentional by the project's author: their physical faders
-  top out at 125, not the full 0–127 MIDI range.
+  top out at 125, not the full 0–127 MIDI range. Banks 3 and 4 use the
+  same `/ 125`. The `EM-16C CC` controller's top value has not been
+  measured yet; if it differs, ADR 0013 describes the fix (an optional
+  scale argument).
 
 ## Patcher snapshots
 
@@ -421,6 +443,14 @@ in a known state. The sixteen older four-voice snapshots (`MASTER`,
 `jam1`, `jam4`, the `May*` set and others) were deliberately retired —
 see [ADR 0011](../docs/adr/0011-octo-snapshot-baseline.md). Snapshot
 files live in `data/`.
+
+As of 2026-09-30 there is a third snapshot, **`C#`**. It is embedded in
+the patch, backed by `data/6-1-5-7[1]_20260930.maxsnap`, and is now the
+**active** snapshot, so a fresh open comes up in `C#`. `octo` is still in
+the list but is no longer embedded: it is recalled from
+`data/6-1-5-7[1].maxsnap`. Both hold 370 values. (`pushtext16[2]` was
+dropped from `octo` on 2026-09-24 because no object has that longname
+any more.)
 
 The output channel is deliberately **not** carried by snapshots at all:
 it is a `patcherargs` creation argument (see `MCHelper` above and

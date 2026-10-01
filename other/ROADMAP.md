@@ -1,6 +1,6 @@
 # Roadmap
 
-_Last updated: 2026-09-23 (patcher layout pass; baseline restated for eight voices). Originally written 2026-09-10, from a grilling session naming this roadmap's
+_Last updated: 2026-09-25 (second fader controller: banks 3 and 4, ADR 0013). Originally written 2026-09-10, from a grilling session naming this roadmap's
 destination. See [CONTEXT.md](CONTEXT.md) and [ARCHITECTURE.md](ARCHITECTURE.md)
 for current-state definitions and architecture — this file is where
 they're headed._
@@ -325,6 +325,26 @@ Reordered 2026-09-10 per the project's author.
   **The expansion is complete**: pads, voice-select, both encoder modes
   and both fader banks all reach all eight voices. Next pressure is the
   patcher hygiene pass (long-term item 1).
+
+- `[~]` **Second fader controller — fader banks 3 and 4.** Built
+  2026-09-25 and **not yet hardware-tested**. The `EM-16C CC` controller
+  sends 16 faders on CC 102-117, channel 2, split into bank 3 (102-109,
+  default alto) and bank 4 (110-117, default soprano). Each bank has its
+  own dropdown and feeds the existing eight shared `s <voice>_amp`. Input
+  is filtered by port and channel in the arguments,
+  `ctlin "EM-16C CC" -1 2 @matchport 1`, because the Push sends channel-1
+  CCs in that range. 745 → 775 cords, 0 lost, exactly the 30 predicted
+  added. See [ADR 0013](../docs/adr/0013-second-fader-controller.md),
+  which also has the studio checklist. Two follow-ups:
+  - `[ ]` **Measure the new faders' top value.** They use `/ 125` like the
+    old ones. If they top out elsewhere, add the optional scale argument
+    described in ADR 0013.
+  - `[ ]` **Filter banks 1 and 2 as well?** Their bare `ctlin`s can be
+    driven by Push CCs 35-47 (convert, the scene/voice-select buttons, the
+    arrows). A scene release would zero one partial on that bank's target
+    voice. This was found by reading the files. Confirm it on hardware,
+    then decide whether to fix it, which needs the old controller's port
+    name and channel.
 
 ## Explicitly parked
 

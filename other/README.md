@@ -15,8 +15,9 @@ microtuning) — see [CONTEXT.md](CONTEXT.md) for the full glossary.
   is required at minimum).
 - An **Ableton Push** controller for keys mode (the patch is built around
   `jk.push*` Push abstractions — see [Third-party code](#third-party--vendored-code)).
-- An external MIDI fader controller for drone mode (read via raw `ctlin`,
-  not part of the vendored Push library).
+- Two external 16-fader MIDI controllers for drone mode (read via raw
+  `ctlin`, not part of the vendored Push library). The second one is
+  `EM-16C CC`, on channel 2 (ADR 0013).
 - The physical rig: four electromagnets, one per string, wired to four
   discrete audio interface output channels (**never** to speakers — the
   signal driving them is intentionally unipolar and would be inaudible/
