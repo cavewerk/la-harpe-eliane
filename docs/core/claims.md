@@ -30,3 +30,11 @@ up, possibly due to hysteresis or residual motion from prior excitation.
 instability for its own sake, but as a fragility that demands constant
 attention and, at once, restraint from the performer.
 *Status:* stated · *Evidence:* Open · *Since:* 2026-10-01
+
+### C5
+**Shared leading.** Playing la harpe Éliane is an entanglement in which
+leading passes back and forth — negotiated and shifting — between performer
+and string. It is not a contest: the string has much to offer, and restraint
+([C4](#c4)) is how the performer makes room for it. Grounded in Malafouris's
+material agency ([theory.md](theory.md) T2).
+*Status:* stated · *Evidence:* Open · *Since:* 2026-10-01

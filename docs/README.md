@@ -31,6 +31,7 @@ never the source themselves.
 7. [history.md](core/history.md) — timeline
 8. [glossary.md](core/glossary.md) — artistic and theoretical terms
 9. [claims.md](core/claims.md) — numbered, citable claims (C1, C2…)
+10. [angles.md](core/angles.md) — framings to pick per submission
 
 ## Rules
 

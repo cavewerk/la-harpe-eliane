@@ -8,6 +8,15 @@ through hardware controllers. It is an **ongoing design project**, not a
 finished object — composing with it and designing it are one continuous
 process. ([C1](claims.md#c1))
 
+## A family of instruments
+
+La harpe Éliane may become a family of instruments in different sizes, as the
+violin family does. Members are **not named yet**: so far all instruments are
+roughly the same size, and *la harpe Éliane* is used for all of them.
+
+> **Open —** how many physical instruments exist now, and how the eight
+> strings are distributed across them.
+
 ## Lineage
 
 The work of Éliane Radigue is the primary influence — on the sound the author
