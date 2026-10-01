@@ -6,7 +6,7 @@ Plain-language summary. Technical detail lives in
 
 ## Strings and voices
 
-- **Eight strings**, one per **voice**. Voices are named after choir
+- **Two instruments, four strings each** — eight strings, one per **voice**. Voices are named after choir
   registers — *soprano, alto, tenor, bass* — plus *alpha, beta, gamma,
   delta* (added September 2026 when the instrument grew from four to eight
   strings).
