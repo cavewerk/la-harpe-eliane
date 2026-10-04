@@ -13,6 +13,9 @@ Plain-language summary. Technical detail lives in
 - Each string has its own **electromagnet**, fed from a dedicated output of the
   audio interface (channels 3–10). The magnets are the only sound source on
   the strings; there are no loudspeakers in the excitation path.
+- In public presentation, discreet microphone reinforcement may be used; the
+  strings remain the source of the sound. Don't claim "no loudspeakers" as a
+  blanket statement.
 
 ## Synthesis
 
