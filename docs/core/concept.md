@@ -14,8 +14,15 @@ La harpe Éliane may become a family of instruments in different sizes, as the
 violin family does. Members are **not named yet**: so far all instruments are
 roughly the same size, and *la harpe Éliane* is used for all of them.
 
-Currently: **two instruments of about the same size, four strings each**
-(eight strings, eight voices in total).
+Currently: **a modular array of eight strings in two four-string modules** of
+about the same size. Describe it as one instrument — a modular array that can
+be distributed throughout a space — not as "two instruments". (2026-10-04)
+
+## Not automation
+
+The instrument is computational, but its aim is not automation. It depends on
+the performer's continuous presence and attention; it does not play itself.
+([C7](claims.md#c7))
 
 ## Lineage
 

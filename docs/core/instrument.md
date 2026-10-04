@@ -6,7 +6,9 @@ Plain-language summary. Technical detail lives in
 
 ## Strings and voices
 
-- **Two instruments, four strings each** — eight strings, one per **voice**. Voices are named after choir
+- A **modular array of strings**: currently eight strings in **two four-string
+  modules**, which can be arranged in different configurations and distributed
+  throughout a space. One string per **voice**. Voices are named after choir
   registers — *soprano, alto, tenor, bass* — plus *alpha, beta, gamma,
   delta* (added September 2026 when the instrument grew from four to eight
   strings).

@@ -45,3 +45,10 @@ but bringing computational material into the string exposes timbres that
 traditional means of excitation (plucking, bowing, striking) cannot reach —
 e.g. combinations of upper modes sounding without a strong fundamental.
 *Status:* stated · *Evidence:* April 2026 outline §5.3 (upper modes without fundamental); recordings Open · *Since:* 2026-10-04 (Hexagram summary)
+
+### C7
+**Presence, not automation.** Although la harpe Éliane is computational, its
+aim is not automation. The performer's continuous presence and attention are
+essential; the instrument does not play itself. Complements [C4](#c4) and
+[C5](#c5).
+*Status:* stated · *Since:* 2026-10-04
