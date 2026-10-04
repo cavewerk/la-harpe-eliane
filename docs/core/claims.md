@@ -38,3 +38,10 @@ and string. It is not a contest: the string has much to offer, and restraint
 ([C4](#c4)) is how the performer makes room for it. Grounded in Malafouris's
 material agency ([theory.md](theory.md) T2).
 *Status:* stated · *Evidence:* Open · *Since:* 2026-10-01
+
+### C6
+**New timbres.** The strings determine the instrument's range of expression,
+but bringing computational material into the string exposes timbres that
+traditional means of excitation (plucking, bowing, striking) cannot reach —
+e.g. combinations of upper modes sounding without a strong fundamental.
+*Status:* stated · *Evidence:* April 2026 outline §5.3 (upper modes without fundamental); recordings Open · *Since:* 2026-10-04 (Hexagram summary)
