@@ -36,6 +36,10 @@ Plain-language summary. Technical detail lives in
 
 ## Software
 
+Most of the circuitry and the Max patch are publicly available on GitHub
+(documentation could be improved). **Open —** add the repository URL.
+
+
 Max 9 (`mc.*` multichannel objects), with a vendored Push library (jk.push,
 Jeff Kaiser, CC BY-NC-SA 4.0).
 
