@@ -52,3 +52,10 @@ aim is not automation. The performer's continuous presence and attention are
 essential; the instrument does not play itself. Complements [C4](#c4) and
 [C5](#c5).
 *Status:* stated · *Since:* 2026-10-04
+
+### C8
+**Beyond prototyping.** Most new instruments remain in the development and
+prototyping phase. La harpe Éliane deliberately moves past it: sustained
+composition and performance are how its affordances are discovered and
+understood.
+*Status:* stated (point raised by supervisor Gabriel Vigliensoni) · *Evidence:* Open — candidate: NIME instrument-longevity literature (verify, e.g. Morreale & McPherson 2017) · *Since:* 2026-10-05
