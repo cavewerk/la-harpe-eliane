@@ -8,6 +8,17 @@ through hardware controllers. It is an **ongoing design project**, not a
 finished object — composing with it and designing it are one continuous
 process. ([C1](claims.md#c1))
 
+## The string in place of the speaker
+
+Topologically, la harpe Éliane resembles a conventional electronic
+instrument: a transducer renders an otherwise inaudible signal (the
+computational material) audible. Usually that transducer is a speaker; here
+the speaker is replaced by the string — a profoundly alive material, and one
+the author has a life-long, intimate connection with as both performer and
+technician. What emerges from this coupling (timbres inaccessible through
+traditional means, [C6](claims.md#c6)) is the primary site of inquiry.
+(Hexagram summary, 2026-10-05)
+
 ## A family of instruments
 
 La harpe Éliane may become a family of instruments in different sizes, as the
