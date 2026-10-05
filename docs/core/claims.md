@@ -59,3 +59,13 @@ prototyping phase. La harpe Éliane deliberately moves past it: sustained
 composition and performance are how its affordances are discovered and
 understood.
 *Status:* stated (point raised by supervisor Gabriel Vigliensoni) · *Evidence:* Open — candidate: NIME instrument-longevity literature (verify, e.g. Morreale & McPherson 2017) · *Since:* 2026-10-05
+
+### C9
+**Narrowing, slowing, listening.** Composition with la harpe Éliane narrows
+the space of possibilities rather than expanding it — reducing the material to
+a few sustained states held long enough for their inner detail (partials,
+beating, resonance) to become audible. This asks for slowing down and deep
+listening, and is where the debt to Radigue is most direct: her music unfolds
+so slowly that attention moves from events to the inner life of timbre.
+*Status:* stated · *Evidence:* Open (Radigue literature; note "Deep Listening"
+is Pauline Oliveros's term — cite or avoid capitalising) · *Since:* 2026-10-05

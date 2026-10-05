@@ -15,5 +15,7 @@ Status: **settled** = fixed usage; **tentative** = working term, may change.
 | **partial / inner voice** | One of the eight sinusoidal components of a voice's drive signal. | settled |
 | **seizing up** | A string abruptly ceasing to resonate under a drive that previously sustained it. | tentative |
 | **fragility** | The instrument's tendency toward unpredictable response, taken as an aesthetic and performative condition rather than a defect. | tentative |
+| **narrowing** | Compositional approach: reducing the space of possibilities to a few sustained states, held long enough for their inner detail to become audible. ([C9](claims.md#c9)) | tentative |
+| **deep listening** | Slow, patient listening to partials, beating and resonance. Lowercase; *Deep Listening* (capitalised) is Pauline Oliveros's practice — cite her if invoked. | tentative |
 | **presence** | The constant attention fragility demands of the performer. | tentative |
 | **restraint** | Not doing too much; the counterpart of presence. | tentative |
