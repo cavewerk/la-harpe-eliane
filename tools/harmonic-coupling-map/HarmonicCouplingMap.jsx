@@ -34,23 +34,63 @@ const X0 = 48;
 const X1 = 952;
 const SPAN = X1 - X0;
 
+const MODULES = {
+  string: { name: "String", title: "String · drag the exciter" },
+  controls: { name: "Controls", title: "Controls" },
+  spectrum: { name: "Spectrum", title: "Coupling spectrum · click a bar to inspect" },
+  midi: { name: "MIDI", title: "MIDI · exciter position + harmonic select" },
+};
+const MODULE_IDS = Object.keys(MODULES);
+
 // panel layout: sizes in px (stringH null = natural aspect), remembered per browser
 const LAYOUT_KEY = "hcm-layout-v1";
 const DEFAULT_LAYOUT = {
+  order: MODULE_IDS,
   stringH: null,
   ctrlW: 300,
   specH: 210,
   collapsed: { string: false, controls: false, spectrum: false, midi: false },
 };
 
+function validOrder(order) {
+  return (
+    Array.isArray(order) &&
+    order.length === MODULE_IDS.length &&
+    MODULE_IDS.every((id) => order.includes(id))
+  );
+}
+
 function loadLayout() {
   try {
     const s = JSON.parse(localStorage.getItem(LAYOUT_KEY));
     if (s && typeof s === "object") {
-      return { ...DEFAULT_LAYOUT, ...s, collapsed: { ...DEFAULT_LAYOUT.collapsed, ...s.collapsed } };
+      return {
+        ...DEFAULT_LAYOUT,
+        ...s,
+        order: validOrder(s.order) ? s.order : DEFAULT_LAYOUT.order,
+        collapsed: { ...DEFAULT_LAYOUT.collapsed, ...s.collapsed },
+      };
     }
   } catch {}
   return DEFAULT_LAYOUT;
+}
+
+// place `id` just before or after `target`
+function moveRelative(order, id, target, edge) {
+  const rest = order.filter((m) => m !== id);
+  const i = rest.indexOf(target);
+  rest.splice(edge === "before" ? i : i + 1, 0, id);
+  return rest;
+}
+
+// swap `id` with its neighbour one step up (-1) or down (+1)
+function shift(order, id, dir) {
+  const i = order.indexOf(id);
+  const j = i + dir;
+  if (j < 0 || j >= order.length) return order;
+  const o = [...order];
+  [o[i], o[j]] = [o[j], o[i]];
+  return o;
 }
 
 function sinc(x) {
@@ -79,6 +119,68 @@ export default function HarmonicCouplingMap() {
       localStorage.setItem(LAYOUT_KEY, JSON.stringify(layout));
     } catch {}
   }, [layout]);
+
+  // ── module reordering: drag a header grip, or focus it and use arrow keys ──
+  // while dragging: { id, over, axis, edge } drives the drop indicator on the panel under
+  // the pointer; { target, targetEdge } is where the module will land
+  const [drag, setDrag] = useState(null);
+  const [focusGrip, setFocusGrip] = useState(null);
+  useEffect(() => {
+    if (!focusGrip) return;
+    document.querySelector(`[data-grip="${focusGrip}"]`)?.focus();
+    setFocusGrip(null);
+  }, [focusGrip]);
+
+  const gripProps = (id) => ({
+    onPointerDown: (e) => {
+      if (e.button !== 0) return;
+      e.preventDefault();
+      e.currentTarget.setPointerCapture?.(e.pointerId);
+      setDrag({ id, over: null, target: null });
+    },
+    onPointerMove: (e) => {
+      if (!drag) return;
+      if (e.clientY < 40) window.scrollBy(0, -16);
+      else if (e.clientY > window.innerHeight - 40) window.scrollBy(0, 16);
+      const el = document.elementFromPoint(e.clientX, e.clientY)?.closest("[data-module]");
+      if (!el) return; // over a gap: keep the last target
+      const over = el.dataset.module;
+      const row = el.dataset.row ? el.dataset.row.split(" ") : null;
+      const r = el.getBoundingClientRect();
+      let axis, edge, target;
+      if (row && row.includes(drag.id)) {
+        // controls/spectrum swapping sides within their pair
+        axis = "x";
+        edge = e.clientX < r.left + r.width / 2 ? "before" : "after";
+        target = over;
+      } else {
+        // anything else lands above or below a module, or above/below the whole pair
+        axis = "y";
+        edge = e.clientY < r.top + r.height / 2 ? "before" : "after";
+        target = row ? (edge === "before" ? row[0] : row[1]) : over;
+      }
+      const noop = target === drag.id;
+      const next = { id: drag.id, over: noop ? null : over, axis, edge, target: noop ? null : target };
+      if (next.over !== drag.over || next.edge !== drag.edge || next.axis !== drag.axis) setDrag(next);
+    },
+    onPointerUp: () => {
+      if (drag?.target) {
+        setLayout((l) => ({ ...l, order: moveRelative(l.order, drag.id, drag.target, drag.edge) }));
+      }
+      setDrag(null);
+    },
+    onPointerCancel: () => setDrag(null),
+    onKeyDown: (e) => {
+      const dir =
+        e.key === "ArrowUp" || e.key === "ArrowLeft" ? -1
+        : e.key === "ArrowDown" || e.key === "ArrowRight" ? 1
+        : 0;
+      if (!dir) return;
+      e.preventDefault();
+      setLayout((l) => ({ ...l, order: shift(l.order, id, dir) }));
+      setFocusGrip(id);
+    },
+  });
 
   // string panel content width, so a chosen pixel height maps to a viewBox height
   const stringPanelRef = useRef(null);
@@ -209,12 +311,245 @@ export default function HarmonicCouplingMap() {
     return d;
   }, [activeN, BASE_Y, AMP]);
 
-  const bothBottomOpen = !layout.collapsed.controls && !layout.collapsed.spectrum;
-
   const modeColor = onNode ? C.red : C.amber;
 
+  // ── module bodies; order and pairing are decided at render ──
+  const bodies = {
+    string: (
+      <>
+        <svg
+          ref={svgRef}
+          viewBox={`0 0 1000 ${vbH.toFixed(1)}`}
+          style={{ width: "100%", height: "auto", display: "block", touchAction: "none", cursor: "ew-resize" }}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+        >
+          {/* mode-shape envelope (mirror, faint) */}
+          <path d={modePath} fill="none" stroke={modeColor} strokeOpacity={0.16} strokeWidth={2} />
+          <g transform={`translate(0 ${2 * BASE_Y}) scale(1 -1)`}>
+            <path d={modePath} fill="none" stroke={modeColor} strokeOpacity={0.16} strokeWidth={2} />
+          </g>
+
+          {/* baseline string */}
+          <line x1={X0} y1={BASE_Y} x2={X1} y2={BASE_Y} stroke={C.line} strokeWidth={1.5} />
+
+          {/* nut / bridge terminations */}
+          {[X0, X1].map((x) => (
+            <line key={x} x1={x} y1={BASE_Y - 30} x2={x} y2={BASE_Y + 30} stroke={C.muted} strokeWidth={2} />
+          ))}
+
+          {/* instantaneous mode shape */}
+          <path d={modePath} fill="none" stroke={modeColor} strokeWidth={2.5} strokeLinecap="round" />
+
+          {/* interior nodes of the shown harmonic */}
+          {nodes.map((f, i) => {
+            const nx = X0 + f * SPAN;
+            const near = Math.abs(f - pos) < 0.012;
+            return (
+              <g key={i}>
+                <line
+                  x1={nx}
+                  y1={BASE_Y - 7}
+                  x2={nx}
+                  y2={BASE_Y + 7}
+                  stroke={near ? C.red : C.muted}
+                  strokeWidth={near ? 2.5 : 1.5}
+                />
+                {near && <circle cx={nx} cy={BASE_Y} r={7} fill="none" stroke={C.red} strokeWidth={1.5} />}
+              </g>
+            );
+          })}
+
+          {/* exciter: pole face + centerline */}
+          <rect
+            x={exX - poleW / 2}
+            y={BASE_Y - 15}
+            width={poleW}
+            height={30}
+            rx={4}
+            fill={C.amberDim}
+            stroke={C.amber}
+            strokeWidth={1.5}
+          />
+          <line x1={exX} y1={22} x2={exX} y2={vbH - 22} stroke={C.amber} strokeWidth={1} strokeDasharray="3 4" strokeOpacity={0.6} />
+          <circle cx={exX} cy={BASE_Y} r={4} fill={C.amber} />
+          <text x={exX} y={16} textAnchor="middle" fill={C.amber} fontSize={12} fontFamily={FONT_MONO}>
+            ⊕ exciter
+          </text>
+        </svg>
+
+        {/* selected-harmonic readout */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 16,
+            flexWrap: "wrap",
+            marginTop: 6,
+            paddingTop: 12,
+            borderTop: `1px solid ${C.hair}`,
+            fontSize: 13,
+          }}
+        >
+          <span style={{ color: modeColor, fontWeight: 600 }}>H{activeN}</span>
+          <span style={{ color: C.muted }}>
+            coupling <span style={{ color: C.text }}>{(activeCoupling * 100).toFixed(1)}%</span>
+          </span>
+          <span style={{ color: C.muted }}>
+            {activeN - 1} interior node{activeN - 1 === 1 ? "" : "s"}
+          </span>
+          {onNode ? (
+            <span style={{ color: C.red, fontWeight: 600 }}>● exciter on a node — this harmonic is nulled</span>
+          ) : (
+            <span style={{ color: C.teal }}>● drivable at this position</span>
+          )}
+        </div>
+      </>
+    ),
+    controls: (
+      <>
+        <Control label="Exciter position a/L" value={(pos * 100).toFixed(1) + " %"}>
+          <input
+            className="hcm-range"
+            type="range"
+            min={0.001}
+            max={0.999}
+            step={0.001}
+            value={pos}
+            onChange={(e) => setPos(parseFloat(e.target.value))}
+          />
+          <QuickPos onPick={setPos} />
+        </Control>
+
+        <Control label="Coil pole width w/L" value={(coil * 100).toFixed(1) + " %"}>
+          <input
+            className="hcm-range"
+            type="range"
+            min={0}
+            max={0.25}
+            step={0.002}
+            value={coil}
+            onChange={(e) => setCoil(parseFloat(e.target.value))}
+          />
+          <div style={{ fontSize: 11, color: C.muted, marginTop: 6 }}>
+            rolls off harmonics above ~H{coil > 0 ? Math.floor(2 / coil) : "∞"}
+          </div>
+        </Control>
+
+        <Control label="Harmonics shown" value={String(nHarm)}>
+          <input
+            className="hcm-range"
+            type="range"
+            min={4}
+            max={32}
+            step={1}
+            value={nHarm}
+            onChange={(e) => setNHarm(parseInt(e.target.value))}
+          />
+        </Control>
+
+        <div
+          style={{
+            marginTop: 18,
+            paddingTop: 14,
+            borderTop: `1px solid ${C.hair}`,
+            fontSize: 12.5,
+            lineHeight: 1.7,
+            color: C.muted,
+          }}
+        >
+          <div>
+            spectral tilt{" "}
+            <span style={{ color: C.text }}>{brightness}</span>
+          </div>
+          <div>
+            nulled{" "}
+            <span style={{ color: nulled.length ? C.red : C.text }}>
+              {nulled.length ? "H" + nulled.join(", H") : "none"}
+            </span>
+          </div>
+        </div>
+      </>
+    ),
+    spectrum: (
+        <Spectrum
+          data={data}
+          activeN={activeN}
+          height={layout.specH}
+          onHover={setHoverN}
+          onSelect={setSelN}
+        />
+    ),
+    midi: <MidiPanel midi={midi} />,
+  };
+
+  const heightSplitter = {
+    string: !layout.collapsed.string && (
+      <Splitter
+        axis="y"
+        label="String height"
+        value={layout.stringH ?? stringW * 0.22}
+        min={Math.ceil(stringW * 0.1)}
+        max={Math.max(Math.ceil(stringW * 0.1), Math.min(640, Math.floor(stringW * 0.9)))}
+        onChange={(v) => setL({ stringH: v })}
+        onReset={() => setL({ stringH: null })}
+      />
+    ),
+    spectrum: !layout.collapsed.spectrum && (
+      <Splitter
+        axis="y"
+        label="Spectrum height"
+        value={layout.specH}
+        min={120}
+        max={600}
+        onChange={(v) => setL({ specH: v })}
+        onReset={() => setL({ specH: DEFAULT_LAYOUT.specH })}
+      />
+    ),
+  };
+
+  // controls + spectrum sit side by side whenever they are adjacent and both open
+  const blocks = [];
+  for (let i = 0; i < layout.order.length; i++) {
+    const id = layout.order[i];
+    const next = layout.order[i + 1];
+    const pair = (id === "controls" && next === "spectrum") || (id === "spectrum" && next === "controls");
+    if (pair && !layout.collapsed.controls && !layout.collapsed.spectrum) {
+      blocks.push([id, next]);
+      i++;
+    } else {
+      blocks.push([id]);
+    }
+  }
+  const blockSplitter = (ids) => ids.map((id) => heightSplitter[id]).find(Boolean) || null;
+  const endsWithSplitter = !!blockSplitter(blocks[blocks.length - 1]);
+
+  const panelFor = (id, row) => (
+    <Panel
+      key={id}
+      moduleId={id}
+      row={row}
+      rootRef={id === "string" ? stringPanelRef : undefined}
+      name={MODULES[id].name}
+      title={MODULES[id].title}
+      collapsed={layout.collapsed[id]}
+      onToggle={() => toggle(id)}
+      grip={gripProps(id)}
+      dragging={drag?.id === id}
+      dropEdge={drag?.over === id ? drag.edge : null}
+      dropAxis={drag?.axis}
+    >
+      {bodies[id]}
+    </Panel>
+  );
+
+
   return (
-    <div style={{ background: C.bg, minHeight: "100%", color: C.text, fontFamily: FONT_MONO }}>
+    <div
+      className={drag ? "hcm-reordering" : undefined}
+      style={{ background: C.bg, minHeight: "100%", color: C.text, fontFamily: FONT_MONO }}
+    >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
         * { box-sizing: border-box; }
@@ -239,6 +574,11 @@ export default function HarmonicCouplingMap() {
         .hcm-textbtn.is-on { color:${C.bg}; background:${C.amber}; border-color:${C.amber}; }
         .hcm-select { font-family:${FONT_MONO}; font-size:12px; color:${C.text}; background:${C.panelHi};
           border:1px solid ${C.hair}; border-radius:5px; padding:4px 6px; max-width:100%; }
+        .hcm-grip { font-size:13px; line-height:1; width:20px; height:24px; margin-left:-6px; padding:0;
+          display:inline-flex; align-items:center; justify-content:center; flex:none;
+          color:${C.muted}; background:transparent; border:0; border-radius:4px; cursor:grab; touch-action:none; }
+        .hcm-grip:hover { color:${C.text}; background:${C.panelHi}; }
+        .hcm-reordering, .hcm-reordering * { cursor:grabbing !important; user-select:none; }
         .hcm-split { position:relative; touch-action:none; user-select:none; }
         .hcm-split-y { height:16px; cursor:row-resize; }
         .hcm-split-x { cursor:col-resize; }
@@ -300,254 +640,55 @@ export default function HarmonicCouplingMap() {
           />
         </div>
 
-        {/* ── string view ── */}
-        <Panel
-          style={{ marginTop: 18 }}
-          rootRef={stringPanelRef}
-          name="String"
-          title="String · drag the exciter"
-          collapsed={layout.collapsed.string}
-          onToggle={() => toggle("string")}
-        >
-          <svg
-            ref={svgRef}
-            viewBox={`0 0 1000 ${vbH.toFixed(1)}`}
-            style={{ width: "100%", height: "auto", display: "block", touchAction: "none", cursor: "ew-resize" }}
-            onPointerDown={onPointerDown}
-            onPointerMove={onPointerMove}
-            onPointerUp={onPointerUp}
-          >
-            {/* mode-shape envelope (mirror, faint) */}
-            <path d={modePath} fill="none" stroke={modeColor} strokeOpacity={0.16} strokeWidth={2} />
-            <g transform={`translate(0 ${2 * BASE_Y}) scale(1 -1)`}>
-              <path d={modePath} fill="none" stroke={modeColor} strokeOpacity={0.16} strokeWidth={2} />
-            </g>
-
-            {/* baseline string */}
-            <line x1={X0} y1={BASE_Y} x2={X1} y2={BASE_Y} stroke={C.line} strokeWidth={1.5} />
-
-            {/* nut / bridge terminations */}
-            {[X0, X1].map((x) => (
-              <line key={x} x1={x} y1={BASE_Y - 30} x2={x} y2={BASE_Y + 30} stroke={C.muted} strokeWidth={2} />
-            ))}
-
-            {/* instantaneous mode shape */}
-            <path d={modePath} fill="none" stroke={modeColor} strokeWidth={2.5} strokeLinecap="round" />
-
-            {/* interior nodes of the shown harmonic */}
-            {nodes.map((f, i) => {
-              const nx = X0 + f * SPAN;
-              const near = Math.abs(f - pos) < 0.012;
+        {/* ── modules (reorderable) ── */}
+        <div style={{ marginTop: 18 }}>
+          {blocks.map((ids, bi) => {
+            const last = bi === blocks.length - 1;
+            const split = blockSplitter(ids) || (last ? null : <div style={{ height: 16 }} />);
+            if (ids.length === 1) {
               return (
-                <g key={i}>
-                  <line
-                    x1={nx}
-                    y1={BASE_Y - 7}
-                    x2={nx}
-                    y2={BASE_Y + 7}
-                    stroke={near ? C.red : C.muted}
-                    strokeWidth={near ? 2.5 : 1.5}
-                  />
-                  {near && <circle cx={nx} cy={BASE_Y} r={7} fill="none" stroke={C.red} strokeWidth={1.5} />}
-                </g>
+                <div key={ids[0]}>
+                  {panelFor(ids[0])}
+                  {split}
+                </div>
               );
-            })}
-
-            {/* exciter: pole face + centerline */}
-            <rect
-              x={exX - poleW / 2}
-              y={BASE_Y - 15}
-              width={poleW}
-              height={30}
-              rx={4}
-              fill={C.amberDim}
-              stroke={C.amber}
-              strokeWidth={1.5}
-            />
-            <line x1={exX} y1={22} x2={exX} y2={vbH - 22} stroke={C.amber} strokeWidth={1} strokeDasharray="3 4" strokeOpacity={0.6} />
-            <circle cx={exX} cy={BASE_Y} r={4} fill={C.amber} />
-            <text x={exX} y={16} textAnchor="middle" fill={C.amber} fontSize={12} fontFamily={FONT_MONO}>
-              ⊕ exciter
-            </text>
-          </svg>
-
-          {/* selected-harmonic readout */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 16,
-              flexWrap: "wrap",
-              marginTop: 6,
-              paddingTop: 12,
-              borderTop: `1px solid ${C.hair}`,
-              fontSize: 13,
-            }}
-          >
-            <span style={{ color: modeColor, fontWeight: 600 }}>H{activeN}</span>
-            <span style={{ color: C.muted }}>
-              coupling <span style={{ color: C.text }}>{(activeCoupling * 100).toFixed(1)}%</span>
-            </span>
-            <span style={{ color: C.muted }}>
-              {activeN - 1} interior node{activeN - 1 === 1 ? "" : "s"}
-            </span>
-            {onNode ? (
-              <span style={{ color: C.red, fontWeight: 600 }}>● exciter on a node — this harmonic is nulled</span>
-            ) : (
-              <span style={{ color: C.teal }}>● drivable at this position</span>
-            )}
-          </div>
-        </Panel>
-
-        {layout.collapsed.string ? (
-          <div style={{ height: 16 }} />
-        ) : (
-          <Splitter
-            axis="y"
-            label="String height"
-            value={layout.stringH ?? stringW * 0.22}
-            min={Math.ceil(stringW * 0.1)}
-            max={Math.max(Math.ceil(stringW * 0.1), Math.min(640, Math.floor(stringW * 0.9)))}
-            onChange={(v) => setL({ stringH: v })}
-            onReset={() => setL({ stringH: null })}
-          />
-        )}
-
-        {/* ── controls + spectrum ── */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: bothBottomOpen
-              ? `${layout.ctrlW}px 16px minmax(0, 1fr)`
-              : "minmax(0, 1fr)",
-            rowGap: 16,
-          }}
-          className={bothBottomOpen ? "hcm-grid" : undefined}
-        >
-          <Panel
-            name="Controls"
-            title="Controls"
-            collapsed={layout.collapsed.controls}
-            onToggle={() => toggle("controls")}
-          >
-            <Control label="Exciter position a/L" value={(pos * 100).toFixed(1) + " %"}>
-              <input
-                className="hcm-range"
-                type="range"
-                min={0.001}
-                max={0.999}
-                step={0.001}
-                value={pos}
-                onChange={(e) => setPos(parseFloat(e.target.value))}
-              />
-              <QuickPos onPick={setPos} />
-            </Control>
-
-            <Control label="Coil pole width w/L" value={(coil * 100).toFixed(1) + " %"}>
-              <input
-                className="hcm-range"
-                type="range"
-                min={0}
-                max={0.25}
-                step={0.002}
-                value={coil}
-                onChange={(e) => setCoil(parseFloat(e.target.value))}
-              />
-              <div style={{ fontSize: 11, color: C.muted, marginTop: 6 }}>
-                rolls off harmonics above ~H{coil > 0 ? Math.floor(2 / coil) : "∞"}
+            }
+            const ctrlFirst = ids[0] === "controls";
+            return (
+              <div key={ids.join("+")}>
+                <div
+                  className="hcm-grid"
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: ctrlFirst
+                      ? `${layout.ctrlW}px 16px minmax(0, 1fr)`
+                      : `minmax(0, 1fr) 16px ${layout.ctrlW}px`,
+                    rowGap: 16,
+                  }}
+                >
+                  {panelFor(ids[0], ids.join(" "))}
+                  <Splitter
+                    axis="x"
+                    invert={!ctrlFirst}
+                    label="Controls width"
+                    value={layout.ctrlW}
+                    min={220}
+                    max={520}
+                    onChange={(v) => setL({ ctrlW: v })}
+                    onReset={() => setL({ ctrlW: DEFAULT_LAYOUT.ctrlW })}
+                  />
+                  {panelFor(ids[1], ids.join(" "))}
+                </div>
+                {split}
               </div>
-            </Control>
-
-            <Control label="Harmonics shown" value={String(nHarm)}>
-              <input
-                className="hcm-range"
-                type="range"
-                min={4}
-                max={32}
-                step={1}
-                value={nHarm}
-                onChange={(e) => setNHarm(parseInt(e.target.value))}
-              />
-            </Control>
-
-            <div
-              style={{
-                marginTop: 18,
-                paddingTop: 14,
-                borderTop: `1px solid ${C.hair}`,
-                fontSize: 12.5,
-                lineHeight: 1.7,
-                color: C.muted,
-              }}
-            >
-              <div>
-                spectral tilt{" "}
-                <span style={{ color: C.text }}>{brightness}</span>
-              </div>
-              <div>
-                nulled{" "}
-                <span style={{ color: nulled.length ? C.red : C.text }}>
-                  {nulled.length ? "H" + nulled.join(", H") : "none"}
-                </span>
-              </div>
-            </div>
-          </Panel>
-
-          {bothBottomOpen && (
-            <Splitter
-              axis="x"
-              label="Controls width"
-              value={layout.ctrlW}
-              min={220}
-              max={520}
-              onChange={(v) => setL({ ctrlW: v })}
-              onReset={() => setL({ ctrlW: DEFAULT_LAYOUT.ctrlW })}
-            />
-          )}
-
-          <Panel
-            name="Spectrum"
-            title="Coupling spectrum · click a bar to inspect"
-            collapsed={layout.collapsed.spectrum}
-            onToggle={() => toggle("spectrum")}
-          >
-            <Spectrum
-              data={data}
-              activeN={activeN}
-              height={layout.specH}
-              onHover={setHoverN}
-              onSelect={setSelN}
-            />
-          </Panel>
+            );
+          })}
         </div>
-
-        {!layout.collapsed.spectrum && (
-          <Splitter
-            axis="y"
-            label="Spectrum height"
-            value={layout.specH}
-            min={120}
-            max={600}
-            onChange={(v) => setL({ specH: v })}
-            onReset={() => setL({ specH: DEFAULT_LAYOUT.specH })}
-          />
-        )}
-
-        {/* ── MIDI ── */}
-        <Panel
-          style={{ marginTop: layout.collapsed.spectrum ? 16 : 0 }}
-          name="MIDI"
-          title="MIDI · exciter position + harmonic select"
-          collapsed={layout.collapsed.midi}
-          onToggle={() => toggle("midi")}
-        >
-          <MidiPanel midi={midi} />
-        </Panel>
 
         {/* ── footnote ── */}
         <p
           style={{
-            marginTop: 20,
+            marginTop: endsWithSplitter ? 4 : 20,
             fontSize: 12,
             lineHeight: 1.7,
             color: C.muted,
@@ -576,19 +717,48 @@ export default function HarmonicCouplingMap() {
 }
 
 // ── subcomponents ──────────────────────────────────────────
-function Panel({ children, style, rootRef, name, title, collapsed, onToggle }) {
+function Panel({
+  children,
+  style,
+  rootRef,
+  moduleId,
+  row,
+  name,
+  title,
+  collapsed,
+  onToggle,
+  grip,
+  dragging,
+  dropEdge,
+  dropAxis,
+}) {
+  // teal bar in the gap on the side the dragged module will land
+  const indicator = dropEdge && {
+    position: "absolute",
+    background: C.teal,
+    borderRadius: 2,
+    pointerEvents: "none",
+    ...(dropAxis === "x"
+      ? { top: 0, bottom: 0, width: 3, [dropEdge === "before" ? "left" : "right"]: -10 }
+      : { left: 0, right: 0, height: 3, [dropEdge === "before" ? "top" : "bottom"]: -10 }),
+  };
   return (
     <div
       ref={rootRef}
+      data-module={moduleId}
+      data-row={row}
       style={{
+        position: "relative",
         background: C.panel,
         border: `1px solid ${C.hair}`,
         borderRadius: 10,
         padding: collapsed ? "10px 18px" : "12px 18px 18px",
         minWidth: 0,
+        opacity: dragging ? 0.5 : 1,
         ...style,
       }}
     >
+      {indicator && <div style={indicator} />}
       <div
         style={{
           display: "flex",
@@ -598,7 +768,18 @@ function Panel({ children, style, rootRef, name, title, collapsed, onToggle }) {
           marginBottom: collapsed ? 0 : 10,
         }}
       >
-        <PanelLabel>{title}</PanelLabel>
+        <div style={{ display: "flex", alignItems: "center", gap: 6, minWidth: 0 }}>
+          <button
+            className="hcm-grip hcm-focusable"
+            data-grip={moduleId}
+            aria-label={`Move ${name}`}
+            title="Drag to reorder, or focus and use the arrow keys"
+            {...grip}
+          >
+            ⠿
+          </button>
+          <PanelLabel>{title}</PanelLabel>
+        </div>
         <button
           className="hcm-iconbtn hcm-focusable"
           onClick={onToggle}
@@ -630,10 +811,12 @@ function PanelLabel({ children }) {
   );
 }
 
-// drag handle between panels; axis "y" resizes a height, "x" a width
-function Splitter({ axis, label, value, min, max, onChange, onReset }) {
+// drag handle between panels; axis "y" resizes a height, "x" a width.
+// invert: the sized panel is after the handle, so dragging toward it shrinks it.
+function Splitter({ axis, invert, label, value, min, max, onChange, onReset }) {
   const dragRef = useRef(null);
   const isX = axis === "x";
+  const sign = invert ? -1 : 1;
   const clamp = (v) => Math.round(Math.min(max, Math.max(min, v)));
   const end = (e) => {
     dragRef.current = null;
@@ -657,7 +840,7 @@ function Splitter({ axis, label, value, min, max, onChange, onReset }) {
       }}
       onPointerMove={(e) => {
         const d = dragRef.current;
-        if (d) onChange(clamp(d.base + (isX ? e.clientX : e.clientY) - d.start));
+        if (d) onChange(clamp(d.base + sign * ((isX ? e.clientX : e.clientY) - d.start)));
       }}
       onMouseDown={(e) => e.preventDefault()}
       onPointerUp={end}
@@ -668,7 +851,7 @@ function Splitter({ axis, label, value, min, max, onChange, onReset }) {
         const i = keys.indexOf(e.key);
         if (i < 0) return;
         e.preventDefault();
-        onChange(clamp(value + (i ? 16 : -16)));
+        onChange(clamp(value + sign * (i ? 16 : -16)));
       }}
     />
   );
