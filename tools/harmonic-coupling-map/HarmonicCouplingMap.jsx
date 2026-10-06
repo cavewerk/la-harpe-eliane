@@ -1,5 +1,6 @@
 import { useState, useMemo, useRef, useCallback, useEffect } from "react";
 import { useMidiControl, describeSource, describeMessage } from "./midi.js";
+import { C, FONT_DISPLAY, FONT_MONO, FONTS_URL, THEMES, THEME_IDS, THEME_CSS, themeStyle } from "./themes.js";
 
 // ─────────────────────────────────────────────────────────────
 // Exciter → Harmonic Coupling Map
@@ -10,24 +11,6 @@ import { useMidiControl, describeSource, describeMessage } from "./midi.js";
 //         └ position term ┘   └ finite-coil-width term ┘
 // ─────────────────────────────────────────────────────────────
 
-const C = {
-  bg: "#0E1519",
-  panel: "#151E23",
-  panelHi: "#1B262C",
-  line: "#33454F",
-  hair: "#26343C",
-  text: "#D7E0E4",
-  muted: "#74868F",
-  amber: "#E9B24C",
-  amberDim: "rgba(233,178,76,0.14)",
-  teal: "#45D4C4",
-  tealDim: "rgba(69,212,196,0.14)",
-  red: "#CE5A4E",
-  redDim: "rgba(206,90,78,0.16)",
-};
-
-const FONT_DISPLAY = "'Space Grotesk', ui-sans-serif, system-ui, sans-serif";
-const FONT_MONO = "'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace";
 
 // string drawing geometry (SVG viewBox 0 0 1000 vbH; vbH defaults to 220)
 const X0 = 48;
@@ -44,6 +27,7 @@ const MODULE_IDS = Object.keys(MODULES);
 
 // panel layout: sizes in px (stringH null = natural aspect), remembered per browser
 const LAYOUT_KEY = "hcm-layout-v1";
+const THEME_KEY = "hcm-theme-v1";
 const DEFAULT_LAYOUT = {
   order: MODULE_IDS,
   stringH: null,
@@ -106,6 +90,23 @@ export default function HarmonicCouplingMap() {
   const [hoverN, setHoverN] = useState(null);
   const svgRef = useRef(null);
   const draggingRef = useRef(false);
+
+  // ── theme ────────────────────────────────────────────────
+  const [theme, setTheme] = useState(() => {
+    try {
+      const t = localStorage.getItem(THEME_KEY);
+      if (THEME_IDS.includes(t)) return t;
+    } catch {}
+    return THEME_IDS[0];
+  });
+  useEffect(() => {
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch {}
+    const bg = THEMES[theme].colors.bg;
+    document.documentElement.style.background = bg;
+    document.body.style.background = bg;
+  }, [theme]);
 
   // ── layout: collapse + resize ────────────────────────────
   const [layout, setLayout] = useState(loadLayout);
@@ -325,55 +326,57 @@ export default function HarmonicCouplingMap() {
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}
         >
-          {/* mode-shape envelope (mirror, faint) */}
-          <path d={modePath} fill="none" stroke={modeColor} strokeOpacity={0.16} strokeWidth={2} />
-          <g transform={`translate(0 ${2 * BASE_Y}) scale(1 -1)`}>
+          <g className="hcm-ink">
+            {/* mode-shape envelope (mirror, faint) */}
             <path d={modePath} fill="none" stroke={modeColor} strokeOpacity={0.16} strokeWidth={2} />
+            <g transform={`translate(0 ${2 * BASE_Y}) scale(1 -1)`}>
+              <path d={modePath} fill="none" stroke={modeColor} strokeOpacity={0.16} strokeWidth={2} />
+            </g>
+
+            {/* baseline string */}
+            <line x1={X0} y1={BASE_Y} x2={X1} y2={BASE_Y} stroke={C.line} strokeWidth={1.5} />
+
+            {/* nut / bridge terminations */}
+            {[X0, X1].map((x) => (
+              <line key={x} x1={x} y1={BASE_Y - 30} x2={x} y2={BASE_Y + 30} stroke={C.muted} strokeWidth={2} />
+            ))}
+
+            {/* instantaneous mode shape */}
+            <path d={modePath} fill="none" stroke={modeColor} strokeWidth={2.5} strokeLinecap="round" />
+
+            {/* interior nodes of the shown harmonic */}
+            {nodes.map((f, i) => {
+              const nx = X0 + f * SPAN;
+              const near = Math.abs(f - pos) < 0.012;
+              return (
+                <g key={i}>
+                  <line
+                    x1={nx}
+                    y1={BASE_Y - 7}
+                    x2={nx}
+                    y2={BASE_Y + 7}
+                    stroke={near ? C.red : C.muted}
+                    strokeWidth={near ? 2.5 : 1.5}
+                  />
+                  {near && <circle cx={nx} cy={BASE_Y} r={7} fill="none" stroke={C.red} strokeWidth={1.5} />}
+                </g>
+              );
+            })}
+
+            {/* exciter: pole face + centerline */}
+            <rect
+              x={exX - poleW / 2}
+              y={BASE_Y - 15}
+              width={poleW}
+              height={30}
+              rx={4}
+              fill={C.amberDim}
+              stroke={C.amber}
+              strokeWidth={1.5}
+            />
+            <line x1={exX} y1={22} x2={exX} y2={vbH - 22} stroke={C.amber} strokeWidth={1} strokeDasharray="3 4" strokeOpacity={0.6} />
+            <circle cx={exX} cy={BASE_Y} r={4} fill={C.amber} />
           </g>
-
-          {/* baseline string */}
-          <line x1={X0} y1={BASE_Y} x2={X1} y2={BASE_Y} stroke={C.line} strokeWidth={1.5} />
-
-          {/* nut / bridge terminations */}
-          {[X0, X1].map((x) => (
-            <line key={x} x1={x} y1={BASE_Y - 30} x2={x} y2={BASE_Y + 30} stroke={C.muted} strokeWidth={2} />
-          ))}
-
-          {/* instantaneous mode shape */}
-          <path d={modePath} fill="none" stroke={modeColor} strokeWidth={2.5} strokeLinecap="round" />
-
-          {/* interior nodes of the shown harmonic */}
-          {nodes.map((f, i) => {
-            const nx = X0 + f * SPAN;
-            const near = Math.abs(f - pos) < 0.012;
-            return (
-              <g key={i}>
-                <line
-                  x1={nx}
-                  y1={BASE_Y - 7}
-                  x2={nx}
-                  y2={BASE_Y + 7}
-                  stroke={near ? C.red : C.muted}
-                  strokeWidth={near ? 2.5 : 1.5}
-                />
-                {near && <circle cx={nx} cy={BASE_Y} r={7} fill="none" stroke={C.red} strokeWidth={1.5} />}
-              </g>
-            );
-          })}
-
-          {/* exciter: pole face + centerline */}
-          <rect
-            x={exX - poleW / 2}
-            y={BASE_Y - 15}
-            width={poleW}
-            height={30}
-            rx={4}
-            fill={C.amberDim}
-            stroke={C.amber}
-            strokeWidth={1.5}
-          />
-          <line x1={exX} y1={22} x2={exX} y2={vbH - 22} stroke={C.amber} strokeWidth={1} strokeDasharray="3 4" strokeOpacity={0.6} />
-          <circle cx={exX} cy={BASE_Y} r={4} fill={C.amber} />
           <text x={exX} y={16} textAnchor="middle" fill={C.amber} fontSize={12} fontFamily={FONT_MONO}>
             ⊕ exciter
           </text>
@@ -547,11 +550,19 @@ export default function HarmonicCouplingMap() {
 
   return (
     <div
+      data-theme={theme}
       className={drag ? "hcm-reordering" : undefined}
-      style={{ background: C.bg, minHeight: "100%", color: C.text, fontFamily: FONT_MONO }}
+      style={{ ...themeStyle(theme), background: C.bg, minHeight: "100%", color: C.text, fontFamily: FONT_MONO }}
     >
+      {/* displacement filter themes can use for a hand-drawn wobble (CSS: filter: url(#hcm-rough)) */}
+      <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
+        <filter id="hcm-rough">
+          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="7" />
+          <feDisplacementMap in="SourceGraphic" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+        @import url('${FONTS_URL}');
         * { box-sizing: border-box; }
         .hcm-range { -webkit-appearance:none; appearance:none; width:100%; height:3px;
           background:${C.line}; border-radius:2px; outline:none; }
@@ -588,9 +599,28 @@ export default function HarmonicCouplingMap() {
         .hcm-split-x::after { width:3px; height:48px; }
         .hcm-split:hover::after, .hcm-split:active::after, .hcm-split:focus-visible::after { background:${C.teal}; }
         @media (prefers-reduced-motion: reduce){ * { transition:none !important; animation:none !important; } }
+        ${THEME_CSS}
       `}</style>
 
-      <div style={{ maxWidth: 1080, margin: "0 auto", padding: "28px 20px 44px" }}>
+      <div style={{ maxWidth: 1080, margin: "0 auto", padding: "16px 20px 44px" }}>
+        <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: 8, marginBottom: 6 }}>
+          <label htmlFor="hcm-theme" style={{ fontSize: 11, color: C.muted }}>
+            theme
+          </label>
+          <select
+            id="hcm-theme"
+            className="hcm-select hcm-focusable"
+            value={theme}
+            onChange={(e) => setTheme(e.target.value)}
+          >
+            {THEME_IDS.map((id) => (
+              <option key={id} value={id}>
+                {THEMES[id].label}
+              </option>
+            ))}
+          </select>
+        </div>
+
         {/* ── header ── */}
         <div
           style={{
@@ -605,6 +635,7 @@ export default function HarmonicCouplingMap() {
         >
           <div>
             <div
+              className="hcm-kicker"
               style={{
                 fontFamily: FONT_MONO,
                 fontSize: 11,
@@ -617,6 +648,7 @@ export default function HarmonicCouplingMap() {
               Standing-wave excitation analyzer
             </div>
             <h1
+              className="hcm-title"
               style={{
                 fontFamily: FONT_DISPLAY,
                 fontWeight: 600,
@@ -745,6 +777,7 @@ function Panel({
   return (
     <div
       ref={rootRef}
+      className="hcm-panel"
       data-module={moduleId}
       data-row={row}
       style={{
@@ -798,6 +831,7 @@ function Panel({
 function PanelLabel({ children }) {
   return (
     <div
+      className="hcm-label"
       style={{
         fontFamily: FONT_MONO,
         fontSize: 10.5,
@@ -872,7 +906,7 @@ function ReadoutStrip({ items }) {
           >
             {it.k}
           </div>
-          <div style={{ fontFamily: FONT_MONO, fontSize: 18, color: C.amber, marginTop: 3 }}>
+          <div className="hcm-readout" style={{ fontFamily: FONT_MONO, fontSize: 18, color: C.amber, marginTop: 3 }}>
             {it.v}
           </div>
         </div>
@@ -1012,7 +1046,7 @@ function QuickPos({ onPick }) {
       {stops.map(([lbl, v]) => (
         <button
           key={lbl}
-          className="hcm-focusable"
+          className="hcm-chip hcm-focusable"
           onClick={() => onPick(v)}
           style={{
             fontFamily: FONT_MONO,
@@ -1087,9 +1121,11 @@ function Spectrum({ data, activeN, height: H, onHover, onSelect }) {
               {isActive || r.coupling > 0.5 ? Math.round(r.coupling * 100) : ""}
             </div>
             <div
+              className={`hcm-bar-fill${isActive ? " is-active" : ""}`}
               style={{
                 width: "100%",
                 height: h,
+                color: barColor,
                 background: isActive ? barColor : `${barColor}`,
                 opacity: isActive ? 1 : isNull ? 0.5 : 0.55,
                 borderRadius: "2px 2px 0 0",
