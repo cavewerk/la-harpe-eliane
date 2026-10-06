@@ -28,12 +28,29 @@ const C = {
 const FONT_DISPLAY = "'Space Grotesk', ui-sans-serif, system-ui, sans-serif";
 const FONT_MONO = "'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace";
 
-// string drawing geometry (SVG viewBox 0 0 1000 220)
+// string drawing geometry (SVG viewBox 0 0 1000 vbH; vbH defaults to 220)
 const X0 = 48;
 const X1 = 952;
 const SPAN = X1 - X0;
-const BASE_Y = 118;
-const AMP = 62;
+
+// panel layout: sizes in px (stringH null = natural aspect), remembered per browser
+const LAYOUT_KEY = "hcm-layout-v1";
+const DEFAULT_LAYOUT = {
+  stringH: null,
+  ctrlW: 300,
+  specH: 210,
+  collapsed: { string: false, controls: false, spectrum: false },
+};
+
+function loadLayout() {
+  try {
+    const s = JSON.parse(localStorage.getItem(LAYOUT_KEY));
+    if (s && typeof s === "object") {
+      return { ...DEFAULT_LAYOUT, ...s, collapsed: { ...DEFAULT_LAYOUT.collapsed, ...s.collapsed } };
+    }
+  } catch {}
+  return DEFAULT_LAYOUT;
+}
 
 function sinc(x) {
   if (x === 0) return 1;
@@ -48,6 +65,37 @@ export default function HarmonicCouplingMap() {
   const [hoverN, setHoverN] = useState(null);
   const svgRef = useRef(null);
   const draggingRef = useRef(false);
+
+  // ── layout: collapse + resize ────────────────────────────
+  const [layout, setLayout] = useState(loadLayout);
+  const setL = useCallback((patch) => setLayout((l) => ({ ...l, ...patch })), []);
+  const toggle = useCallback(
+    (k) => setLayout((l) => ({ ...l, collapsed: { ...l.collapsed, [k]: !l.collapsed[k] } })),
+    []
+  );
+  useEffect(() => {
+    try {
+      localStorage.setItem(LAYOUT_KEY, JSON.stringify(layout));
+    } catch {}
+  }, [layout]);
+
+  // string panel content width, so a chosen pixel height maps to a viewBox height
+  const stringPanelRef = useRef(null);
+  const [stringW, setStringW] = useState(0);
+  useEffect(() => {
+    const el = stringPanelRef.current;
+    if (!el || typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(([entry]) => setStringW(entry.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const vbH =
+    layout.stringH && stringW > 0
+      ? Math.min(900, Math.max(100, (1000 * layout.stringH) / stringW))
+      : 220;
+  const BASE_Y = (vbH + 16) / 2;
+  const AMP = ((vbH - 44) / 2) * 0.7;
 
   const activeN = hoverN ?? selN;
 
@@ -149,7 +197,9 @@ export default function HarmonicCouplingMap() {
       d += (i === 0 ? "M" : "L") + X.toFixed(2) + " " + Y.toFixed(2) + " ";
     }
     return d;
-  }, [activeN]);
+  }, [activeN, BASE_Y, AMP]);
+
+  const bothBottomOpen = !layout.collapsed.controls && !layout.collapsed.spectrum;
 
   const modeColor = onNode ? C.red : C.amber;
 
@@ -169,6 +219,21 @@ export default function HarmonicCouplingMap() {
         .hcm-bar { cursor:pointer; transition: opacity .12s ease; }
         .hcm-bar:hover { opacity:1 !important; }
         .hcm-focusable:focus-visible { outline:2px solid ${C.teal}; outline-offset:2px; }
+        .hcm-iconbtn { font-family:${FONT_MONO}; font-size:14px; line-height:1; width:24px; height:24px;
+          display:inline-flex; align-items:center; justify-content:center; padding:0;
+          color:${C.muted}; background:transparent; border:1px solid ${C.hair}; border-radius:5px; cursor:pointer; }
+        .hcm-iconbtn:hover { color:${C.text}; border-color:${C.line}; background:${C.panelHi}; }
+        .hcm-textbtn { font-family:${FONT_MONO}; font-size:11px; color:${C.muted}; background:transparent;
+          border:1px solid ${C.hair}; border-radius:5px; padding:4px 8px; cursor:pointer; }
+        .hcm-textbtn:hover { color:${C.text}; border-color:${C.line}; }
+        .hcm-split { position:relative; touch-action:none; user-select:none; }
+        .hcm-split-y { height:16px; cursor:row-resize; }
+        .hcm-split-x { cursor:col-resize; }
+        .hcm-split::after { content:""; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+          background:${C.hair}; border-radius:2px; transition:background .12s ease; }
+        .hcm-split-y::after { width:48px; height:3px; }
+        .hcm-split-x::after { width:3px; height:48px; }
+        .hcm-split:hover::after, .hcm-split:active::after, .hcm-split:focus-visible::after { background:${C.teal}; }
         @media (prefers-reduced-motion: reduce){ * { transition:none !important; animation:none !important; } }
       `}</style>
 
@@ -223,11 +288,17 @@ export default function HarmonicCouplingMap() {
         </div>
 
         {/* ── string view ── */}
-        <Panel style={{ marginTop: 18 }}>
-          <PanelLabel>String · drag the exciter</PanelLabel>
+        <Panel
+          style={{ marginTop: 18 }}
+          rootRef={stringPanelRef}
+          name="String"
+          title="String · drag the exciter"
+          collapsed={layout.collapsed.string}
+          onToggle={() => toggle("string")}
+        >
           <svg
             ref={svgRef}
-            viewBox="0 0 1000 220"
+            viewBox={`0 0 1000 ${vbH.toFixed(1)}`}
             style={{ width: "100%", height: "auto", display: "block", touchAction: "none", cursor: "ew-resize" }}
             onPointerDown={onPointerDown}
             onPointerMove={onPointerMove}
@@ -280,7 +351,7 @@ export default function HarmonicCouplingMap() {
               stroke={C.amber}
               strokeWidth={1.5}
             />
-            <line x1={exX} y1={22} x2={exX} y2={198} stroke={C.amber} strokeWidth={1} strokeDasharray="3 4" strokeOpacity={0.6} />
+            <line x1={exX} y1={22} x2={exX} y2={vbH - 22} stroke={C.amber} strokeWidth={1} strokeDasharray="3 4" strokeOpacity={0.6} />
             <circle cx={exX} cy={BASE_Y} r={4} fill={C.amber} />
             <text x={exX} y={16} textAnchor="middle" fill={C.amber} fontSize={12} fontFamily={FONT_MONO}>
               ⊕ exciter
@@ -315,18 +386,37 @@ export default function HarmonicCouplingMap() {
           </div>
         </Panel>
 
+        {layout.collapsed.string ? (
+          <div style={{ height: 16 }} />
+        ) : (
+          <Splitter
+            axis="y"
+            label="String height"
+            value={layout.stringH ?? stringW * 0.22}
+            min={Math.ceil(stringW * 0.1)}
+            max={Math.max(Math.ceil(stringW * 0.1), Math.min(640, Math.floor(stringW * 0.9)))}
+            onChange={(v) => setL({ stringH: v })}
+            onReset={() => setL({ stringH: null })}
+          />
+        )}
+
         {/* ── controls + spectrum ── */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "minmax(240px, 300px) 1fr",
-            gap: 16,
-            marginTop: 16,
+            gridTemplateColumns: bothBottomOpen
+              ? `${layout.ctrlW}px 16px minmax(0, 1fr)`
+              : "minmax(0, 1fr)",
+            rowGap: 16,
           }}
-          className="hcm-grid"
+          className={bothBottomOpen ? "hcm-grid" : undefined}
         >
-          <Panel>
-            <PanelLabel>Controls</PanelLabel>
+          <Panel
+            name="Controls"
+            title="Controls"
+            collapsed={layout.collapsed.controls}
+            onToggle={() => toggle("controls")}
+          >
             <Control label="Exciter position a/L" value={(pos * 100).toFixed(1) + " %"}>
               <input
                 className="hcm-range"
@@ -390,21 +480,50 @@ export default function HarmonicCouplingMap() {
             </div>
           </Panel>
 
-          <Panel>
-            <PanelLabel>Coupling spectrum · click a bar to inspect</PanelLabel>
+          {bothBottomOpen && (
+            <Splitter
+              axis="x"
+              label="Controls width"
+              value={layout.ctrlW}
+              min={220}
+              max={520}
+              onChange={(v) => setL({ ctrlW: v })}
+              onReset={() => setL({ ctrlW: DEFAULT_LAYOUT.ctrlW })}
+            />
+          )}
+
+          <Panel
+            name="Spectrum"
+            title="Coupling spectrum · click a bar to inspect"
+            collapsed={layout.collapsed.spectrum}
+            onToggle={() => toggle("spectrum")}
+          >
             <Spectrum
               data={data}
               activeN={activeN}
+              height={layout.specH}
               onHover={setHoverN}
               onSelect={setSelN}
             />
           </Panel>
         </div>
 
+        {!layout.collapsed.spectrum && (
+          <Splitter
+            axis="y"
+            label="Spectrum height"
+            value={layout.specH}
+            min={120}
+            max={600}
+            onChange={(v) => setL({ specH: v })}
+            onReset={() => setL({ specH: DEFAULT_LAYOUT.specH })}
+          />
+        )}
+
         {/* ── footnote ── */}
         <p
           style={{
-            marginTop: 20,
+            marginTop: layout.collapsed.spectrum ? 20 : 4,
             fontSize: 12,
             lineHeight: 1.7,
             color: C.muted,
@@ -417,11 +536,15 @@ export default function HarmonicCouplingMap() {
           damping, or the string's own mechanical impedance. Your pickup filters the output by the same
           geometry, so its placement multiplies this map again.
         </p>
+        <button className="hcm-textbtn hcm-focusable" onClick={() => setLayout(DEFAULT_LAYOUT)}>
+          reset layout
+        </button>
       </div>
 
       <style>{`
         @media (max-width: 720px){
           .hcm-grid { grid-template-columns: 1fr !important; }
+          .hcm-split-x { display: none; }
         }
       `}</style>
     </div>
@@ -429,18 +552,40 @@ export default function HarmonicCouplingMap() {
 }
 
 // ── subcomponents ──────────────────────────────────────────
-function Panel({ children, style }) {
+function Panel({ children, style, rootRef, name, title, collapsed, onToggle }) {
   return (
     <div
+      ref={rootRef}
       style={{
         background: C.panel,
         border: `1px solid ${C.hair}`,
         borderRadius: 10,
-        padding: "16px 18px 18px",
+        padding: collapsed ? "10px 18px" : "12px 18px 18px",
+        minWidth: 0,
         ...style,
       }}
     >
-      {children}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 12,
+          marginBottom: collapsed ? 0 : 10,
+        }}
+      >
+        <PanelLabel>{title}</PanelLabel>
+        <button
+          className="hcm-iconbtn hcm-focusable"
+          onClick={onToggle}
+          aria-expanded={!collapsed}
+          aria-label={`${collapsed ? "Expand" : "Minimize"} ${name}`}
+          title={collapsed ? "Expand" : "Minimize"}
+        >
+          {collapsed ? "+" : "–"}
+        </button>
+      </div>
+      {!collapsed && children}
     </div>
   );
 }
@@ -454,11 +599,54 @@ function PanelLabel({ children }) {
         letterSpacing: "0.2em",
         textTransform: "uppercase",
         color: C.muted,
-        marginBottom: 14,
       }}
     >
       {children}
     </div>
+  );
+}
+
+// drag handle between panels; axis "y" resizes a height, "x" a width
+function Splitter({ axis, label, value, min, max, onChange, onReset }) {
+  const dragRef = useRef(null);
+  const isX = axis === "x";
+  const clamp = (v) => Math.round(Math.min(max, Math.max(min, v)));
+  const end = (e) => {
+    dragRef.current = null;
+    e.currentTarget.releasePointerCapture?.(e.pointerId);
+  };
+  return (
+    <div
+      role="separator"
+      tabIndex={0}
+      aria-label={label}
+      aria-orientation={isX ? "vertical" : "horizontal"}
+      aria-valuenow={Math.round(value)}
+      aria-valuemin={min}
+      aria-valuemax={max}
+      title={`${label} · drag to resize, double-click to reset`}
+      className={`hcm-split ${isX ? "hcm-split-x" : "hcm-split-y"} hcm-focusable`}
+      onPointerDown={(e) => {
+        e.preventDefault();
+        dragRef.current = { start: isX ? e.clientX : e.clientY, base: value };
+        e.currentTarget.setPointerCapture?.(e.pointerId);
+      }}
+      onPointerMove={(e) => {
+        const d = dragRef.current;
+        if (d) onChange(clamp(d.base + (isX ? e.clientX : e.clientY) - d.start));
+      }}
+      onMouseDown={(e) => e.preventDefault()}
+      onPointerUp={end}
+      onPointerCancel={end}
+      onDoubleClick={onReset}
+      onKeyDown={(e) => {
+        const keys = isX ? ["ArrowLeft", "ArrowRight"] : ["ArrowUp", "ArrowDown"];
+        const i = keys.indexOf(e.key);
+        if (i < 0) return;
+        e.preventDefault();
+        onChange(clamp(value + (i ? 16 : -16)));
+      }}
+    />
   );
 }
 
@@ -538,8 +726,7 @@ function QuickPos({ onPick }) {
   );
 }
 
-function Spectrum({ data, activeN, onHover, onSelect }) {
-  const H = 210;
+function Spectrum({ data, activeN, height: H, onHover, onSelect }) {
   return (
     <div
       onPointerLeave={() => onHover(null)}
