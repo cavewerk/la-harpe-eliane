@@ -1,4 +1,5 @@
 import { useState, useMemo, useRef, useCallback, useEffect } from "react";
+import { useMidiControl, describeSource, describeMessage } from "./midi.js";
 
 // ─────────────────────────────────────────────────────────────
 // Exciter → Harmonic Coupling Map
@@ -39,7 +40,7 @@ const DEFAULT_LAYOUT = {
   stringH: null,
   ctrlW: 300,
   specH: 210,
-  collapsed: { string: false, controls: false, spectrum: false },
+  collapsed: { string: false, controls: false, spectrum: false, midi: false },
 };
 
 function loadLayout() {
@@ -96,6 +97,15 @@ export default function HarmonicCouplingMap() {
       : 220;
   const BASE_Y = (vbH + 16) / 2;
   const AMP = ((vbH - 44) / 2) * 0.7;
+
+  const midi = useMidiControl({
+    nHarm,
+    onPosition: setPos,
+    onHarmonic: (n) => {
+      setSelN(n);
+      setHoverN(null);
+    },
+  });
 
   const activeN = hoverN ?? selN;
 
@@ -224,8 +234,11 @@ export default function HarmonicCouplingMap() {
           color:${C.muted}; background:transparent; border:1px solid ${C.hair}; border-radius:5px; cursor:pointer; }
         .hcm-iconbtn:hover { color:${C.text}; border-color:${C.line}; background:${C.panelHi}; }
         .hcm-textbtn { font-family:${FONT_MONO}; font-size:11px; color:${C.muted}; background:transparent;
-          border:1px solid ${C.hair}; border-radius:5px; padding:4px 8px; cursor:pointer; }
+          border:1px solid ${C.hair}; border-radius:5px; padding:4px 8px; cursor:pointer; white-space:nowrap; }
         .hcm-textbtn:hover { color:${C.text}; border-color:${C.line}; }
+        .hcm-textbtn.is-on { color:${C.bg}; background:${C.amber}; border-color:${C.amber}; }
+        .hcm-select { font-family:${FONT_MONO}; font-size:12px; color:${C.text}; background:${C.panelHi};
+          border:1px solid ${C.hair}; border-radius:5px; padding:4px 6px; max-width:100%; }
         .hcm-split { position:relative; touch-action:none; user-select:none; }
         .hcm-split-y { height:16px; cursor:row-resize; }
         .hcm-split-x { cursor:col-resize; }
@@ -520,10 +533,21 @@ export default function HarmonicCouplingMap() {
           />
         )}
 
+        {/* ── MIDI ── */}
+        <Panel
+          style={{ marginTop: layout.collapsed.spectrum ? 16 : 0 }}
+          name="MIDI"
+          title="MIDI · exciter position + harmonic select"
+          collapsed={layout.collapsed.midi}
+          onToggle={() => toggle("midi")}
+        >
+          <MidiPanel midi={midi} />
+        </Panel>
+
         {/* ── footnote ── */}
         <p
           style={{
-            marginTop: layout.collapsed.spectrum ? 20 : 4,
+            marginTop: 20,
             fontSize: 12,
             lineHeight: 1.7,
             color: C.muted,
@@ -670,6 +694,105 @@ function ReadoutStrip({ items }) {
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+
+function MidiPanel({ midi }) {
+  const { status } = midi;
+  const note = { fontSize: 12.5, color: C.muted, lineHeight: 1.7 };
+
+  if (status === "unsupported") {
+    return (
+      <div style={note}>
+        {window.isSecureContext
+          ? "Web MIDI isn't available in this browser. Open this file in Chrome or Edge (Safari has no Web MIDI)."
+          : "Web MIDI only works on a secure page. Open index.html directly (file://) or from localhost."}
+      </div>
+    );
+  }
+  if (status === "off" || status === "denied") {
+    return (
+      <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap", ...note }}>
+        <button className="hcm-textbtn hcm-focusable" onClick={midi.enable}>
+          enable MIDI
+        </button>
+        {status === "denied"
+          ? <span style={{ color: C.red }}>MIDI permission was denied. Allow it in the browser's site settings, then retry.</span>
+          : <span>The browser will ask for permission to use MIDI devices.</span>}
+      </div>
+    );
+  }
+  if (status === "pending") return <div style={note}>Waiting for MIDI permission…</div>;
+
+  const inputKnown = midi.inputId === "all" || midi.inputs.some((i) => i.id === midi.inputId);
+  const rows = [
+    { key: "pos", label: "Exciter position", hint: "move a CC or pitch bend…" },
+    { key: "harm", label: "Harmonic select", hint: "press the key for H1, or move a CC…" },
+  ];
+
+  return (
+    <div style={{ fontSize: 12.5 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 14 }}>
+        <span style={{ color: C.text }}>Input</span>
+        <select
+          className="hcm-select hcm-focusable"
+          value={midi.inputId}
+          onChange={(e) => midi.setInputId(e.target.value)}
+        >
+          <option value="all">All inputs ({midi.inputs.length})</option>
+          {midi.inputs.map((i) => (
+            <option key={i.id} value={i.id}>
+              {i.name}
+            </option>
+          ))}
+          {!inputKnown && <option value={midi.inputId}>(disconnected device)</option>}
+        </select>
+        <span style={{ color: C.muted, marginLeft: "auto" }}>
+          last{" "}
+          <span style={{ color: midi.lastMsg ? C.teal : C.muted }}>
+            {midi.lastMsg ? describeMessage(midi.lastMsg) : "nothing received yet"}
+          </span>
+        </span>
+      </div>
+
+      {rows.map((r) => {
+        const learning = midi.learning === r.key;
+        return (
+          <div
+            key={r.key}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              flexWrap: "wrap",
+              padding: "8px 0",
+              borderTop: `1px solid ${C.hair}`,
+            }}
+          >
+            <span style={{ color: C.text, minWidth: 130 }}>{r.label}</span>
+            <span style={{ color: learning ? C.amber : C.muted, flex: 1, minWidth: 180 }}>
+              {learning ? r.hint : describeSource(midi.map[r.key])}
+            </span>
+            <button
+              className={`hcm-textbtn hcm-focusable${learning ? " is-on" : ""}`}
+              onClick={() => midi.toggleLearn(r.key)}
+              aria-pressed={learning}
+            >
+              {learning ? "cancel" : "learn"}
+            </button>
+          </div>
+        );
+      })}
+
+      <div style={{ display: "flex", gap: 8, paddingTop: 10, borderTop: `1px solid ${C.hair}` }}>
+        <button className="hcm-textbtn hcm-focusable" onClick={midi.resetMap}>
+          reset mappings
+        </button>
+        <button className="hcm-textbtn hcm-focusable" onClick={midi.disable}>
+          disable MIDI
+        </button>
+      </div>
     </div>
   );
 }
