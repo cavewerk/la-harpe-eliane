@@ -11934,7 +11934,7 @@
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "MCHelper.maxpat",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int" ],
@@ -12008,7 +12008,7 @@
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "MCHelper.maxpat",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int" ],
@@ -12106,7 +12106,7 @@
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "MCHelper.maxpat",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int" ],
@@ -12156,7 +12156,7 @@
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "MCHelper.maxpat",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int" ],
@@ -13045,7 +13045,7 @@
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "MCHelper.maxpat",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int" ],
@@ -13160,7 +13160,7 @@
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "MCHelper.maxpat",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int" ],
@@ -13234,7 +13234,7 @@
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "MCHelper.maxpat",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int" ],
@@ -13336,7 +13336,7 @@
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "MCHelper.maxpat",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int" ],
@@ -16272,6 +16272,634 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1685.0, 740.0, 341.0, 33.0 ],
 					"text" : "Absorbs rotary 1's touch note (jk.pushcore sends it as 10pad). Without it, touching the knob posts \"10pad: no such object\"."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-423",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1540.0, 860.0, 520.0, 33.0 ],
+					"text" : "Drone on/off per voice on the Push track-below buttons (lit = drone on): 1 gamma, 2 delta, 3 beta, 4 alpha, 5 bass, 6 tenor, 7 alto, 8 soprano. Each sets its MCHelper's drone toggle; change sends on-screen clicks back to the light."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-424",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1540.0, 940.0, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						},
+						"activebgoncolor" : 						{
+							"expression" : ""
+						},
+						"activetextcolor" : 						{
+							"expression" : ""
+						},
+						"activetextoncolor" : 						{
+							"expression" : ""
+						},
+						"bordercolor" : 						{
+							"expression" : ""
+						},
+						"focusbordercolor" : 						{
+							"expression" : ""
+						},
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "drone_gamma",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "drone_gamma",
+							"parameter_type" : 2
+						}
+					},
+					"text" : "gamma",
+					"texton" : "gamma",
+					"varname" : "drone_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-425",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 1586.0, 940.0, 140.0, 62.0 ],
+					"text" : "jk.push @button track1below @oncolor y @offcolor k @textoff gamma @texton gamma @mode t",
+					"varname" : "drone_push_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-426",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 1540.0, 905.0, 48.0, 22.0 ],
+					"text" : "change",
+					"varname" : "drone_change_gamma"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-427",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1730.0, 940.0, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						},
+						"activebgoncolor" : 						{
+							"expression" : ""
+						},
+						"activetextcolor" : 						{
+							"expression" : ""
+						},
+						"activetextoncolor" : 						{
+							"expression" : ""
+						},
+						"bordercolor" : 						{
+							"expression" : ""
+						},
+						"focusbordercolor" : 						{
+							"expression" : ""
+						},
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "drone_delta",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "drone_delta",
+							"parameter_type" : 2
+						}
+					},
+					"text" : "delta",
+					"texton" : "delta",
+					"varname" : "drone_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-428",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 1776.0, 940.0, 140.0, 62.0 ],
+					"text" : "jk.push @button track2below @oncolor y @offcolor k @textoff delta @texton delta @mode t",
+					"varname" : "drone_push_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-429",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 1730.0, 905.0, 48.0, 22.0 ],
+					"text" : "change",
+					"varname" : "drone_change_delta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-430",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1920.0, 940.0, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						},
+						"activebgoncolor" : 						{
+							"expression" : ""
+						},
+						"activetextcolor" : 						{
+							"expression" : ""
+						},
+						"activetextoncolor" : 						{
+							"expression" : ""
+						},
+						"bordercolor" : 						{
+							"expression" : ""
+						},
+						"focusbordercolor" : 						{
+							"expression" : ""
+						},
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "drone_beta",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "drone_beta",
+							"parameter_type" : 2
+						}
+					},
+					"text" : "beta",
+					"texton" : "beta",
+					"varname" : "drone_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-431",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 1966.0, 940.0, 140.0, 62.0 ],
+					"text" : "jk.push @button track3below @oncolor y @offcolor k @textoff beta @texton beta @mode t",
+					"varname" : "drone_push_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-432",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 1920.0, 905.0, 48.0, 22.0 ],
+					"text" : "change",
+					"varname" : "drone_change_beta"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-433",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 2110.0, 940.0, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						},
+						"activebgoncolor" : 						{
+							"expression" : ""
+						},
+						"activetextcolor" : 						{
+							"expression" : ""
+						},
+						"activetextoncolor" : 						{
+							"expression" : ""
+						},
+						"bordercolor" : 						{
+							"expression" : ""
+						},
+						"focusbordercolor" : 						{
+							"expression" : ""
+						},
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "drone_alpha",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "drone_alpha",
+							"parameter_type" : 2
+						}
+					},
+					"text" : "alpha",
+					"texton" : "alpha",
+					"varname" : "drone_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-434",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 2156.0, 940.0, 140.0, 62.0 ],
+					"text" : "jk.push @button track4below @oncolor y @offcolor k @textoff alpha @texton alpha @mode t",
+					"varname" : "drone_push_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-435",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 2110.0, 905.0, 48.0, 22.0 ],
+					"text" : "change",
+					"varname" : "drone_change_alpha"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-436",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 2300.0, 940.0, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						},
+						"activebgoncolor" : 						{
+							"expression" : ""
+						},
+						"activetextcolor" : 						{
+							"expression" : ""
+						},
+						"activetextoncolor" : 						{
+							"expression" : ""
+						},
+						"bordercolor" : 						{
+							"expression" : ""
+						},
+						"focusbordercolor" : 						{
+							"expression" : ""
+						},
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "drone_bass",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "drone_bass",
+							"parameter_type" : 2
+						}
+					},
+					"text" : "bass",
+					"texton" : "bass",
+					"varname" : "drone_bass"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-437",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 2346.0, 940.0, 140.0, 62.0 ],
+					"text" : "jk.push @button track5below @oncolor y @offcolor k @textoff bass @texton bass @mode t",
+					"varname" : "drone_push_bass"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-438",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 2300.0, 905.0, 48.0, 22.0 ],
+					"text" : "change",
+					"varname" : "drone_change_bass"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-439",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 2490.0, 940.0, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						},
+						"activebgoncolor" : 						{
+							"expression" : ""
+						},
+						"activetextcolor" : 						{
+							"expression" : ""
+						},
+						"activetextoncolor" : 						{
+							"expression" : ""
+						},
+						"bordercolor" : 						{
+							"expression" : ""
+						},
+						"focusbordercolor" : 						{
+							"expression" : ""
+						},
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "drone_tenor",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "drone_tenor",
+							"parameter_type" : 2
+						}
+					},
+					"text" : "tenor",
+					"texton" : "tenor",
+					"varname" : "drone_tenor"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-440",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 2536.0, 940.0, 140.0, 62.0 ],
+					"text" : "jk.push @button track6below @oncolor y @offcolor k @textoff tenor @texton tenor @mode t",
+					"varname" : "drone_push_tenor"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-441",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 2490.0, 905.0, 48.0, 22.0 ],
+					"text" : "change",
+					"varname" : "drone_change_tenor"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-442",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 2680.0, 940.0, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						},
+						"activebgoncolor" : 						{
+							"expression" : ""
+						},
+						"activetextcolor" : 						{
+							"expression" : ""
+						},
+						"activetextoncolor" : 						{
+							"expression" : ""
+						},
+						"bordercolor" : 						{
+							"expression" : ""
+						},
+						"focusbordercolor" : 						{
+							"expression" : ""
+						},
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "drone_alto",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "drone_alto",
+							"parameter_type" : 2
+						}
+					},
+					"text" : "alto",
+					"texton" : "alto",
+					"varname" : "drone_alto"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-443",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 2726.0, 940.0, 140.0, 62.0 ],
+					"text" : "jk.push @button track7below @oncolor y @offcolor k @textoff alto @texton alto @mode t",
+					"varname" : "drone_push_alto"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-444",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 2680.0, 905.0, 48.0, 22.0 ],
+					"text" : "change",
+					"varname" : "drone_change_alto"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 1.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-445",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 2870.0, 940.0, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						},
+						"activebgoncolor" : 						{
+							"expression" : ""
+						},
+						"activetextcolor" : 						{
+							"expression" : ""
+						},
+						"activetextoncolor" : 						{
+							"expression" : ""
+						},
+						"bordercolor" : 						{
+							"expression" : ""
+						},
+						"focusbordercolor" : 						{
+							"expression" : ""
+						},
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "drone_soprano",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "drone_soprano",
+							"parameter_type" : 2
+						}
+					},
+					"text" : "soprano",
+					"texton" : "soprano",
+					"varname" : "drone_soprano"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-446",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 2916.0, 940.0, 140.0, 62.0 ],
+					"text" : "jk.push @button track8below @oncolor y @offcolor k @textoff soprano @texton soprano @mode t",
+					"varname" : "drone_push_soprano"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-447",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 2870.0, 905.0, 48.0, 22.0 ],
+					"text" : "change",
+					"varname" : "drone_change_soprano"
 				}
 
 			}
@@ -19957,8 +20585,296 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-425", 0 ],
+					"source" : [ "obj-424", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-424", 0 ],
+					"source" : [ "obj-425", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-317", 2 ],
+					"source" : [ "obj-424", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-426", 0 ],
+					"source" : [ "obj-317", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-424", 0 ],
+					"source" : [ "obj-426", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-428", 0 ],
+					"source" : [ "obj-427", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-427", 0 ],
+					"source" : [ "obj-428", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-321", 2 ],
+					"source" : [ "obj-427", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-429", 0 ],
+					"source" : [ "obj-321", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-427", 0 ],
+					"source" : [ "obj-429", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-431", 0 ],
+					"source" : [ "obj-430", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-430", 0 ],
+					"source" : [ "obj-431", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-313", 2 ],
+					"source" : [ "obj-430", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-432", 0 ],
+					"source" : [ "obj-313", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-430", 0 ],
+					"source" : [ "obj-432", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-434", 0 ],
+					"source" : [ "obj-433", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-433", 0 ],
+					"source" : [ "obj-434", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-309", 2 ],
+					"source" : [ "obj-433", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-435", 0 ],
+					"source" : [ "obj-309", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-433", 0 ],
+					"source" : [ "obj-435", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-437", 0 ],
+					"source" : [ "obj-436", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-436", 0 ],
+					"source" : [ "obj-437", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 2 ],
+					"source" : [ "obj-436", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-438", 0 ],
+					"source" : [ "obj-9", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-436", 0 ],
+					"source" : [ "obj-438", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-440", 0 ],
+					"source" : [ "obj-439", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-439", 0 ],
+					"source" : [ "obj-440", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-18", 2 ],
+					"source" : [ "obj-439", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-441", 0 ],
+					"source" : [ "obj-18", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-439", 0 ],
+					"source" : [ "obj-441", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-443", 0 ],
+					"source" : [ "obj-442", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-442", 0 ],
+					"source" : [ "obj-443", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 2 ],
+					"source" : [ "obj-442", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-444", 0 ],
+					"source" : [ "obj-13", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-442", 0 ],
+					"source" : [ "obj-444", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-446", 0 ],
+					"source" : [ "obj-445", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-445", 0 ],
+					"source" : [ "obj-446", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-10", 2 ],
+					"source" : [ "obj-445", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-447", 0 ],
+					"source" : [ "obj-10", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-445", 0 ],
+					"source" : [ "obj-447", 0 ]
+				}
+
+			}
  ],
 		"parameters" : 		{
+			"obj-424" : [ "drone_gamma", "drone_gamma", 0 ],
+			"obj-427" : [ "drone_delta", "drone_delta", 0 ],
+			"obj-430" : [ "drone_beta", "drone_beta", 0 ],
+			"obj-433" : [ "drone_alpha", "drone_alpha", 0 ],
+			"obj-436" : [ "drone_bass", "drone_bass", 0 ],
+			"obj-439" : [ "drone_tenor", "drone_tenor", 0 ],
+			"obj-442" : [ "drone_alto", "drone_alto", 0 ],
+			"obj-445" : [ "drone_soprano", "drone_soprano", 0 ],
 			"obj-100" : [ "2[29]", "2", 0 ],
 			"obj-102" : [ "2[30]", "2", 0 ],
 			"obj-103" : [ "2[31]", "2", 0 ],
