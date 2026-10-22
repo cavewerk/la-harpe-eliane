@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -203.0, -880.0, 1602.0, 847.0 ],
+		"rect" : [ -59.0, -843.0, 833.0, 710.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -634,6 +634,8 @@
 					"presentation_rect" : [ 255.0, 898.0, 143.0, 48.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_initial" : [ -70 ],
+							"parameter_initial_enable" : 1,
 							"parameter_longname" : "synth out",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
@@ -851,8 +853,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial"
+
 				}
 
 			}
@@ -1075,8 +1076,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[1]"
+
 				}
 
 			}
@@ -1314,8 +1314,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[2]"
+
 				}
 
 			}
@@ -1553,8 +1552,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[3]"
+
 				}
 
 			}
@@ -1988,8 +1986,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[4]"
+
 				}
 
 			}
@@ -2253,8 +2250,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[5]"
+
 				}
 
 			}
@@ -2505,8 +2501,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[6]"
+
 				}
 
 			}
@@ -11749,8 +11744,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[7]"
+
 				}
 
 			}
@@ -12081,7 +12075,7 @@
 				"box" : 				{
 					"bgmode" : 0,
 					"border" : 0,
-					"clickthrough" : 0,
+					"clickthrough" : 1,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
 					"id" : "obj-15",
@@ -12095,7 +12089,7 @@
 					"outlettype" : [ "multichannelsignal" ],
 					"patching_rect" : [ 413.0, 210.0, 109.836062431335449, 46.721310138702393 ],
 					"presentation" : 1,
-					"presentation_rect" : [ -1.470588207244873, 327.941170215606689, 370.588228225708008, 52.94117546081543 ],
+					"presentation_rect" : [ -2.0, 328.0, 370.0, 26.411757946014404 ],
 					"varname" : "obj-163",
 					"viewvisibility" : 1
 				}
@@ -13010,7 +13004,7 @@
 					"outlettype" : [ "signal", "signal", "" ],
 					"patching_rect" : [ 5.0, 1138.0, 401.300000000000011, 247.300000000000011 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1198.360621452331543, 501.63932991027832, 383.71560925245285, 284.705894231796265 ],
+					"presentation_rect" : [ 1198.0, 502.0, 384.0, 260.0 ],
 					"varname" : "obj-96[1]",
 					"viewvisibility" : 1
 				}
@@ -13125,7 +13119,7 @@
 					"outlettype" : [ "signal", "signal", "" ],
 					"patching_rect" : [ 5.0, 1418.0, 401.300000000000011, 247.300000000000011 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 801.639321327209473, 499.999985694885254, 384.705898404121399, 284.705894231796265 ],
+					"presentation_rect" : [ 802.0, 500.0, 384.0, 256.0 ],
 					"varname" : "obj-91",
 					"viewvisibility" : 1
 				}
@@ -13199,7 +13193,7 @@
 					"outlettype" : [ "signal", "signal", "" ],
 					"patching_rect" : [ 5.0, 1698.0, 401.300000000000011, 247.300000000000011 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.083333253860474, 497.916647672653198, 384.705898404121399, 284.705894231796265 ],
+					"presentation_rect" : [ 2.0, 498.0, 384.0, 252.0 ],
 					"varname" : "obj-88[1]",
 					"viewvisibility" : 1
 				}
@@ -13301,7 +13295,7 @@
 					"outlettype" : [ "signal", "signal", "" ],
 					"patching_rect" : [ 5.0, 1978.0, 401.300000000000011, 247.300000000000011 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 400.0, 498.0, 385.044579148292542, 284.705894231796265 ],
+					"presentation_rect" : [ 400.0, 498.0, 386.0, 258.0 ],
 					"varname" : "obj-84[1]",
 					"viewvisibility" : 1
 				}
@@ -13325,7 +13319,7 @@
 					"outlettype" : [ "multichannelsignal" ],
 					"patching_rect" : [ 413.0, 2170.0, 109.799999999999997, 46.700000000000003 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 400.0, 752.0, 372.058816432952881, 47.058822631835938 ],
+					"presentation_rect" : [ 400.0, 752.0, 372.0, 24.0 ],
 					"varname" : "obj-83[1]",
 					"viewvisibility" : 1
 				}
@@ -14119,8 +14113,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[8]"
+
 				}
 
 			}
@@ -14343,8 +14336,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[9]"
+
 				}
 
 			}
@@ -14567,8 +14559,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[10]"
+
 				}
 
 			}
@@ -14791,8 +14782,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[11]"
+
 				}
 
 			}
@@ -15015,8 +15005,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[12]"
+
 				}
 
 			}
@@ -15239,8 +15228,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[15]"
+
 				}
 
 			}
@@ -15463,8 +15451,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[17]"
+
 				}
 
 			}
@@ -15687,8 +15674,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[20]"
+
 				}
 
 			}
@@ -16298,7 +16284,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1540.0, 860.0, 614.0, 33.0 ],
+					"patching_rect" : [ 1540.0, 860.0, 616.0, 33.0 ],
 					"text" : "Drone on/off per voice on the Push track-below buttons (lit = drone on): 1 gamma, 2 delta, 3 beta, 4 alpha, 5 bass, 6 tenor, 7 alto, 8 soprano. Each sets its MCHelper's drone toggle; change sends on-screen clicks back to the light."
 				}
 
@@ -16369,7 +16355,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 1586.0, 940.0, 160.0, 62.0 ],
+					"patching_rect" : [ 1586.0, 940.0, 166.0, 62.0 ],
 					"text" : "jk.push @button track1below @oncolor y @offcolor k @textoff gamma @texton gamma @mode t",
 					"varname" : "drone_push_gamma"
 				}
@@ -16454,7 +16440,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 1776.0, 940.0, 146.0, 62.0 ],
+					"patching_rect" : [ 1776.0, 940.0, 150.0, 62.0 ],
 					"text" : "jk.push @button track2below @oncolor y @offcolor k @textoff delta @texton delta @mode t",
 					"varname" : "drone_push_delta"
 				}
@@ -16539,7 +16525,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 1966.0, 940.0, 144.0, 62.0 ],
+					"patching_rect" : [ 1966.0, 940.0, 147.0, 62.0 ],
 					"text" : "jk.push @button track3below @oncolor y @offcolor k @textoff beta @texton beta @mode t",
 					"varname" : "drone_push_beta"
 				}
@@ -16624,7 +16610,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 2156.0, 940.0, 150.0, 62.0 ],
+					"patching_rect" : [ 2156.0, 940.0, 153.0, 62.0 ],
 					"text" : "jk.push @button track4below @oncolor y @offcolor k @textoff alpha @texton alpha @mode t",
 					"varname" : "drone_push_alpha"
 				}
@@ -16709,7 +16695,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 2346.0, 940.0, 146.0, 62.0 ],
+					"patching_rect" : [ 2346.0, 940.0, 149.0, 62.0 ],
 					"text" : "jk.push @button track5below @oncolor y @offcolor k @textoff bass @texton bass @mode t",
 					"varname" : "drone_push_bass"
 				}
@@ -16794,7 +16780,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 2536.0, 940.0, 148.0, 62.0 ],
+					"patching_rect" : [ 2536.0, 940.0, 151.0, 62.0 ],
 					"text" : "jk.push @button track6below @oncolor y @offcolor k @textoff tenor @texton tenor @mode t",
 					"varname" : "drone_push_tenor"
 				}
@@ -16964,7 +16950,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "int", "", "", "" ],
-					"patching_rect" : [ 2916.0, 940.0, 164.0, 62.0 ],
+					"patching_rect" : [ 2916.0, 940.0, 166.0, 62.0 ],
 					"text" : "jk.push @button track8below @oncolor y @offcolor k @textoff soprano @texton soprano @mode t",
 					"varname" : "drone_push_soprano"
 				}
@@ -23001,9 +22987,9 @@
 						"-[110]" : 0.0,
 						"-[111]" : 0.0,
 						"-[112]" : 0.0,
-						"-[113]" : -0.00048,
-						"-[114]" : -0.0002,
-						"-[115]" : 0.00028,
+						"-[113]" : -0.072,
+						"-[114]" : -0.03,
+						"-[115]" : 0.042,
 						"-[116]" : 2.0,
 						"-[117]" : 3.0,
 						"-[118]" : 5.0,
@@ -23018,37 +23004,37 @@
 						"-[126]" : 0.0,
 						"-[127]" : 0.0,
 						"-[12]" : 0.0,
-						"-[13]" : 0.0,
-						"-[14]" : 0.0,
-						"-[15]" : 0.0,
+						"-[13]" : 0.204,
+						"-[14]" : -0.006,
+						"-[15]" : -0.27,
 						"-[16]" : 2.0,
 						"-[17]" : 1.0,
 						"-[18]" : 0.0,
-						"-[19]" : 0.0024,
+						"-[19]" : 0.36,
 						"-[1]" : 2.0,
 						"-[20]" : 0.0,
 						"-[21]" : 0.0,
-						"-[22]" : 0.00072,
+						"-[22]" : 0.108,
 						"-[23]" : 4.0,
 						"-[24]" : 3.0,
-						"-[25]" : -0.0012,
+						"-[25]" : -0.18,
 						"-[26]" : 3.0,
 						"-[27]" : 0.0,
 						"-[28]" : 6.0,
 						"-[29]" : 3.0,
 						"-[2]" : 3.0,
-						"-[30]" : 0.00192,
+						"-[30]" : 0.288,
 						"-[31]" : 5.0,
 						"-[32]" : 0.0,
 						"-[33]" : 5.0,
 						"-[34]" : 0.0,
 						"-[35]" : 0.0,
 						"-[36]" : 0.0,
-						"-[37]" : 0.00224,
+						"-[37]" : 0.336,
 						"-[38]" : 4.0,
 						"-[39]" : 0.0,
 						"-[3]" : 9.0,
-						"-[40]" : 0.00008,
+						"-[40]" : 0.012,
 						"-[41]" : 0.0,
 						"-[42]" : 9.0,
 						"-[43]" : 2.0,
@@ -23067,7 +23053,7 @@
 						"-[55]" : 6.999999999999999,
 						"-[56]" : 2.0,
 						"-[57]" : 0.0,
-						"-[58]" : 0.00004,
+						"-[58]" : 0.006,
 						"-[59]" : 6.0,
 						"-[5]" : 8.0,
 						"-[60]" : 1.0,
@@ -23077,7 +23063,7 @@
 						"-[64]" : 0.0,
 						"-[65]" : 0.0,
 						"-[66]" : 0.0,
-						"-[67]" : -0.00028,
+						"-[67]" : -0.042,
 						"-[68]" : 1.0,
 						"-[69]" : 2.0,
 						"-[6]" : 6.0,
@@ -23088,14 +23074,14 @@
 						"-[74]" : 9.0,
 						"-[75]" : 7.0,
 						"-[76]" : 0.0,
-						"-[77]" : -0.0002,
+						"-[77]" : -0.03,
 						"-[78]" : 0.0,
 						"-[79]" : 0.0,
 						"-[7]" : 4.0,
 						"-[80]" : 0.0,
-						"-[81]" : 0.00012,
-						"-[82]" : -0.00204,
-						"-[83]" : -0.0054,
+						"-[81]" : 0.018,
+						"-[82]" : -0.306,
+						"-[83]" : -0.81,
 						"-[84]" : 1.0,
 						"-[85]" : 2.0,
 						"-[86]" : 5.0,
@@ -23174,10 +23160,12 @@
 						"2[61]" : 500.0,
 						"2[62]" : 500.0,
 						"2[63]" : 500.0,
+						"2[64]" : 0.0,
 						"2[6]" : 500.0,
 						"2[7]" : 499.0,
 						"2[8]" : 470.0,
 						"2[9]" : 500.0,
+						"Mic Out" : -70.0,
 						"button" : 0.0,
 						"button[1]" : 0.0,
 						"button[2]" : 0.0,
@@ -23186,6 +23174,14 @@
 						"button[5]" : 0.0,
 						"button[6]" : 0.0,
 						"button[8]" : 0.0,
+						"drone_alpha" : 0.0,
+						"drone_alto" : 0.0,
+						"drone_bass" : 0.0,
+						"drone_beta" : 0.0,
+						"drone_delta" : 0.0,
+						"drone_gamma" : 0.0,
+						"drone_soprano" : 0.0,
+						"drone_tenor" : 0.0,
 						"live.button[10]" : 0.0,
 						"live.button[11]" : 0.0,
 						"live.button[12]" : 0.0,
@@ -23201,7 +23197,7 @@
 						"live.button[21]" : 0.0,
 						"live.button[22]" : 0.0,
 						"live.button[23]" : 0.0,
-						"live.button[24]" : 1.0,
+						"live.button[24]" : 0.0,
 						"live.button[25]" : 0.0,
 						"live.button[26]" : 0.0,
 						"live.button[27]" : 0.0,
@@ -23247,6 +23243,7 @@
 						"live.button[68]" : 0.0,
 						"live.button[69]" : 0.0,
 						"live.button[6]" : 0.0,
+						"live.button[70]" : 0.0,
 						"live.button[7]" : 0.0,
 						"live.button[8]" : 0.0,
 						"live.button[9]" : 0.0,
@@ -23258,7 +23255,6 @@
 						"live.dial[5]" : 285.999999999999943,
 						"live.dial[6]" : 285.999999999999943,
 						"live.dial[7]" : 191.184159296725284,
-						"live.gain~" : -70.0,
 						"live.menu[1]" : 0.0,
 						"live.menu[2]" : 4.0,
 						"live.menu[3]" : 3.0,
@@ -23310,7 +23306,7 @@
 						"live.text[47]" : 0.0,
 						"live.text[48]" : 0.0,
 						"live.text[49]" : 0.0,
-						"live.text[4]" : 1.0,
+						"live.text[4]" : 0.0,
 						"live.text[50]" : 0.0,
 						"live.text[51]" : 0.0,
 						"live.text[52]" : 0.0,
@@ -23331,11 +23327,11 @@
 						"live.text[7]" : 0.0,
 						"live.text[8]" : 0.0,
 						"live.text[9]" : 0.0,
+						"live.toggle[13]" : 0.0,
 						"pushtext16[1]" : 0.0,
-						"pushtext16[2]" : 0.0,
 						"pushtext18[1]" : 0.0,
 						"pushtext20[1]" : 0.0,
-						"pushtext22[1]" : 1.0,
+						"pushtext22[1]" : 0.0,
 						"pushtext[1]" : 0.0,
 						"pushtext[2]" : 0.0,
 						"pushtext[3]" : 0.0,
@@ -23348,6 +23344,7 @@
 						"slider[5]" : 1.0,
 						"slider[6]" : 0.0,
 						"slider[7]" : 0.0,
+						"synth out" : -70.0,
 						"toggle" : 0.0,
 						"toggle[1]" : 0.0,
 						"toggle[2]" : 0.0,
@@ -23365,7 +23362,7 @@
 							"flonum[6]" : [ 1.0 ],
 							"flonum[7]" : [ 1.0 ],
 							"flonum[8]" : [ 1.0 ],
-							"multislider" : [ 0.936834809087938, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
+							"multislider" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
 							"multislider[1]" : [ 0.891560333005844, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
 							"multislider[2]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.925516190067414 ],
 							"multislider[3]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
@@ -23416,14 +23413,6 @@
 						"type" : "patcher",
 						"subtype" : "Undefined",
 						"embed" : 1,
-						"fileref" : 						{
-							"name" : "6-1-5-7",
-							"filename" : "jam1[3].maxsnap",
-							"filepath" : "~/Documents/Max 9/Snapshots",
-							"filepos" : -1,
-							"snapshotfileid" : "b94ad598e0604d959a5f3dc45bfbc177"
-						}
-,
 						"snapshot" : 						{
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
@@ -23442,9 +23431,9 @@
 									"-[110]" : 0.0,
 									"-[111]" : 0.0,
 									"-[112]" : 0.0,
-									"-[113]" : -0.00048,
-									"-[114]" : -0.0002,
-									"-[115]" : 0.00028,
+									"-[113]" : -0.072,
+									"-[114]" : -0.03,
+									"-[115]" : 0.042,
 									"-[116]" : 2.0,
 									"-[117]" : 3.0,
 									"-[118]" : 5.0,
@@ -23459,37 +23448,37 @@
 									"-[126]" : 0.0,
 									"-[127]" : 0.0,
 									"-[12]" : 0.0,
-									"-[13]" : 0.0,
-									"-[14]" : 0.0,
-									"-[15]" : 0.0,
+									"-[13]" : 0.204,
+									"-[14]" : -0.006,
+									"-[15]" : -0.27,
 									"-[16]" : 2.0,
 									"-[17]" : 1.0,
 									"-[18]" : 0.0,
-									"-[19]" : 0.0024,
+									"-[19]" : 0.36,
 									"-[1]" : 2.0,
 									"-[20]" : 0.0,
 									"-[21]" : 0.0,
-									"-[22]" : 0.00072,
+									"-[22]" : 0.108,
 									"-[23]" : 4.0,
 									"-[24]" : 3.0,
-									"-[25]" : -0.0012,
+									"-[25]" : -0.18,
 									"-[26]" : 3.0,
 									"-[27]" : 0.0,
 									"-[28]" : 6.0,
 									"-[29]" : 3.0,
 									"-[2]" : 3.0,
-									"-[30]" : 0.00192,
+									"-[30]" : 0.288,
 									"-[31]" : 5.0,
 									"-[32]" : 0.0,
 									"-[33]" : 5.0,
 									"-[34]" : 0.0,
 									"-[35]" : 0.0,
 									"-[36]" : 0.0,
-									"-[37]" : 0.00224,
+									"-[37]" : 0.336,
 									"-[38]" : 4.0,
 									"-[39]" : 0.0,
 									"-[3]" : 9.0,
-									"-[40]" : 0.00008,
+									"-[40]" : 0.012,
 									"-[41]" : 0.0,
 									"-[42]" : 9.0,
 									"-[43]" : 2.0,
@@ -23508,7 +23497,7 @@
 									"-[55]" : 6.999999999999999,
 									"-[56]" : 2.0,
 									"-[57]" : 0.0,
-									"-[58]" : 0.00004,
+									"-[58]" : 0.006,
 									"-[59]" : 6.0,
 									"-[5]" : 8.0,
 									"-[60]" : 1.0,
@@ -23518,7 +23507,7 @@
 									"-[64]" : 0.0,
 									"-[65]" : 0.0,
 									"-[66]" : 0.0,
-									"-[67]" : -0.00028,
+									"-[67]" : -0.042,
 									"-[68]" : 1.0,
 									"-[69]" : 2.0,
 									"-[6]" : 6.0,
@@ -23529,14 +23518,14 @@
 									"-[74]" : 9.0,
 									"-[75]" : 7.0,
 									"-[76]" : 0.0,
-									"-[77]" : -0.0002,
+									"-[77]" : -0.03,
 									"-[78]" : 0.0,
 									"-[79]" : 0.0,
 									"-[7]" : 4.0,
 									"-[80]" : 0.0,
-									"-[81]" : 0.00012,
-									"-[82]" : -0.00204,
-									"-[83]" : -0.0054,
+									"-[81]" : 0.018,
+									"-[82]" : -0.306,
+									"-[83]" : -0.81,
 									"-[84]" : 1.0,
 									"-[85]" : 2.0,
 									"-[86]" : 5.0,
@@ -23615,10 +23604,12 @@
 									"2[61]" : 500.0,
 									"2[62]" : 500.0,
 									"2[63]" : 500.0,
+									"2[64]" : 0.0,
 									"2[6]" : 500.0,
 									"2[7]" : 499.0,
 									"2[8]" : 470.0,
 									"2[9]" : 500.0,
+									"Mic Out" : -70.0,
 									"button" : 0.0,
 									"button[1]" : 0.0,
 									"button[2]" : 0.0,
@@ -23627,6 +23618,14 @@
 									"button[5]" : 0.0,
 									"button[6]" : 0.0,
 									"button[8]" : 0.0,
+									"drone_alpha" : 0.0,
+									"drone_alto" : 0.0,
+									"drone_bass" : 0.0,
+									"drone_beta" : 0.0,
+									"drone_delta" : 0.0,
+									"drone_gamma" : 0.0,
+									"drone_soprano" : 0.0,
+									"drone_tenor" : 0.0,
 									"live.button[10]" : 0.0,
 									"live.button[11]" : 0.0,
 									"live.button[12]" : 0.0,
@@ -23642,7 +23641,7 @@
 									"live.button[21]" : 0.0,
 									"live.button[22]" : 0.0,
 									"live.button[23]" : 0.0,
-									"live.button[24]" : 1.0,
+									"live.button[24]" : 0.0,
 									"live.button[25]" : 0.0,
 									"live.button[26]" : 0.0,
 									"live.button[27]" : 0.0,
@@ -23688,6 +23687,7 @@
 									"live.button[68]" : 0.0,
 									"live.button[69]" : 0.0,
 									"live.button[6]" : 0.0,
+									"live.button[70]" : 0.0,
 									"live.button[7]" : 0.0,
 									"live.button[8]" : 0.0,
 									"live.button[9]" : 0.0,
@@ -23699,7 +23699,6 @@
 									"live.dial[5]" : 285.999999999999943,
 									"live.dial[6]" : 285.999999999999943,
 									"live.dial[7]" : 191.184159296725284,
-									"live.gain~" : -70.0,
 									"live.menu[1]" : 0.0,
 									"live.menu[2]" : 4.0,
 									"live.menu[3]" : 3.0,
@@ -23751,7 +23750,7 @@
 									"live.text[47]" : 0.0,
 									"live.text[48]" : 0.0,
 									"live.text[49]" : 0.0,
-									"live.text[4]" : 1.0,
+									"live.text[4]" : 0.0,
 									"live.text[50]" : 0.0,
 									"live.text[51]" : 0.0,
 									"live.text[52]" : 0.0,
@@ -23772,11 +23771,11 @@
 									"live.text[7]" : 0.0,
 									"live.text[8]" : 0.0,
 									"live.text[9]" : 0.0,
+									"live.toggle[13]" : 0.0,
 									"pushtext16[1]" : 0.0,
-									"pushtext16[2]" : 0.0,
 									"pushtext18[1]" : 0.0,
 									"pushtext20[1]" : 0.0,
-									"pushtext22[1]" : 1.0,
+									"pushtext22[1]" : 0.0,
 									"pushtext[1]" : 0.0,
 									"pushtext[2]" : 0.0,
 									"pushtext[3]" : 0.0,
@@ -23789,6 +23788,7 @@
 									"slider[5]" : 1.0,
 									"slider[6]" : 0.0,
 									"slider[7]" : 0.0,
+									"synth out" : -70.0,
 									"toggle" : 0.0,
 									"toggle[1]" : 0.0,
 									"toggle[2]" : 0.0,
@@ -23806,7 +23806,7 @@
 										"flonum[6]" : [ 1.0 ],
 										"flonum[7]" : [ 1.0 ],
 										"flonum[8]" : [ 1.0 ],
-										"multislider" : [ 0.936834809087938, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
+										"multislider" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
 										"multislider[1]" : [ 0.891560333005844, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
 										"multislider[2]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.925516190067414 ],
 										"multislider[3]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
@@ -23844,6 +23844,14 @@
 
 							}
 
+						}
+,
+						"fileref" : 						{
+							"name" : "6-1-5-7",
+							"filename" : "jam1[3].maxsnap",
+							"filepath" : "~/Documents/Max 9/Snapshots",
+							"filepos" : -1,
+							"snapshotfileid" : "b94ad598e0604d959a5f3dc45bfbc177"
 						}
 
 					}
