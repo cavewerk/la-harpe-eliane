@@ -9,8 +9,14 @@
 	counter-clockwise, two's complement), so this object keeps a shadow
 	of each voice's current frequency, fed from each MCHelper's Global
 	Freq outlet. On-screen edits, snapshot recalls and this object's own
-	output all keep the shadow in sync. Until a voice's dial has reported
-	once, nudges for it are ignored rather than starting from 0 Hz.
+	output all keep the shadow in sync. The dials don't reliably output
+	at load, so at load (and before the first nudge of any voice not yet
+	heard from) this object bangs the dial, which makes it report its
+	value. A voice that still hasn't reported is skipped, never nudged
+	from 0 Hz.
+
+	Max Console: "globaltune: ready" at load, "globaltune: rotary 1
+	received" on the first tick, and a line if a voice has no frequency.
 
 	Steps are in cents, so a tick is the same musical size at any pitch.
 
@@ -32,6 +38,7 @@
 
 inlets = 10;
 outlets = 8;
+autowatch = 1;
 
 var VOICES = 8;
 var FIRST_STATE_INLET = 2;
@@ -43,6 +50,16 @@ if (isNaN(cents) || cents <= 0) cents = 1;
 var voice = 1;   // 1-VOICES, 0 = no valid target
 var freq = [];   // freq[voice-1] in Hz, null until that dial reports
 for (var v = 0; v < VOICES; v++) freq[v] = null;
+var heard = false;
+
+// A bang into MCHelper inlet 1 makes its Global Freq dial output its
+// current value, which comes straight back into this voice's state inlet.
+function requestState(v) { outlet(v, "bang"); }
+
+function loadbang() {
+	for (var v = 0; v < VOICES; v++) requestState(v);
+	post("globaltune: ready\n");
+}
 
 // Push relative encoder: 1..63 clockwise, 65..127 counter-clockwise.
 function ticksFromCC(raw) {
@@ -53,9 +70,14 @@ function ticksFromCC(raw) {
 }
 
 function nudge(raw) {
+	if (!heard) { heard = true; post("globaltune: rotary 1 received\n"); }
 	if (voice < 1) return;
 	var v = voice - 1;
-	if (freq[v] === null) return;
+	if (freq[v] === null) requestState(v);
+	if (freq[v] === null) {
+		post("globaltune: no Global Freq reported yet for voice " + voice + "\n");
+		return;
+	}
 	var ticks = ticksFromCC(raw);
 	if (ticks === 0) return;
 	var hz = freq[v] * Math.pow(2, ticks * cents / 1200);
