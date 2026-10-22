@@ -16969,6 +16969,34 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"id" : "obj-448",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1540.0, 1040.0, 520.0, 20.0 ],
+					"text" : "Presentation: the targeted voice's panel turns amber (code/voicehighlight.js). Panels matched to modules by position."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-449",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 8,
+					"outlettype" : [ "", "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 1540.0, 1070.0, 560.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"filename" : "voicehighlight.js",
+						"parameter_enable" : 0
+					},
+					"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/voicehighlight.js\"",
+					"varname" : "voicehighlight_js"
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -20960,6 +20988,69 @@
 					"midpoints" : [ 909.499920606613159, 1250.658177614212036, 1169.681719541549683, 1250.658177614212036 ],
 					"order" : 0,
 					"source" : [ "obj-99", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-449", 0 ],
+					"source" : [ "obj-58", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"source" : [ "obj-449", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-26", 0 ],
+					"source" : [ "obj-449", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-29", 0 ],
+					"source" : [ "obj-449", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-28", 0 ],
+					"source" : [ "obj-449", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-160", 0 ],
+					"source" : [ "obj-449", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-161", 0 ],
+					"source" : [ "obj-449", 5 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-163", 0 ],
+					"source" : [ "obj-449", 6 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-162", 0 ],
+					"source" : [ "obj-449", 7 ]
 				}
 
 			}
