@@ -10,11 +10,64 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 380.0, 113.0, 507.0, 659.0 ],
+		"rect" : [ 373.0, 106.0, 308.0, 659.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"assistshowspatchername" : 1,
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontsize" : 7.0,
+					"id" : "obj-4",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 4.0, 7.0, 27.0, 36.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 10.0, 16.0, 27.0, 36.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_exponent" : 1.6,
+							"parameter_initial" : [ 285.999999999999943 ],
+							"parameter_initial_enable" : 1,
+							"parameter_longname" : "live.dial[1]",
+							"parameter_mmax" : 340.0,
+							"parameter_mmin" : 20.0,
+							"parameter_modmode" : 4,
+							"parameter_shortname" : "Gobal Freq",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 3
+						}
+
+					}
+,
+					"shownumber" : 0,
+					"varname" : "live.dial[10]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.701960784313725, 0.674509803921569, 0.650980392156863, 0.0 ],
+					"fontsize" : 8.0,
+					"format" : 6,
+					"id" : "obj-15",
+					"ignoreclick" : 1,
+					"maxclass" : "flonum",
+					"numdecimalplaces" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ -2.666666746139526, 48.666668117046356, 40.0, 17.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 4.0, 54.0, 40.0, 17.0 ],
+					"tricolor" : [ 0.376470588235294, 0.376470588235294, 0.376470588235294, 0.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontsize" : 8.0,
 					"id" : "obj-19",
@@ -23,7 +76,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 35.0, 153.0, 32.947974443435669, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 260.0, 46.0, 32.999997735023499, 15.0 ],
+					"presentation_rect" : [ 260.0, 69.0, 32.999997735023499, 15.0 ],
 					"text" : "Drone",
 					"textjustification" : 1
 				}
@@ -38,7 +91,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 103.0, 68.69074559211731, 33.0, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 308.0, 8.0, 33.0, 15.0 ],
+					"presentation_rect" : [ 308.0, 31.0, 33.0, 15.0 ],
 					"text" : "Output"
 				}
 
@@ -77,7 +130,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ -2.312138557434082, 194.666672468185425, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 263.0, 20.0, 27.500001132488251, 27.500001132488251 ],
+					"presentation_rect" : [ 263.0, 43.0, 27.500001132488251, 27.500001132488251 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_enum" : [ "off", "on" ],
@@ -153,7 +206,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 103.0, 86.69074559211731, 43.352597951889038, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 308.0, 26.0, 33.327616274356842, 15.0 ],
+					"presentation_rect" : [ 308.0, 49.0, 33.327616274356842, 15.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_annotation_name" : "Output",
@@ -182,39 +235,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 182.0, 27.749511957168579, 128.888895034790039, 76.666670322418213 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 54.0, 7.0, 200.0, 49.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 7.0,
-					"id" : "obj-4",
-					"maxclass" : "live.dial",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "float" ],
-					"parameter_enable" : 1,
-					"patching_rect" : [ 4.0, 22.166664838790894, 40.0, 42.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 6.0, 14.0, 40.0, 42.0 ],
-					"saved_attribute_attributes" : 					{
-						"valueof" : 						{
-							"parameter_exponent" : 1.6,
-							"parameter_initial" : [ 285.999999999999943 ],
-							"parameter_initial_enable" : 1,
-							"parameter_longname" : "live.dial[1]",
-							"parameter_mmax" : 340.0,
-							"parameter_mmin" : 20.0,
-							"parameter_modmode" : 4,
-							"parameter_shortname" : "Gobal Freq",
-							"parameter_type" : 0,
-							"parameter_unitstyle" : 3
-						}
-
-					}
-,
-					"varname" : "live.dial[10]"
+					"presentation_rect" : [ 54.0, 7.0, 200.0, 72.0 ]
 				}
 
 			}
@@ -262,8 +283,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 200.0, 364.0, 302.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 17,
-					"presentation_rect" : [ 67.586202263832092, 353.103424072265625, 46.0, 158.0 ],
+					"presentation_linecount" : 16,
+					"presentation_rect" : [ 68.0, 376.0, 49.0, 149.0 ],
 					"text" : "Output channel comes from this bpatcher's creation argument (default 3). Channel number minus 3 = live.menu index. The menu still overrides at runtime."
 				}
 
@@ -344,15 +365,17 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
+					"destination" : [ "obj-15", 0 ],
+					"order" : 1,
 					"source" : [ "obj-4", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"source" : [ "obj-6", 0 ]
+					"destination" : [ "obj-3", 0 ],
+					"order" : 0,
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}
@@ -360,6 +383,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-50", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-6", 0 ]
 				}
 
 			}

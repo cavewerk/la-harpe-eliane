@@ -6,7 +6,7 @@
 	"origin" : "LivingStringProject",
 	"type" : "patcher",
 	"subtype" : "Undefined",
-	"embed" : 1,
+	"embed" : 0,
 	"snapshot" : 	{
 		"valuedictionary" : 		{
 			"parameter_values" : 			{
