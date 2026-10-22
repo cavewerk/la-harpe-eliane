@@ -16152,6 +16152,31 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"id" : "obj-421",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1620.0, 745.0, 58.0, 22.0 ],
+					"text" : "r 10pad",
+					"varname" : "gtune_touch"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-422",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1685.0, 740.0, 300.0, 33.0 ],
+					"text" : "Absorbs rotary 1's touch note (jk.pushcore sends it as 10pad). Without it, touching the knob posts \"10pad: no such object\"."
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -19772,6 +19797,7 @@
 				}
 
 			}
+
  ],
 		"parameters" : 		{
 			"obj-100" : [ "2[29]", "2", 0 ],

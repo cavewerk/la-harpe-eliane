@@ -163,10 +163,11 @@ It isn't recorded in an ADR yet.
 **Push mappings**
 1. `[ ]` **Audio kill switch** — a Push button that toggles DSP
    (DAC and ADC) on and off. ([Notion](https://app.notion.com/p/4011a7ca192381868b62e799f8a4caa4))
-2. `[~]` **Per-voice global tuning** — **rotary 1** (leftmost,
+2. `[x]` **Per-voice global tuning** — **rotary 1** (leftmost,
    detented, CC 14) retunes whichever voice is selected, with no shift
    button. This is what item 2 above meant by encoder 1 = global
-   tuning. Built 2026-10-22, **not yet hardware-tested**:
+   tuning. Built and hardware-tested 2026-10-22. An `r 10pad` absorbs
+   the knob's touch note, which otherwise posts "no such object":
    [`code/globaltune.js`](../code/globaltune.js) reads `r 14rot` and the
    voice-select `int`. It nudges the selected voice by 1 cent per tick
    (the script's argument), keeps a shadow of every voice's frequency
