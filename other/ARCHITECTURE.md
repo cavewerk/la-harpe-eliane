@@ -271,8 +271,11 @@ Push 8x8 grid, highest voice at the top. See
 | bass    | 5        | 68-75 | 32-39  | cyan    | 4     | 3      | yes   |
 | alpha   | 4        | 60-67 | 24-31  | white*  | 5     | 7      | yes   |
 | beta    | 3        | 52-59 | 16-23  | blue    | 6     | 8      | yes   |
-| gamma   | 2        | 44-51 | 8-15   | magenta | 7     | 9      | yes   |
-| delta   | 1        | 36-43 | 0-7    | white   | 8     | 10     | yes   |
+| gamma   | 2        | 44-51 | 8-15   | magenta | 7     | 10†    | yes   |
+| delta   | 1        | 36-43 | 0-7    | white   | 8     | 9†     | yes   |
+
+† Gamma and delta swapped output channels on 2026-10-22 (MCHelper
+creation arguments 9 ↔ 10), and swapped places in presentation mode.
 
 \* **Alpha and delta are both white**, and that is accepted for now.
 Alpha was changed from orange on 2026-09-22; delta already held `w`. The
