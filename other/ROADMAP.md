@@ -15,6 +15,11 @@ Two horizons, both driven by the project's author:
 Anything without a horizon tag below is deliberately parked or
 unscheduled, not forgotten.
 
+This roadmap covers **patch** work only. The whole project schedule,
+including building, printing, writing and performing, is the Notion Gantt
+(see [TASKS.md](TASKS.md)). When an item here has a Notion row, link it
+inline as `([Notion](…))`, and keep both statuses in step.
+
 Each item is tagged with a status — check this before starting work,
 and update it (plus a one-line note if useful) as you go, so a fresh
 chat can tell what's done without digging through git log:
@@ -105,7 +110,9 @@ Reordered 2026-09-10 per the project's author.
    fader-chain code, `sustain.js`, and the encoder wiring, comment those
    sections and adopt `patcherargs` there if it helps. Not a separate
    pass — see Code Cleanup below for the full pass, which is mostly
-   scheduled after this window.
+   scheduled after this window. The `patcherargs` part is
+   *Refactor BPatchers (arguments)* in the Gantt
+   ([Notion](https://app.notion.com/p/3551a7ca19238046b636fd04ac91c44c)).
    In progress: both fader banks, the sustain-pedal block, the new
    pedal-2 block, the encoder gate and the `MCModule` ampstate tap now
    carry in-patch comments. Added 2026-09-20 alongside the pad-row
@@ -137,6 +144,53 @@ Reordered 2026-09-10 per the project's author.
 **Stretch, if the above land early:**
 - Harmonic multiplier as the encoder mode-switch's third target.
 - Decide encoder 11's job (currently deliberately open).
+
+## Performance prep — added 2026-10-22
+
+Patch items from the project's author on 2026-10-22, alongside build,
+backup and documentation tasks that live only in Notion (see
+[TASKS.md](TASKS.md)). **Due by 2026-11-05**: everything here except
+item 3 (drone on/off), which is unscheduled. Per-item dates are on the
+Gantt rows. Work that can be done without the strings comes first.
+
+Context: the author has since added mic input and audio output
+(`adc~ 1 2` → `live.gain~` → `dac~ 1 2`) for miking the strings, with
+the gain on **encoder 11** (`jk.pushrotary 11`, "Rotary 2", through
+`scale 0. 1. -70. 1.`). That uses the encoder the stretch list above
+calls undecided. That isn't recorded in an ADR yet.
+
+**Push mappings**
+1. `[ ]` **Audio kill switch** — a Push button that toggles DSP
+   (DAC and ADC) on and off. ([Notion](https://app.notion.com/p/4011a7ca192381868b62e799f8a4caa4))
+2. `[ ]` **Per-voice global tuning** — hold a voice's track-select
+   button and turn one of the two unused encoders (second from the
+   right was suggested) to shift that voice's tuning. This touches two
+   open questions above: encoder 11's job, and item 2's plan to keep
+   encoders 1 & 2 permanently on global tuning and master fader.
+   Settle both before building. ([Notion](https://app.notion.com/p/4011a7ca1923817f824ae63e7fbd8834))
+3. `[ ]` **Drone on/off per voice** — switch a voice's drone function
+   on and off from the Push. Mechanism still open. ([Notion](https://app.notion.com/p/4011a7ca1923812eb8cbdbb0c98eba82))
+
+**Presentation mode** (scopes and module order: the author is doing these)
+4. `[ ]` **Bigger scopes** ([Notion](https://app.notion.com/p/4011a7ca192381bba7acdca7f4e6eded))
+5. `[ ]` **Reorder voice modules** ([Notion](https://app.notion.com/p/4011a7ca192381c18c45c7adf7e97176))
+6. `[ ]` **Bigger labels**, readable from playing position. ([Notion](https://app.notion.com/p/4011a7ca192381da9cf6f99fe2a6ec24))
+
+**Control resolution**
+7. `[ ]` **Microtuner readout** — a value display you can actually read.
+   The current adjustments are too fine to see. ([Notion](https://app.notion.com/p/4011a7ca192381c08da9de5e377ef5a0))
+8. `[ ]` **Higher microtuner resolution** — the encoders send relative
+   deltas, so the microtuners don't have to stay on a 7-bit MIDI grid.
+   ([Notion](https://app.notion.com/p/4011a7ca1923813c9b2efe646b81cd19))
+9. `[ ]` **Higher amplitude bar resolution** — the same for the
+   partial-amplitude bars, covering `faderamp.js`, `encoderamp.js`
+   (currently 0.01 per tick) and the MCModule multisliders. Big job.
+   ([Notion](https://app.notion.com/p/4011a7ca1923815bb5b3c5384c15c611))
+
+**Mic output chain** (outputs 1 and 2)
+10. `[ ]` **High-pass filter** ([Notion](https://app.notion.com/p/4011a7ca192381a38596d24b1fd4b3fb))
+11. `[ ]` **Mono the sub** — sum the low end to mono. ([Notion](https://app.notion.com/p/4011a7ca19238171b235f597e6672c6f))
+12. `[ ]` **Feedback limiter** ([Notion](https://app.notion.com/p/4011a7ca1923810cb17fe6f937d770a9))
 
 ## Long-term horizon — early December 2026
 

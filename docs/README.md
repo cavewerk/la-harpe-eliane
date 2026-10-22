@@ -19,6 +19,7 @@ never the source themselves.
 | [../other/ARCHITECTURE.md](../other/ARCHITECTURE.md) | How the patch is wired, in detail | Existing |
 | [../other/CONTEXT.md](../other/CONTEXT.md) | Technical glossary of the patch | Existing |
 | [../other/ROADMAP.md](../other/ROADMAP.md) | Build roadmap | Existing |
+| [../other/TASKS.md](../other/TASKS.md) | Where the project schedule lives (Notion Gantt) and how to use it | Existing |
 
 ### Core
 
