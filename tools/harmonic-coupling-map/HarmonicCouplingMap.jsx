@@ -623,6 +623,7 @@ export default function HarmonicCouplingMap() {
 
         {/* ── header ── */}
         <div
+          className="hcm-header"
           style={{
             display: "flex",
             justifyContent: "space-between",
