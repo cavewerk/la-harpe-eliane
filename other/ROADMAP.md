@@ -174,7 +174,7 @@ It isn't recorded in an ADR yet.
    fed from each MCHelper's Global Freq outlet, and sets the dial through
    a new MCHelper inlet 1, clamped to the dial's 20–340 Hz.
    ([Notion](https://app.notion.com/p/4011a7ca1923817f824ae63e7fbd8834))
-3. `[~]` **Drone on/off per voice** — the eight Push **track-below**
+3. `[x]` **Drone on/off per voice** — the eight Push **track-below**
    buttons each toggle one voice's drone, and are lit while it's on:
    1 gamma, 2 delta, 3 beta, 4 alpha, 5 bass, 6 tenor, 7 alto,
    8 soprano. Not tied to voice-select. Per voice: a toggle-mode
@@ -182,7 +182,7 @@ It isn't recorded in an ADR yet.
    (yellow on, unlit off) sets MCHelper's drone toggle through new
    inlet 2. MCHelper's drone outlet → `change` → back to the
    `live.text`, so clicking the on-screen toggle updates the light
-   without a feedback loop. Built 2026-10-22, not yet hardware-tested.
+   without a feedback loop. Built and hardware-tested 2026-10-22.
    ([Notion](https://app.notion.com/p/4011a7ca1923812eb8cbdbb0c98eba82))
 
 **Presentation mode** (done by the author 2026-10-22)
