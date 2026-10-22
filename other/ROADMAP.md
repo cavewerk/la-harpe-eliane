@@ -143,7 +143,8 @@ Reordered 2026-09-10 per the project's author.
 
 **Stretch, if the above land early:**
 - Harmonic multiplier as the encoder mode-switch's third target.
-- Decide encoder 11's job (currently deliberately open).
+- ~~Decide encoder 11's job~~ — settled 2026-10-22: it's the mic
+  output gain (see Performance prep, below).
 
 ## Performance prep — added 2026-10-22
 
@@ -156,18 +157,22 @@ Gantt rows. Work that can be done without the strings comes first.
 Context: the author has since added mic input and audio output
 (`adc~ 1 2` → `live.gain~` → `dac~ 1 2`) for miking the strings, with
 the gain on **encoder 11** (`jk.pushrotary 11`, "Rotary 2", through
-`scale 0. 1. -70. 1.`). That uses the encoder the stretch list above
-calls undecided. That isn't recorded in an ADR yet.
+`scale 0. 1. -70. 1.`). That assignment is final as of 2026-10-22.
+It isn't recorded in an ADR yet.
 
 **Push mappings**
 1. `[ ]` **Audio kill switch** — a Push button that toggles DSP
    (DAC and ADC) on and off. ([Notion](https://app.notion.com/p/4011a7ca192381868b62e799f8a4caa4))
-2. `[ ]` **Per-voice global tuning** — hold a voice's track-select
-   button and turn one of the two unused encoders (second from the
-   right was suggested) to shift that voice's tuning. This touches two
-   open questions above: encoder 11's job, and item 2's plan to keep
-   encoders 1 & 2 permanently on global tuning and master fader.
-   Settle both before building. ([Notion](https://app.notion.com/p/4011a7ca1923817f824ae63e7fbd8834))
+2. `[~]` **Per-voice global tuning** — **rotary 1** (leftmost,
+   detented, CC 14) retunes whichever voice is selected, with no shift
+   button. This is what item 2 above meant by encoder 1 = global
+   tuning. Built 2026-10-22, **not yet hardware-tested**:
+   [`code/globaltune.js`](../code/globaltune.js) reads `r 14rot` and the
+   voice-select `int`. It nudges the selected voice by 1 cent per tick
+   (the script's argument), keeps a shadow of every voice's frequency
+   fed from each MCHelper's Global Freq outlet, and sets the dial through
+   a new MCHelper inlet 1, clamped to the dial's 20–340 Hz.
+   ([Notion](https://app.notion.com/p/4011a7ca1923817f824ae63e7fbd8834))
 3. `[ ]` **Drone on/off per voice** — switch a voice's drone function
    on and off from the Push. Mechanism still open. ([Notion](https://app.notion.com/p/4011a7ca1923812eb8cbdbb0c98eba82))
 
@@ -177,11 +182,12 @@ calls undecided. That isn't recorded in an ADR yet.
 6. `[ ]` **Bigger labels**, readable from playing position. ([Notion](https://app.notion.com/p/4011a7ca192381da9cf6f99fe2a6ec24))
 
 **Control resolution**
-7. `[ ]` **Microtuner readout** — a value display you can actually read.
-   The current adjustments are too fine to see. ([Notion](https://app.notion.com/p/4011a7ca192381c08da9de5e377ef5a0))
-8. `[ ]` **Higher microtuner resolution** — the encoders send relative
-   deltas, so the microtuners don't have to stay on a 7-bit MIDI grid.
-   ([Notion](https://app.notion.com/p/4011a7ca1923813c9b2efe646b81cd19))
+7. `[x]` **Microtuner readout** — the dials now read -3..+3, with the
+   same ±3% range underneath. Done by the author, hardware-tested
+   2026-10-22. See CONTEXT.md, "Microtuning". ([Notion](https://app.notion.com/p/4011a7ca192381c08da9de5e377ef5a0))
+8. `[x]` **Higher microtuner resolution** — the existing 0–1000 encoder
+   range turned out to be fine once the readout was legible. Closed
+   2026-10-22 with no change. ([Notion](https://app.notion.com/p/4011a7ca1923813c9b2efe646b81cd19))
 9. `[ ]` **Higher amplitude bar resolution** — the same for the
    partial-amplitude bars, covering `faderamp.js`, `encoderamp.js`
    (currently 0.01 per tick) and the MCModule multisliders. Big job.

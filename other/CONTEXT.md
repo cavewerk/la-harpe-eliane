@@ -27,7 +27,11 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   of the eight from their dropdowns (ADR 0012, ADR 0013), so every
   control surface reaches every voice. See
   **Voice-select buttons** below.
-- **Global tuning** — a voice's fundamental / open-string frequency.
+- **Global tuning** — a voice's fundamental / open-string frequency. It's
+  set on the **Global Freq** dial inside that voice's `MCHelper`
+  (20–340 Hz), which feeds `MCModule`'s Global Freq inlet. From the Push,
+  rotary 1 nudges the selected voice's dial in cents
+  (`code/globaltune.js`, via `MCHelper` inlet 1).
 - **Inner voice** (aka **harmonic**) — one of the 8 additive-synthesis
   partials inside a voice's oscillator bank (`MCModule`'s 8 `mc.*`
   channels). Each inner voice is a harmonic multiple of its voice's global
@@ -36,9 +40,13 @@ see `docs/adr/` for the reasoning behind any hard-to-reverse ones.
   electromagnet for that voice. (Corrects last session's CONTEXT.md, which
   wrongly called these "8 strings per voice.")
 - **Microtuning (`#1_micro`)** — a small per-inner-voice fine-tuning offset
-  layered on top of a harmonic's frequency. Range is **±0.03** (widened
-  from ±0.02 on 2026-09-22), set by the `scale 0 1000 -0.03 0.03` in
-  front of each voice's `s <voice>_micro`.
+  layered on top of a harmonic's frequency. The `scale 0 1000 -3. 3.` in
+  front of each voice's `s <voice>_micro` sends a display value of
+  **-3 to +3**, shown on MCModule's dials. Each dial's normalized outlet
+  then goes through `scale 0. 1. 0.97 1.03` to a multiplier on that
+  harmonic's ratio, so the range is ±3% of frequency (about ±51 cents).
+  The range was widened from ±2% on 2026-09-22, and the readable -3..+3
+  display was added 2026-10-22.
 - **Drone mode** — a performance mode: a sustained "on" is sent directly to
   an inner voice's ADSR, typically driven by the external MIDI fader
   controller. Continuous excitation of the string.

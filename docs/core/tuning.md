@@ -7,8 +7,9 @@
 >   chosen relative to its string — matched to the open string, to a
 >   harmonic of it, or deliberately detuned?
 > - **Partials:** are the eight partials integer multiples of the fundamental
->   (harmonic), or freely tuned? Range and meaning of microtuning
->   (patch: ±0.03 — in what unit?).
+>   (harmonic), or freely tuned? Microtuning, from the patch: each
+>   partial's frequency can move by ±3% (about ±51 cents), shown on its
+>   dial as -3..+3. Still open: what range is musically wanted, and why.
 > - **Tuning system:** just intonation, equal temperament, spectral, or
 >   tuned by ear to string resonance?
 > - **Named states:** what do the snapshots `C#`, `octo` and `6-1-5-7` mean

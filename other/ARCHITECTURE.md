@@ -237,10 +237,14 @@ a pedal rather than the Push button the roadmap originally sketched.
   the fader banks emit into `s <voice>_amp` (outlets 0-7). Deltas
   arriving while the pedal is up are dropped.
 
-  **Microtuning range** is set by the `scale 0 1000 -0.03 0.03` sitting
-  between each voice's `pak` and its `s <voice>_micro`, i.e. ±0.03.
-  Widened from ±0.02 on 2026-09-22, consistently across all eight
-  voices in both rotary banks.
+  **Microtuning range:** the `scale 0 1000 -3. 3.` between each voice's
+  `pak` and its `s <voice>_micro` sends a display value (-3..+3). Inside
+  `MCModule`, each microtuning `live.dial` (range -3..3) sends its
+  normalized outlet through `scale 0. 1. 0.97 1.03` → `setvalue` →
+  `mc.line~` → `mc.*~` on the harmonic ratio, so the range is ±3% of
+  frequency (about ±51 cents). Widened from ±2% on 2026-09-22. Display
+  units added 2026-10-22, replacing a raw ±0.03 sent through `+ 1.`,
+  which gave the same multiplier.
 
   **This path covers all eight voices**, and got there without touching
   `jk.pushrotaryAlt` — it never went through that abstraction, and

@@ -68,6 +68,7 @@ code/
   padhold.js                      Per-pad sustain-pedal LED hold (own work)
   faderamp.js                     Fader CC -> per-partial amplitude message (own work)
   encoderamp.js                   Push encoder -> per-partial amplitude, while pedal 2 is held (own work)
+  globaltune.js                   Push rotary 1 -> selected voice's global tuning, in cents (own work)
 docs/adr/                         Architecture decision records
 ```
 
