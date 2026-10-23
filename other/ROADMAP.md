@@ -242,6 +242,16 @@ need tuning with the mics in the room.
     [ADR 0014](../docs/adr/0014-per-encoder-gating-and-multiplier-hold.md).
     ([Notion](https://app.notion.com/p/4021a7ca192381aea4b1e52985962484))
 
+**Envelope**
+14. `[x]` **Lyra-8 style envelope speed** — each voice's MCLyra replaces
+    the attack/release ms boxes with a **slow** toggle and a **length**
+    knob (0–1, default 0.9). One time sets attack and release together,
+    on an exponential curve across fast (5 ms–1 s) or slow (1–30 s).
+    The ms result is still shown in the old attack box and feeds
+    `live.adsrui` as before. The ranges are global, set by four `flonum`s
+    at the top level → `s env_ranges`, so they can be changed live for
+    experimenting. `code/envspeed.js`, built and hardware-tested 2026-10-23.
+
 ## Long-term horizon — early December 2026
 
 1. `[~]` **Full patcher hygiene pass** — comments and `patcherargs`
