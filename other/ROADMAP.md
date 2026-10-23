@@ -190,6 +190,14 @@ It isn't recorded in an ADR yet.
    without a feedback loop. Built and hardware-tested 2026-10-22.
    ([Notion](https://app.notion.com/p/4011a7ca1923812eb8cbdbb0c98eba82))
 
+3b. `[x]` **Per-voice master gain on rotary 2** — rotary 2 (CC 15) moves
+   the selected voice's master slider in MCModule (0–1, 0.01 per tick).
+   That slider scales both the magnet output and the synth out. Added
+   2026-10-23 with `code/mastergain.js`, the same pattern as global
+   tuning: `r #1_master` sets the slider and `s #1_masterstate` reports
+   it back. `r 9pad` absorbs the knob's touch note. Hardware-tested
+   2026-10-23.
+
 **Presentation mode** (done by the author 2026-10-22)
 4. `[x]` **Bigger scopes** ([Notion](https://app.notion.com/p/4011a7ca192381bba7acdca7f4e6eded))
 5. `[x]` **Reorder voice modules** ([Notion](https://app.notion.com/p/4011a7ca192381c18c45c7adf7e97176))

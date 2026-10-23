@@ -2112,6 +2112,42 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"id" : "obj-283",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 387.0, 660.0, 80.0, 22.0 ],
+					"text" : "r #1_master",
+					"varname" : "master_r"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-284",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 430.0, 880.0, 105.0, 22.0 ],
+					"text" : "s #1_masterstate",
+					"varname" : "masterstate_s"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-285",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 475.0, 660.0, 300.0, 20.0 ],
+					"text" : "Push rotary 2 sets this slider (mastergain.js) and reads it back."
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -3296,6 +3332,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-280", 7 ],
 					"source" : [ "obj-227", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-283", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-284", 0 ],
+					"source" : [ "obj-16", 0 ]
 				}
 
 			}

@@ -71,6 +71,7 @@ code/
   globaltune.js                   Push rotary 1 -> selected voice's global tuning, in cents (own work)
   voicehighlight.js               Recolours the targeted voice's panel in presentation mode (own work)
   multhold.js                     Track-above hold -> encoder edits a partial's harmonic multiplier; gates the rotary banks (own work)
+  mastergain.js                   Push rotary 2 -> selected voice's master gain slider (own work)
 docs/adr/                         Architecture decision records
 ```
 
