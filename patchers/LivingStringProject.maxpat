@@ -17112,6 +17112,44 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"id" : "obj-456",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1530.0, 110.0, 260.0, 33.0 ],
+					"text" : "Debug: hold Push Shift (CC 49) = hold pedal 2 (encoder mode), for working without the pedal."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-457",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1530.0, 150.0, 55.0, 22.0 ],
+					"text" : "r 49btn",
+					"varname" : "shift_r"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-458",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 1530.0, 180.0, 32.0, 22.0 ],
+					"text" : "> 0",
+					"varname" : "shift_gt"
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -21215,6 +21253,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-451", 0 ],
 					"source" : [ "obj-455", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-458", 0 ],
+					"source" : [ "obj-457", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-111", 0 ],
+					"source" : [ "obj-458", 0 ]
 				}
 
 			}

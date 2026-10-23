@@ -204,6 +204,10 @@ a pedal rather than the Push button the roadmap originally sketched.
   `> 63` → `!= 0` → `s encmode_pedal`, with its **own** manual
   polarity-invert toggle. Deliberately not shared with the sustain pedal's
   toggle — a performer could have the two pedals wired oppositely.
+- **Push Shift as a stand-in** (debugging without the pedal, added
+  2026-10-23): `r 49btn` (jk.pushcore's send for Shift, 127 pressed /
+  0 released) → `> 0` → the same `s encmode_pedal`. Holding Shift acts
+  like holding pedal 2. When both are used, whichever changed last wins.
 - **Microtuning suppression**, without editing the vendored library: each
   `jk.pushrotaryAlt`'s 5th inlet is the control inlet of its internal
   `gate 4` (voice 1–4 picks which per-voice accumulator the encoder
