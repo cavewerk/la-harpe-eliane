@@ -208,13 +208,19 @@ It isn't recorded in an ADR yet.
    ([Notion](https://app.notion.com/p/4011a7ca1923815bb5b3c5384c15c611))
 
 **Mic output chain** (outputs 1 and 2)
-All three live in one `p micout` subpatcher, between the mic
-`live.gain~` and `dac~ 1 2`. Built 2026-10-23. The signal path has been
-checked; the settings still need tuning with the mics in the room.
+All three live in one `p micout` subpatcher: `adc~ 1 2` → `p micout`
+→ the Mic Out `live.gain~` (fader, meter and encoder 11) → `dac~ 1 2`,
+so the fader and meter show the final mix. The limiter sits before the
+fader, so a fader above 0 dB can push past its ceiling. Encoder 11 tops
+out at +1 dB. Presentation controls next to the fader: **Mono Hz** dial
+(crossover, 40–300 Hz, default 120) and a **mono lows** toggle
+(default on), crossfaded over 20 ms. Built 2026-10-23; the settings still
+need tuning with the mics in the room.
 10. `[~]` **High-pass filter** — `cross~ 40.` per side, high outlet
     (3rd order, 18 dB/oct). ([Notion](https://app.notion.com/p/4011a7ca192381a38596d24b1fd4b3fb))
-11. `[~]` **Mono the sub** — `cross~ 120.` per side; the two low halves
-    are summed, halved and added back to both sides. ([Notion](https://app.notion.com/p/4011a7ca19238171b235f597e6672c6f))
+11. `[~]` **Mono the sub** — `cross~` per side at the Mono Hz
+    frequency. With mono on, each side's lows crossfade to the L+R
+    average; with it off, they stay stereo. ([Notion](https://app.notion.com/p/4011a7ca19238171b235f597e6672c6f))
 12. `[~]` **Feedback limiter** — `omx.peaklim~` last, at its default
     settings. A limiter caps feedback peaks but won't stop a feedback
     loop, so mic placement and the high-pass still matter. ([Notion](https://app.notion.com/p/4011a7ca1923810cb17fe6f937d770a9))
