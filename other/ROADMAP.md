@@ -161,8 +161,13 @@ the gain on **encoder 11** (`jk.pushrotary 11`, "Rotary 2", through
 It isn't recorded in an ADR yet.
 
 **Push mappings**
-1. `[ ]` **Audio kill switch** — a Push button that toggles DSP
-   (DAC and ADC) on and off. ([Notion](https://app.notion.com/p/4011a7ca192381868b62e799f8a4caa4))
+1. `[x]` **Audio kill switch** — the Push **Play** button (CC 85)
+   toggles DSP, lit green while audio is on. A toggle `live.text` paired
+   with `jk.push @button play @mode t` → `sel 1 0` → the author's
+   `start` / `stop` messages into `adc~ 1 2`. `adstatus switch` →
+   `change` → the `live.text` keeps the light matching Max's real DSP
+   state, including changes made from Max's own audio controls. Built
+   and hardware-tested 2026-10-23. ([Notion](https://app.notion.com/p/4011a7ca192381868b62e799f8a4caa4))
 2. `[x]` **Per-voice global tuning** — **rotary 1** (leftmost,
    detented, CC 14) retunes whichever voice is selected, with no shift
    button. This is what item 2 above meant by encoder 1 = global

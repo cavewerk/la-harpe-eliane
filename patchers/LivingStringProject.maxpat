@@ -16997,6 +16997,121 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"id" : "obj-450",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 960.0, 2200.0, 330.0, 33.0 ],
+					"text" : "Push Play = audio on/off (lit = on). sel 1 0 -> start/stop into adc~. adstatus switch -> change keeps the light in sync with Max's own DSP state."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"activebgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"activebgoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"activetextcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Arial Narrow",
+					"fontsize" : 11.0,
+					"id" : "obj-451",
+					"maxclass" : "live.text",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 960.0, 2275.0, 44.0, 15.0 ],
+					"saved_attribute_attributes" : 					{
+						"activebgcolor" : 						{
+							"expression" : ""
+						},
+						"activebgoncolor" : 						{
+							"expression" : ""
+						},
+						"activetextcolor" : 						{
+							"expression" : ""
+						},
+						"activetextoncolor" : 						{
+							"expression" : ""
+						},
+						"bordercolor" : 						{
+							"expression" : ""
+						},
+						"focusbordercolor" : 						{
+							"expression" : ""
+						},
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "audio_onoff",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "audio_onoff",
+							"parameter_type" : 2
+						}
+					},
+					"text" : "audio",
+					"texton" : "audio",
+					"varname" : "audio_onoff"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-452",
+					"linecount" : 4,
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 1010.0, 2275.0, 140.0, 62.0 ],
+					"text" : "jk.push @button play @oncolor g @offcolor k @textoff audio @texton audio @mode t",
+					"varname" : "audio_push"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-453",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "bang", "bang", "" ],
+					"patching_rect" : [ 960.0, 2350.0, 60.0, 22.0 ],
+					"text" : "sel 1 0",
+					"varname" : "audio_sel"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-454",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "int", "" ],
+					"patching_rect" : [ 1160.0, 2240.0, 95.0, 22.0 ],
+					"text" : "adstatus switch",
+					"varname" : "audio_status"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-455",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 1160.0, 2275.0, 48.0, 22.0 ],
+					"text" : "change",
+					"varname" : "audio_change"
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -21054,8 +21169,58 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-452", 0 ],
+					"source" : [ "obj-451", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-451", 0 ],
+					"source" : [ "obj-452", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-453", 0 ],
+					"source" : [ "obj-451", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-171", 0 ],
+					"source" : [ "obj-453", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-169", 0 ],
+					"source" : [ "obj-453", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-455", 0 ],
+					"source" : [ "obj-454", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-451", 0 ],
+					"source" : [ "obj-455", 0 ]
+				}
+
+			}
  ],
 		"parameters" : 		{
+			"obj-451" : [ "audio_onoff", "audio_onoff", 0 ],
 			"obj-100" : [ "2[29]", "2", 0 ],
 			"obj-102" : [ "2[30]", "2", 0 ],
 			"obj-103" : [ "2[31]", "2", 0 ],
