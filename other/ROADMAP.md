@@ -226,11 +226,11 @@ need tuning with the mics in the room.
     loop, so mic placement and the high-pass still matter. ([Notion](https://app.notion.com/p/4011a7ca1923810cb17fe6f937d770a9))
 
 **Multiplier editing**
-13. `[~]` **Hold track-above to edit a partial's multiplier** — hold
+13. `[x]` **Hold track-above to edit a partial's multiplier** — hold
     track-N-above and encoder N edits partial N's harmonic multiplier
     (1–18) on the selected voice, in microtuning or amplitude mode, with
     that encoder's normal job suspended. `code/multhold.js`, built
-    2026-10-23, not yet hardware-tested. See
+    and hardware-tested 2026-10-23. See
     [ADR 0014](../docs/adr/0014-per-encoder-gating-and-multiplier-hold.md).
     ([Notion](https://app.notion.com/p/4021a7ca192381aea4b1e52985962484))
 
