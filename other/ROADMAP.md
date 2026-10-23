@@ -208,9 +208,25 @@ It isn't recorded in an ADR yet.
    ([Notion](https://app.notion.com/p/4011a7ca1923815bb5b3c5384c15c611))
 
 **Mic output chain** (outputs 1 and 2)
-10. `[ ]` **High-pass filter** ([Notion](https://app.notion.com/p/4011a7ca192381a38596d24b1fd4b3fb))
-11. `[ ]` **Mono the sub** — sum the low end to mono. ([Notion](https://app.notion.com/p/4011a7ca19238171b235f597e6672c6f))
-12. `[ ]` **Feedback limiter** ([Notion](https://app.notion.com/p/4011a7ca1923810cb17fe6f937d770a9))
+All three live in one `p micout` subpatcher, between the mic
+`live.gain~` and `dac~ 1 2`. Built 2026-10-23. The signal path has been
+checked; the settings still need tuning with the mics in the room.
+10. `[~]` **High-pass filter** — `cross~ 40.` per side, high outlet
+    (3rd order, 18 dB/oct). ([Notion](https://app.notion.com/p/4011a7ca192381a38596d24b1fd4b3fb))
+11. `[~]` **Mono the sub** — `cross~ 120.` per side; the two low halves
+    are summed, halved and added back to both sides. ([Notion](https://app.notion.com/p/4011a7ca19238171b235f597e6672c6f))
+12. `[~]` **Feedback limiter** — `omx.peaklim~` last, at its default
+    settings. A limiter caps feedback peaks but won't stop a feedback
+    loop, so mic placement and the high-pass still matter. ([Notion](https://app.notion.com/p/4011a7ca1923810cb17fe6f937d770a9))
+
+**Multiplier editing**
+13. `[~]` **Hold track-above to edit a partial's multiplier** — hold
+    track-N-above and encoder N edits partial N's harmonic multiplier
+    (1–18) on the selected voice, in microtuning or amplitude mode, with
+    that encoder's normal job suspended. `code/multhold.js`, built
+    2026-10-23, not yet hardware-tested. See
+    [ADR 0014](../docs/adr/0014-per-encoder-gating-and-multiplier-hold.md).
+    ([Notion](https://app.notion.com/p/4021a7ca192381aea4b1e52985962484))
 
 ## Long-term horizon — early December 2026
 

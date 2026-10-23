@@ -32,6 +32,9 @@
 	Inlet 9:      encoder-mode pedal state, 1 = held, 0 = released
 	Inlets 10-17: current 8-partial amplitude list for voice 1..8, from
 	              `r bass_ampstate` .. `r delta_ampstate`
+	Inlet 18:     list of 8 held flags from multhold.js. A partial whose
+	              track-above button is held is editing its harmonic
+	              multiplier instead, so its encoder is ignored here.
 	Outlets 0-7:  "select <partial> <0.-1.>" for voice 1..8, wired to
 	              `s bass_amp` / `s tenor_amp` / `s alto_amp` /
 	              `s soprano_amp` / `s alpha_amp` / `s beta_amp` /
@@ -48,11 +51,13 @@
 	that passes the script path as a leading argument can't shift it.
 */
 
-inlets = 18;
+inlets = 19;
 outlets = 8;
 
 var PARTIALS = 8, VOICES = 8;
 var FIRST_AMPSTATE_INLET = 10;
+var HELD_INLET = 18;
+var held = [0, 0, 0, 0, 0, 0, 0, 0]; // per partial, from multhold.js
 
 var step = (jsarguments.length > 0) ? Number(jsarguments[jsarguments.length - 1]) : 0.01;
 if (isNaN(step) || step <= 0) step = 0.01;
@@ -77,6 +82,7 @@ function ticksFromCC(raw) {
 function nudge(partial, raw) {
 	if (!pedalDown) return; // microtuning mode: jk.pushrotaryAlt owns the encoder
 	if (voice < 1) return;  // selected voice is outside this bank - no target
+	if (held[partial - 1]) return; // encoder is editing the multiplier
 	var ticks = ticksFromCC(raw);
 	if (ticks === 0) return;
 	var v = voice - 1;
@@ -108,6 +114,10 @@ function msg_float(value) { msg_int(value); }
 // Full 8-value amplitude list from a voice's multislider (inlets 10-13).
 function list() {
 	if (inlet < FIRST_AMPSTATE_INLET) { msg_int(arguments[0]); return; }
+	if (inlet === HELD_INLET) {
+		for (var p = 0; p < PARTIALS && p < arguments.length; p++) held[p] = arguments[p] ? 1 : 0;
+		return;
+	}
 	var v = inlet - FIRST_AMPSTATE_INLET;
 	if (v >= VOICES) return;
 	var n = Math.min(arguments.length, PARTIALS);

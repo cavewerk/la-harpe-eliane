@@ -208,20 +208,31 @@ a pedal rather than the Push button the roadmap originally sketched.
   2026-10-23): `r 49btn` (jk.pushcore's send for Shift, 127 pressed /
   0 released) → `> 0` → the same `s encmode_pedal`. Holding Shift acts
   like holding pedal 2. When both are used, whichever changed last wins.
+- **Multiplier hold** (2026-10-23, [ADR 0014](../docs/adr/0014-per-encoder-gating-and-multiplier-hold.md)):
+  holding track-N-above (`r 102btn`–`r 109btn`) makes encoder N edit
+  partial N's harmonic multiplier (MCModule's 1–18 dials) on the selected
+  voice, in either mode. `multhold.js` steps it by one every 5 ticks,
+  sends `<partial> <value>` to `s <voice>_mult` (MCModule:
+  `r #1_mult` → `route 1…8` → dials), and shadows the dials through
+  `s #1_multstate`. That encoder's microtuning gate closes and
+  `encoderamp.js` (inlet 18) skips its partial while the button is held.
 - **Microtuning suppression**, without editing the vendored library: each
   `jk.pushrotaryAlt`'s 5th inlet is the control inlet of its internal
   `gate 4` (voice 1–4 picks which per-voice accumulator the encoder
-  drives; 0 closes the gate). The voice-select `int` passes through
-  `pak i i` alongside the pedal state into a gate expression, so a held
-  pedal sends every rotary 0 and a released one re-sends the current
-  voice.
+  drives; 0 closes the gate). Since 2026-10-23
+  ([ADR 0014](../docs/adr/0014-per-encoder-gating-and-multiplier-hold.md))
+  every gate inlet is driven individually by
+  [`code/multhold.js`](../code/multhold.js), from the voice-select `int`,
+  `r encmode_pedal` and the track-above buttons. A held pedal sends every
+  rotary 0, a held track-above button sends only its own rotary 0, and a
+  release re-sends the current voice. (Before that, a `pak i i` and two
+  `expr` objects gated whole banks.)
 
   Since [ADR 0010](../docs/adr/0010-second-rotary-bank.md) there are
   **two banks** of eight `jk.pushrotaryAlt`, because the abstraction is
   four-voice throughout — four internal `accum` objects behind a
-  `gate 4`, four outlets. Both banks read the same `pak i i`, through
-  complementary expressions: bank A `expr ($i1<=4)*$i1*(1-$i2)` and
-  bank B `expr ($i1>4)*($i1-4)*(1-$i2)`. Exactly one bank is open at a
+  `gate 4`, four outlets. Bank A is open for voices 1–4 and bank B for
+  voices 5–8 (sent as 1–4). Exactly one bank is open at a
   time, and a held pedal closes both. Bank B carries the **same rotary
   numbers** as bank A — `jk.pushrotaryAlt 3` exists twice — which works
   because the abstraction is a pure listener: it takes its deltas off
