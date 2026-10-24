@@ -251,6 +251,15 @@ need tuning with the mics in the room.
     `live.adsrui` as before. The ranges are global, set by four `flonum`s
     at the top level → `s env_ranges`, so they can be changed live for
     experimenting. `code/envspeed.js`, built and hardware-tested 2026-10-23.
+15. `[x]` **Envelope from the Push** — Shift + rotary 2 moves the
+    targeted voice's length knob (0.01 per tick), and plain rotary 2 stays
+    on master gain. The **Metronome** button toggles the targeted voice
+    between fast and slow, and is lit while that voice is on slow; the
+    light follows voice-select. `code/envcontrol.js`. To make this
+    possible, each MCLyra bpatcher now takes its voice name as an
+    argument (like MCModule), with `r #1_envlength` / `r #1_envslow` in
+    and `s #1_envlengthstate` / `s #1_envslowstate` out. Built 2026-10-23,
+    hardware-tested 2026-10-24.
 
 ## Long-term horizon — early December 2026
 

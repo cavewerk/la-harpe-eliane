@@ -16,6 +16,9 @@
 	Inlet 1:     target voice 1-8 (voice-select int)
 	Inlets 2-9:  current slider value of voice 1-8, from
 	             `r <voice>_masterstate`
+	Inlet 10:    Shift button, `r 49btn`. While Shift is held, rotary 2
+	             belongs to the envelope length (envcontrol.js) and is
+	             ignored here.
 	Outlets 0-7: new value (or a bang, to request the value) for voice
 	             1-8 -> `s <voice>_master`
 
@@ -25,12 +28,14 @@
 	ticks from silent to full).
 */
 
-inlets = 10;
+inlets = 11;
 outlets = 8;
 autowatch = 1;
 
 var VOICES = 8;
 var FIRST_STATE_INLET = 2;
+var SHIFT_INLET = 10;
+var shift = 0;
 
 var step = (jsarguments.length > 1) ? Number(jsarguments[jsarguments.length - 1]) : 0.01;
 if (isNaN(step) || step <= 0) step = 0.01;
@@ -46,7 +51,7 @@ function ticksFromCC(raw) {
 }
 
 function nudge(raw) {
-	if (voice < 1) return;
+	if (shift || voice < 1) return;
 	var v = voice - 1;
 	if (gain[v] === null) outlet(v, "bang");
 	if (gain[v] === null) return;
@@ -65,6 +70,7 @@ function msg_int(value) {
 		value = Number(value);
 		voice = (value >= 1 && value <= VOICES) ? value : 0;
 	}
+	else if (inlet === SHIFT_INLET) shift = (Number(value) > 0) ? 1 : 0;
 	else {
 		var v = inlet - FIRST_STATE_INLET;
 		var g = Number(value);
