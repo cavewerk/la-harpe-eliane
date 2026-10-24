@@ -260,6 +260,13 @@ need tuning with the mics in the room.
     argument (like MCModule), with `r #1_envlength` / `r #1_envslow` in
     and `s #1_envlengthstate` / `s #1_envslowstate` out. Built 2026-10-23,
     hardware-tested 2026-10-24.
+16. `[x]` **Global envelope controls** — an **Env All** length knob and
+    a **slow (all)** toggle in presentation, next to the mic controls, set
+    every voice at once (`s env_global_length` / `s env_global_slow` →
+    each MCLyra's dial and toggle). They're hidden parameters: not stored
+    in snapshots and no output at load, so they only act when touched.
+    The per-voice controls and Push mappings keep working on top of them.
+    Built and hardware-tested 2026-10-24.
 
 ## Long-term horizon — early December 2026
 

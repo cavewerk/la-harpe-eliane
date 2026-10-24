@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -59.0, -843.0, 833.0, 710.0 ],
+		"rect" : [ -203.0, -880.0, 1234.0, 847.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -853,8 +853,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial"
+
 				}
 
 			}
@@ -1077,8 +1076,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[1]"
+
 				}
 
 			}
@@ -1316,8 +1314,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[2]"
+
 				}
 
 			}
@@ -1555,8 +1552,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[3]"
+
 				}
 
 			}
@@ -1990,8 +1986,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[4]"
+
 				}
 
 			}
@@ -2255,8 +2250,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[5]"
+
 				}
 
 			}
@@ -2507,8 +2501,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[6]"
+
 				}
 
 			}
@@ -11751,8 +11744,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[7]"
+
 				}
 
 			}
@@ -11909,13 +11901,13 @@
 			}
 , 			{
 				"box" : 				{
+					"args" : [ "tenor" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
 					"id" : "obj-17",
-					"args" : [ "tenor" ],
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
@@ -11984,13 +11976,13 @@
 			}
 , 			{
 				"box" : 				{
+					"args" : [ "alto" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
 					"id" : "obj-12",
-					"args" : [ "alto" ],
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
@@ -12059,13 +12051,13 @@
 			}
 , 			{
 				"box" : 				{
+					"args" : [ "soprano" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
 					"id" : "obj-1",
-					"args" : [ "soprano" ],
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
@@ -12084,13 +12076,13 @@
 			}
 , 			{
 				"box" : 				{
+					"args" : [ "bass" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
 					"id" : "obj-15",
-					"args" : [ "bass" ],
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
@@ -12244,7 +12236,7 @@
 , 			{
 				"box" : 				{
 					"angle" : 270.0,
-					"bgcolor" : [ 0.96, 0.8, 0.45, 1 ],
+					"bgcolor" : [ 0.796078431372549, 0.749019607843137, 0.686274509803922, 1 ],
 					"id" : "obj-28",
 					"maxclass" : "panel",
 					"mode" : 0,
@@ -12261,7 +12253,7 @@
 , 			{
 				"box" : 				{
 					"angle" : 270.0,
-					"bgcolor" : [ 0.796078431372549, 0.749019607843137, 0.686274509803922, 1 ],
+					"bgcolor" : [ 0.96, 0.8, 0.45, 1 ],
 					"id" : "obj-29",
 					"maxclass" : "panel",
 					"mode" : 0,
@@ -12985,13 +12977,13 @@
 			}
 , 			{
 				"box" : 				{
+					"args" : [ "alpha" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
 					"id" : "obj-308",
-					"args" : [ "alpha" ],
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
@@ -13101,13 +13093,13 @@
 			}
 , 			{
 				"box" : 				{
+					"args" : [ "beta" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
 					"id" : "obj-312",
-					"args" : [ "beta" ],
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
@@ -13176,13 +13168,13 @@
 			}
 , 			{
 				"box" : 				{
+					"args" : [ "gamma" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
 					"id" : "obj-316",
-					"args" : [ "gamma" ],
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
@@ -13279,13 +13271,13 @@
 			}
 , 			{
 				"box" : 				{
+					"args" : [ "delta" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 1,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
 					"id" : "obj-320",
-					"args" : [ "delta" ],
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
@@ -14090,8 +14082,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[8]"
+
 				}
 
 			}
@@ -14314,8 +14305,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[9]"
+
 				}
 
 			}
@@ -14538,8 +14528,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[10]"
+
 				}
 
 			}
@@ -14762,8 +14751,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[11]"
+
 				}
 
 			}
@@ -14986,8 +14974,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[12]"
+
 				}
 
 			}
@@ -15210,8 +15197,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[15]"
+
 				}
 
 			}
@@ -15434,8 +15420,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[17]"
+
 				}
 
 			}
@@ -15658,8 +15643,7 @@
 						}
 
 					}
-,
-					"varname" : "live.dial[20]"
+
 				}
 
 			}
@@ -16977,7 +16961,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 960.0, 2200.0, 400.0, 33.0 ],
+					"patching_rect" : [ 960.0, 2200.0, 403.0, 33.0 ],
 					"text" : "Push Play = audio on/off (lit = on). sel 1 0 -> start/stop into adc~. adstatus switch -> change keeps the light in sync with Max's own DSP state."
 				}
 
@@ -18627,7 +18611,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1960.0, 1870.0, 135.0, 22.0 ],
+					"patching_rect" : [ 1960.0, 1870.0, 144.0, 22.0 ],
 					"text" : "r soprano_envlengthstate"
 				}
 
@@ -18663,7 +18647,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2380.0, 1870.0, 135.0, 22.0 ],
+					"patching_rect" : [ 2380.0, 1870.0, 141.0, 22.0 ],
 					"text" : "r gamma_envlengthstate"
 				}
 
@@ -18787,7 +18771,8 @@
 					"saved_object_attributes" : 					{
 						"filename" : "envcontrol.js",
 						"parameter_enable" : 0
-					},
+					}
+,
 					"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/envcontrol.js\" 0.01",
 					"varname" : "envctl_js"
 				}
@@ -18988,22 +18973,28 @@
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
-						},
+						}
+,
 						"activebgoncolor" : 						{
 							"expression" : ""
-						},
+						}
+,
 						"activetextcolor" : 						{
 							"expression" : ""
-						},
+						}
+,
 						"activetextoncolor" : 						{
 							"expression" : ""
-						},
+						}
+,
 						"bordercolor" : 						{
 							"expression" : ""
-						},
+						}
+,
 						"focusbordercolor" : 						{
 							"expression" : ""
-						},
+						}
+,
 						"valueof" : 						{
 							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_longname" : "env_slow_led",
@@ -19012,7 +19003,9 @@
 							"parameter_shortname" : "env_slow_led",
 							"parameter_type" : 2
 						}
-					},
+
+					}
+,
 					"text" : "slow",
 					"texton" : "slow",
 					"varname" : "env_slow_led"
@@ -19026,10 +19019,115 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 2710.0, 1940.0, 140.0, 62.0 ],
+					"outlettype" : [ "int", "", "", "" ],
+					"patching_rect" : [ 2710.0, 1940.0, 148.0, 62.0 ],
 					"text" : "jk.push @button metronome @oncolor w @offcolor k @textoff slow @texton slow @mode t",
 					"varname" : "env_slow_push"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-563",
+					"maxclass" : "live.dial",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1540.0, 2080.0, 44.0, 48.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 1180.0, 893.0, 44.0, 48.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_initial" : [ 0.9 ],
+							"parameter_invisible" : 2,
+							"parameter_longname" : "env_global_length",
+							"parameter_mmax" : 1.0,
+							"parameter_modmode" : 3,
+							"parameter_shortname" : "Env All",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 1
+						}
+
+					}
+,
+					"varname" : "env_global_length"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-564",
+					"maxclass" : "live.toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 1600.0, 2090.0, 20.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 1230.0, 905.0, 20.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_enum" : [ "fast", "slow" ],
+							"parameter_initial" : [ 0 ],
+							"parameter_invisible" : 2,
+							"parameter_longname" : "env_global_slow",
+							"parameter_mmax" : 1,
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "slow all",
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"varname" : "env_global_slow"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-565",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1625.0, 2090.0, 70.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 1252.0, 905.0, 70.0, 20.0 ],
+					"text" : "slow (all)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-566",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1540.0, 2140.0, 130.0, 22.0 ],
+					"text" : "s env_global_length"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-567",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1680.0, 2140.0, 120.0, 22.0 ],
+					"text" : "s env_global_slow"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-568",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1540.0, 2050.0, 520.0, 33.0 ],
+					"text" : "Global envelope: set every voice's length / fast-slow at once. Hidden parameters (not stored in snapshots, no output at load), so they only act when touched."
 				}
 
 			}
@@ -22007,6 +22105,23 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-458", 0 ],
+					"order" : 2,
+					"source" : [ "obj-457", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-502", 10 ],
+					"order" : 0,
+					"source" : [ "obj-457", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 2 ],
+					"order" : 1,
 					"source" : [ "obj-457", 0 ]
 				}
 
@@ -22405,6 +22520,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-502", 0 ],
+					"order" : 1,
+					"source" : [ "obj-492", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 0 ],
+					"order" : 0,
 					"source" : [ "obj-492", 0 ]
 				}
 
@@ -22668,6 +22792,265 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-544", 3 ],
+					"source" : [ "obj-527", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 4 ],
+					"source" : [ "obj-528", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 5 ],
+					"source" : [ "obj-529", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 6 ],
+					"source" : [ "obj-530", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 7 ],
+					"source" : [ "obj-531", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 8 ],
+					"source" : [ "obj-532", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 9 ],
+					"source" : [ "obj-533", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 10 ],
+					"source" : [ "obj-534", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 11 ],
+					"source" : [ "obj-535", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 12 ],
+					"source" : [ "obj-536", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 13 ],
+					"source" : [ "obj-537", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 14 ],
+					"source" : [ "obj-538", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 15 ],
+					"source" : [ "obj-539", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 16 ],
+					"source" : [ "obj-540", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 17 ],
+					"source" : [ "obj-541", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 18 ],
+					"source" : [ "obj-542", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 19 ],
+					"source" : [ "obj-543", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-545", 0 ],
+					"source" : [ "obj-544", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-546", 0 ],
+					"source" : [ "obj-544", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-547", 0 ],
+					"source" : [ "obj-544", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-548", 0 ],
+					"source" : [ "obj-544", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-549", 0 ],
+					"source" : [ "obj-544", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-550", 0 ],
+					"source" : [ "obj-544", 5 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-551", 0 ],
+					"source" : [ "obj-544", 6 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-552", 0 ],
+					"source" : [ "obj-544", 7 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-553", 0 ],
+					"source" : [ "obj-544", 8 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-554", 0 ],
+					"source" : [ "obj-544", 9 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-555", 0 ],
+					"source" : [ "obj-544", 10 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-556", 0 ],
+					"source" : [ "obj-544", 11 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-557", 0 ],
+					"source" : [ "obj-544", 12 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-558", 0 ],
+					"source" : [ "obj-544", 13 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-559", 0 ],
+					"source" : [ "obj-544", 14 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-560", 0 ],
+					"source" : [ "obj-544", 15 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-561", 0 ],
+					"source" : [ "obj-544", 16 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-562", 0 ],
+					"source" : [ "obj-561", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-566", 0 ],
+					"source" : [ "obj-563", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-567", 0 ],
+					"source" : [ "obj-564", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-59", 0 ],
 					"source" : [ "obj-57", 0 ]
 				}
@@ -22676,7 +23059,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-167", 8 ],
-					"order" : 4,
+					"order" : 5,
 					"source" : [ "obj-58", 0 ]
 				}
 
@@ -22692,7 +23075,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-449", 0 ],
-					"order" : 3,
+					"order" : 4,
 					"source" : [ "obj-58", 0 ]
 				}
 
@@ -22709,6 +23092,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-502", 1 ],
 					"order" : 1,
+					"source" : [ "obj-58", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-544", 1 ],
+					"order" : 3,
 					"source" : [ "obj-58", 0 ]
 				}
 
@@ -23589,282 +23980,8 @@
 				}
 
 			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 0 ],
-					"source" : [ "obj-492", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 1 ],
-					"source" : [ "obj-58", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 2 ],
-					"source" : [ "obj-457", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 3 ],
-					"source" : [ "obj-527", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 4 ],
-					"source" : [ "obj-528", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 12 ],
-					"source" : [ "obj-536", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-545", 0 ],
-					"source" : [ "obj-544", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-553", 0 ],
-					"source" : [ "obj-544", 8 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 5 ],
-					"source" : [ "obj-529", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 13 ],
-					"source" : [ "obj-537", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-546", 0 ],
-					"source" : [ "obj-544", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-554", 0 ],
-					"source" : [ "obj-544", 9 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 6 ],
-					"source" : [ "obj-530", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 14 ],
-					"source" : [ "obj-538", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-547", 0 ],
-					"source" : [ "obj-544", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-555", 0 ],
-					"source" : [ "obj-544", 10 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 7 ],
-					"source" : [ "obj-531", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 15 ],
-					"source" : [ "obj-539", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-548", 0 ],
-					"source" : [ "obj-544", 3 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-556", 0 ],
-					"source" : [ "obj-544", 11 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 8 ],
-					"source" : [ "obj-532", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 16 ],
-					"source" : [ "obj-540", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-549", 0 ],
-					"source" : [ "obj-544", 4 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-557", 0 ],
-					"source" : [ "obj-544", 12 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 9 ],
-					"source" : [ "obj-533", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 17 ],
-					"source" : [ "obj-541", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-550", 0 ],
-					"source" : [ "obj-544", 5 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-558", 0 ],
-					"source" : [ "obj-544", 13 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 10 ],
-					"source" : [ "obj-534", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 18 ],
-					"source" : [ "obj-542", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-551", 0 ],
-					"source" : [ "obj-544", 6 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-559", 0 ],
-					"source" : [ "obj-544", 14 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 11 ],
-					"source" : [ "obj-535", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-544", 19 ],
-					"source" : [ "obj-543", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-552", 0 ],
-					"source" : [ "obj-544", 7 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-560", 0 ],
-					"source" : [ "obj-544", 15 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-561", 0 ],
-					"source" : [ "obj-544", 16 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-562", 0 ],
-					"source" : [ "obj-561", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-502", 10 ],
-					"source" : [ "obj-457", 0 ]
-				}
-
-			}
  ],
 		"parameters" : 		{
-			"obj-561" : [ "env_slow_led", "env_slow_led", 0 ],
 			"obj-100" : [ "2[29]", "2", 0 ],
 			"obj-102" : [ "2[30]", "2", 0 ],
 			"obj-103" : [ "2[31]", "2", 0 ],
@@ -24262,6 +24379,9 @@
 			"obj-5" : [ "Mic Out", "Mic Out", 0 ],
 			"obj-50" : [ "2[6]", "2", 0 ],
 			"obj-51" : [ "2[7]", "2", 0 ],
+			"obj-561" : [ "env_slow_led", "env_slow_led", 0 ],
+			"obj-563" : [ "env_global_length", "Env All", 0 ],
+			"obj-564" : [ "env_global_slow", "slow all", 0 ],
 			"obj-63" : [ "2[8]", "2", 0 ],
 			"obj-64" : [ "2[9]", "2", 0 ],
 			"obj-65" : [ "2[10]", "2", 0 ],
@@ -25836,6 +25956,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "envcontrol.js",
+				"bootpath" : "~/Claude Drive/MaxMsp/LivingStringProject/code",
+				"patcherrelativepath" : "../code",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "envspeed.js",
 				"bootpath" : "~/Claude Drive/MaxMsp/LivingStringProject/code",
 				"patcherrelativepath" : "../code",
@@ -25976,8 +26103,8 @@
 				"valuedictionary" : 				{
 					"parameter_values" : 					{
 						"-" : 1.0,
-						"-[100]" : 2.0,
-						"-[101]" : 3.0,
+						"-[100]" : 1.0,
+						"-[101]" : 2.0,
 						"-[102]" : 5.0,
 						"-[103]" : 13.0,
 						"-[104]" : 12.0,
@@ -25990,9 +26117,9 @@
 						"-[110]" : 0.0,
 						"-[111]" : 0.0,
 						"-[112]" : 0.0,
-						"-[113]" : -0.072,
-						"-[114]" : -0.03,
-						"-[115]" : 0.042,
+						"-[113]" : 0.0,
+						"-[114]" : 0.0,
+						"-[115]" : 0.0,
 						"-[116]" : 2.0,
 						"-[117]" : 3.0,
 						"-[118]" : 5.0,
@@ -26007,93 +26134,93 @@
 						"-[126]" : 0.0,
 						"-[127]" : 0.0,
 						"-[12]" : 0.0,
-						"-[13]" : 0.204,
-						"-[14]" : -0.006,
-						"-[15]" : -0.27,
+						"-[13]" : 0.0,
+						"-[14]" : 0.0,
+						"-[15]" : 0.0,
 						"-[16]" : 2.0,
-						"-[17]" : 1.0,
+						"-[17]" : 8.0,
 						"-[18]" : 0.0,
-						"-[19]" : 0.36,
+						"-[19]" : 0.0,
 						"-[1]" : 2.0,
 						"-[20]" : 0.0,
 						"-[21]" : 0.0,
-						"-[22]" : 0.108,
+						"-[22]" : 0.0,
 						"-[23]" : 4.0,
 						"-[24]" : 3.0,
-						"-[25]" : -0.18,
+						"-[25]" : 0.0,
 						"-[26]" : 3.0,
 						"-[27]" : 0.0,
 						"-[28]" : 6.0,
 						"-[29]" : 3.0,
 						"-[2]" : 3.0,
-						"-[30]" : 0.288,
+						"-[30]" : 0.0,
 						"-[31]" : 5.0,
 						"-[32]" : 0.0,
 						"-[33]" : 5.0,
 						"-[34]" : 0.0,
 						"-[35]" : 0.0,
 						"-[36]" : 0.0,
-						"-[37]" : 0.336,
-						"-[38]" : 4.0,
+						"-[37]" : 0.0,
+						"-[38]" : 6.0,
 						"-[39]" : 0.0,
 						"-[3]" : 9.0,
-						"-[40]" : 0.012,
+						"-[40]" : 0.0,
 						"-[41]" : 0.0,
 						"-[42]" : 9.0,
-						"-[43]" : 2.0,
+						"-[43]" : 10.0,
 						"-[44]" : 3.0,
-						"-[45]" : 2.0,
+						"-[45]" : 4.0,
 						"-[46]" : 8.0,
 						"-[47]" : 1.0,
 						"-[48]" : 0.0,
 						"-[49]" : 9.0,
-						"-[4]" : 9.0,
+						"-[4]" : 8.0,
 						"-[50]" : 0.0,
 						"-[51]" : 9.0,
-						"-[52]" : 3.0,
+						"-[52]" : 5.0,
 						"-[53]" : 0.0,
 						"-[54]" : 0.0,
 						"-[55]" : 6.999999999999999,
 						"-[56]" : 2.0,
 						"-[57]" : 0.0,
-						"-[58]" : 0.006,
-						"-[59]" : 6.0,
+						"-[58]" : 0.0,
+						"-[59]" : 10.0,
 						"-[5]" : 8.0,
 						"-[60]" : 1.0,
 						"-[61]" : 0.0,
-						"-[62]" : 5.0,
+						"-[62]" : 6.0,
 						"-[63]" : 0.0,
 						"-[64]" : 0.0,
 						"-[65]" : 0.0,
 						"-[66]" : 0.0,
-						"-[67]" : -0.042,
+						"-[67]" : 0.0,
 						"-[68]" : 1.0,
 						"-[69]" : 2.0,
 						"-[6]" : 6.0,
 						"-[70]" : 5.0,
 						"-[71]" : 13.0,
-						"-[72]" : 12.0,
+						"-[72]" : 6.0,
 						"-[73]" : 10.0,
 						"-[74]" : 9.0,
-						"-[75]" : 7.0,
+						"-[75]" : 3.0,
 						"-[76]" : 0.0,
-						"-[77]" : -0.03,
+						"-[77]" : 0.0,
 						"-[78]" : 0.0,
 						"-[79]" : 0.0,
 						"-[7]" : 4.0,
 						"-[80]" : 0.0,
-						"-[81]" : 0.018,
-						"-[82]" : -0.306,
-						"-[83]" : -0.81,
+						"-[81]" : 0.0,
+						"-[82]" : 0.0,
+						"-[83]" : 0.0,
 						"-[84]" : 1.0,
 						"-[85]" : 2.0,
-						"-[86]" : 5.0,
+						"-[86]" : 3.0,
 						"-[87]" : 13.0,
 						"-[88]" : 12.0,
 						"-[89]" : 5.0,
 						"-[8]" : 0.0,
 						"-[90]" : 9.0,
-						"-[91]" : 7.0,
+						"-[91]" : 6.0,
 						"-[92]" : 0.0,
 						"-[93]" : 0.0,
 						"-[94]" : 0.0,
@@ -26103,9 +26230,9 @@
 						"-[98]" : 0.0,
 						"-[99]" : 0.0,
 						"-[9]" : 0.0,
-						"2" : 455.0,
+						"2" : 500.0,
 						"2[10]" : 500.0,
-						"2[11]" : 534.0,
+						"2[11]" : 500.0,
 						"2[12]" : 500.0,
 						"2[13]" : 500.0,
 						"2[14]" : 500.0,
@@ -26114,7 +26241,7 @@
 						"2[17]" : 500.0,
 						"2[18]" : 500.0,
 						"2[19]" : 500.0,
-						"2[1]" : 501.0,
+						"2[1]" : 500.0,
 						"2[20]" : 500.0,
 						"2[21]" : 500.0,
 						"2[22]" : 500.0,
@@ -26122,35 +26249,35 @@
 						"2[24]" : 500.0,
 						"2[25]" : 500.0,
 						"2[26]" : 500.0,
-						"2[27]" : 560.0,
+						"2[27]" : 500.0,
 						"2[28]" : 500.0,
 						"2[29]" : 500.0,
-						"2[2]" : 502.0,
+						"2[2]" : 500.0,
 						"2[30]" : 500.0,
 						"2[31]" : 500.0,
-						"2[32]" : 493.0,
-						"2[33]" : 365.0,
+						"2[32]" : 500.0,
+						"2[33]" : 500.0,
 						"2[34]" : 500.0,
-						"2[35]" : 507.0,
+						"2[35]" : 500.0,
 						"2[36]" : 500.0,
-						"2[37]" : 449.0,
+						"2[37]" : 500.0,
 						"2[38]" : 500.0,
-						"2[39]" : 495.0,
-						"2[3]" : 548.0,
+						"2[39]" : 500.0,
+						"2[3]" : 500.0,
 						"2[40]" : 500.0,
-						"2[41]" : 503.0,
+						"2[41]" : 500.0,
 						"2[42]" : 500.0,
-						"2[43]" : 488.0,
+						"2[43]" : 500.0,
 						"2[44]" : 500.0,
 						"2[45]" : 500.0,
 						"2[46]" : 500.0,
 						"2[47]" : 500.0,
 						"2[48]" : 500.0,
 						"2[49]" : 500.0,
-						"2[4]" : 518.0,
+						"2[4]" : 500.0,
 						"2[50]" : 500.0,
 						"2[51]" : 500.0,
-						"2[52]" : 495.0,
+						"2[52]" : 500.0,
 						"2[53]" : 500.0,
 						"2[54]" : 500.0,
 						"2[55]" : 500.0,
@@ -26158,17 +26285,18 @@
 						"2[57]" : 500.0,
 						"2[58]" : 500.0,
 						"2[59]" : 500.0,
-						"2[5]" : 556.0,
+						"2[5]" : 500.0,
 						"2[60]" : 500.0,
 						"2[61]" : 500.0,
 						"2[62]" : 500.0,
 						"2[63]" : 500.0,
 						"2[64]" : 0.0,
 						"2[6]" : 500.0,
-						"2[7]" : 499.0,
-						"2[8]" : 470.0,
+						"2[7]" : 500.0,
+						"2[8]" : 500.0,
 						"2[9]" : 500.0,
 						"Mic Out" : -70.0,
+						"audio_onoff" : 0.0,
 						"button" : 0.0,
 						"button[1]" : 0.0,
 						"button[2]" : 0.0,
@@ -26185,6 +26313,23 @@
 						"drone_gamma" : 0.0,
 						"drone_soprano" : 0.0,
 						"drone_tenor" : 0.0,
+						"env_length" : 0.9,
+						"env_length[1]" : 0.9,
+						"env_length[2]" : 0.9,
+						"env_length[3]" : 0.9,
+						"env_length[4]" : 0.9,
+						"env_length[5]" : 0.884251968503937,
+						"env_length[6]" : 0.884251968503937,
+						"env_length[7]" : 0.9,
+						"env_slow" : 0.0,
+						"env_slow[1]" : 0.0,
+						"env_slow[2]" : 0.0,
+						"env_slow[3]" : 0.0,
+						"env_slow[4]" : 0.0,
+						"env_slow[5]" : 0.0,
+						"env_slow[6]" : 0.0,
+						"env_slow[7]" : 0.0,
+						"env_slow_led" : 0.0,
 						"live.button[10]" : 0.0,
 						"live.button[11]" : 0.0,
 						"live.button[12]" : 0.0,
@@ -26250,20 +26395,20 @@
 						"live.button[7]" : 0.0,
 						"live.button[8]" : 0.0,
 						"live.button[9]" : 0.0,
-						"live.dial[10]" : 145.27252381808367,
-						"live.dial[1]" : 130.042593722335141,
-						"live.dial[2]" : 109.118110236220218,
-						"live.dial[3]" : 220.947905721342238,
-						"live.dial[4]" : 87.302207797856553,
-						"live.dial[5]" : 285.999999999999943,
+						"live.dial[10]" : 147.052801701452893,
+						"live.dial[1]" : 129.689769809820945,
+						"live.dial[2]" : 109.353341243580701,
+						"live.dial[3]" : 222.91367572998783,
+						"live.dial[4]" : 95.631990077235741,
+						"live.dial[5]" : 86.738168388338735,
 						"live.dial[6]" : 285.999999999999943,
-						"live.dial[7]" : 191.184159296725284,
+						"live.dial[7]" : 191.940064808536249,
 						"live.menu[1]" : 0.0,
 						"live.menu[2]" : 4.0,
 						"live.menu[3]" : 3.0,
-						"live.menu[4]" : 5.0,
+						"live.menu[4]" : 6.0,
 						"live.menu[5]" : 2.0,
-						"live.menu[6]" : 6.0,
+						"live.menu[6]" : 7.0,
 						"live.menu[7]" : 7.0,
 						"live.menu[8]" : 1.0,
 						"live.text[10]" : 0.0,
@@ -26331,7 +26476,9 @@
 						"live.text[8]" : 0.0,
 						"live.text[9]" : 0.0,
 						"live.toggle[13]" : 0.0,
-						"pushtext16[1]" : 0.0,
+						"mono_on" : 1.0,
+						"mono_xover" : 120.0,
+						"pushtext16[1]" : 1.0,
 						"pushtext18[1]" : 0.0,
 						"pushtext20[1]" : 0.0,
 						"pushtext22[1]" : 0.0,
@@ -26339,15 +26486,15 @@
 						"pushtext[2]" : 0.0,
 						"pushtext[3]" : 0.0,
 						"pushtext[4]" : 0.0,
-						"slider" : 0.75375489708331,
-						"slider[1]" : 0.955831782464737,
-						"slider[2]" : 0.985761232974659,
-						"slider[3]" : 0.865138167360231,
-						"slider[4]" : 0.895094608107207,
+						"slider" : 1.0,
+						"slider[1]" : 1.0,
+						"slider[2]" : 1.0,
+						"slider[3]" : 1.0,
+						"slider[4]" : 1.0,
 						"slider[5]" : 1.0,
-						"slider[6]" : 0.0,
-						"slider[7]" : 0.0,
-						"synth out" : -70.0,
+						"slider[6]" : 0.951459506314495,
+						"slider[7]" : 1.0,
+						"synth out" : -23.495447834645667,
 						"toggle" : 0.0,
 						"toggle[1]" : 0.0,
 						"toggle[2]" : 0.0,
@@ -26366,35 +26513,35 @@
 							"flonum[7]" : [ 1.0 ],
 							"flonum[8]" : [ 1.0 ],
 							"multislider" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
-							"multislider[1]" : [ 0.891560333005844, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
-							"multislider[2]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.925516190067414 ],
+							"multislider[1]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
+							"multislider[2]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
 							"multislider[3]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
-							"multislider[4]" : [ 0.936834809087938, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
-							"multislider[5]" : [ 1.0, 0.914197571046891, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
-							"multislider[6]" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
-							"multislider[7]" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+							"multislider[4]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
+							"multislider[5]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
+							"multislider[6]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
+							"multislider[7]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
 							"number[10]" : [ 1000 ],
 							"number[11]" : [ 100 ],
-							"number[12]" : [ 1288 ],
+							"number[12]" : [ 588 ],
 							"number[13]" : [ 100 ],
-							"number[14]" : [ 236 ],
+							"number[14]" : [ 588 ],
 							"number[15]" : [ 100 ],
-							"number[16]" : [ 3734 ],
-							"number[17]" : [ 704 ],
+							"number[16]" : [ 541 ],
+							"number[17]" : [ 541 ],
 							"number[18]" : [ 600 ],
-							"number[1]" : [ 1000 ],
-							"number[21]" : [ 3639 ],
+							"number[1]" : [ 4000 ],
+							"number[21]" : [ 541 ],
 							"number[22]" : [ 100 ],
-							"number[23]" : [ 303 ],
-							"number[27]" : [ 490 ],
+							"number[23]" : [ 541 ],
+							"number[27]" : [ 500 ],
 							"number[28]" : [ 100 ],
-							"number[29]" : [ 1052 ],
+							"number[29]" : [ 4999 ],
 							"number[2]" : [ 100 ],
 							"number[3]" : [ 600 ],
-							"number[4]" : [ 1000 ],
+							"number[4]" : [ 4000 ],
 							"number[5]" : [ 100 ],
 							"number[6]" : [ 600 ],
-							"number[7]" : [ 1000 ],
+							"number[7]" : [ 4000 ],
 							"number[8]" : [ 100 ],
 							"number[9]" : [ 600 ]
 						}
@@ -26420,8 +26567,8 @@
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"-" : 1.0,
-									"-[100]" : 2.0,
-									"-[101]" : 3.0,
+									"-[100]" : 1.0,
+									"-[101]" : 2.0,
 									"-[102]" : 5.0,
 									"-[103]" : 13.0,
 									"-[104]" : 12.0,
@@ -26434,9 +26581,9 @@
 									"-[110]" : 0.0,
 									"-[111]" : 0.0,
 									"-[112]" : 0.0,
-									"-[113]" : -0.072,
-									"-[114]" : -0.03,
-									"-[115]" : 0.042,
+									"-[113]" : 0.0,
+									"-[114]" : 0.0,
+									"-[115]" : 0.0,
 									"-[116]" : 2.0,
 									"-[117]" : 3.0,
 									"-[118]" : 5.0,
@@ -26451,93 +26598,93 @@
 									"-[126]" : 0.0,
 									"-[127]" : 0.0,
 									"-[12]" : 0.0,
-									"-[13]" : 0.204,
-									"-[14]" : -0.006,
-									"-[15]" : -0.27,
+									"-[13]" : 0.0,
+									"-[14]" : 0.0,
+									"-[15]" : 0.0,
 									"-[16]" : 2.0,
-									"-[17]" : 1.0,
+									"-[17]" : 8.0,
 									"-[18]" : 0.0,
-									"-[19]" : 0.36,
+									"-[19]" : 0.0,
 									"-[1]" : 2.0,
 									"-[20]" : 0.0,
 									"-[21]" : 0.0,
-									"-[22]" : 0.108,
+									"-[22]" : 0.0,
 									"-[23]" : 4.0,
 									"-[24]" : 3.0,
-									"-[25]" : -0.18,
+									"-[25]" : 0.0,
 									"-[26]" : 3.0,
 									"-[27]" : 0.0,
 									"-[28]" : 6.0,
 									"-[29]" : 3.0,
 									"-[2]" : 3.0,
-									"-[30]" : 0.288,
+									"-[30]" : 0.0,
 									"-[31]" : 5.0,
 									"-[32]" : 0.0,
 									"-[33]" : 5.0,
 									"-[34]" : 0.0,
 									"-[35]" : 0.0,
 									"-[36]" : 0.0,
-									"-[37]" : 0.336,
-									"-[38]" : 4.0,
+									"-[37]" : 0.0,
+									"-[38]" : 6.0,
 									"-[39]" : 0.0,
 									"-[3]" : 9.0,
-									"-[40]" : 0.012,
+									"-[40]" : 0.0,
 									"-[41]" : 0.0,
 									"-[42]" : 9.0,
-									"-[43]" : 2.0,
+									"-[43]" : 10.0,
 									"-[44]" : 3.0,
-									"-[45]" : 2.0,
+									"-[45]" : 4.0,
 									"-[46]" : 8.0,
 									"-[47]" : 1.0,
 									"-[48]" : 0.0,
 									"-[49]" : 9.0,
-									"-[4]" : 9.0,
+									"-[4]" : 8.0,
 									"-[50]" : 0.0,
 									"-[51]" : 9.0,
-									"-[52]" : 3.0,
+									"-[52]" : 5.0,
 									"-[53]" : 0.0,
 									"-[54]" : 0.0,
 									"-[55]" : 6.999999999999999,
 									"-[56]" : 2.0,
 									"-[57]" : 0.0,
-									"-[58]" : 0.006,
-									"-[59]" : 6.0,
+									"-[58]" : 0.0,
+									"-[59]" : 10.0,
 									"-[5]" : 8.0,
 									"-[60]" : 1.0,
 									"-[61]" : 0.0,
-									"-[62]" : 5.0,
+									"-[62]" : 6.0,
 									"-[63]" : 0.0,
 									"-[64]" : 0.0,
 									"-[65]" : 0.0,
 									"-[66]" : 0.0,
-									"-[67]" : -0.042,
+									"-[67]" : 0.0,
 									"-[68]" : 1.0,
 									"-[69]" : 2.0,
 									"-[6]" : 6.0,
 									"-[70]" : 5.0,
 									"-[71]" : 13.0,
-									"-[72]" : 12.0,
+									"-[72]" : 6.0,
 									"-[73]" : 10.0,
 									"-[74]" : 9.0,
-									"-[75]" : 7.0,
+									"-[75]" : 3.0,
 									"-[76]" : 0.0,
-									"-[77]" : -0.03,
+									"-[77]" : 0.0,
 									"-[78]" : 0.0,
 									"-[79]" : 0.0,
 									"-[7]" : 4.0,
 									"-[80]" : 0.0,
-									"-[81]" : 0.018,
-									"-[82]" : -0.306,
-									"-[83]" : -0.81,
+									"-[81]" : 0.0,
+									"-[82]" : 0.0,
+									"-[83]" : 0.0,
 									"-[84]" : 1.0,
 									"-[85]" : 2.0,
-									"-[86]" : 5.0,
+									"-[86]" : 3.0,
 									"-[87]" : 13.0,
 									"-[88]" : 12.0,
 									"-[89]" : 5.0,
 									"-[8]" : 0.0,
 									"-[90]" : 9.0,
-									"-[91]" : 7.0,
+									"-[91]" : 6.0,
 									"-[92]" : 0.0,
 									"-[93]" : 0.0,
 									"-[94]" : 0.0,
@@ -26547,9 +26694,9 @@
 									"-[98]" : 0.0,
 									"-[99]" : 0.0,
 									"-[9]" : 0.0,
-									"2" : 455.0,
+									"2" : 500.0,
 									"2[10]" : 500.0,
-									"2[11]" : 534.0,
+									"2[11]" : 500.0,
 									"2[12]" : 500.0,
 									"2[13]" : 500.0,
 									"2[14]" : 500.0,
@@ -26558,7 +26705,7 @@
 									"2[17]" : 500.0,
 									"2[18]" : 500.0,
 									"2[19]" : 500.0,
-									"2[1]" : 501.0,
+									"2[1]" : 500.0,
 									"2[20]" : 500.0,
 									"2[21]" : 500.0,
 									"2[22]" : 500.0,
@@ -26566,35 +26713,35 @@
 									"2[24]" : 500.0,
 									"2[25]" : 500.0,
 									"2[26]" : 500.0,
-									"2[27]" : 560.0,
+									"2[27]" : 500.0,
 									"2[28]" : 500.0,
 									"2[29]" : 500.0,
-									"2[2]" : 502.0,
+									"2[2]" : 500.0,
 									"2[30]" : 500.0,
 									"2[31]" : 500.0,
-									"2[32]" : 493.0,
-									"2[33]" : 365.0,
+									"2[32]" : 500.0,
+									"2[33]" : 500.0,
 									"2[34]" : 500.0,
-									"2[35]" : 507.0,
+									"2[35]" : 500.0,
 									"2[36]" : 500.0,
-									"2[37]" : 449.0,
+									"2[37]" : 500.0,
 									"2[38]" : 500.0,
-									"2[39]" : 495.0,
-									"2[3]" : 548.0,
+									"2[39]" : 500.0,
+									"2[3]" : 500.0,
 									"2[40]" : 500.0,
-									"2[41]" : 503.0,
+									"2[41]" : 500.0,
 									"2[42]" : 500.0,
-									"2[43]" : 488.0,
+									"2[43]" : 500.0,
 									"2[44]" : 500.0,
 									"2[45]" : 500.0,
 									"2[46]" : 500.0,
 									"2[47]" : 500.0,
 									"2[48]" : 500.0,
 									"2[49]" : 500.0,
-									"2[4]" : 518.0,
+									"2[4]" : 500.0,
 									"2[50]" : 500.0,
 									"2[51]" : 500.0,
-									"2[52]" : 495.0,
+									"2[52]" : 500.0,
 									"2[53]" : 500.0,
 									"2[54]" : 500.0,
 									"2[55]" : 500.0,
@@ -26602,17 +26749,18 @@
 									"2[57]" : 500.0,
 									"2[58]" : 500.0,
 									"2[59]" : 500.0,
-									"2[5]" : 556.0,
+									"2[5]" : 500.0,
 									"2[60]" : 500.0,
 									"2[61]" : 500.0,
 									"2[62]" : 500.0,
 									"2[63]" : 500.0,
 									"2[64]" : 0.0,
 									"2[6]" : 500.0,
-									"2[7]" : 499.0,
-									"2[8]" : 470.0,
+									"2[7]" : 500.0,
+									"2[8]" : 500.0,
 									"2[9]" : 500.0,
 									"Mic Out" : -70.0,
+									"audio_onoff" : 0.0,
 									"button" : 0.0,
 									"button[1]" : 0.0,
 									"button[2]" : 0.0,
@@ -26629,6 +26777,23 @@
 									"drone_gamma" : 0.0,
 									"drone_soprano" : 0.0,
 									"drone_tenor" : 0.0,
+									"env_length" : 0.9,
+									"env_length[1]" : 0.9,
+									"env_length[2]" : 0.9,
+									"env_length[3]" : 0.9,
+									"env_length[4]" : 0.9,
+									"env_length[5]" : 0.884251968503937,
+									"env_length[6]" : 0.884251968503937,
+									"env_length[7]" : 0.9,
+									"env_slow" : 0.0,
+									"env_slow[1]" : 0.0,
+									"env_slow[2]" : 0.0,
+									"env_slow[3]" : 0.0,
+									"env_slow[4]" : 0.0,
+									"env_slow[5]" : 0.0,
+									"env_slow[6]" : 0.0,
+									"env_slow[7]" : 0.0,
+									"env_slow_led" : 0.0,
 									"live.button[10]" : 0.0,
 									"live.button[11]" : 0.0,
 									"live.button[12]" : 0.0,
@@ -26694,20 +26859,20 @@
 									"live.button[7]" : 0.0,
 									"live.button[8]" : 0.0,
 									"live.button[9]" : 0.0,
-									"live.dial[10]" : 145.27252381808367,
-									"live.dial[1]" : 130.042593722335141,
-									"live.dial[2]" : 109.118110236220218,
-									"live.dial[3]" : 220.947905721342238,
-									"live.dial[4]" : 87.302207797856553,
-									"live.dial[5]" : 285.999999999999943,
+									"live.dial[10]" : 147.052801701452893,
+									"live.dial[1]" : 129.689769809820945,
+									"live.dial[2]" : 109.353341243580701,
+									"live.dial[3]" : 222.91367572998783,
+									"live.dial[4]" : 95.631990077235741,
+									"live.dial[5]" : 86.738168388338735,
 									"live.dial[6]" : 285.999999999999943,
-									"live.dial[7]" : 191.184159296725284,
+									"live.dial[7]" : 191.940064808536249,
 									"live.menu[1]" : 0.0,
 									"live.menu[2]" : 4.0,
 									"live.menu[3]" : 3.0,
-									"live.menu[4]" : 5.0,
+									"live.menu[4]" : 6.0,
 									"live.menu[5]" : 2.0,
-									"live.menu[6]" : 6.0,
+									"live.menu[6]" : 7.0,
 									"live.menu[7]" : 7.0,
 									"live.menu[8]" : 1.0,
 									"live.text[10]" : 0.0,
@@ -26775,7 +26940,9 @@
 									"live.text[8]" : 0.0,
 									"live.text[9]" : 0.0,
 									"live.toggle[13]" : 0.0,
-									"pushtext16[1]" : 0.0,
+									"mono_on" : 1.0,
+									"mono_xover" : 120.0,
+									"pushtext16[1]" : 1.0,
 									"pushtext18[1]" : 0.0,
 									"pushtext20[1]" : 0.0,
 									"pushtext22[1]" : 0.0,
@@ -26783,15 +26950,15 @@
 									"pushtext[2]" : 0.0,
 									"pushtext[3]" : 0.0,
 									"pushtext[4]" : 0.0,
-									"slider" : 0.75375489708331,
-									"slider[1]" : 0.955831782464737,
-									"slider[2]" : 0.985761232974659,
-									"slider[3]" : 0.865138167360231,
-									"slider[4]" : 0.895094608107207,
+									"slider" : 1.0,
+									"slider[1]" : 1.0,
+									"slider[2]" : 1.0,
+									"slider[3]" : 1.0,
+									"slider[4]" : 1.0,
 									"slider[5]" : 1.0,
-									"slider[6]" : 0.0,
-									"slider[7]" : 0.0,
-									"synth out" : -70.0,
+									"slider[6]" : 0.951459506314495,
+									"slider[7]" : 1.0,
+									"synth out" : -23.495447834645667,
 									"toggle" : 0.0,
 									"toggle[1]" : 0.0,
 									"toggle[2]" : 0.0,
@@ -26810,35 +26977,35 @@
 										"flonum[7]" : [ 1.0 ],
 										"flonum[8]" : [ 1.0 ],
 										"multislider" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
-										"multislider[1]" : [ 0.891560333005844, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
-										"multislider[2]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.925516190067414 ],
+										"multislider[1]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
+										"multislider[2]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
 										"multislider[3]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
-										"multislider[4]" : [ 0.936834809087938, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
-										"multislider[5]" : [ 1.0, 0.914197571046891, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
-										"multislider[6]" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
-										"multislider[7]" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+										"multislider[4]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
+										"multislider[5]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
+										"multislider[6]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
+										"multislider[7]" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
 										"number[10]" : [ 1000 ],
 										"number[11]" : [ 100 ],
-										"number[12]" : [ 1288 ],
+										"number[12]" : [ 588 ],
 										"number[13]" : [ 100 ],
-										"number[14]" : [ 236 ],
+										"number[14]" : [ 588 ],
 										"number[15]" : [ 100 ],
-										"number[16]" : [ 3734 ],
-										"number[17]" : [ 704 ],
+										"number[16]" : [ 541 ],
+										"number[17]" : [ 541 ],
 										"number[18]" : [ 600 ],
-										"number[1]" : [ 1000 ],
-										"number[21]" : [ 3639 ],
+										"number[1]" : [ 4000 ],
+										"number[21]" : [ 541 ],
 										"number[22]" : [ 100 ],
-										"number[23]" : [ 303 ],
-										"number[27]" : [ 490 ],
+										"number[23]" : [ 541 ],
+										"number[27]" : [ 500 ],
 										"number[28]" : [ 100 ],
-										"number[29]" : [ 1052 ],
+										"number[29]" : [ 4999 ],
 										"number[2]" : [ 100 ],
 										"number[3]" : [ 600 ],
-										"number[4]" : [ 1000 ],
+										"number[4]" : [ 4000 ],
 										"number[5]" : [ 100 ],
 										"number[6]" : [ 600 ],
-										"number[7]" : [ 1000 ],
+										"number[7]" : [ 4000 ],
 										"number[8]" : [ 100 ],
 										"number[9]" : [ 600 ]
 									}
@@ -26903,6 +27070,459 @@
 						"type" : "patcher",
 						"subtype" : "Undefined",
 						"embed" : 0,
+						"snapshot" : 						{
+							"valuedictionary" : 							{
+								"parameter_values" : 								{
+									"-" : 1.0,
+									"-[100]" : 1.0,
+									"-[101]" : 2.0,
+									"-[102]" : 5.0,
+									"-[103]" : 13.0,
+									"-[104]" : 12.0,
+									"-[105]" : 10.0,
+									"-[106]" : 9.0,
+									"-[107]" : 7.0,
+									"-[108]" : 0.0,
+									"-[109]" : 0.438,
+									"-[10]" : 0.318,
+									"-[110]" : 0.0,
+									"-[111]" : 0.0,
+									"-[112]" : 0.0,
+									"-[113]" : 0.0,
+									"-[114]" : -0.006,
+									"-[115]" : 0.0,
+									"-[116]" : 2.0,
+									"-[117]" : 3.0,
+									"-[118]" : 5.0,
+									"-[119]" : 13.0,
+									"-[11]" : 0.0,
+									"-[120]" : 12.0,
+									"-[121]" : 10.0,
+									"-[122]" : 9.0,
+									"-[123]" : 7.0,
+									"-[124]" : 0.0,
+									"-[125]" : 0.0,
+									"-[126]" : 0.0,
+									"-[127]" : -0.144,
+									"-[12]" : 0.0,
+									"-[13]" : 0.318,
+									"-[14]" : 0.03,
+									"-[15]" : 0.0,
+									"-[16]" : 2.0,
+									"-[17]" : 8.0,
+									"-[18]" : 0.216,
+									"-[19]" : 0.204,
+									"-[1]" : 2.0,
+									"-[20]" : 0.0,
+									"-[21]" : 0.246,
+									"-[22]" : 0.276,
+									"-[23]" : 4.0,
+									"-[24]" : 3.0,
+									"-[25]" : 0.258,
+									"-[26]" : 3.0,
+									"-[27]" : 0.288,
+									"-[28]" : 6.0,
+									"-[29]" : 3.0,
+									"-[2]" : 3.0,
+									"-[30]" : 0.3,
+									"-[31]" : 5.0,
+									"-[32]" : 0.006,
+									"-[33]" : 5.0,
+									"-[34]" : 0.0,
+									"-[35]" : 0.312,
+									"-[36]" : 0.174,
+									"-[37]" : 0.0,
+									"-[38]" : 6.0,
+									"-[39]" : 0.0,
+									"-[3]" : 9.0,
+									"-[40]" : -0.048,
+									"-[41]" : 0.0,
+									"-[42]" : 9.0,
+									"-[43]" : 10.0,
+									"-[44]" : 3.0,
+									"-[45]" : 4.0,
+									"-[46]" : 8.0,
+									"-[47]" : 1.0,
+									"-[48]" : 0.21,
+									"-[49]" : 9.0,
+									"-[4]" : 8.0,
+									"-[50]" : -0.048,
+									"-[51]" : 9.0,
+									"-[52]" : 5.0,
+									"-[53]" : -0.036,
+									"-[54]" : 0.0,
+									"-[55]" : 6.999999999999999,
+									"-[56]" : 2.0,
+									"-[57]" : 0.066,
+									"-[58]" : 0.0,
+									"-[59]" : 10.0,
+									"-[5]" : 8.0,
+									"-[60]" : 1.0,
+									"-[61]" : 0.198,
+									"-[62]" : 6.0,
+									"-[63]" : 0.0,
+									"-[64]" : 0.0,
+									"-[65]" : 0.0,
+									"-[66]" : -0.078,
+									"-[67]" : 0.156,
+									"-[68]" : 1.0,
+									"-[69]" : 2.0,
+									"-[6]" : 6.0,
+									"-[70]" : 5.0,
+									"-[71]" : 13.0,
+									"-[72]" : 6.0,
+									"-[73]" : 10.0,
+									"-[74]" : 9.0,
+									"-[75]" : 3.0,
+									"-[76]" : 0.0,
+									"-[77]" : 0.042,
+									"-[78]" : 0.0,
+									"-[79]" : 0.0,
+									"-[7]" : 4.0,
+									"-[80]" : 0.0,
+									"-[81]" : -0.708,
+									"-[82]" : -0.696,
+									"-[83]" : -0.648,
+									"-[84]" : 1.0,
+									"-[85]" : 2.0,
+									"-[86]" : 3.0,
+									"-[87]" : 13.0,
+									"-[88]" : 12.0,
+									"-[89]" : 5.0,
+									"-[8]" : 0.942,
+									"-[90]" : 9.0,
+									"-[91]" : 6.0,
+									"-[92]" : 0.0,
+									"-[93]" : -0.426,
+									"-[94]" : 0.27,
+									"-[95]" : -0.75,
+									"-[96]" : 0.0,
+									"-[97]" : -0.492,
+									"-[98]" : 0.012,
+									"-[99]" : -0.078,
+									"-[9]" : 1.074,
+									"2" : 500.0,
+									"2[10]" : 492.0,
+									"2[11]" : 553.0,
+									"2[12]" : 548.0,
+									"2[13]" : 552.0,
+									"2[14]" : 511.0,
+									"2[15]" : 500.0,
+									"2[16]" : 501.0,
+									"2[17]" : 535.0,
+									"2[18]" : 500.0,
+									"2[19]" : 536.0,
+									"2[1]" : 500.0,
+									"2[20]" : 500.0,
+									"2[21]" : 533.0,
+									"2[22]" : 657.0,
+									"2[23]" : 500.0,
+									"2[24]" : 500.0,
+									"2[25]" : 500.0,
+									"2[26]" : 679.0,
+									"2[27]" : 534.0,
+									"2[28]" : 500.0,
+									"2[29]" : 494.0,
+									"2[2]" : 492.0,
+									"2[30]" : 541.0,
+									"2[31]" : 553.0,
+									"2[32]" : 526.0,
+									"2[33]" : 392.0,
+									"2[34]" : 487.0,
+									"2[35]" : 500.0,
+									"2[36]" : 487.0,
+									"2[37]" : 384.0,
+									"2[38]" : 502.0,
+									"2[39]" : 499.0,
+									"2[3]" : 550.0,
+									"2[40]" : 500.0,
+									"2[41]" : 382.0,
+									"2[42]" : 418.0,
+									"2[43]" : 500.0,
+									"2[44]" : 500.0,
+									"2[45]" : 375.0,
+									"2[46]" : 500.0,
+									"2[47]" : 476.0,
+									"2[48]" : 500.0,
+									"2[49]" : 545.0,
+									"2[4]" : 546.0,
+									"2[50]" : 500.0,
+									"2[51]" : 500.0,
+									"2[52]" : 507.0,
+									"2[53]" : 429.0,
+									"2[54]" : 573.0,
+									"2[55]" : 500.0,
+									"2[56]" : 500.0,
+									"2[57]" : 500.0,
+									"2[58]" : 500.0,
+									"2[59]" : 500.0,
+									"2[5]" : 500.0,
+									"2[60]" : 500.0,
+									"2[61]" : 500.0,
+									"2[62]" : 500.0,
+									"2[63]" : 500.0,
+									"2[64]" : 0.0,
+									"2[6]" : 500.0,
+									"2[7]" : 505.0,
+									"2[8]" : 543.0,
+									"2[9]" : 529.0,
+									"Mic Out" : -70.0,
+									"audio_onoff" : 0.0,
+									"button" : 0.0,
+									"button[1]" : 0.0,
+									"button[2]" : 0.0,
+									"button[3]" : 0.0,
+									"button[4]" : 0.0,
+									"button[5]" : 0.0,
+									"button[6]" : 0.0,
+									"button[8]" : 0.0,
+									"drone_alpha" : 1.0,
+									"drone_alto" : 1.0,
+									"drone_bass" : 0.0,
+									"drone_beta" : 1.0,
+									"drone_delta" : 0.0,
+									"drone_gamma" : 1.0,
+									"drone_soprano" : 1.0,
+									"drone_tenor" : 1.0,
+									"env_length" : 0.9,
+									"env_length[1]" : 0.9,
+									"env_length[2]" : 0.9,
+									"env_length[3]" : 0.9,
+									"env_length[4]" : 0.9,
+									"env_length[5]" : 0.9,
+									"env_length[6]" : 0.9,
+									"env_length[7]" : 0.9,
+									"env_slow" : 0.0,
+									"env_slow[1]" : 0.0,
+									"env_slow[2]" : 0.0,
+									"env_slow[3]" : 0.0,
+									"env_slow[4]" : 0.0,
+									"env_slow[5]" : 0.0,
+									"env_slow[6]" : 0.0,
+									"env_slow[7]" : 0.0,
+									"env_slow_led" : 0.0,
+									"live.button[10]" : 0.0,
+									"live.button[11]" : 0.0,
+									"live.button[12]" : 0.0,
+									"live.button[13]" : 0.0,
+									"live.button[14]" : 0.0,
+									"live.button[15]" : 0.0,
+									"live.button[16]" : 0.0,
+									"live.button[17]" : 0.0,
+									"live.button[18]" : 0.0,
+									"live.button[19]" : 0.0,
+									"live.button[1]" : 0.0,
+									"live.button[20]" : 0.0,
+									"live.button[21]" : 0.0,
+									"live.button[22]" : 0.0,
+									"live.button[23]" : 0.0,
+									"live.button[24]" : 0.0,
+									"live.button[25]" : 0.0,
+									"live.button[26]" : 0.0,
+									"live.button[27]" : 0.0,
+									"live.button[28]" : 0.0,
+									"live.button[29]" : 0.0,
+									"live.button[2]" : 0.0,
+									"live.button[30]" : 0.0,
+									"live.button[31]" : 0.0,
+									"live.button[32]" : 0.0,
+									"live.button[33]" : 0.0,
+									"live.button[34]" : 0.0,
+									"live.button[35]" : 0.0,
+									"live.button[36]" : 0.0,
+									"live.button[37]" : 0.0,
+									"live.button[38]" : 0.0,
+									"live.button[39]" : 0.0,
+									"live.button[3]" : 0.0,
+									"live.button[40]" : 0.0,
+									"live.button[41]" : 0.0,
+									"live.button[42]" : 0.0,
+									"live.button[43]" : 0.0,
+									"live.button[44]" : 0.0,
+									"live.button[45]" : 0.0,
+									"live.button[46]" : 0.0,
+									"live.button[47]" : 0.0,
+									"live.button[48]" : 0.0,
+									"live.button[49]" : 0.0,
+									"live.button[4]" : 0.0,
+									"live.button[50]" : 0.0,
+									"live.button[51]" : 0.0,
+									"live.button[52]" : 0.0,
+									"live.button[53]" : 0.0,
+									"live.button[54]" : 0.0,
+									"live.button[55]" : 0.0,
+									"live.button[56]" : 0.0,
+									"live.button[5]" : 0.0,
+									"live.button[62]" : 0.0,
+									"live.button[63]" : 0.0,
+									"live.button[64]" : 0.0,
+									"live.button[65]" : 0.0,
+									"live.button[66]" : 0.0,
+									"live.button[67]" : 0.0,
+									"live.button[68]" : 0.0,
+									"live.button[69]" : 0.0,
+									"live.button[6]" : 0.0,
+									"live.button[70]" : 0.0,
+									"live.button[7]" : 0.0,
+									"live.button[8]" : 0.0,
+									"live.button[9]" : 0.0,
+									"live.dial[10]" : 147.052801701452893,
+									"live.dial[1]" : 129.689769809820945,
+									"live.dial[2]" : 109.353341243580701,
+									"live.dial[3]" : 222.91367572998783,
+									"live.dial[4]" : 95.631990077235741,
+									"live.dial[5]" : 86.738168388338735,
+									"live.dial[6]" : 285.999999999999943,
+									"live.dial[7]" : 191.940064808536249,
+									"live.menu[1]" : 0.0,
+									"live.menu[2]" : 4.0,
+									"live.menu[3]" : 3.0,
+									"live.menu[4]" : 6.0,
+									"live.menu[5]" : 2.0,
+									"live.menu[6]" : 7.0,
+									"live.menu[7]" : 7.0,
+									"live.menu[8]" : 1.0,
+									"live.text[10]" : 0.0,
+									"live.text[11]" : 0.0,
+									"live.text[12]" : 0.0,
+									"live.text[13]" : 0.0,
+									"live.text[14]" : 0.0,
+									"live.text[15]" : 0.0,
+									"live.text[16]" : 0.0,
+									"live.text[17]" : 0.0,
+									"live.text[18]" : 0.0,
+									"live.text[19]" : 0.0,
+									"live.text[1]" : 0.0,
+									"live.text[20]" : 0.0,
+									"live.text[21]" : 0.0,
+									"live.text[22]" : 0.0,
+									"live.text[23]" : 0.0,
+									"live.text[24]" : 0.0,
+									"live.text[25]" : 0.0,
+									"live.text[26]" : 0.0,
+									"live.text[27]" : 0.0,
+									"live.text[28]" : 0.0,
+									"live.text[29]" : 0.0,
+									"live.text[2]" : 0.0,
+									"live.text[30]" : 0.0,
+									"live.text[31]" : 0.0,
+									"live.text[32]" : 0.0,
+									"live.text[33]" : 0.0,
+									"live.text[34]" : 0.0,
+									"live.text[35]" : 0.0,
+									"live.text[36]" : 0.0,
+									"live.text[37]" : 0.0,
+									"live.text[38]" : 0.0,
+									"live.text[39]" : 0.0,
+									"live.text[3]" : 0.0,
+									"live.text[40]" : 0.0,
+									"live.text[41]" : 0.0,
+									"live.text[42]" : 0.0,
+									"live.text[43]" : 0.0,
+									"live.text[44]" : 0.0,
+									"live.text[45]" : 0.0,
+									"live.text[46]" : 0.0,
+									"live.text[47]" : 0.0,
+									"live.text[48]" : 0.0,
+									"live.text[49]" : 0.0,
+									"live.text[4]" : 0.0,
+									"live.text[50]" : 0.0,
+									"live.text[51]" : 0.0,
+									"live.text[52]" : 0.0,
+									"live.text[53]" : 0.0,
+									"live.text[54]" : 0.0,
+									"live.text[55]" : 0.0,
+									"live.text[56]" : 0.0,
+									"live.text[57]" : 0.0,
+									"live.text[58]" : 0.0,
+									"live.text[59]" : 0.0,
+									"live.text[5]" : 0.0,
+									"live.text[60]" : 0.0,
+									"live.text[6]" : 0.0,
+									"live.text[70]" : 0.0,
+									"live.text[71]" : 0.0,
+									"live.text[78]" : 0.0,
+									"live.text[79]" : 0.0,
+									"live.text[7]" : 0.0,
+									"live.text[8]" : 0.0,
+									"live.text[9]" : 0.0,
+									"live.toggle[13]" : 0.0,
+									"mono_on" : 1.0,
+									"mono_xover" : 120.0,
+									"pushtext16[1]" : 0.0,
+									"pushtext18[1]" : 0.0,
+									"pushtext20[1]" : 0.0,
+									"pushtext22[1]" : 0.0,
+									"pushtext[1]" : 0.0,
+									"pushtext[2]" : 0.0,
+									"pushtext[3]" : 0.0,
+									"pushtext[4]" : 1.0,
+									"slider" : 1.0,
+									"slider[1]" : 0.583064555086767,
+									"slider[2]" : 1.0,
+									"slider[3]" : 0.0,
+									"slider[4]" : 1.0,
+									"slider[5]" : 1.0,
+									"slider[6]" : 0.951459506314495,
+									"slider[7]" : 1.0,
+									"synth out" : -70.0,
+									"toggle" : 1.0,
+									"toggle[1]" : 1.0,
+									"toggle[2]" : 1.0,
+									"toggle[3]" : 0.0,
+									"toggle[4]" : 1.0,
+									"toggle[5]" : 1.0,
+									"toggle[6]" : 1.0,
+									"toggle[7]" : 0.0,
+									"blob" : 									{
+										"flonum[1]" : [ 1.0 ],
+										"flonum[2]" : [ 1.0 ],
+										"flonum[3]" : [ 1.0 ],
+										"flonum[4]" : [ 1.0 ],
+										"flonum[5]" : [ 1.0 ],
+										"flonum[6]" : [ 1.0 ],
+										"flonum[7]" : [ 1.0 ],
+										"flonum[8]" : [ 1.0 ],
+										"multislider" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+										"multislider[1]" : [ 0.0, 0.575997204934397, 0.0, 0.300728379526446, 0.0, 0.0, 0.0, 0.0 ],
+										"multislider[2]" : [ 0.0, 0.0, 0.0, 0.0, 0.48, 0.0, 0.0, 0.13 ],
+										"multislider[3]" : [ 0.0, 0.0, 0.43, 0.0, 0.22, 0.0, 0.0, 0.0 ],
+										"multislider[4]" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+										"multislider[5]" : [ 0.0, 0.0, 0.45, 0.17, 0.0, 0.0, 0.0, 0.0 ],
+										"multislider[6]" : [ 0.541588601758403, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+										"multislider[7]" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+										"number[10]" : [ 1000 ],
+										"number[11]" : [ 100 ],
+										"number[12]" : [ 4000 ],
+										"number[13]" : [ 100 ],
+										"number[14]" : [ 500 ],
+										"number[15]" : [ 100 ],
+										"number[16]" : [ 4999 ],
+										"number[17]" : [ 599 ],
+										"number[18]" : [ 600 ],
+										"number[1]" : [ 4000 ],
+										"number[21]" : [ 4999 ],
+										"number[22]" : [ 100 ],
+										"number[23]" : [ 17 ],
+										"number[27]" : [ 500 ],
+										"number[28]" : [ 100 ],
+										"number[29]" : [ 4999 ],
+										"number[2]" : [ 100 ],
+										"number[3]" : [ 600 ],
+										"number[4]" : [ 4000 ],
+										"number[5]" : [ 100 ],
+										"number[6]" : [ 600 ],
+										"number[7]" : [ 4000 ],
+										"number[8]" : [ 100 ],
+										"number[9]" : [ 600 ]
+									}
+
+								}
+
+							}
+
+						}
+,
 						"fileref" : 						{
 							"name" : "dronedance",
 							"filename" : "6-1-5-7[1]_20261012.maxsnap",
