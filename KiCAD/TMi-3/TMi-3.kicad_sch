@@ -1310,47 +1310,38 @@
 			(embedded_fonts no)
 		)
 		(symbol "MJ-3536NG:MJ-3536NG"
+			(pin_names
+				(offset 1.016)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "J"
-				(at 16.51 7.62 0)
+				(at -7.628 5.8482 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
+					(justify left bottom)
 				)
 			)
 			(property "Value" "MJ-3536NG"
-				(at 16.51 5.08 0)
+				(at -7.6261 -7.6261 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
+					(justify left bottom)
 				)
 			)
-			(property "Footprint" "MJ3536NG"
-				(at 16.51 -94.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Datasheet" "https://www.sameskydevices.com/product/resource/mj-3536ng.pdf"
-				(at 16.51 -194.92 0)
+			(property "Footprint" "MJ-3536NG:CUI_MJ-3536NG"
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1358,10 +1349,10 @@
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
+					(justify bottom)
 				)
 			)
-			(property "Description" "3.5 mm, Mono, Right Angle, Through Hole, Isolated Ground, 2 Conductors, 1 Internal Switch, Audio Jack Connector"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1372,8 +1363,8 @@
 					)
 				)
 			)
-			(property "Height" "10.2"
-				(at 16.51 -394.92 0)
+			(property "Description" ""
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1381,11 +1372,10 @@
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 				)
 			)
-			(property "Mouser Part Number" "490-MJ-3536NG"
-				(at 16.51 -494.92 0)
+			(property "PARTREV" "1.03"
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1393,11 +1383,11 @@
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
+					(justify bottom)
 				)
 			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Same-Sky/MJ-3536NG?qs=WyjlAZoYn52nE%2FwqTkWWPA%3D%3D"
-				(at 16.51 -594.92 0)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1405,11 +1395,11 @@
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
+					(justify bottom)
 				)
 			)
-			(property "Manufacturer_Name" "Same Sky"
-				(at 16.51 -694.92 0)
+			(property "MAXIMUM_PACKAGE_HEIGHT" "10.2mm"
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1417,11 +1407,11 @@
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
+					(justify bottom)
 				)
 			)
-			(property "Manufacturer_Part_Number" "MJ-3536NG"
-				(at 16.51 -794.92 0)
+			(property "MANUFACTURER" "Cui Devices"
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1429,13 +1419,13 @@
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
+					(justify bottom)
 				)
 			)
-			(symbol "MJ-3536NG_1_1"
+			(symbol "MJ-3536NG_0_0"
 				(rectangle
-					(start 5.08 2.54)
-					(end 15.24 -5.08)
+					(start -7.62 -5.08)
+					(end 7.62 5.08)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -1444,56 +1434,212 @@
 						(type background)
 					)
 				)
+				(polyline
+					(pts
+						(xy -5.588 0.508) (xy -5.588 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.588 -2.54) (xy -4.572 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 2.54) (xy 7.62 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 0.508) (xy -5.588 0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 0.508) (xy -5.08 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -4.572 0.508) (xy -5.08 0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -4.572 -2.54) (xy -4.572 0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -2.54) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -2.54) (xy 7.62 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(pin passive line
-					(at 20.32 0 180)
+					(at 12.7 2.54 180)
 					(length 5.08)
-					(name "1"
+					(name ""
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "1"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 				(pin passive line
-					(at 20.32 -2.54 180)
+					(at 12.7 -2.54 180)
 					(length 5.08)
-					(name "2"
+					(name ""
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 				(pin passive line
-					(at 0 0 0)
+					(at 12.7 0 180)
 					(length 5.08)
-					(name "3"
+					(name ""
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "3"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -2339,12 +2485,6 @@
 		(uuid "0fe217f5-c8bd-4f35-8ed7-cd56acd2c926")
 	)
 	(junction
-		(at 134.62 77.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "10699f15-648c-4318-a66d-fc744e2442ea")
-	)
-	(junction
 		(at 171.45 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2429,12 +2569,6 @@
 		(uuid "6bdad554-18d8-4bae-a716-193d531b76d2")
 	)
 	(junction
-		(at 134.62 124.46)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "757c4441-25c5-4dbc-8cd7-6b17c8822ef9")
-	)
-	(junction
 		(at 140.97 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2493,12 +2627,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c30c25a3-9220-4001-8b05-04ce6add7cdb")
-	)
-	(junction
-		(at 135.89 52.07)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c8bd97ab-0537-4e8a-8bc5-a8b67b9070d0")
 	)
 	(junction
 		(at 68.58 134.62)
@@ -2626,16 +2754,6 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 30.48) (xy 135.89 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "09633758-cff9-47e5-bacd-92b727dbc1d3")
-	)
-	(wire
-		(pts
 			(xy 40.64 63.5) (xy 58.42 63.5)
 		)
 		(stroke
@@ -2676,16 +2794,6 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 48.26) (xy 129.54 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1bb7f138-5517-4ff2-af58-278989a96b82")
-	)
-	(wire
-		(pts
 			(xy 121.92 99.06) (xy 121.92 93.98)
 		)
 		(stroke
@@ -2716,7 +2824,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 77.47) (xy 134.62 77.47)
+			(xy 128.27 77.47) (xy 156.21 77.47)
 		)
 		(stroke
 			(width 0)
@@ -2793,16 +2901,6 @@
 			(type default)
 		)
 		(uuid "3bf4a6e9-7a02-4138-8895-8b09198eb439")
-	)
-	(wire
-		(pts
-			(xy 129.54 48.26) (xy 129.54 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d7b511f-11a0-456b-8689-cafc6f458227")
 	)
 	(wire
 		(pts
@@ -2953,16 +3051,6 @@
 			(type default)
 		)
 		(uuid "550b1593-6a71-4b76-9d77-6b8b52bee5cb")
-	)
-	(wire
-		(pts
-			(xy 134.62 77.47) (xy 156.21 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "55abb34c-553e-4316-9fca-afccb213dd8f")
 	)
 	(wire
 		(pts
@@ -3226,16 +3314,6 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 52.07) (xy 153.67 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "90f2135f-dd02-4e31-985d-5857381a4f82")
-	)
-	(wire
-		(pts
 			(xy 134.62 146.05) (xy 121.92 146.05)
 		)
 		(stroke
@@ -3276,7 +3354,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 52.07) (xy 135.89 52.07)
+			(xy 127 52.07) (xy 153.67 52.07)
 		)
 		(stroke
 			(width 0)
@@ -4388,7 +4466,7 @@
 	)
 	(symbol
 		(lib_id "MJ-3536NG:MJ-3536NG")
-		(at 134.62 124.46 270)
+		(at 149.86 135.89 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4399,29 +4477,29 @@
 		(fields_autoplaced yes)
 		(uuid "2ba78f95-f4d9-4201-98ca-9b3253422faa")
 		(property "Reference" "J4"
-			(at 138.43 133.3499 90)
+			(at 158.75 134.6199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "MJ-3536NG"
-			(at 138.43 135.8899 90)
+			(at 158.75 137.1599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:MJ3536NG_Tighter_Pads"
-			(at 39.7 140.97 0)
+		(property "Footprint" "MJ-3536NG:CUI_MJ-3536NG"
+			(at 133.35 40.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4433,7 +4511,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.sameskydevices.com/product/resource/mj-3536ng.pdf"
-			(at -60.3 140.97 0)
+			(at 133.35 -59.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4445,7 +4523,7 @@
 			)
 		)
 		(property "Description" "3.5 mm, Mono, Right Angle, Through Hole, Isolated Ground, 2 Conductors, 1 Internal Switch, Audio Jack Connector"
-			(at 134.62 124.46 0)
+			(at 149.86 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4456,7 +4534,7 @@
 			)
 		)
 		(property "Height" "10.2"
-			(at -260.3 140.97 0)
+			(at 133.35 -259.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4468,7 +4546,7 @@
 			)
 		)
 		(property "Mouser Part Number" "490-MJ-3536NG"
-			(at -360.3 140.97 0)
+			(at 133.35 -359.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4480,7 +4558,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Same-Sky/MJ-3536NG?qs=WyjlAZoYn52nE%2FwqTkWWPA%3D%3D"
-			(at -460.3 140.97 0)
+			(at 133.35 -459.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4492,7 +4570,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Same Sky"
-			(at -560.3 140.97 0)
+			(at 133.35 -559.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4504,7 +4582,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "MJ-3536NG"
-			(at -660.3 140.97 0)
+			(at 133.35 -659.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4513,6 +4591,54 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(property "PARTREV" "1.03"
+			(at 149.86 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 149.86 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "10.2mm"
+			(at 149.86 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MANUFACTURER" "Cui Devices"
+			(at 149.86 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
 			)
 		)
 		(pin "3"
@@ -5661,7 +5787,7 @@
 	)
 	(symbol
 		(lib_id "MJ-3536NG:MJ-3536NG")
-		(at 134.62 77.47 270)
+		(at 142.24 90.17 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5672,29 +5798,29 @@
 		(fields_autoplaced yes)
 		(uuid "5d5b37af-7aa4-4d75-9681-ba02fb0e6387")
 		(property "Reference" "J3"
-			(at 138.43 86.3599 90)
+			(at 151.13 88.8999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "MJ-3536NG"
-			(at 138.43 88.8999 90)
+			(at 151.13 91.4399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:MJ3536NG_Tighter_Pads"
-			(at 39.7 93.98 0)
+		(property "Footprint" "MJ-3536NG:CUI_MJ-3536NG"
+			(at 125.73 -4.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5706,7 +5832,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.sameskydevices.com/product/resource/mj-3536ng.pdf"
-			(at -60.3 93.98 0)
+			(at 125.73 -104.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5718,7 +5844,7 @@
 			)
 		)
 		(property "Description" "3.5 mm, Mono, Right Angle, Through Hole, Isolated Ground, 2 Conductors, 1 Internal Switch, Audio Jack Connector"
-			(at 134.62 77.47 0)
+			(at 142.24 90.17 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5729,7 +5855,7 @@
 			)
 		)
 		(property "Height" "10.2"
-			(at -260.3 93.98 0)
+			(at 125.73 -304.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5741,7 +5867,7 @@
 			)
 		)
 		(property "Mouser Part Number" "490-MJ-3536NG"
-			(at -360.3 93.98 0)
+			(at 125.73 -404.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5753,7 +5879,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Same-Sky/MJ-3536NG?qs=WyjlAZoYn52nE%2FwqTkWWPA%3D%3D"
-			(at -460.3 93.98 0)
+			(at 125.73 -504.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5765,7 +5891,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Same Sky"
-			(at -560.3 93.98 0)
+			(at 125.73 -604.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5777,7 +5903,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "MJ-3536NG"
-			(at -660.3 93.98 0)
+			(at 125.73 -704.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5786,6 +5912,54 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(property "PARTREV" "1.03"
+			(at 142.24 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 142.24 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "10.2mm"
+			(at 142.24 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MANUFACTURER" "Cui Devices"
+			(at 142.24 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
 			)
 		)
 		(pin "3"
@@ -7282,7 +7456,7 @@
 	)
 	(symbol
 		(lib_id "MJ-3536NG:MJ-3536NG")
-		(at 135.89 52.07 270)
+		(at 140.97 60.96 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7293,29 +7467,29 @@
 		(fields_autoplaced yes)
 		(uuid "9c35348d-33e6-4be4-ab3e-2e46f92de3ee")
 		(property "Reference" "J2"
-			(at 139.7 60.9599 90)
+			(at 149.86 59.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "MJ-3536NG"
-			(at 139.7 63.4999 90)
+			(at 149.86 62.2299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:MJ3536NG_Tighter_Pads"
-			(at 40.97 68.58 0)
+		(property "Footprint" "MJ-3536NG:CUI_MJ-3536NG"
+			(at 124.46 -33.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7327,7 +7501,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.sameskydevices.com/product/resource/mj-3536ng.pdf"
-			(at -59.03 68.58 0)
+			(at 124.46 -133.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7339,7 +7513,7 @@
 			)
 		)
 		(property "Description" "3.5 mm, Mono, Right Angle, Through Hole, Isolated Ground, 2 Conductors, 1 Internal Switch, Audio Jack Connector"
-			(at 135.89 52.07 0)
+			(at 140.97 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7350,7 +7524,7 @@
 			)
 		)
 		(property "Height" "10.2"
-			(at -259.03 68.58 0)
+			(at 124.46 -333.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7362,7 +7536,7 @@
 			)
 		)
 		(property "Mouser Part Number" "490-MJ-3536NG"
-			(at -359.03 68.58 0)
+			(at 124.46 -433.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7374,7 +7548,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Same-Sky/MJ-3536NG?qs=WyjlAZoYn52nE%2FwqTkWWPA%3D%3D"
-			(at -459.03 68.58 0)
+			(at 124.46 -533.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7386,7 +7560,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Same Sky"
-			(at -559.03 68.58 0)
+			(at 124.46 -633.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7398,7 +7572,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "MJ-3536NG"
-			(at -659.03 68.58 0)
+			(at 124.46 -733.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7407,6 +7581,54 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(property "PARTREV" "1.03"
+			(at 140.97 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 140.97 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "10.2mm"
+			(at 140.97 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MANUFACTURER" "Cui Devices"
+			(at 140.97 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
 			)
 		)
 		(pin "3"
@@ -7918,7 +8140,7 @@
 	)
 	(symbol
 		(lib_id "MJ-3536NG:MJ-3536NG")
-		(at 135.89 27.94 270)
+		(at 143.51 35.56 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7929,29 +8151,29 @@
 		(fields_autoplaced yes)
 		(uuid "cd26bea5-ba81-4e52-bb86-1cd5d628d70b")
 		(property "Reference" "J1"
-			(at 139.7 36.8299 90)
+			(at 152.4 34.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "MJ-3536NG"
-			(at 139.7 39.3699 90)
+			(at 152.4 36.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_Audio:MJ3536NG_Tighter_Pads"
-			(at 40.97 44.45 0)
+		(property "Footprint" "MJ-3536NG:CUI_MJ-3536NG"
+			(at 127 -59.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7963,7 +8185,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.sameskydevices.com/product/resource/mj-3536ng.pdf"
-			(at -59.03 44.45 0)
+			(at 127 -159.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7975,7 +8197,7 @@
 			)
 		)
 		(property "Description" "3.5 mm, Mono, Right Angle, Through Hole, Isolated Ground, 2 Conductors, 1 Internal Switch, Audio Jack Connector"
-			(at 135.89 27.94 0)
+			(at 143.51 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7986,7 +8208,7 @@
 			)
 		)
 		(property "Height" "10.2"
-			(at -259.03 44.45 0)
+			(at 127 -359.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7998,7 +8220,7 @@
 			)
 		)
 		(property "Mouser Part Number" "490-MJ-3536NG"
-			(at -359.03 44.45 0)
+			(at 127 -459.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8010,7 +8232,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Same-Sky/MJ-3536NG?qs=WyjlAZoYn52nE%2FwqTkWWPA%3D%3D"
-			(at -459.03 44.45 0)
+			(at 127 -559.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8022,7 +8244,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Same Sky"
-			(at -559.03 44.45 0)
+			(at 127 -659.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8034,7 +8256,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "MJ-3536NG"
-			(at -659.03 44.45 0)
+			(at 127 -759.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8043,6 +8265,54 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(property "PARTREV" "1.03"
+			(at 143.51 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 143.51 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "10.2mm"
+			(at 143.51 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MANUFACTURER" "Cui Devices"
+			(at 143.51 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
 			)
 		)
 		(pin "3"

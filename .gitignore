@@ -5,3 +5,6 @@ KiCAD/TMi-3/gerbers/.DS_Store
 .DS_Store
 .DS_Store
 /KiCAD/TMi-3/PCBArchives
+
+# KiCAD local autosave history
+.history/
