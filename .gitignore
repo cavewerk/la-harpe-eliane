@@ -8,3 +8,9 @@
 
 # Max project auto-generated cache
 .max.js.cache
+
+# Thesis sources live in Zotero, not in the repo
+docs/thesis/sources/
+
+# Submissions (applications in progress) stay private
+docs/submissions/
