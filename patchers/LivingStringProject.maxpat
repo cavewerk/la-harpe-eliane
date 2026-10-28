@@ -5109,7 +5109,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_1"
 								}
 
@@ -5127,7 +5127,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_2"
 								}
 
@@ -5145,7 +5145,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_3"
 								}
 
@@ -5163,7 +5163,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_4"
 								}
 
@@ -5181,7 +5181,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_5"
 								}
 
@@ -5199,7 +5199,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_6"
 								}
 
@@ -5217,7 +5217,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_7"
 								}
 
@@ -5235,7 +5235,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_8"
 								}
 
@@ -5253,7 +5253,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_9"
 								}
 
@@ -5271,7 +5271,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_10"
 								}
 
@@ -5289,7 +5289,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_11"
 								}
 
@@ -5307,7 +5307,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_12"
 								}
 
@@ -5325,7 +5325,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_13"
 								}
 
@@ -5343,7 +5343,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_14"
 								}
 
@@ -5361,7 +5361,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_15"
 								}
 
@@ -5379,7 +5379,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_16"
 								}
 
@@ -5397,7 +5397,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_17"
 								}
 
@@ -5415,7 +5415,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_18"
 								}
 
@@ -5433,7 +5433,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_19"
 								}
 
@@ -5451,7 +5451,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_20"
 								}
 
@@ -5469,7 +5469,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_21"
 								}
 
@@ -5487,7 +5487,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_22"
 								}
 
@@ -5505,7 +5505,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_23"
 								}
 
@@ -5523,7 +5523,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_24"
 								}
 
@@ -5541,7 +5541,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_25"
 								}
 
@@ -5559,7 +5559,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_26"
 								}
 
@@ -5577,7 +5577,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_27"
 								}
 
@@ -5595,7 +5595,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_28"
 								}
 
@@ -5613,7 +5613,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_29"
 								}
 
@@ -5631,7 +5631,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_30"
 								}
 
@@ -5649,7 +5649,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_31"
 								}
 
@@ -5667,7 +5667,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_32"
 								}
 
@@ -5769,7 +5769,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_33"
 								}
 
@@ -5859,7 +5859,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_34"
 								}
 
@@ -5949,7 +5949,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_35"
 								}
 
@@ -6039,7 +6039,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_36"
 								}
 
@@ -6129,7 +6129,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_37"
 								}
 
@@ -6219,7 +6219,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_38"
 								}
 
@@ -6309,7 +6309,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_39"
 								}
 
@@ -6399,7 +6399,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_40"
 								}
 
@@ -6528,7 +6528,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_41"
 								}
 
@@ -6619,7 +6619,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_42"
 								}
 
@@ -6710,7 +6710,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_43"
 								}
 
@@ -6801,7 +6801,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_44"
 								}
 
@@ -6892,7 +6892,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_45"
 								}
 
@@ -6983,7 +6983,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_46"
 								}
 
@@ -7074,7 +7074,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_47"
 								}
 
@@ -7165,7 +7165,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_48"
 								}
 
@@ -7281,7 +7281,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_49"
 								}
 
@@ -7371,7 +7371,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_50"
 								}
 
@@ -7462,7 +7462,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_51"
 								}
 
@@ -7553,7 +7553,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_52"
 								}
 
@@ -7644,7 +7644,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_53"
 								}
 
@@ -7735,7 +7735,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_54"
 								}
 
@@ -7826,7 +7826,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_55"
 								}
 
@@ -7917,7 +7917,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_56"
 								}
 
@@ -8033,7 +8033,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_57"
 								}
 
@@ -8123,7 +8123,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_58"
 								}
 
@@ -8213,7 +8213,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_59"
 								}
 
@@ -8303,7 +8303,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_60"
 								}
 
@@ -8393,7 +8393,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_61"
 								}
 
@@ -8483,7 +8483,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_62"
 								}
 
@@ -8573,7 +8573,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_63"
 								}
 
@@ -8663,7 +8663,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/padhold.js\"",
+									"text" : "js padhold.js",
 									"varname" : "padhold_64"
 								}
 
@@ -12919,7 +12919,7 @@
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/encoderamp.js\" 0.01",
+					"text" : "js encoderamp.js 0.01",
 					"varname" : "encamp_js"
 				}
 
@@ -16203,7 +16203,7 @@
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/globaltune.js\" 1",
+					"text" : "js globaltune.js 1",
 					"varname" : "gtune_js"
 				}
 
@@ -16949,7 +16949,7 @@
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/voicehighlight.js\"",
+					"text" : "js voicehighlight.js",
 					"varname" : "voicehighlight_js"
 				}
 
@@ -17361,7 +17361,7 @@
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/multhold.js\" 5",
+					"text" : "js multhold.js 5",
 					"varname" : "multhold_js"
 				}
 
@@ -18257,7 +18257,7 @@
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/mastergain.js\" 0.01",
+					"text" : "js mastergain.js 0.01",
 					"varname" : "mgain_js"
 				}
 
@@ -18612,7 +18612,7 @@
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js \"/Users/austintecks/Claude Drive/MaxMsp/LivingStringProject/code/envcontrol.js\" 0.01",
+					"text" : "js envcontrol.js 0.01",
 					"varname" : "envctl_js"
 				}
 

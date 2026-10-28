@@ -82,7 +82,7 @@ docs/adr/                         Architecture decision records
 This patch embeds a third-party Ableton Push abstraction library so it is
 self-contained and doesn't require installing a separate Max package:
 
-- `jk.push.maxpat`, `jk.pushcore.maxpat`, `jk.pushrotaryAlt.maxpat`,
+- `jk.push.maxpat`, `jk.pushcore.maxpat`, `jk.pushrotary.maxpat`, `jk.pushrotaryAlt.maxpat`,
   `livebuttoninfo.maxpat`, `livedialinfo.maxpat`, `livemenuinfo.maxpat`,
   `livetextinfo.maxpat` — **jk.push family**, by Jeff Kaiser
   ([jeffkaiser.com/max](https://jeffkaiser.com/max)), licensed under
