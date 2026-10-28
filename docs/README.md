@@ -16,6 +16,10 @@ never the source themselves.
 | [thesis/](thesis/) | Proto-thesis: working drafts in [thesis/drafts/](thesis/drafts/); source texts are moving to Zotero (`thesis/sources/` is local only, not published) | Awaiting sources |
 | `submissions/` | One folder per submission + the shaping method (`submissions/_method.md`). Local only, not published | Method ready |
 | [adr/](adr/) | Technical decision records for the Max patch | Existing |
+| [journal/](journal/) | Dated working journal, `YYYYMMDD_journal.md` (from the Obsidian vault, Dec 2025 on) | Ongoing |
+| [notes/](notes/) | Rough and main notes: ideas not yet stated in core | Ongoing |
+| [tags/](tags/) | One note per recurring concept (schizophonia, transducer, legibility…) | Ongoing |
+| [assets/](assets/) | Images and attachments for any note | — |
 | [../other/ARCHITECTURE.md](../other/ARCHITECTURE.md) | How the patch is wired, in detail | Existing |
 | [../other/CONTEXT.md](../other/CONTEXT.md) | Technical glossary of the patch | Existing |
 | [../other/ROADMAP.md](../other/ROADMAP.md) | Build roadmap | Existing |
@@ -34,10 +38,19 @@ never the source themselves.
 9. [claims.md](core/claims.md) — numbered, citable claims (C1, C2…)
 10. [angles.md](core/angles.md) — framings to pick per submission
 
+## Obsidian
+
+This folder is also an Obsidian vault: open `docs/` itself. The vault uses
+relative markdown links (not `[[wikilinks]]`) so links also work on GitHub;
+new daily notes land in `journal/`, attachments in `assets/`. Window state
+and plugin code are gitignored, so plugins (Pandoc, Zotero Integration)
+need installing once per machine.
+
 ## Rules
 
 - **Core holds statements, not prose.** Short, checkable, dated where it matters.
-  Polished writing belongs in `thesis/drafts/` or a submission folder.
+  Polished writing belongs in `thesis/drafts/` or a submission folder; raw
+  thinking belongs in `journal/` and `notes/`.
 - **Every claim has a status** — *stated* (author's position), *supported*
   (backed by a reference or documented evidence), or *tentative*.
 - **Write back.** Anything new that emerges while drafting a submission or

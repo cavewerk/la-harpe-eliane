@@ -14,3 +14,7 @@ docs/thesis/sources/
 
 # Submissions (applications in progress) stay private
 docs/submissions/
+
+# Obsidian (docs/ is the vault): share settings, not window state or plugin code
+docs/.obsidian/workspace*.json
+docs/.obsidian/plugins/

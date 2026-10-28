@@ -41,8 +41,9 @@ intentionally unipolar: **never route it to speakers.** See
 The project's commits run back to December 2025 through its earlier
 repository, *schizophonic_remediation*, which also held the KiCAD boards,
 microcontroller scripts, TouchOSC layouts and an Obsidian research vault.
-Those folders are no longer in the current tree but remain in the history,
-reachable through the second parent of the commit "Join
+The Obsidian vault now lives in [docs/](docs/README.md#obsidian) (journal,
+notes, tags). The other folders are no longer in the current tree but remain
+in the history, reachable through the second parent of the commit "Join
 schizophonic_remediation history".
 
 ## Licence

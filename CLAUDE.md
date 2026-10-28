@@ -7,3 +7,5 @@
   decisions in [docs/adr/](docs/adr/).
 - **Project identity and thesis material:** [docs/README.md](docs/README.md) is the
   source of truth. Public name is always *la harpe Éliane*.
+- **docs/ is an Obsidian vault.** Link with relative markdown links, never
+  `[[wikilinks]]`; journal entries are `docs/journal/YYYYMMDD_journal.md`.
