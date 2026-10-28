@@ -2,12 +2,12 @@
 
 This started as a reverse-engineered description (reading the `.maxpat` JSON
 directly) and was then corrected and confirmed against the project's actual
-author. See [CONTEXT.md](../CONTEXT.md) for term definitions used below.
+author. See [CONTEXT.md](CONTEXT.md) for term definitions used below.
 
 ## Signal path, per voice
 
-Each of the four voices (bass, tenor, alto, soprano) is one instance of
-three bpatchers, chained together:
+Each of the eight voices (soprano, alto, tenor, bass, alpha, beta, gamma,
+delta) is one instance of three bpatchers, chained together:
 
 ```
 MCModule   -- 8 additive harmonics ("inner voices") of the voice's global tuning, + microtuning -->
@@ -67,8 +67,8 @@ MCHelper   -- mixdown, splits to:
   `set $1` message) — this is the actual electromagnet output. The menu
   offers channels **3-10** (widened from 3-6 for the eight-voice
   expansion). Current convention: bass→3, tenor→4, alto→5, soprano→6,
-  alpha→7, with beta/gamma/delta→8/9/10 once built — reconfigurable per
-  setup, not hardcoded in the file.
+  alpha→7, beta→8, delta→9, gamma→10 — reconfigurable per setup, not
+  hardcoded in the file.
 
   **The starting channel is a creation argument** on the bpatcher
   (`MCHelper 7`), read by `patcherargs 3` and turned into a menu index

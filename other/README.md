@@ -1,10 +1,10 @@
 # Living String Project
 
-A Max/MSP + Max for Live patch that plays four physical, electromagnetically
-actuated strings — **bass, tenor, alto, soprano** — as a kinetic sound
-sculpture. Each string is driven by an additive-synthesis engine (8 harmonic
-partials, or "inner voices," per string) and physically excited through a
-dedicated electromagnet, not a speaker. It's played two ways: **drone mode**
+The Max/MSP patch for **la harpe Éliane**, an instrument in development: a
+modular array of strings, each set vibrating by its own electromagnet. It
+currently drives eight strings (voices) in two four-string modules. Each
+string is driven by an additive-synthesis engine (8 harmonic partials, or
+"inner voices," per string). It's played two ways: **drone mode**
 (external MIDI faders hold a sustained note per inner voice) and **keys
 mode** (an Ableton Push triggers/retriggers inner voices, with knobs for
 microtuning) — see [CONTEXT.md](CONTEXT.md) for the full glossary.
@@ -18,8 +18,8 @@ microtuning) — see [CONTEXT.md](CONTEXT.md) for the full glossary.
 - Two external 16-fader MIDI controllers for drone mode (read via raw
   `ctlin`, not part of the vendored Push library). The second one is
   `EM-16C CC`, on channel 2 (ADR 0013).
-- The physical rig: four electromagnets, one per string, wired to four
-  discrete audio interface output channels (**never** to speakers — the
+- The physical rig: one electromagnet per string, each wired to its own
+  audio interface output channel, currently 3-10 (**never** to speakers — the
   signal driving them is intentionally unipolar and would be inaudible/
   harmful there).
 - No external Max packages need to be installed — every dependency is
@@ -27,27 +27,31 @@ microtuning) — see [CONTEXT.md](CONTEXT.md) for the full glossary.
 
 ## Opening it
 
-Open [`LivingStringProject.maxproj`](LivingStringProject.maxproj) in Max, then
+Open [`LivingStringProject.maxproj`](../LivingStringProject.maxproj) in Max, then
 open `patchers/LivingStringProject.maxpat` from the project window. See
-[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for how the patch is wired
+[docs/ARCHITECTURE.md](ARCHITECTURE.md) for how the patch is wired
 internally, and [CONTEXT.md](CONTEXT.md) for what the terms below mean.
 
 ## Voices
 
-There are four identical voice modules, named after choir registers. Each
-one's electromagnet output channel is set live via a dropdown in its
-`MCHelper` instance — this is the current convention, not a hardcoded
-constant:
+There are eight identical voice modules, one per string: four named after
+choir registers, and four added in September 2026 as the array grew. Each
+one's electromagnet output channel is set in its `MCHelper` instance. This
+is the current convention, not a hardcoded constant:
 
 | Voice     | Amp send      | Microtuning send  | Electromagnet channel (current) |
 |-----------|---------------|--------------------|----------------------------------|
-| Bass      | `bass_amp`    | `bass_micro`       | 3                                |
-| Tenor     | `tenor_amp`   | `tenor_micro`      | 4                                |
-| Alto      | `alto_amp`    | `alto_micro`       | 5                                |
 | Soprano   | `soprano_amp` | `soprano_micro`    | 6                                |
+| Alto      | `alto_amp`    | `alto_micro`       | 5                                |
+| Tenor     | `tenor_amp`   | `tenor_micro`      | 4                                |
+| Bass      | `bass_amp`    | `bass_micro`       | 3                                |
+| Alpha     | `alpha_amp`   | `alpha_micro`      | 7                                |
+| Beta      | `beta_amp`    | `beta_micro`       | 8                                |
+| Gamma     | `gamma_amp`   | `gamma_micro`      | 10                               |
+| Delta     | `delta_amp`   | `delta_micro`      | 9                                |
 
 Each voice is one instance of three bpatchers, chained together — see
-[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the signal path:
+[docs/ARCHITECTURE.md](ARCHITECTURE.md) for the signal path:
 `MCModule` (8-harmonic additive engine), `MCLyra` (8-channel ADSR envelope),
 `MCHelper` (mixdown + electromagnet output + rarely-used monitor tap).
 

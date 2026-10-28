@@ -1,13 +1,16 @@
 # la harpe Éliane
 
-An instrument of four physical strings, **bass, tenor, alto and soprano**,
-set vibrating by electromagnets rather than heard through speakers. Each
-string is driven by an additive-synthesis engine of eight harmonic partials
-running in Max/MSP. It is played two ways: **drone mode**, where MIDI faders
-hold a sustained note per partial, and **keys mode**, where an Ableton Push
-triggers partials and its encoders retune them.
+An instrument in development: a **modular array of strings**, each set
+vibrating by its own electromagnet. Every string is driven by an
+additive-synthesis engine of eight harmonic partials running in Max/MSP.
+The array can be arranged in different configurations and distributed
+throughout a space; it currently has eight strings in two four-string
+modules, and its size and form are still changing.
 
-Named after Éliane Radigue. See [docs/core/identity.md](docs/core/identity.md).
+It is played live through hardware controllers in two ways: in
+**drone mode**, MIDI faders hold sustained levels for partials; in
+**keys mode**, an Ableton Push triggers partials and its encoders retune
+them.
 
 - **What it is and why:** [docs/](docs/README.md), the source of truth for
   the concept, instrument, tuning, theory and claims.
@@ -27,13 +30,14 @@ Named after Éliane Radigue. See [docs/core/identity.md](docs/core/identity.md).
    project file, not the patcher on its own, so Max can find the scripts in
    `code/`.
 3. Connect an **Ableton Push 2** for keys mode and up to two 16-fader MIDI
-   controllers for drone mode.
+   controllers for drone mode. Each string's electromagnet takes its own
+   audio-interface output (currently channels 3–10).
 
 No Max packages need installing: the Push abstractions are bundled in
 `patchers/`.
 
-The audio outputs drive the electromagnets directly. The signal is
-intentionally unipolar: **never route it to speakers.** See
+The outputs drive the electromagnets directly with an intentionally unipolar
+signal: **never route them to speakers.** See
 [other/README.md](other/README.md#requirements) for the physical rig.
 
 ## History
