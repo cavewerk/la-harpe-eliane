@@ -13,8 +13,8 @@ never the source themselves.
 | Area | What lives there | Status |
 |---|---|---|
 | [core/](core/) | Canonical statements: identity, concept, instrument, tuning, theory, method, history, glossary, claims | Partly filled — gaps marked **Open** |
-| [thesis/](thesis/) | Proto-thesis: source texts in [thesis/sources/](thesis/sources/), working drafts in [thesis/drafts/](thesis/drafts/) | Awaiting sources |
-| [submissions/](submissions/) | One folder per submission + the [shaping method](submissions/_method.md) | Method ready |
+| [thesis/](thesis/) | Proto-thesis: working drafts in [thesis/drafts/](thesis/drafts/); source texts are moving to Zotero (`thesis/sources/` is local only, not published) | Awaiting sources |
+| `submissions/` | One folder per submission + the shaping method (`submissions/_method.md`). Local only, not published | Method ready |
 | [adr/](adr/) | Technical decision records for the Max patch | Existing |
 | [../other/ARCHITECTURE.md](../other/ARCHITECTURE.md) | How the patch is wired, in detail | Existing |
 | [../other/CONTEXT.md](../other/CONTEXT.md) | Technical glossary of the patch | Existing |

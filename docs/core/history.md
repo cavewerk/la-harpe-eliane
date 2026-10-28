@@ -16,7 +16,7 @@ and FRQSC master's awards.
 | 2026-09 | Expansion from four to eight strings/voices; second fader controller (EM-16C) added |
 | *Open* | Performances in research-meeting contexts |
 | 2026-10-01 | Name **la harpe Éliane** fixed; source-of-truth docs created |
-| 2026-10-05 | **Submitted** Hexagram-UQAM residency application (Agora, Jan–Jun 2027) — see [../submissions/2026-10-hexagram-residency/](../submissions/2026-10-hexagram-residency/) |
+| 2026-10-05 | **Submitted** Hexagram-UQAM residency application (Agora, Jan–Jun 2027) — see `docs/submissions/2026-10-hexagram-residency/` (local only) |
 | 2026-11 (mid) | **Public debut** — live-streamed performance for Parking, Québec City |
 
 > **Open —** fill in early history, performances, presentations, residencies,
