@@ -267,6 +267,15 @@ need tuning with the mics in the room.
     in snapshots and no output at load, so they only act when touched.
     The per-voice controls and Push mappings keep working on top of them.
     Built and hardware-tested 2026-10-24.
+17. `[x]` **Separate attack and release ranges** — the global ranges are
+    now eight `flonum`s: attack fast min/max, attack slow min/max, release
+    fast min/max, release slow min/max (`pak f f f f f f f f` →
+    `s env_ranges`). Each length knob, per voice or Env All, sweeps
+    attack through its range and release through its range at once.
+    `envspeed.js` now has two outlets (attack → the attack box, release →
+    the release box), and both ms readouts are back in each MCLyra's
+    presentation. Defaults are unchanged (5–1000 ms fast, 1–30 s slow, for
+    both). Built 2026-10-24, hardware-tested 2026-10-28.
 
 ## Long-term horizon — early December 2026
 
