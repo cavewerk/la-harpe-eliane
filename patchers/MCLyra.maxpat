@@ -46,7 +46,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 70.413905828576475, 279.0, 30.0, 30.0 ]
+					"patching_rect" : [ 70.413905828576475, 380.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -660,6 +660,125 @@
 
 			}
 , 			{
+				"box" : {
+					"id" : "obj-214",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "multichannelsignal", "", "", "" ],
+					"patcher" : {
+						"fileversion" : 1,
+						"appversion" : {
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 7,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "dsp.gen",
+						"rect" : [ 100.0, 100.0, 640.0, 520.0 ],
+						"gridsize" : [ 15.0, 15.0 ],
+						"boxes" : [ {
+								"box" : {
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 20.0, 15.0, 28.0, 22.0 ],
+									"text" : "in 1"
+								}
+
+							}
+, {
+								"box" : {
+									"code" : "// Envelope knee for the amp circuit, which only draws power from about\n// -7 dB. The linear ADSR (in1) is bent so the attack reaches the knee in\n// the first knee_time of its length, then spends the rest climbing from\n// the knee to full, linear in dB. Release is the same curve run backwards:\n// a slow fall to the knee, then a quick drop to silence.\n// Global control: `; env_knee <knee_db> <knee_time>`.\n\nParam knee_db(-7, min=-60, max=0);      // output level of the knee, dB at full fader\nParam knee_time(0.1, min=0.001, max=1); // share of attack/release spent below the knee\nParam curve(1.3, min=0.1);              // MCModule's `scale 0. 1. 0. 1. 1.3`, undone here\n\nt = clamp(in1, 0, 1);\nlevel = 0;\nif (t < knee_time) {\n\tlevel = dbtoa(knee_db) * t / knee_time;\n} else {\n\tlevel = dbtoa(knee_db * (1 - t) / max(1 - knee_time, 0.000001));\n}\nout1 = pow(level, 1 / curve);\n",
+									"fontface" : 0,
+									"fontname" : "<Monospaced>",
+									"fontsize" : 12.0,
+									"id" : "obj-2",
+									"maxclass" : "codebox",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 20.0, 50.0, 580.0, 380.0 ]
+								}
+
+							}
+, {
+								"box" : {
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 20.0, 445.0, 35.0, 22.0 ],
+									"text" : "out 1"
+								}
+
+							}
+ ],
+						"lines" : [ {
+								"patchline" : {
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, {
+								"patchline" : {
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 70.41390582857647, 345.0, 120.0, 22.0 ],
+					"text" : "mc.gen~ @chans 8",
+					"varname" : "env_knee_gen"
+				}
+
+			}
+, 			{
+				"box" : {
+					"id" : "obj-215",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 200.0, 283.0, 77.0, 22.0 ],
+					"text" : "r env_knee",
+					"varname" : "env_knee_r"
+				}
+
+			}
+, 			{
+				"box" : {
+					"id" : "obj-216",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 200.0, 313.0, 160.0, 22.0 ],
+					"text" : "knee_db $1, knee_time $2"
+				}
+
+			}
+, 			{
+				"box" : {
+					"id" : "obj-217",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 200.0, 255.0, 230.0, 20.0 ],
+					"linecount" : 1,
+					"text" : "Envelope knee: fast to -7 dB, then slow (see codebox)."
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-120",
 					"maxclass" : "toggle",
@@ -682,7 +801,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "float" ],
-					"patching_rect" : [ 70.413905828576475, 324.0, 58.0, 23.0 ],
+					"patching_rect" : [ 110.0, 380.0, 58.0, 23.0 ],
 					"sig" : 0.0
 				}
 
@@ -978,18 +1097,16 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"midpoints" : [ 79.913905828576475, 276.0, 79.913905828576475, 276.0 ],
 					"order" : 0,
-					"source" : [ "obj-119", 0 ]
+					"source" : [ "obj-214", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-124", 0 ],
-					"midpoints" : [ 79.913905828576475, 276.0, 57.0, 276.0, 57.0, 321.0, 79.913905828576475, 321.0 ],
 					"order" : 1,
-					"source" : [ "obj-119", 0 ]
+					"source" : [ "obj-214", 0 ]
 				}
 
 			}
@@ -1415,6 +1532,27 @@
 					"destination" : [ "obj-83", 0 ],
 					"midpoints" : [ 78.913905828576475, 87.0, 79.913905828576475, 87.0 ],
 					"source" : [ "obj-92", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-214", 0 ],
+					"source" : [ "obj-119", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-216", 0 ],
+					"source" : [ "obj-215", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : {
+					"destination" : [ "obj-214", 0 ],
+					"source" : [ "obj-216", 0 ]
 				}
 
 			}
